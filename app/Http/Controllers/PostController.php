@@ -40,7 +40,7 @@ class PostController extends BaseController
 		$topUsers=User::where('id','>',0)->orderBy('rating','DESC')->limit(10)->get();
 		$topGroups=Group::where('id','>',0)->orderBy('subscribers_count','DESC')->limit(10)->get();
 		
-		$posts=$Post::where('lang',app()->getLocale())->orderBy('24h_rating','desc')->with(['user','voted','group'])->paginate(100);
+		$posts=$Post::where('lang',app()->getLocale())->orderBy('24h_rating','desc')->orderBy('id','desc')->with(['user','voted','group'])->paginate(100);
 		//$posts=$Post->voted($posts,$userId);
 		
         return view('post.index',['posts'=>$posts,'topUsers'=>$topUsers,'topGroups'=>$topGroups,'title'=>$title]);
