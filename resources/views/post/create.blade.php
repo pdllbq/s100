@@ -49,17 +49,23 @@
 <script type="text/javascript">
 
     $(document).ready(function() {
+		
+		callbacks: {
+			onPaste: function (e) {
+				var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+				e.preventDefault();
+				document.execCommand('insertText', false, bufferText);
+			}
+		}
 
-     $('#text').summernote({
+		$('#text').summernote({
 
-           height: 300,
-		   
-		   fontNames: [],
-		   
-		   lang: '{{ app()->getLocale() }}',
-		   
-		   
-      });
+			  height: 300,
+
+			  fontNames: [],
+
+			  lang: '{{ app()->getLocale() }}',
+		 });
 
    });
 
