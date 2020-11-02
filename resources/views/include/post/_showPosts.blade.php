@@ -15,6 +15,8 @@
 	{!! $post->html !!}
 	@endif
 
+	<div style="clear:both;"></div>
+	
 </div>
 
 @if(isset($post->voted[0]))

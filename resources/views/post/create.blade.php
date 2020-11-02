@@ -57,6 +57,8 @@
 		   fontNames: [],
 		   
 		   lang: '{{ app()->getLocale() }}',
+		   
+		   
       });
 
    });

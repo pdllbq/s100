@@ -31,6 +31,7 @@
 			<div class="post-content">
 				{!! $post->html !!}
 
+				<div style="clear:both;"></div>
 
 			</div>
 			<div class="post-footer">
