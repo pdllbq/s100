@@ -160,6 +160,8 @@ class PostController extends BaseController
 		
         $inputs=$request->input();
 		
+		//dd($inputs['text']);
+		
 		$Post=new Post;
 		$Post->user_id=\Auth::id();
 		$Post->title=$inputs['title'];

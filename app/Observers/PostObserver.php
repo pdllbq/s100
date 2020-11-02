@@ -367,12 +367,18 @@ class PostObserver
 		$post->text= str_replace('<br>', '[br]',$post->text);
 		$post->text=preg_replace('/<blockquote class="blockquote">(.*?)<\/blockquote>/im','[blockquote]$1[/blockquote]', $post->text);
 		$post->text=preg_replace('/<b>(.*?)<\/b>/im','[b]$1[/b]', $post->text);
+		$post->text=preg_replace('/<h1>(.*?)<\/h1>/im','[h1]$1[/h1]', $post->text);
+		$post->text=preg_replace('/<h2>(.*?)<\/h2>/im','[h2]$1[/h2]', $post->text);
+		$post->text=preg_replace('/<h3>(.*?)<\/h3>/im','[h3]$1[/h3]', $post->text);
+		$post->text=preg_replace('/<h4>(.*?)<\/h4>/im','[h4]$1[/h4]', $post->text);
+		$post->text=preg_replace('/<h5>(.*?)<\/h5>/im','[h5]$1[/h5]', $post->text);
+		$post->text=preg_replace('/<h6>(.*?)<\/h6>/im','[h6]$1[/h6]', $post->text);
 		$post->text=preg_replace('/<u>(.*?)<\/u>/im','[u]$1[/u]', $post->text);
 		$post->text=preg_replace('/<span style="background-color: rgb\((.*?)\);">(.*?)<\/span>/im','[backgroundColor=rgb($1)]$2[/backgroundColor]', $post->text);
 		$post->text=preg_replace('/<font color="#(.*?)">(.*?)<\/font>/im','[fontColor=$1]$2[/fontColor]', $post->text);
 		$post->text=preg_replace('/<ul>(.*?)<\/ul>/im','[ul]$1[/ul]', $post->text);
-		$post->text=preg_replace('/<li>(.*?)<\/li>/im','[li]$1[/li]', $post->text);
-		$post->text=preg_replace('/<ol>(.*?)<\/ol>/im','[ol]$1[/ol]', $post->text);
+		$post->text=preg_replace('/<li>(.*?)<\/li>/sim','[li]$1[/li]', $post->text);
+		$post->text=preg_replace('/<ol>(.*?)<\/ol>/sim','[ol]$1[/ol]', $post->text);
 		$post->text=preg_replace('/<div align="(.*?)">(.*?)<\/div>/im','[align=$1]$2[/align]', $post->text);
 		$post->text=preg_replace('/<table class="table table-bordered">(.*?)<\/table>/im','[table]$1[/table]', $post->text);
 		$post->text=preg_replace('/<tbody>(.*?)<\/tbody>/im','[tbody]$1[/tbody]', $post->text);
@@ -385,8 +391,14 @@ class PostObserver
 	
 	function p($text)
 	{
+		
+		$i=0;
 		while(strpos($text,'<p>')!==false && strpos($text,'</p>')!==false){
-			$text=preg_replace('/<p>(.*?)<\/p>/','[p]$1[/p]', $text);
+			$text=preg_replace('/<p>(.*?)<\/p>/s','[p]$1[/p]', $text);
+			$i++;
+			if($i==100){
+				dd($text);
+			}
 		}
 		
 		return $text;
@@ -395,7 +407,7 @@ class PostObserver
 	function pbb($text)
 	{
 		while(strpos($text,'[p]')!==false && strpos($text,'[/p]')!==false){
-			$text=preg_replace('/\[p\](.*?)\[\/p\]/','<p>$1</p>', $text);
+			$text=preg_replace('/\[p\](.*?)\[\/p\]/s','<p>$1</p>', $text);
 		}
 		
 		return $text;
@@ -414,12 +426,18 @@ class PostObserver
 		$html= str_replace('[br]','<br>', $html);
 		$html=preg_replace('~\[blockquote\](.*?)\[/blockquote\]~im','<blockquote class="blockquote">$1</blockquote>', $html);
 		$html=preg_replace('~\[b\](.*?)\[/b\]~im','<b>$1</b>', $html);
+		$html=preg_replace('~\[h1\](.*?)\[/h1\]~im','<h1>$1</h1>', $html);
+		$html=preg_replace('~\[h2\](.*?)\[/h2\]~im','<h2>$1</h2>', $html);
+		$html=preg_replace('~\[h3\](.*?)\[/h3\]~im','<h3>$1</h3>', $html);
+		$html=preg_replace('~\[h4\](.*?)\[/h4\]~im','<h4>$1</h4>', $html);
+		$html=preg_replace('~\[h5\](.*?)\[/h5\]~im','<h5>$1</h5>', $html);
+		$html=preg_replace('~\[h6\](.*?)\[/h6\]~im','<h6>$1</h6>', $html);
 		$html=preg_replace('~\[u\](.*?)\[/u\]~im','<u>$1</u>', $html);
 		$html=preg_replace('~\[backgroundColor=(.*?)\](.*?)\[/backgroundColor\]~im','<span style="background-color: $1;">$2</span>', $html);
 		$html=preg_replace('~\[fontColor=(.*?)\](.*?)\[/fontColor\]~im','<font color="#$1">$2</font>', $html);
 		$html=preg_replace('~\[ul\](.*?)\[/ul\]~im','<ul>$1</ul>', $html);
-		$html=preg_replace('~\[li\](.*?)\[/li\]~im','<li>$1</li>', $html);
-		$html=preg_replace('~\[ol\](.*?)\[/ol\]~im','<ol>$1</ol>', $html);
+		$html=preg_replace('~\[li\](.*?)\[/li\]~sim','<li>$1</li>', $html);
+		$html=preg_replace('~\[ol\](.*?)\[/ol\]~sim','<ol>$1</ol>', $html);
 		$html=preg_replace('~\[align=(.*?)\](.*?)\[/align\]~im','<div align="$1">$2</div>', $html);
 		$html=preg_replace('~\[table\](.*?)\[/table\]~im','<table class="table table-bordered">$1</table>', $html);
 		$html=preg_replace('~\[tbody\](.*?)\[/tbody\]~im','<tbody>$1</tbody>', $html);

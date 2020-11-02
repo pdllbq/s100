@@ -49,22 +49,22 @@
 <script type="text/javascript">
 
     $(document).ready(function() {
-		
-		callbacks: {
-			onPaste: function (e) {
-				var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
-				e.preventDefault();
-				document.execCommand('insertText', false, bufferText);
-			}
-		}
 
 		$('#text').summernote({
+			
+			callbacks: {
+				onPaste: function (e) {
+					var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+					e.preventDefault();
+					document.execCommand('insertText', false, bufferText);
+				}
+			},
 
-			  height: 300,
+			height: 300,
 
-			  fontNames: [],
+			fontNames: [],
 
-			  lang: '{{ app()->getLocale() }}',
+			lang: '{{ app()->getLocale() }}',
 		 });
 
    });
