@@ -1,0 +1,20 @@
+<?php
+return [
+	'Rating'=>'Rating',
+	'Subscribe'=>'Subscribe',
+	'Subscribers'=>'Subscribers',
+	'My profile'=>'My profile',
+	'Password was updated'=>'Password updated',
+	'Passwords do not match'=>'Passwords do not match',
+	'Change password'=>'Change password (if you don\'t want to change - leave it blank)',
+	'Retype paassword'=>'Confirm new password',
+	'Save'=>'Ыфму',
+	'Edit avatar'=>'Change image',
+	'New avatar'=>'Change image',
+	'Groups'=>'Groups',
+	'Make group'=>'Create a group',
+	'Make'=>'Create',
+	'Language'=>'Language',
+	'Top users'=>'Top users',
+	'Message'=>'Message',
+];

@@ -1,0 +1,20 @@
+<?php
+return [
+	'Rating'=>'Reitings',
+	'Subscribe'=>'Sekot',
+	'Subscribers'=>'Sekotāji',
+	'My profile'=>'Mans profils',
+	'Password was updated'=>'Parole ir atjaunināta',
+	'Passwords do not match'=>'Paroles nesakrīt',
+	'Change password'=>'Mainīt paroli (ja nevēlaties to mainīt - atstājiet to tukšu)',
+	'Retype paassword'=>'Apstipriniet jauno paroli',
+	'Save'=>'Saglabāt',
+	'Edit avatar'=>'Mainīt attēlu',
+	'New avatar'=>'Mainīt attēlu',
+	'Groups'=>'Grupas',
+	'Make group'=>'Izveidot grupu',
+	'Make'=>'Izveidot',
+	'Language'=>'Valoda',
+	'Top users'=>'Top lietotāji',
+	'Message'=>'Vēstules',
+];

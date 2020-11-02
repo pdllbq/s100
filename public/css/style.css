@@ -1,0 +1,181 @@
+p {
+	margin-bottom: 0px;
+}
+
+h1 {
+}
+
+.video-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.video-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+.rating-button-minus{
+	cursor: pointer;
+}
+
+.rating-button-plus{
+	cursor: pointer;
+}
+
+.plus-active{
+	color:green;
+	font-weight: bold;
+}
+
+.minus-active{
+	color:red;
+	font-weight: bold;
+}
+
+.post-info{
+	color:#696969;
+}
+
+.comment-answer{
+}
+
+.post-content{
+	word-wrap: break-word;
+}
+
+.post-content img{
+	max-width: 100%;
+}
+
+.avatar img{
+	width:100%;
+}
+
+.text-underline{
+	text-decoration: underline #3490dc;
+}
+
+.side-menu-list{
+	border-bottom: 1px solid #dfdfdf;
+	padding:5px 0;
+}
+
+.cursor-pointer
+{
+	cursor: pointer;
+}
+
+.navbar-custom{
+	background-color: #f7f7f7;
+	border-bottom:1px solid #dadada;
+}
+
+.navbar-brand{
+	text-transform: uppercase;
+	font-weight: bold;
+	
+}
+
+.navbar-brand:hover{
+}
+
+.navbar-custom a{
+	color:#5e5e5e;
+}
+
+.navbar-custom .domain{
+	color:#00affe;
+}
+
+@keyframes pulsing {
+  0% {
+    -webkit-transform: scale(1,1);
+    transform: scale(1,1)
+  }
+  50% {
+    -webkit-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
+  }
+  100% {
+    -webkit-transform: scale(1,1);
+    transform: scale(1,1);
+  }
+}
+
+.menu-header{
+	color:#505c66;
+	text-transform: uppercase;
+	font-weight: bold;
+	border-bottom:1px solid #dadada;
+}
+
+.post-title a{
+	color: #505c66;
+}
+
+.post-title a:hover, .post-title a:active{
+	color: #3490dc;
+	text-decoration: none;
+}
+
+h2{
+	margin:0;
+}
+
+.post-footer{
+	border:1px solid #dadada;
+	padding: 10px;
+	border-radius: 5px;
+	margin-top:5px;
+}
+
+.read-more{
+	margin-bottom: 5px;
+}
+
+.pagination{
+	justify-content: center;
+}
+
+.footer{
+	background-color: #edeeef;
+	padding: 10px 0px;
+	text-align: center;
+}
+
+.dropdown-menu{
+	border:none;
+	border-radius: 0px;
+	padding: 0px;
+	margin:0px;
+	background-color: #f7f7f7;
+	text-align: left;
+	border-left: 1px solid #3490dc;
+}
+
+.menu-footer{
+	margin-bottom: 15px;
+}
+
+.sup-not{
+	animation: animation-not 2s infinite;
+	cursor: pointer;
+}
+
+
+@keyframes animation-not {   
+  0% {     
+    color: #5e5e5e;   
+  }   
+  50% {     
+    color: red;   
+  } 
+  100% {
+    color: #5e5e5e;
+   }
+}

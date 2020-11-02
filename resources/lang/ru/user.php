@@ -1,0 +1,20 @@
+<?php
+return [
+	'Rating'=>'Рейтинг',
+	'Subscribe'=>'Подписаться',
+	'Subscribers'=>'Подписчиков',
+	'My profile'=>'Мой профиль',
+	'Password was updated'=>'Пароль обновлён',
+	'Passwords do not match'=>'Пароли не совпадают',
+	'Change password'=>'Сменить пароль (если не хотите менять- оставьте пустым)',
+	'Retype paassword'=>'Подтвердите новый пароль',
+	'Save'=>'Сохранить',
+	'Edit avatar'=>'Изменить изображение',
+	'New avatar'=>'Изменить изображение',
+	'Groups'=>'Группы',
+	'Make group'=>'Создать группу',
+	'Make'=>'Создать',
+	'Language'=>'Язык',
+	'Top users'=>'Топ пользователей',
+	'Message'=>'Сообщение',
+];
