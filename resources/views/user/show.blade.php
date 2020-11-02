@@ -29,6 +29,7 @@
 	</div>
 </div>
 
+@include('user.include._newGroupModal')
 
 {{ $posts->links() }}
 
