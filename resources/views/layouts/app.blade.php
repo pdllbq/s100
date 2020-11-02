@@ -122,7 +122,7 @@ if(isset(\Auth::user()->id)){
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
-                                <div class="dropdown-menu dropdown-secondary" aria-labelledby="navbarDropdown">
+                                <div class="dropdown-menu dropdown-menu-right dropdown-secondary" aria-labelledby="navbarDropdown">
 									<a data-toggle="modal" data-target="#modal-template" class=" dropdown-item mx-auto" style="cursor:pointer;" onclick="Message.index('{{ route('message.index',app()->getLocale()) }}');">{{ __('message.Messages') }}</a>
 									<a class="dropdown-item" href="{{ route('post.create',app()->getLocale()) }}">{{ __('post.Create') }}</a>
 									<a class="dropdown-item" href="{{ route('user.profile',[app()->getLocale()]) }}">{{ __('user.My profile') }}</a>
