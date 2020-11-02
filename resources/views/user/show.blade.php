@@ -31,6 +31,8 @@
 
 @include('user.include._newGroupModal')
 
+@include('user.include._editGroupModal')
+
 {{ $posts->links() }}
 
 @endsection
