@@ -26,4 +26,5 @@ return[
 	'Group'=>'Grupa',
 	'Create'=>'Jauns raksts',
 	'Read more'=>'Lasīt vairāk',
+	'Save'=>'Saglabāt',
 ];

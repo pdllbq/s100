@@ -26,4 +26,5 @@ return[
 	'Group'=>'Group',
 	'Create'=>'New post',
 	'Read more'=>'Read more',
+	'Save'=>'Save',
 ];
