@@ -174,11 +174,7 @@ class PostController extends BaseController
 		//
 		
 		if($canCreate==0){
-			$lastPost=Post::where('user_id',\Auth::user()->id)->orderBy('id','DESC')->first();
-			$nextPost=Carbon::parse($lastPost->created_at)->addHour()->addMinute()->toTimeString();
-			//dd($nextPost);
-		}else{
-			return redirect()->route('post.create',[app()->getLocale(),$Post->slug]);
+			return redirect()->route('post.create',[app()->getLocale()]);
 		}
 		
         $inputs=$request->input();
