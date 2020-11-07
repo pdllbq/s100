@@ -27,4 +27,5 @@ return[
 	'Create'=>'Новая запись',
 	'Read more'=>'Читать далее',
 	'Save'=>'Сохранить',
+	'Next post you can create in :time'=>'Следующую запись вы можете создать в :time'
 ];

@@ -11,6 +11,7 @@ use App\Models\Subscribe;
 use App\Models\Group;
 use App\User;
 use App\Models\Notification;
+use Carbon\Carbon;
 
 class PostController extends BaseController
 {
@@ -138,9 +139,19 @@ class PostController extends BaseController
 		$groups=Group::where('user_id',\Auth::user()->id)->get();
 		//
 		
-		//dd($groups);
+		//Ограничение на один пост в час
+		$canCreate=$this->canCreatePost();
+		//
 		
-        return view('post.create',['groups'=>$groups]);
+		if($canCreate==0){
+			$lastPost=Post::where('user_id',\Auth::user()->id)->orderBy('id','DESC')->first();
+			$nextPost=Carbon::parse($lastPost->created_at)->addHour()->addMinute()->toTimeString();
+			//dd($nextPost);
+		}else{
+			$nextPost=0;
+		}
+		
+        return view('post.create',['groups'=>$groups,'canCreate'=>$canCreate,'nextPost'=>$nextPost]);
     }
 
     /**
@@ -157,6 +168,18 @@ class PostController extends BaseController
 			return redirect()->route('login',app()->getLocale());
 		}
 		//
+		
+		//Ограничение на один пост в час
+		$canCreate=$this->canCreatePost();
+		//
+		
+		if($canCreate==0){
+			$lastPost=Post::where('user_id',\Auth::user()->id)->orderBy('id','DESC')->first();
+			$nextPost=Carbon::parse($lastPost->created_at)->addHour()->addMinute()->toTimeString();
+			//dd($nextPost);
+		}else{
+			return redirect()->route('post.create',[app()->getLocale(),$Post->slug]);
+		}
 		
         $inputs=$request->input();
 		
@@ -363,4 +386,23 @@ class PostController extends BaseController
 		return view('post.include._commentGetAnswers',['comments'=>$comments]);
 	}
 	
+	//Ограничение на один пост в час
+	function canCreatePost()
+	{
+		if(\Auth::user()->post_limit==1){
+			$time=Carbon::now()->subHour(1);
+			$result=Post::where('user_id',\Auth::user()->id)->where('created_at','>=',$time)->count();
+
+			if($result>0){
+				$canCreate=0;
+			}else{
+				$canCreate=1;
+			}
+		}else{
+			$canCreate=1;
+		}
+		
+		return $canCreate;
+	}
+	//
 }
