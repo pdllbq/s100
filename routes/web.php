@@ -50,6 +50,9 @@ Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
   Route::get('new','PostController@new')->name('post.new');
 });
 Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
+  Route::get('draft','PostController@draft')->name('post.draft');
+});
+Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
   Route::get('subscribes','PostController@subscribes')->name('post.subscribes');
 });
 

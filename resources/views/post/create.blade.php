@@ -37,6 +37,10 @@
 								 <textarea name="text" id="text" class="form-control" rows="20">{{ old('text') }}</textarea> 
 							</div>
 							<div class="form-group">
+								<input type="checkbox" id="draft" name="draft">
+								<label for="draft"> {{ __('post.Save in draft') }}</label>
+							</div>
+							<div class="form-group">
 								<input type="submit" value="{{ __('post.Add') }}" class="btn btn-primary">
 								<a href="{{ url()->previous() }}" class="btn btn-danger">{{ __('post.Cancel') }}</a>
 							</div>

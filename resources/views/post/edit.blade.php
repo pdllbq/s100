@@ -37,6 +37,10 @@
 							 <textarea name="text" id="text" class="form-control" rows="20">{{ old('text',$post->html) }}</textarea> 
 						</div>
 						<div class="form-group">
+							<input type="checkbox" id="draft" name="draft" value="on" {{ $post->draft==1?'checked="checked"':'' }}>
+							<label for="draft"> {{ __('post.Save in draft') }}</label>
+						</div>
+						<div class="form-group">
 							<input type="submit" value="{{ __('post.Save') }}" class="btn btn-success">
 							<a href="{{ url()->previous() }}" class="btn btn-primary">{{ __('post.Cancel') }}</a>
 							<a href="{{ route('post.destroy', [app()->getLocale(),$post->slug]) }}" class="btn btn-danger" onclick="return confirm('{{ __('post.Destroy') }}?')">{{ __('post.Destroy') }}</a>

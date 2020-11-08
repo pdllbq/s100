@@ -41,7 +41,7 @@ class PostController extends BaseController
 		$topUsers=User::where('id','>',0)->orderBy('rating','DESC')->limit(10)->get();
 		$topGroups=Group::where('id','>',0)->orderBy('subscribers_count','DESC')->limit(10)->get();
 		
-		$posts=$Post::where('lang',app()->getLocale())->orderBy('24h_rating','desc')->orderBy('id','desc')->with(['user','voted','group'])->paginate(100);
+		$posts=$Post::where('lang',app()->getLocale())->where('draft','!=',1)->orderBy('24h_rating','desc')->orderBy('id','desc')->with(['user','voted','group'])->paginate(100);
 		//$posts=$Post->voted($posts,$userId);
 		
         return view('post.index',['posts'=>$posts,'topUsers'=>$topUsers,'topGroups'=>$topGroups,'title'=>$title]);
@@ -71,6 +71,8 @@ class PostController extends BaseController
 			$posts=$posts->orWhere('tags','like','%'.$tag['tag_name'].'%');
 		}
 		
+		$posts=$posts->where('draft','!=',1);
+		
 		$topUsers=User::where('id','>',0)->orderBy('rating','DESC')->limit(10)->get();
 		$topGroups=Group::where('id','>',0)->orderBy('subscribers_count','DESC')->limit(10)->get();
 		
@@ -95,7 +97,28 @@ class PostController extends BaseController
 		$topUsers=User::where('id','>',0)->orderBy('rating','DESC')->limit(10)->get();
 		$topGroups=Group::where('id','>',0)->orderBy('subscribers_count','DESC')->limit(10)->get();
 		
-		$posts=$Post::where('lang',app()->getLocale())->orderBy('id','desc')->with(['user','voted'])->paginate(100);
+		$posts=$Post::where('lang',app()->getLocale())->where('draft','!=',1)->orderBy('id','desc')->with(['user','voted'])->paginate(100);
+		//$posts=$Post->voted($posts,$userId);
+		
+        return view('post.index',['posts'=>$posts,'topUsers'=>$topUsers,'topGroups'=>$topGroups,'title'=>$title]);
+	}
+	
+	public function draft()
+	{
+		$title=__('post.Draft');
+		
+		$Post=new Post;
+		
+		if(isset(\Auth::user()->id)){
+			$userId=\Auth::user()->id;
+		}else{
+			$userId=false;
+		}
+		
+		$topUsers=User::where('id','>',0)->orderBy('rating','DESC')->limit(10)->get();
+		$topGroups=Group::where('id','>',0)->orderBy('subscribers_count','DESC')->limit(10)->get();
+		
+		$posts=$Post::where('user_id',$userId)->where('draft',1)->orderBy('id','desc')->with(['user','voted'])->paginate(100);
 		//$posts=$Post->voted($posts,$userId);
 		
         return view('post.index',['posts'=>$posts,'topUsers'=>$topUsers,'topGroups'=>$topGroups,'title'=>$title]);
@@ -108,9 +131,10 @@ class PostController extends BaseController
 	
 	function tag($locale,$tag)
 	{
+		
 		$title='#'.$tag;
 		
-		$posts=Post::where('tags','like','%#'.$tag.',%')->with(['user','voted'])->orderBy('24h_rating','desc')->paginate(100);
+		$posts=Post::where('tags','like','%#'.$tag.',%')->orWhere('tags','like','#'.$tag.',%')->orWhere('tags','like','#'.$tag.',')->where('draft','!=',1)->with(['user','voted'])->orderBy('24h_rating','desc')->paginate(100);
 		
 		if(isset(\Auth::user()->id)){
 			$subscribed=Subscribe::where('master_id',\Auth::user()->id)->where('tag_name','#'.$tag)->count();
@@ -144,7 +168,7 @@ class PostController extends BaseController
 		//
 		
 		if($canCreate==0){
-			$lastPost=Post::where('user_id',\Auth::user()->id)->orderBy('id','DESC')->first();
+			$lastPost=Post::where('user_id',\Auth::user()->id)->where('draft','!=',1)->orderBy('id','DESC')->first();
 			$nextPost=Carbon::parse($lastPost->created_at)->addHour()->addMinute()->toTimeString();
 			//dd($nextPost);
 		}else{
@@ -179,7 +203,7 @@ class PostController extends BaseController
 		
         $inputs=$request->input();
 		
-		//dd($inputs['text']);
+		//dd($inputs['draft']);
 		
 		$Post=new Post;
 		$Post->user_id=\Auth::id();
@@ -187,6 +211,11 @@ class PostController extends BaseController
 		$Post->group_slug=$inputs['group'];
 		$Post->text=$inputs['text'];
 		$Post->lang=\app()->getLocale();
+		if(isset($inputs['draft']) && $inputs['draft']=='on'){
+			$Post->draft=1;
+		}else{
+			$Post->draft=0;
+		}
 		$Post->save();
 		
 		return redirect()->route('post.show',[app()->getLocale(),$Post->slug]);
@@ -267,6 +296,11 @@ class PostController extends BaseController
 		$post->group_slug=$inputs['group'];
 		$post->text=$inputs['text'];
 		$post->lang=\app()->getLocale();
+		if(isset($inputs['draft']) && $inputs['draft']=='on'){
+			$post->draft=1;
+		}else{
+			$post->draft=0;
+		}
 		$post->save();
 		
 		return redirect()->route('post.show',[app()->getLocale(),$post->slug]);
