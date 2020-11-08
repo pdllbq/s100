@@ -261,6 +261,7 @@ class PostObserver
 		$post->text=str_replace("\n",'',$post->text);
 		
 		$dom = new \DomDocument('1.0', 'UTF-8');
+		libxml_use_internal_errors(true);
 		$dom->loadHtml(mb_convert_encoding($post->text, 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
 		$imgs=$dom->getElementsByTagName('img');
 		
