@@ -255,6 +255,10 @@ class PostObserver
 	{
 		dd($post->text);
 		
+		$post->text=str_replace("\r\n",'',$post->text);
+		$post->text=str_replace("\r",'',$post->text);
+		$post->text=str_replace("\n",'',$post->text);
+		
 		$dom = new \DomDocument('1.0', 'UTF-8');
 		$dom->loadHtml(mb_convert_encoding($post->text, 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
 		$imgs=$dom->getElementsByTagName('img');
