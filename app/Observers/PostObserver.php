@@ -253,7 +253,7 @@ class PostObserver
 	
 	protected function saveImages(Post $post)
 	{
-		dd($post->text);
+		//dd($post->text);
 		
 		$post->text=str_replace("\r\n",'',$post->text);
 		$post->text=str_replace("\r",'',$post->text);
