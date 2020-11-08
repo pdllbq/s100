@@ -392,6 +392,7 @@ class PostObserver
 		$post->text=preg_replace('/<td>(.*?)<\/td>/im','[td]$1[/td]', $post->text);
 		$post->text=preg_replace('/<a href="([^"]+)" target="_blank">(.*?)<\/a>/','[link=$1]$2[/link]', $post->text);
 		$post->text=preg_replace('/<a href="[^"]+">#(.*?)<\/a>/','[hashTag]$1[/hashTag]', $post->text);
+		$post->text=preg_replace('/<div class="video-responsive">(.*?)<\/div>/im','$1', $post->text);
 		$post->text=preg_replace('/<iframe src="\/\/www.youtube.com\/embed\/(.*?)"(.*?)<\/iframe>/im','[youtube]$1[/youtube]', $post->text);
 	}
 	
