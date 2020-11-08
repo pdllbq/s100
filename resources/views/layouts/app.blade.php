@@ -125,6 +125,7 @@ if(isset(\Auth::user()->id)){
                                 <div class="dropdown-menu dropdown-menu-right dropdown-secondary" aria-labelledby="navbarDropdown">
 									<a data-toggle="modal" data-target="#modal-template" class=" dropdown-item mx-auto" style="cursor:pointer;" onclick="Message.index('{{ route('message.index',app()->getLocale()) }}');">{{ __('message.Messages') }}</a>
 									<a class="dropdown-item" href="{{ route('post.create',app()->getLocale()) }}">{{ __('post.Create') }}</a>
+									<a class="dropdown-item" href="{{ route('post.draft',app()->getLocale()) }}">{{ __('post.Draft') }}</a>
 									<a class="dropdown-item" href="{{ route('user.profile',[app()->getLocale()]) }}">{{ __('user.My profile') }}</a>
 									
 									<a class="dropdown-item" href="{{ route('logout', app()->getLocale()) }}"
