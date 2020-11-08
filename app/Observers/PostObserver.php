@@ -32,6 +32,7 @@ class PostObserver
 	
 	public function creating(Post $post)
     {
+		$post->text=str_replace('<p></p>','',$post->text);
         //dd($post);
 		
 		$post->slug=$this->makeSlug($post);
