@@ -253,7 +253,7 @@ class PostObserver
 	
 	protected function saveImages(Post $post)
 	{
-		//dd($post->text);
+		dd($post->text);
 		
 		$dom = new \DomDocument('1.0', 'UTF-8');
 		$dom->loadHtml(mb_convert_encoding($post->text, 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
@@ -391,8 +391,6 @@ class PostObserver
 	
 	function p($text)
 	{
-		$text= str_replace('<p>','',$text);
-		$text= str_replace('</p>','',$text);
 		$i=0;
 		while(strpos($text,'<p>')!==false && strpos($text,'</p>')!==false){
 			$text=preg_replace('/<p>(.*?)<\/p>/s','[p]$1[/p]', $text);
