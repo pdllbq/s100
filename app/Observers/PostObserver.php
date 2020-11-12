@@ -398,6 +398,8 @@ class PostObserver
 	
 	function p($text)
 	{
+		$text=str_replace('<p></p>','',$text);
+		
 		$i=0;
 		while(strpos($text,'<p>')!==false && strpos($text,'</p>')!==false){
 			$text=preg_replace('/<p>(.*?)<\/p>/s','[p]$1[/p]', $text);
