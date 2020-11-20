@@ -17,7 +17,7 @@ class GroupController extends Controller
 		$title=$group->name;
 		
 		//User is subscribed on this group?
-		if(\Auth::user()->id){
+		if(isset(\Auth::user()->id) && \Auth::user()->id){
 			$subscribed=Subscribe::where('master_id',\Auth::user()->id)->where('group_slug',$group->slug)->count();
 		}else{
 			$subscribed=0;

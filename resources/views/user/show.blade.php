@@ -12,9 +12,8 @@
 				@include('user.include._userGroups',['userGroups'=>$userGroups])
 				<br>
 		</div>
-		
+					
 		<div class="col-12 col-lg-9">
-
 		@include('include.post._showPosts',['posts'=>$posts])
 		
 				
