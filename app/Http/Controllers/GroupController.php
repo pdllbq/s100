@@ -73,7 +73,7 @@ class GroupController extends Controller
 	{
 		$inputs=$request->input();
 		
-		Group::where('id',$inputs['id'])->update([
+		Group::where('id',$inputs['id'])->where('user_id',\Auth::user()->id)->update([
 			'name'=>$inputs['name'],
 			'description'=>$inputs['description'],
 		]);
