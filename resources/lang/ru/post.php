@@ -29,5 +29,6 @@ return[
 	'Save'=>'Сохранить',
 	'Next post you can create in :time'=>'Следующую запись вы можете создать в :time',
 	'Save in draft'=>'Сохранить в черновике',
-	'Draft'=>'Черновик'
+	'Draft'=>'Черновик',
+	'Read more on :site'=>'Читать далее на :site'
 ];

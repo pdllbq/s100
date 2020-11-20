@@ -23,6 +23,20 @@ h1 {
     position:absolute;
 }
 
+.iframe-responsive{
+    overflow:hidden;
+    padding-bottom:100vh;
+    position:relative;
+    height:0;
+}
+.iframe-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
 .rating-button-minus{
 	cursor: pointer;
 }

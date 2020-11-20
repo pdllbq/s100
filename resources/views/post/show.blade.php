@@ -29,7 +29,11 @@
 			<h1 class="post-title">{{ $post->title }}</h1>
 				
 			<div class="post-content">
-				{!! $post->html !!}
+				@if($post->iframe_mode==1)
+					<div class="iframe-responsive"><iframe src="{{ $post->iframe_url }}"></iframe></div>
+				@else
+					{!! $post->html !!}
+				@endif
 
 				<div style="clear:both;"></div>
 

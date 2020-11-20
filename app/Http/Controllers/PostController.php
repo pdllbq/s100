@@ -186,10 +186,12 @@ class PostController extends BaseController
      */
     public function store(\App\Http\Requests\StorePostRequest $request)
     {
-		//Only logged in users
-		if(!\Auth::check()){
+		//Only logged in users or with api key and userId
+		if(!\Auth::check() && !isset($userId)){
 			session(['after_auth'=>\route('post.create',app()->getLocale())]);
 			return redirect()->route('login',app()->getLocale());
+		}else{
+			$userId=\Auth::id();
 		}
 		//
 		
@@ -201,15 +203,25 @@ class PostController extends BaseController
 			return redirect()->route('post.create',[app()->getLocale()]);
 		}
 		
+		
         $inputs=$request->input();
 		
-		//dd($inputs['draft']);
+		//dd($inputs['text']);
+		
+		if(!isset($inputs['iframe_mode'])){
+			$inputs['iframe_mode']=0;
+		}
+		if(!isset($inputs['iframe_url'])){
+			$inputs['iframe_url']='';
+		}
 		
 		$Post=new Post;
-		$Post->user_id=\Auth::id();
+		$Post->user_id=$userId;
 		$Post->title=$inputs['title'];
 		$Post->group_slug=$inputs['group'];
 		$Post->text=$inputs['text'];
+		$Post->iframe_mode=$inputs['iframe_mode'];
+		$Post->iframe_url=$inputs['iframe_url'];
 		$Post->lang=\app()->getLocale();
 		if(isset($inputs['draft']) && $inputs['draft']=='on'){
 			$Post->draft=1;
@@ -292,9 +304,18 @@ class PostController extends BaseController
 		
 		$inputs=$request->input();
 		
+		if(!isset($inputs['iframe_mode'])){
+			$inputs['iframe_mode']=0;
+		}
+		if(!isset($inputs['iframe_url'])){
+			$inputs['iframe_url']='';
+		}
+		
 		$post->title=$inputs['title'];
 		$post->group_slug=$inputs['group'];
 		$post->text=$inputs['text'];
+		$post->iframe_mode=$inputs['iframe_mode'];
+		$post->iframe_url=$inputs['iframe_url'];
 		$post->lang=\app()->getLocale();
 		if(isset($inputs['draft']) && $inputs['draft']=='on'){
 			$post->draft=1;

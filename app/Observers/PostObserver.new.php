@@ -32,18 +32,25 @@ class PostObserver
 	
 	public function creating(Post $post)
     {
-		$post->text=str_replace('<p></p>','',$post->text);
-        //dd($post);
 		
 		$post->slug=$this->makeSlug($post);
 		$this->saveImages($post);
 		$this->htmlTagsToBb($post);
 		$this->makeTags($post);
-		$post->html=$this->textToHtml($post);
+		if(isset($post->iframe_mode) && $post->iframe_mode==1){
+			$post->html=$this->textToIframe($post);
+			//dd($post->html);
+		}else{
+			$post->html=$this->textToHtml($post);
+		}
 		$this->makeTags($post); //Второй раз-так надо, иначе не работает
 		
 		//dd($post->html);
-		$post->excerpt=$this->truncate($post->html,255,array('html' => true, 'ending' => '...'));
+		if(isset($post->iframe_mode) && $post->iframe_mode==1){
+			$post->excerpt=$this->excerptIframeFormat($post);
+		}else{
+			$post->excerpt=$this->truncate($post->html,255,array('html' => true, 'ending' => '...'));
+		}
 		//$post->excerpt_no_html=$this->truncate($post->html,255,array('html' => false, 'ending' => '...'));
 		$post->excerpt_no_html= strip_tags($post->excerpt);
 		
@@ -51,7 +58,7 @@ class PostObserver
 		
 		$post->{'24h_rating'}=$user->rating;
 		
-		//dd($post);
+		dd($post);
 	}
 	
 	function truncate($text, $length = 100, $options = array()) {
@@ -309,7 +316,7 @@ class PostObserver
 		foreach($savedImages as $img){
 			$post->files.=$img.',';
 		}
-		
+		//dd($post->text);
 	}
 	
 	protected function makeSlug(Post $post)
@@ -394,20 +401,21 @@ class PostObserver
 		$post->text=preg_replace('/<a href="([^"]+)" target="_blank">(.*?)<\/a>/','[link=$1]$2[/link]', $post->text);
 		$post->text=preg_replace('/<a href="[^"]+">#(.*?)<\/a>/','[hashTag]$1[/hashTag]', $post->text);
 		$post->text=preg_replace('/<div class="video-responsive">(.*?)<\/div>/im','$1', $post->text);
+		$post->text=preg_replace('/<div class="iframe-responsive">(.*?)<\/div>/im','$1', $post->text);
 		$post->text=preg_replace('/<iframe src="\/\/www.youtube.com\/embed\/(.*?)"(.*?)<\/iframe>/im','[youtube]$1[/youtube]', $post->text);
+		if(\Auth::user()->iframe_allowed==1){
+			//dd(1);
+			$post->text=preg_replace('/&lt;iframe src="(.*?)"&gt;&lt;\/iframe&gt;/sim','[iframe]$1[/iframe]', $post->text);
+			$post->text=preg_replace('/<iframe src="(.*?)"><\/iframe>/sim','[iframe]$1[/iframe]', $post->text);
+		}
 	}
 	
 	function p($text)
 	{
 		$text=str_replace('<p></p>','',$text);
 		
-		$i=0;
 		while(strpos($text,'<p>')!==false && strpos($text,'</p>')!==false){
 			$text=preg_replace('/<p>(.*?)<\/p>/s','[p]$1[/p]', $text);
-			$i++;
-			if($i==100){
-				dd($text);
-			}
 		}
 		
 		return $text;
@@ -454,6 +462,9 @@ class PostObserver
 		$html=preg_replace('~\[td\](.*?)\[/td\]~im','<td>$1</td>', $html);
 		$html=preg_replace('~\[link=(.*?)\](.*?)\[/link\]~im','<a href="$1" target="_blank">$2</a>', $html);
 		$html=preg_replace('~\[youtube\](.*?)\[/youtube\]~im','<div class="video-responsive"><iframe src="//www.youtube.com/embed/$1" class="note-video-clip" width="640" height="360" frameborder="0"></iframe></div>', $html);
+		if(\Auth::user()->iframe_allowed==1){
+			$html=preg_replace('~\[iframe\](.*?)\[/iframe\]~im','<div class="iframe-responsive"><iframe src="$1"></iframe></div>', $html);
+		}
 		$html=preg_replace('~\[hashTag\](.*?)\[/hashTag\]~','<a href="/tag/$1">#$1</a>', $html);
 		
 		return $html;	
@@ -470,5 +481,40 @@ class PostObserver
 		}
 		
 		return false;
+	}
+	
+	function excerptIframeFormat($html)
+	{	
+		//dd($html);
+//		$html=preg_replace('~<div class="iframe-responsive"><iframe src="(.*?)"></iframe></div>~im','', $html);
+//		$html=preg_replace('~<iframe src="(.*?)"></iframe>~im','', $html);
+		
+		$html=preg_replace('~\[iframe\](.*?)\[/iframe\]~im','', $html);
+		
+		return $this->textToHtml($html);
+	}
+	
+	protected function textToIframe(Post $post)
+	{
+		$html=$post->text;
+		
+		$html= htmlspecialchars($html);
+		
+		if(\Auth::user()->iframe_allowed==1){
+			preg_match_all('~\[iframe\](.*?)\[/iframe\]~im',$html,$iframes);
+			//$html=preg_replace('~\[iframe\](.*?)\[/iframe\]~im','<div class="iframe-responsive"><iframe src="$2"></iframe></div>', $html);
+		}
+		
+		$count=count($iframes[0]);
+		
+		$html='';
+		
+		for($i=0; $i<$count; $i++){
+			$html.='<div class="iframe-responsive"><iframe src="'.$iframes[1][$i].'"></iframe></div>';
+		}
+		
+		//dd($html);
+		
+		return $html;	
 	}
 }

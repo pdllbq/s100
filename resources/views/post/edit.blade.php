@@ -40,6 +40,16 @@
 							<input type="checkbox" id="draft" name="draft" value="on" {{ $post->draft==1?'checked="checked"':'' }}>
 							<label for="draft"> {{ __('post.Save in draft') }}</label>
 						</div>
+						@if(\Auth::user()->iframe_allowed==1)
+							<div class="form-group">
+								<input type="checkbox" id="iframe_mode" name="iframe_mode" value="1" {{ $post->iframe_mode==1?'checked="checked"':'' }}>
+								<label for="iframe_mode">Iframe</label>
+							</div>
+							<div id="iframe_input" class="form-group" {{ $post->iframe_mode==0?'style="display:none;"':'style="display:block;"' }} style="display:none;">
+								<label for="iframe_url">Iframe URL</label>
+								<input type="text" id="iframe_url" name="iframe_url" value="{{ old('iframe_url',$post->iframe_url) }}" class="form-control">
+							</div>
+						@endif
 						<div class="form-group">
 							<input type="submit" value="{{ __('post.Save') }}" class="btn btn-success">
 							<a href="{{ url()->previous() }}" class="btn btn-primary">{{ __('post.Cancel') }}</a>
@@ -66,6 +76,16 @@
       });
 
    });
+   
+   
+   $(document).ready(function() {
+		$("#iframe_mode").click(function(event) {
+		  if ($(this).is(":checked"))
+			$("#iframe_input").show('fast');
+		  else
+			$("#iframe_input").hide('fast');
+		});
+	});
 
 </script>
 

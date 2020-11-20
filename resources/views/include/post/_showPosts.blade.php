@@ -8,8 +8,11 @@
 <div class="post-content">
 	@if(\Route::currentRouteName()!='post.show' && $post->excerpt!=NULL)
 		{!! $post->excerpt !!}
-		@if($post->excerpt!=$post->html)
-			<div class="read-more"><a class=" btn btn-outline-primary btn-sm" href="{{ route('post.show',[app()->getLocale(),$post->slug]) }}">{{ __('post.Read more') }}</a></div>
+		@if($post->excerpt!=$post->html || $post->iframe_mode!=0)
+		<div class="read-more" style="display: inline-block;"><a class=" btn btn-outline-primary btn-sm" href="{{ route('post.show',[app()->getLocale(),$post->slug]) }}">{{ __('post.Read more') }}</a></div>
+		@endif
+		@if($post->iframe_mode!=0)
+		<a target="_blank" class=" btn btn-outline-primary btn-sm" href="{{ $post->iframe_url }}">{{ __('post.Read more on :site',['site'=>parse_url($post->iframe_url,PHP_URL_HOST)]) }}</a>
 		@endif
 	@else
 	{!! $post->html !!}

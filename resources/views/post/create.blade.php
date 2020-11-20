@@ -40,8 +40,18 @@
 								<input type="checkbox" id="draft" name="draft">
 								<label for="draft"> {{ __('post.Save in draft') }}</label>
 							</div>
+							@if(\Auth::user()->iframe_allowed==1)
+								<div class="form-group">
+									<input type="checkbox" id="iframe_mode" name="iframe_mode" value="1">
+									<label for="iframe_mode">Iframe</label>
+								</div>
+								<div id="iframe_input" class="form-group" style="display:none;">
+									<label for="iframe_url">Iframe URL</label>
+									<input type="text" id="iframe_url" name="iframe_url" value="" class="form-control">
+								</div>
+							@endif
 							<div class="form-group">
-								<input type="submit" value="{{ __('post.Add') }}" class="btn btn-primary">
+								<input id="submit_button" type="submit" value="{{ __('post.Add') }}" class="btn btn-primary">
 								<a href="{{ url()->previous() }}" class="btn btn-danger">{{ __('post.Cancel') }}</a>
 							</div>
 						</div>
@@ -78,6 +88,15 @@
 		 });
 
    });
+   
+   $(document).ready(function() {
+		$("#iframe_mode").click(function(event) {
+		  if ($(this).is(":checked"))
+			$("#iframe_input").show('fast');
+		  else
+			$("#iframe_input").hide('fast');
+		});
+	});
 
 </script>
 
