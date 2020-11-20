@@ -17,9 +17,11 @@
 			@endauth
 		@endforeach
 		
-		@if($user->id==\Auth::user()->id)
-			<div class="btn btn-primary d-flex justify-content-center" data-toggle="modal" data-target="#userGroupMakeModal">{{ __('user.Make group') }}</div>
-		@endif
+		@auth
+			@if($user->id==\Auth::user()->id)
+				<div class="btn btn-primary d-flex justify-content-center" data-toggle="modal" data-target="#userGroupMakeModal">{{ __('user.Make group') }}</div>
+			@endif
+		@endauth
 	</div>
 </div>
 
