@@ -170,7 +170,6 @@ class PostController extends BaseController
 		if($canCreate==0){
 			$lastPost=Post::where('user_id',\Auth::user()->id)->where('draft','!=',1)->orderBy('id','DESC')->first();
 			$nextPost=Carbon::parse($lastPost->created_at)->addHour()->addMinute()->toTimeString();
-			//dd($nextPost);
 		}else{
 			$nextPost=0;
 		}
@@ -205,8 +204,6 @@ class PostController extends BaseController
 		
 		
         $inputs=$request->input();
-		
-		//dd($inputs['text']);
 		
 		if(!isset($inputs['iframe_mode'])){
 			$inputs['iframe_mode']=0;
@@ -363,7 +360,6 @@ class PostController extends BaseController
 	{
 		$this->middleware('auth');
 		
-//		dd(\Auth::check());
 //		
 //		if(!\Auth::check()){
 //			return redirect()->route('login',app()->getLocale());

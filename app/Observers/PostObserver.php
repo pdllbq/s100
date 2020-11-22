@@ -33,7 +33,6 @@ class PostObserver
 	public function creating(Post $post)
     {
 		$post->text=str_replace('<p></p>','',$post->text);
-        //dd($post);
 		
 		$post->slug=$this->makeSlug($post);
 		$this->saveImages($post);
@@ -42,7 +41,6 @@ class PostObserver
 		$post->html=$this->textToHtml($post);
 		$this->makeTags($post); //Второй раз-так надо, иначе не работает
 		
-		//dd($post->html);
 		$post->excerpt=$this->truncate($post->html,255,array('html' => true, 'ending' => '...'));
 		//$post->excerpt_no_html=$this->truncate($post->html,255,array('html' => false, 'ending' => '...'));
 		$post->excerpt_no_html= strip_tags($post->excerpt);
@@ -50,8 +48,7 @@ class PostObserver
 		$user=User::where('id',\Auth::id())->first();
 		
 		$post->{'24h_rating'}=$user->rating;
-		
-		//dd($post);
+
 	}
 	
 	function truncate($text, $length = 100, $options = array()) {
@@ -160,21 +157,15 @@ class PostObserver
 	
 	public function updating(Post $post)
 	{
-		//dd($post);
-		
 		
 		$this->saveImages($post);
 		$this->htmlTagsToBb($post);
-		//dd($post->text);
 		$this->makeTags($post);
-		//dd($post->text);
 		$post->html=$this->textToHtml($post);
 		
-		//dd($post->html);
 		$post->excerpt=$this->truncate($post->html,255,array('html' => true, 'ending' => '...'));
 		//$post->excerpt_no_html=$this->truncate($post->html,255,array('html' => false, 'ending' => '...'));
 		$post->excerpt_no_html= strip_tags($post->excerpt);
-		//dd($post);
 	}
 
 	/**
@@ -198,8 +189,6 @@ class PostObserver
 		}
 		$imgs=$dom->getElementsByTagName('img');
 		
-		//dd($imgs);
-		
 		$savedImages=[];
 		
 		foreach($imgs as $key=>$img){
@@ -207,8 +196,6 @@ class PostObserver
 			$data=explode(';',$image);
 			
 			$data[0]=str_replace('/storage/','/storage/app/public/',$data[0]);
-			
-			//dd($data[0]);
 			
 			if(file_exists(base_path().$data[0])){
 				unlink(base_path().$data[0]);
@@ -227,7 +214,6 @@ class PostObserver
      */
     public function deleted(Post $post)
     {
-       // dd($post);
     }
 
     /**
@@ -249,13 +235,10 @@ class PostObserver
      */
     public function forceDeleted(Post $post)
     {
-        //dd($post);
     }
 	
 	protected function saveImages(Post $post)
 	{
-		//dd($post->text);
-		
 		$post->text=str_replace("\r\n",'',$post->text);
 		$post->text=str_replace("\r",'',$post->text);
 		$post->text=str_replace("\n",'',$post->text);
@@ -263,9 +246,7 @@ class PostObserver
 		$dom = new \DomDocument('1.0', 'UTF-8');
 		libxml_use_internal_errors(true);
 		$dom->loadHtml(mb_convert_encoding($post->text, 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-		$imgs=$dom->getElementsByTagName('img');
-		
-		//dd($imgs);
+		$imgs=$dom->getElementsByTagName('img');;
 		
 		$savedImages=[];
 		
@@ -275,7 +256,6 @@ class PostObserver
 			$extension=explode('/',$data[0]);
 			$extension=$extension[1];
 			$i=0;
-			//dd($data);
 			
 			if(isset($data[1])){
 				if(array_search($data[0],$this->allowedFiles)!==false){
@@ -284,8 +264,6 @@ class PostObserver
 						$fileName='public/post-files/user-'.$post->user_id.'/'.$post->slug.'-'.$i.'.'.$extension;
 						$i++;
 					}
-
-					//dd($fileName);
 
 					Storage::put($fileName, base64_decode(str_replace('base64,','',$data[1])));
 					$savedImages[]=$fileName;
@@ -404,10 +382,6 @@ class PostObserver
 		$i=0;
 		while(strpos($text,'<p>')!==false && strpos($text,'</p>')!==false){
 			$text=preg_replace('/<p>(.*?)<\/p>/s','[p]$1[/p]', $text);
-			$i++;
-			if($i==100){
-				dd($text);
-			}
 		}
 		
 		return $text;

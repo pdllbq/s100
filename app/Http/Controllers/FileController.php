@@ -78,8 +78,6 @@ class FileController extends Controller
 
         $detail = $dom->saveHTML();
 
-        dd($detail);
-
     }
 
 }
