@@ -28,6 +28,8 @@
 	</div>
 </div>
 
+@include('user.include._newAvatar')
+
 @include('user.include._newGroupModal')
 
 @include('user.include._editGroupModal')

@@ -44,15 +44,6 @@
 
 @include('user.include._newAvatar')
 
-<script>
-	$('#userAvatarModal').on('show.bs.modal', function (event) {
-		var button = $(event.relatedTarget)
-		var commentId = button.data('commentid')
-		var modal = $(this)
-		modal.find('#answer-id').val(commentId)
-	})
-</script>
-
 
 @include('user.include._newGroupModal')
 
