@@ -5,7 +5,7 @@
 			@if($user->avatar==null)
 				<img src="/img/no-avatar.png" alt="avatar">
 			@else
-				<img src="{{ $user->avatar }}" alt="avatar">
+				<a href="{{ $user->avatar }}" target="_blank"><img src="{{ $user->avatar }}" alt="avatar"></a>
 			@endif
 		</div>
 		@auth
