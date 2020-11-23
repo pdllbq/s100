@@ -25,5 +25,6 @@ return [
 	'Name'=>'Имя',
 	'E-Mail Address'=>'Э-почта',
 	'Confirm Password'=>'Подтвердить пароль',
-	'Logout'=>'Выйти'
+	'Logout'=>'Выйти',
+	'Login with Facebook'=>'Войти через Facebook',
 ];

@@ -8,9 +8,12 @@
                 <div class="card-header">{{ __('auth.Login') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login', app()->getLocale()) }}">
+	                    <form method="POST" action="{{ route('login', app()->getLocale()) }}">
                         @csrf
 
+						<div class="form-group row justify-content-center">
+							<a class="btn btn-primary" href="/login/facebook">{{ __('auth.Login with Facebook') }}</a>
+						</div>
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('auth.eMail') }}</label>
 

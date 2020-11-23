@@ -28,6 +28,9 @@ Route::get('/home', function () {
     return redirect('/'.$locale);
 });
 
+Route::get('login/facebook', 'Auth\LoginController@redirectToFacebook');
+Route::get('login/facebook/callback', 'Auth\LoginController@handleFacebookCallback');
+
 Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
   Route::resource('message','MessageController')->except('create');
 });

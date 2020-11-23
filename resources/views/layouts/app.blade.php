@@ -68,7 +68,11 @@ if(isset(\Auth::user()->id)){
 				$brand=explode('.',$_SERVER['SERVER_NAME']);
 				?>
                 <a class="navbar-brand" href="{{ url('/'.app()->getLocale()) }}">
-                    <span class="domain">{{ $brand[0] }}</span>.<span class="zone">{{ $brand[1] }}</span>
+					@if($brand[0]!='localhost')
+	                    <span class="domain">{{ $brand[0] }}</span>.<span class="zone">{{ $brand[1] }}</span>
+					@else
+					<span class="domain">{{ $brand[0] }}</span>
+					@endif
                 </a>
 				
 				@if($messageCount>0)
