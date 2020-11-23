@@ -15,6 +15,10 @@ class UserController extends Controller
 	{
 		$user=User::where('name',$userName)->first();
 		
+		if(!isset($user->id)){
+			return redirect('/'.\app()->getLocale().'/404');
+		}
+		
 		$title='@'.$user->name;
 		
 		$posts=Post::where('user_id',$user->id)->where('draft',0)->orderBy('id','DESC')->with(['user','voted'])->paginate(100);
