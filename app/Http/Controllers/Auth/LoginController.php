@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Cookie;
 
 class LoginController extends Controller
 {
@@ -48,20 +49,23 @@ class LoginController extends Controller
 		if($_SERVER['SERVER_NAME']=='localhost'){
 			return redirect('http://s100.loc/login/facebook/callback?code='.$_GET['code'].'&state='.$_GET['state']);
 		}
-		
+
 		$user = Socialite::driver('facebook')->user();
-		$this->facebookAuth($user);
+		
+		
+		return $this->facebookAuth($user);
 		// $user->token;
 		
-		return redirect('/');
 	}
 	
 	function redirectToFacebook()
 	{
-		return Socialite::driver('facebook')->redirect();
+		Cookie::queue('locale',\app()->getLocale(),5);
+		return Socialite::driver('facebook')->with(['locale'=>\app()->getLocale()])->redirect();
 	}
 	
 	function facebookAuth($facebookUser){
+		
 		$user=User::where('facebook_id',$facebookUser->id)->first();
 		
 		if(!isset($user->id)){
@@ -71,8 +75,13 @@ class LoginController extends Controller
 				$name=$facebookUser->name;
 			}
 			
+			if($this->checkEmail($facebookUser->email)){
+				\app()->setLocale(Cookie::get('locale'));
+				return redirect()->route('login',Cookie::get('locale'))->withErrors([__('auth.E-mail alredy exists')]);
+			}
+			
 			$User=new User;
-			$User->name=$name;
+			$User->name=$this->newNickname($name);
 			$User->facebook_id=$facebookUser->id;
 			$User->email=$facebookUser->email;
 			$User->avatar=$this->facebookAvatar($facebookUser->avatar_original,$facebookUser->id);
@@ -83,6 +92,7 @@ class LoginController extends Controller
 		}else{
 			\Auth::loginUsingId($user->id,true);
 		}
+		return redirect('/'.Cookie::get('locale'));
 	}
 	
 	function facebookAvatar($url,$fId)
@@ -100,4 +110,28 @@ class LoginController extends Controller
 		return $url;
 	}
 	
+	
+	function newNickname($nick)
+	{
+		$i=rand(0,9);
+		
+		$count=User::where('name',$nick)->count();
+		if($count>0){
+			$nick=$nick.$i;
+			
+			return $this->newNickname($nick);
+		}else{
+			return $nick;
+		}
+	}
+	
+	function checkEmail($mail)
+	{
+		$count=User::where('email',$mail)->count();
+		if($count>0){
+			return true;
+		}else{
+			return false;
+		}
+	}
 }

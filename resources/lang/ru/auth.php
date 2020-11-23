@@ -27,4 +27,5 @@ return [
 	'Confirm Password'=>'Подтвердить пароль',
 	'Logout'=>'Выйти',
 	'Login with Facebook'=>'Войти через Facebook',
+	'E-mail alredy exists'=>'Данная э-почта уже используется на сайте',
 ];

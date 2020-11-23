@@ -63,6 +63,27 @@
 </form>
 
 <script type="text/javascript">
+	
+	$(document).ready(function() {
+
+		$('#text').summernote({
+			
+			callbacks: {
+				onPaste: function (e) {
+					var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+					e.preventDefault();
+					document.execCommand('insertText', false, bufferText);
+				}
+			},
+
+			height: 300,
+
+			fontNames: [],
+
+			lang: '{{ app()->getLocale() }}',
+		 });
+
+   });
 
     $(document).ready(function() {
 
