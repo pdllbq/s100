@@ -13,10 +13,10 @@
 		</div>
 		<div class="form-group">
 			<label for="message_text">{{ __('message.Message') }}</label>
-			<textarea id="message_text" name="message_text" class="form-control"></textarea>
+			<textarea id="message_text" name="message_text" class="form-control" onChange="$('#message_text').val(this.value);"></textarea>
 		</div>
 	</form>
 </div>
 <div class="modal-footer">
-	<button class="btn btn-primary" onClick="Message.store('{{ route('message.store',[app()->getLocale()]) }}')">{{ __('message.Send') }}</button>
+	<button class="btn btn-primary" onClick="Message.store('{{ route('message.store',[app()->getLocale()]) }}');;">{{ __('message.Send') }}</button>
 </div>

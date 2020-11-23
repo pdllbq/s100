@@ -21,6 +21,7 @@ class Message
 	
 	static store(url)
 	{
+		$('#message_text').val($('#message_text').val()	);
 		var userName=$('#user_name').val();
 		var message=$('#message_text').val();
 		var _token=$('input[name=_token]').val();

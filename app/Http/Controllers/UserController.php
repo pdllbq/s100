@@ -93,4 +93,9 @@ class UserController extends Controller
 		
 		return redirect('/'.$lang);
 	}
+	
+	function deleteMe()
+	{
+		
+	}
 }
