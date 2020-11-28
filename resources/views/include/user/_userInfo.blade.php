@@ -55,7 +55,7 @@
 							@if(!$banIp && $user->ip)
 								<div class="pb-1"></div>
 								<div id="banIp-button" class="btn btn-danger d-flex justify-content-center"><a href="{{ route('user.banIp',[app()->getLocale(),$user->ip]) }}" class="text-white"><i class="fa fa-ban" aria-hidden="true">{{ __('user.Ban by ip :ip',['ip'=>$user->ip]) }}</i></a></div>
-							@else
+							@elseif($user->ip)
 								<div class="pb-1"></div>
 								<div id="banIp-button" class="btn btn-danger d-flex justify-content-center"><a href="{{ route('user.unbanIp',[app()->getLocale(),$user->ip]) }}" class="text-white"><i class="fa fa-ban" aria-hidden="true">{{ __('user.Unban ip :ip',['ip'=>$user->ip]) }}</i></a></div>
 							@endif
