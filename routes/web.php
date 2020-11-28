@@ -168,6 +168,14 @@ Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
 	Route::get('/user/unban/{user}','UserController@unban')->name('user.unban');
 });
 
+Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
+	Route::get('/user/banIp/{ip}','UserController@banIp')->name('user.banIp');
+});
+
+Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
+	Route::get('/user/unbanIp/{ip}','UserController@unbanIp')->name('user.unbanIp');
+});
+
 Route::get('/', function () {
     $locale = session('locale','ru');
 	if($locale!='en' && $locale!='ru' && $locale!='lv'){

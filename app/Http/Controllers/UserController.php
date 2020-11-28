@@ -9,6 +9,7 @@ use App\Models\Subscribe;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Group;
 use Carbon\Carbon;
+use App\Models\BanIp;
 
 class UserController extends Controller
 {
@@ -21,6 +22,7 @@ class UserController extends Controller
 		}
 		
 		$ban=User::isBanned($userName);
+		$banIp=BanIp::isBanned($user->ip);
 		
 		$title='@'.$user->name;
 		
@@ -35,7 +37,7 @@ class UserController extends Controller
 		
 		$subscribers=Subscribe::where('master_id',$user->id)->count();
 		
-		return view('user.show',['user'=>$user,'posts'=>$posts,'subscribed'=>$subscribed,'subscribers'=>$subscribers,'userGroups'=>$userGroups,'title'=>$title,'ban'=>$ban]);
+		return view('user.show',['user'=>$user,'posts'=>$posts,'subscribed'=>$subscribed,'subscribers'=>$subscribers,'userGroups'=>$userGroups,'title'=>$title,'ban'=>$ban,'banIp'=>$banIp]);
 	}
 	
 	function profile()
@@ -146,5 +148,30 @@ class UserController extends Controller
 		User::where('name',$userName)->update(['ban_until'=>$time]);
 
 		return redirect()->route('user.show',[App()->getLocale(),$userName]);
+	}
+	
+	function banIp($locale,$ip)
+	{		
+		if(\Auth::user()->is_moder!=1){
+			return redirect()->back();
+		}
+		
+		$BanIp=new BanIp;
+		
+		$BanIp->ip=$ip;
+		$BanIp->save();
+		
+		return redirect()->back();
+	}
+	
+	function unbanIp($locale,$ip)
+	{		
+		if(\Auth::user()->is_moder!=1){
+			return redirect()->back();
+		}
+		
+		BanIp::where('ip',$ip)->delete();
+		
+		return redirect()->back();
 	}
 }

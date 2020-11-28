@@ -51,6 +51,14 @@
 									<a class="dropdown-item" href="{{ route('user.unban',[app()->getLocale(),$user->name]) }}">{{ __('user.Unban') }}</a>
 								</div>
 							@endif
+							
+							@if(!$banIp)
+								<div class="pb-1"></div>
+								<div id="banIp-button" class="btn btn-danger d-flex justify-content-center"><a href="{{ route('user.banIp',[app()->getLocale(),$user->ip]) }}" class="text-white"><i class="fa fa-ban" aria-hidden="true">{{ __('user.Ban by ip :ip',['ip'=>$user->ip]) }}</i></a></div>
+							@else
+								<div class="pb-1"></div>
+								<div id="banIp-button" class="btn btn-danger d-flex justify-content-center"><a href="{{ route('user.unbanIp',[app()->getLocale(),$user->ip]) }}" class="text-white"><i class="fa fa-ban" aria-hidden="true">{{ __('user.Unban ip :ip',['ip'=>$user->ip]) }}</i></a></div>
+							@endif
 						</div>
 					@endif
 				@endauth

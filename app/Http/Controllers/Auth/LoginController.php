@@ -40,9 +40,14 @@ class LoginController extends Controller
      * @return void
      */
     public function __construct()
-    {
+    {	
         $this->middleware('guest')->except('logout');
     }
+	
+	function authenticated()
+	{
+		User::where('id',\Auth::user()->id)->update(['ip'=>\Request::ip()]);
+	}
 	
 	function handleFacebookCallback()
 	{
@@ -91,6 +96,7 @@ class LoginController extends Controller
 			$this->facebookAuth($facebookUser);
 		}else{
 			\Auth::loginUsingId($user->id,true);
+			User::where('id',$user->id)->update(['ip'=>\Request::ip()]);
 		}
 		return redirect('/'.Cookie::get('locale'));
 	}

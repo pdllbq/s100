@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Models\BanIp;
 
 class RegisterController extends Controller
 {
@@ -55,6 +56,12 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
+	
+	public function showRegistrationForm()
+    {
+		$banIp=BanIp::isBanned(\Request::ip());
+        return view('auth.register',compact('banIp'));
+    }
 
     /**
      * Create a new user instance after a valid registration.
@@ -64,6 +71,10 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+		if(BanIp::isBanned(\Request::ip())){
+			return false;
+		}
+		
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

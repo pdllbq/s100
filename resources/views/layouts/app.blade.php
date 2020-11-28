@@ -162,7 +162,7 @@ if(isset(\Auth::user()->id)){
         <main class="py-4">
             @yield('content')
         </main>
-		@include('include._modal');	
+		@include('include._modal')
     </div>
 	
 	<div class="footer">

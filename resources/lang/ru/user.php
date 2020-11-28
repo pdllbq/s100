@@ -26,4 +26,7 @@ return [
 	'Century'=>'Век',
 	'Banned until :time'=>'Забанен до :time',
 	'Unban'=>'Разбанить',
+	'Ban by ip :ip'=>'Забанить ip :ip',
+	'Unban ip :ip'=>'Разбанить ip :ip',
+	'You are banned'=>'Вы забанены',
 ];

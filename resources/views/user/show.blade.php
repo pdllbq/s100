@@ -20,7 +20,7 @@
 		</div>
 				
 		<div class="d-none d-lg-block col-lg-3">
-				@include('include.user._userInfo',['user'=>$user,'subscribed'=>$subscribed,'ban'=>$ban])
+				@include('include.user._userInfo',['user'=>$user,'subscribed'=>$subscribed,'ban'=>$ban,'banIp'=>$banIp])
 				<br>
 				@include('user.include._userGroups',['userGroups'=>$userGroups])
 		</div>
