@@ -8,6 +8,7 @@ use App\User;
 use App\Models\Subscribe;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Group;
+use Carbon\Carbon;
 
 class UserController extends Controller
 {
@@ -18,6 +19,8 @@ class UserController extends Controller
 		if(!isset($user->id)){
 			return redirect('/'.\app()->getLocale().'/404');
 		}
+		
+		$ban=User::isBanned($userName);
 		
 		$title='@'.$user->name;
 		
@@ -32,7 +35,7 @@ class UserController extends Controller
 		
 		$subscribers=Subscribe::where('master_id',$user->id)->count();
 		
-		return view('user.show',['user'=>$user,'posts'=>$posts,'subscribed'=>$subscribed,'subscribers'=>$subscribers,'userGroups'=>$userGroups,'title'=>$title]);
+		return view('user.show',['user'=>$user,'posts'=>$posts,'subscribed'=>$subscribed,'subscribers'=>$subscribers,'userGroups'=>$userGroups,'title'=>$title,'ban'=>$ban]);
 	}
 	
 	function profile()
@@ -101,5 +104,47 @@ class UserController extends Controller
 	function deleteMe()
 	{
 		
+	}
+	
+	function ban($locale,$userName,$time)
+	{
+		if(\Auth::user()->is_moder!=1){
+			return redirect()->route('user.show',[App()->getLocale(),$userName]);
+		}
+		
+		if($time=='day'){
+			$time=Carbon::now()->addDay();
+			User::where('name',$userName)->update(['ban_until'=>$time]);
+		}
+		if($time=='week'){
+			$time=Carbon::now()->addWeek();
+			User::where('name',$userName)->update(['ban_until'=>$time]);
+		}
+		if($time=='month'){
+			$time=Carbon::now()->addMonth();
+			User::where('name',$userName)->update(['ban_until'=>$time]);
+		}
+		if($time=='year'){
+			$time=Carbon::now()->addYear();
+			User::where('name',$userName)->update(['ban_until'=>$time]);
+		}
+		if($time=='2038'){
+			$time='2038-01-01 00:00:00';
+			User::where('name',$userName)->update(['ban_until'=>$time]);
+		}
+		
+		return redirect()->route('user.show',[App()->getLocale(),$userName]);
+	}
+	
+	function unban($locale,$userName)
+	{
+		if(\Auth::user()->is_moder!=1){
+			return redirect()->route('user.show',[App()->getLocale(),$userName]);
+		}
+		
+		$time=Carbon::now()->toDateTimeString();
+		User::where('name',$userName)->update(['ban_until'=>$time]);
+
+		return redirect()->route('user.show',[App()->getLocale(),$userName]);
 	}
 }

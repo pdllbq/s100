@@ -7,7 +7,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-12 d-lg-none">
-				@include('include.user._userInfo',['user'=>$user,'subscribed'=>$subscribed])
+				@include('include.user._userInfo',['user'=>$user,'subscribed'=>$subscribed,'ban'=>$ban])
 				<br>
 				@include('user.include._userGroups',['userGroups'=>$userGroups])
 				<br>
@@ -20,7 +20,7 @@
 		</div>
 				
 		<div class="d-none d-lg-block col-lg-3">
-				@include('include.user._userInfo',['user'=>$user,'subscribed'=>$subscribed])
+				@include('include.user._userInfo',['user'=>$user,'subscribed'=>$subscribed,'ban'=>$ban])
 				<br>
 				@include('user.include._userGroups',['userGroups'=>$userGroups])
 		</div>

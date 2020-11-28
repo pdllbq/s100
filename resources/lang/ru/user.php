@@ -17,4 +17,13 @@ return [
 	'Language'=>'Язык',
 	'Top users'=>'Топ пользователей',
 	'Message'=>'Сообщение',
+	'You are banned until :time'=>'Вы забанены до :time',
+	'Ban'=>'Забанить',
+	'Day'=>'День',
+	'Week'=>'Неделя',
+	'Month'=>'Месяц',
+	'Year'=>'Год',
+	'Century'=>'Век',
+	'Banned until :time'=>'Забанен до :time',
+	'Unban'=>'Разбанить',
 ];

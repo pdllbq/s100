@@ -160,6 +160,14 @@ Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
 	Route::get('/notification/clear','NotificationController@clear')->name('notification.clear');
 });
 
+Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
+	Route::get('/user/ban/{user}/{time}','UserController@ban')->name('user.ban');
+});
+
+Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
+	Route::get('/user/unban/{user}','UserController@unban')->name('user.unban');
+});
+
 Route::get('/', function () {
     $locale = session('locale','ru');
 	if($locale!='en' && $locale!='ru' && $locale!='lv'){

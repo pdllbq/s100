@@ -4,66 +4,73 @@
 
 @include('include._messages')
 
-@if($canCreate==1)
-	<form method="POST" action="{{ route('post.store',app()->getLocale()) }}">
-		@csrf
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-12">
-					<div class="card">
-						<div class="card-header"> {{ __('post.Add post') }} </div>
-						<div class="card-body">
-							<div class="form-group">
-								<label for="title">{{ __('post.Title') }}</label>
-								<input name="title" maxlength="255" value="{{ old('title') }}" id="title" type="text" class="form-control" required>
-							</div>
-							@if($groups->count()>0)
+@if($ban)
+	<div class="container">
+			<div class="alert alert-danger">{{ __('user.You are banned until :time',['time'=>$ban]) }}</div>
+	</div>
+@else
+
+	@if($canCreate==1)
+		<form method="POST" action="{{ route('post.store',app()->getLocale()) }}">
+			@csrf
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-12">
+						<div class="card">
+							<div class="card-header"> {{ __('post.Add post') }} </div>
+							<div class="card-body">
 								<div class="form-group">
-									<label for="group">{{ __('post.Group') }}</label>
-									<select class="form-control" name="group" id="group">
-										<option value="{{ NULL }}">Без группы</option>
-										@foreach($groups as $group)
-											<option value="{{ $group->slug }}">{{ $group->name }}</option>
-										@endforeach
-									</select>
+									<label for="title">{{ __('post.Title') }}</label>
+									<input name="title" maxlength="255" value="{{ old('title') }}" id="title" type="text" class="form-control" required>
 								</div>
-							@else
-								<input type="hidden" name="group" id="group" value="{{ NULL }}">
-							@endif
-							<div class="form-group">
-								<label for="text">{{ __('post.Text') }}</label>
-	<!--							<input id="article-text-new-model" type="hidden" name="text" value="{{ old('text') }}">
-								@trix(\App\Article::class, 'text')-->
-								 <textarea name="text" id="text" class="form-control" rows="20">{{ old('text') }}</textarea> 
-							</div>
-							<div class="form-group">
-								<input type="checkbox" id="draft" name="draft">
-								<label for="draft"> {{ __('post.Save in draft') }}</label>
-							</div>
-							@if(\Auth::user()->iframe_allowed==1)
+								@if($groups->count()>0)
+									<div class="form-group">
+										<label for="group">{{ __('post.Group') }}</label>
+										<select class="form-control" name="group" id="group">
+											<option value="{{ NULL }}">Без группы</option>
+											@foreach($groups as $group)
+												<option value="{{ $group->slug }}">{{ $group->name }}</option>
+											@endforeach
+										</select>
+									</div>
+								@else
+									<input type="hidden" name="group" id="group" value="{{ NULL }}">
+								@endif
 								<div class="form-group">
-									<input type="checkbox" id="iframe_mode" name="iframe_mode" value="1">
-									<label for="iframe_mode">Iframe</label>
+									<label for="text">{{ __('post.Text') }}</label>
+		<!--							<input id="article-text-new-model" type="hidden" name="text" value="{{ old('text') }}">
+									@trix(\App\Article::class, 'text')-->
+									 <textarea name="text" id="text" class="form-control" rows="20">{{ old('text') }}</textarea> 
 								</div>
-								<div id="iframe_input" class="form-group" style="display:none;">
-									<label for="iframe_url">Iframe URL</label>
-									<input type="text" id="iframe_url" name="iframe_url" value="" class="form-control">
+								<div class="form-group">
+									<input type="checkbox" id="draft" name="draft">
+									<label for="draft"> {{ __('post.Save in draft') }}</label>
 								</div>
-							@endif
-							<div class="form-group">
-								<input id="submit_button" type="submit" value="{{ __('post.Add') }}" class="btn btn-primary">
-								<a href="{{ url()->previous() }}" class="btn btn-danger">{{ __('post.Cancel') }}</a>
+								@if(\Auth::user()->iframe_allowed==1)
+									<div class="form-group">
+										<input type="checkbox" id="iframe_mode" name="iframe_mode" value="1">
+										<label for="iframe_mode">Iframe</label>
+									</div>
+									<div id="iframe_input" class="form-group" style="display:none;">
+										<label for="iframe_url">Iframe URL</label>
+										<input type="text" id="iframe_url" name="iframe_url" value="" class="form-control">
+									</div>
+								@endif
+								<div class="form-group">
+									<input id="submit_button" type="submit" value="{{ __('post.Add') }}" class="btn btn-primary">
+									<a href="{{ url()->previous() }}" class="btn btn-danger">{{ __('post.Cancel') }}</a>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+		</form>
+	@else
+		<div class="container">
+			<div class="alert alert-danger">{{ __('post.Next post you can create in :time',['time'=>$nextPost]) }}</div>
 		</div>
-	</form>
-@else
-	<div class="container">
-		<div class="alert alert-danger">{{ __('post.Next post you can create in :time',['time'=>$nextPost]) }}</div>
-	</div>
+	@endif
 @endif
 
 <script type="text/javascript">

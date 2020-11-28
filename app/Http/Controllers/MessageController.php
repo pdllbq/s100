@@ -23,17 +23,21 @@ class MessageController extends Controller
 	
     function create($locale,$userName)
 	{
-		return view('message.create', compact('userName'));
+		$ban=User::isBanned(\Auth::user()->name);
+		
+		return view('message.create', compact('userName','ban'));
 	}
 	
 	function store(Request $request)
 	{
+		$ban=User::isBanned(\Auth::user()->name);
+		
 		$inputs=$request->input();
 		
 		$u=str_replace('@','',$inputs['user_name']);
 		$userExists=User::where('name',$u)->count();
 		
-		if($userExists>0){
+		if($userExists>0 && !$ban){
 			$Message=new Message;
 
 			$Message->from_name=\Auth::user()->name;
@@ -42,7 +46,7 @@ class MessageController extends Controller
 			$Message->save();
 		}
 		
-		return view('message.store', compact('userExists'));
+		return view('message.store', compact('userExists','ban'));
 	}
 	
 	function show($locale,$id)

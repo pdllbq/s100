@@ -167,6 +167,8 @@ class PostController extends BaseController
 		$canCreate=$this->canCreatePost();
 		//
 		
+		$ban=User::isBanned(\Auth::user()->name);
+		
 		if($canCreate==0){
 			$lastPost=Post::where('user_id',\Auth::user()->id)->where('draft','!=',1)->orderBy('id','DESC')->first();
 			$nextPost=Carbon::parse($lastPost->created_at)->addHour()->addMinute()->toTimeString();
@@ -174,7 +176,7 @@ class PostController extends BaseController
 			$nextPost=0;
 		}
 		
-        return view('post.create',['groups'=>$groups,'canCreate'=>$canCreate,'nextPost'=>$nextPost]);
+        return view('post.create',['groups'=>$groups,'canCreate'=>$canCreate,'nextPost'=>$nextPost,'ban'=>$ban]);
     }
 
     /**
@@ -193,6 +195,11 @@ class PostController extends BaseController
 			$userId=\Auth::id();
 		}
 		//
+		
+		if(User::isBanned(\Auth::user()->name)){
+			return redirect()->route('post.create',[app()->getLocale()]);
+		}
+		
 		
 		//Ограничение на один пост в час
 		$canCreate=$this->canCreatePost();
@@ -246,7 +253,9 @@ class PostController extends BaseController
 			return abort(404);
 		}
 		
-        return view('post.show',['post'=>$post,'comments'=>$comments]);
+		$ban=User::isBanned(\Auth::user()->name);
+		
+        return view('post.show',['post'=>$post,'comments'=>$comments,'ban'=>$ban]);
     }
 
     /**
@@ -373,6 +382,12 @@ class PostController extends BaseController
 			return json_encode($data);
 		}
 		
+		$ban=User::isBanned(\Auth::user()->name);
+		if($ban){
+			$data=['ban'=>1,'banText'=>__('user.You are banned until :time',['time'=>$ban])];
+			return json_encode($data);
+		}
+		
 		$Rating=new Rating;
 		
 		$Rating->plus($slug, \Auth::user()->id);
@@ -384,6 +399,12 @@ class PostController extends BaseController
 	{
 		if(!isset(\Auth::user()->id)){
 			$data=['auth'=>1,'redirect'=>route('login',app()->getLocale())];
+			return json_encode($data);
+		}
+		
+		$ban=User::isBanned(\Auth::user()->name);
+		if($ban){
+			$data=['ban'=>1,'banText'=>__('user.You are banned until :time',['time'=>$ban])];
 			return json_encode($data);
 		}
 		
@@ -401,9 +422,12 @@ class PostController extends BaseController
 			return redirect()->route('login',app()->getLocale());
 		}
 		
-		
-		
 		$inputs=$request->input();
+		
+		if(User::isBanned(\Auth::user()->name)){
+			return redirect()->route('post.show',[app()->getLocale(),$inputs['post-slug'],'#comments']);
+		}
+		
 		
 		$Comment=new Comment;
 		

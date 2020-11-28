@@ -3,9 +3,11 @@ function ratingMinus(slug,lang)
 	$.getJSON('/'+lang+'/post/minus/'+slug, function(){
 		
 	})
-	.done(function(data){
+	.done(function(data){ 
 		if(data.auth==1){
 			$(location).attr('href',data.redirect);
+		}else if(data.ban==1){
+			alert(data.banText);
 		}else{
 			$('#rating_'+slug).text(data.rating);
 			
@@ -31,6 +33,8 @@ function ratingPlus(slug,lang)
 	.done(function(data){
 		if(data.auth==1){
 			$(location).attr('href',data.redirect);
+		}else if(data.ban==1){
+			alert(data.banText);
 		}else{
 			$('#rating_'+slug).text(data.rating);
 			

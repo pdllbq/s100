@@ -1,7 +1,3 @@
-
-
-
-
 <div class="modal-header">
 	<h5 class="modal-title">{{ __('message.New message') }}</h5>
 	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -11,8 +7,10 @@
 <div class="modal-body">
 	@if($userExists==0)
 		<div class="alert alert-danger">{{ __('message.User not found') }}</div>
-	@else
+	@elseif(!$ban)
 		<div class="alert alert-success">{{ __('message.Message was sended') }}</div>
+	@else
+		<div class="alert alert-danger">{{ __('user.You are banned until :time',['time'=>$ban]) }}</div>
 	@endif
 </div>
 <div class="modal-footer">

@@ -62,7 +62,7 @@
 			<div class="col-12">
 				<div class="alert alert-primary">{{ __('post.Auth to write comment') }}</div>
 			</div>
-		@else
+		@elseif(!$ban)
 			<div class="col-12">
 				<form method="POST" action="{{ route('post.addComment',app()->getLocale()) }}">
 					@csrf
@@ -75,6 +75,10 @@
 						<input type="submit" value="{{ __('post.Add') }}" class="btn btn-primary">
 					</div>
 				</form>
+			</div>
+		@else
+			<div class="container">
+					<div class="alert alert-danger">{{ __('user.You are banned until :time',['time'=>$ban]) }}</div>
 			</div>
 		@endguest
 		
@@ -102,7 +106,7 @@
 	</div>
 </div>
 
-@include('post.include._commentAnswer')
+@include('post.include._commentAnswer',['ban'=>$ban])
 
 <script>
 	$('#commentAnswerModal').on('show.bs.modal', function (event) {
