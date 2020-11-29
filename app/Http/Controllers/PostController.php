@@ -11,6 +11,7 @@ use App\Models\Subscribe;
 use App\Models\Group;
 use App\User;
 use App\Models\Notification;
+use App\Models\PostTempSave;
 use Carbon\Carbon;
 
 class PostController extends BaseController
@@ -169,6 +170,17 @@ class PostController extends BaseController
 		
 		$ban=User::isBanned(\Auth::user()->name);
 		
+		$oldTitle=null;
+		$oldGroup=null;
+		$oldText=null;
+		
+		$old=PostTempSave::where('user_name',\Auth::user()->name)->first();
+		if(isset($old->user_name)){
+			$oldTitle=$old->title;
+			$oldGroup=$old->group_slug;
+			$oldText=$old->text;
+		}
+
 		if($canCreate==0){
 			$lastPost=Post::where('user_id',\Auth::user()->id)->where('draft','!=',1)->orderBy('id','DESC')->first();
 			$nextPost=Carbon::parse($lastPost->created_at)->addHour()->addMinute()->toTimeString();
@@ -176,7 +188,7 @@ class PostController extends BaseController
 			$nextPost=0;
 		}
 		
-        return view('post.create',['groups'=>$groups,'canCreate'=>$canCreate,'nextPost'=>$nextPost,'ban'=>$ban]);
+        return view('post.create',['groups'=>$groups,'canCreate'=>$canCreate,'nextPost'=>$nextPost,'ban'=>$ban,'oldTitle'=>$oldTitle,'oldText'=>$oldText,'oldGroup'=>$oldGroup]);
     }
 
     /**
@@ -233,6 +245,8 @@ class PostController extends BaseController
 			$Post->draft=0;
 		}
 		$Post->save();
+		
+		PostTempSave::where('user_name',\Auth::user()->name)->delete();
 		
 		return redirect()->route('post.show',[app()->getLocale(),$Post->slug]);
     }
@@ -475,5 +489,16 @@ class PostController extends BaseController
 		
 		return $canCreate;
 	}
-	//
+	
+	
+	function tempSave(Request $request)
+	{
+		$PostTempSave=new PostTempSave;
+		
+		$title=$request->input('title');
+		$group=$request->input('group');
+		$text=$request->input('text');
+		
+		$PostTempSave->store(\Auth::user()->name,$title,$group,$text);
+	}
 }

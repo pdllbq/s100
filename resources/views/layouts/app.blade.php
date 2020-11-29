@@ -37,6 +37,7 @@
 	<script src="{{ asset('js/summernote.js') }}" ></script>
 	<script src="{{ asset('js/summernote-ru.js') }}" ></script>
 	<script src="{{ asset('js/summernote-lv.js') }}" ></script>
+	<script src="{{ asset('js/post.js') }}" ></script>
 	
 
     <!-- Fonts -->

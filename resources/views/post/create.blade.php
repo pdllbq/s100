@@ -21,7 +21,7 @@
 							<div class="card-body">
 								<div class="form-group">
 									<label for="title">{{ __('post.Title') }}</label>
-									<input name="title" maxlength="255" value="{{ old('title') }}" id="title" type="text" class="form-control" required>
+									<input name="title" maxlength="255" value="{{ old('title',$oldTitle) }}" id="title" type="text" class="form-control" required>
 								</div>
 								@if($groups->count()>0)
 									<div class="form-group">
@@ -29,7 +29,7 @@
 										<select class="form-control" name="group" id="group">
 											<option value="{{ NULL }}">Без группы</option>
 											@foreach($groups as $group)
-												<option value="{{ $group->slug }}">{{ $group->name }}</option>
+											<option value="{{ $group->slug }}" {{ $oldGroup==$group->slug?'selected':'' }}>{{ $group->name }}</option>
 											@endforeach
 										</select>
 									</div>
@@ -40,7 +40,7 @@
 									<label for="text">{{ __('post.Text') }}</label>
 		<!--							<input id="article-text-new-model" type="hidden" name="text" value="{{ old('text') }}">
 									@trix(\App\Article::class, 'text')-->
-									 <textarea name="text" id="text" class="form-control" rows="20">{{ old('text') }}</textarea> 
+									 <textarea name="text" id="text" class="form-control" rows="20">{{ old('text',$oldText) }}</textarea> 
 								</div>
 								<div class="form-group">
 									<input type="checkbox" id="draft" name="draft">
@@ -72,6 +72,8 @@
 		</div>
 	@endif
 @endif
+
+@include('post.include._postTempSave',['titleInputId'=>'#title','groupInputId'=>'#group','textInputId'=>'#text'])
 
 <script type="text/javascript">
 

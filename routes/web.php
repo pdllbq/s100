@@ -176,6 +176,8 @@ Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
 	Route::get('/user/unbanIp/{ip}','UserController@unbanIp')->name('user.unbanIp');
 });
 
+Route::post('/post/tempSave','PostController@tempSave')->name('post.tempSave');
+
 Route::get('/', function () {
     $locale = session('locale','ru');
 	if($locale!='en' && $locale!='ru' && $locale!='lv'){
