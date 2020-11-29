@@ -66,7 +66,7 @@ class LoginController extends Controller
 	function redirectToFacebook()
 	{
 		Cookie::queue('locale',\app()->getLocale(),5);
-		return Socialite::driver('facebook')->with(['locale'=>\app()->getLocale()])->redirect();
+		return Socialite::driver('facebook')->redirect();
 	}
 	
 	function facebookAuth($facebookUser){
