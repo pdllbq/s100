@@ -267,7 +267,11 @@ class PostController extends BaseController
 			return abort(404);
 		}
 		
-		$ban=User::isBanned(\Auth::user()->name);
+		if(isset(\Auth::user()->name)){
+			$ban=User::isBanned(\Auth::user()->name);
+		}else{
+			$ban=false;
+		}
 		
         return view('post.show',['post'=>$post,'comments'=>$comments,'ban'=>$ban]);
     }
