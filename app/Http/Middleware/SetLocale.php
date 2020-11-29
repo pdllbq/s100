@@ -19,19 +19,19 @@ class SetLocale
      */
     public function handle($request, Closure $next)
     {
-		
-		
 		$locale=$request->segment(1);
 		
 		if(isset(\Auth::user()->lang) && $locale!=\Auth::user()->lang){
 			return redirect('/'.\Auth::user()->lang);
 		}
 		
-		if($locale=='en' || $locale=='ru' || $locale=='lv'){
+		if($locale=='ru'){
 			app()->setLocale($locale);
 			session(['locale' => $locale]);
 		}elseif(!$locale){
-			return redirect('/lv');
+			return redirect('/ru');
+		}else{
+			return redirect('/ru');
 		}
 		//dd(app()->getLocale());
         return $next($request);
