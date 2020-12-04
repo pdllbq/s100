@@ -12,6 +12,7 @@ npm-debug.log
 yarn-error.log
 toDo.txt
 /config/services.php
+/config/mail.php
 
 /nbproject/
 /storage/

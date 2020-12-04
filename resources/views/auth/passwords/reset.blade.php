@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+
+@include('include._messages')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

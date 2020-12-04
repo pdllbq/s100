@@ -1,0 +1,1 @@
+Your token for password reset is: {{ $token }}

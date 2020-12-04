@@ -176,6 +176,14 @@ Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
 	Route::get('/user/unbanIp/{ip}','UserController@unbanIp')->name('user.unbanIp');
 });
 
+Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
+	Route::post('/password/new','\App\Http\Controllers\Auth\ResetPasswordController@newPassword')->name('password.newPassword');
+});
+
+Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
+	Route::post('/password/new_save','\App\Http\Controllers\Auth\ResetPasswordController@saveNewPassword')->name('password.saveNewPassword');
+});
+
 Route::post('/post/tempSave','PostController@tempSave')->name('post.tempSave');
 
 Route::get('/', function () {
