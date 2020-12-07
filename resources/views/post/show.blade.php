@@ -4,7 +4,11 @@
 
 @section('description',$post->excerpt_no_html)
 
-@section('keywords',str_replace('#','',$post->tags))
+<?php
+$metaTags=mb_strtolower(preg_replace('/[A-ZA-Я]/u', ' $0', $post->tags));
+?>
+
+@section('keywords',str_replace('#','',$metaTags))
 
 @section('content')
 

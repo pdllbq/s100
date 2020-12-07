@@ -2,6 +2,10 @@
 
 @section('title',$title)
 
+@if(isset($description))
+	@section('description',$description)
+@endif
+
 @section('content')
 
 @include('include._messages')

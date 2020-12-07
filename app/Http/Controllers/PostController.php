@@ -45,7 +45,9 @@ class PostController extends BaseController
 		$posts=$Post::where('lang',app()->getLocale())->where('draft','!=',1)->orderBy('24h_rating','desc')->orderBy('id','desc')->with(['user','voted','group'])->paginate(100);
 		//$posts=$Post->voted($posts,$userId);
 		
-        return view('post.index',['posts'=>$posts,'topUsers'=>$topUsers,'topGroups'=>$topGroups,'title'=>$title]);
+		$description=__('description.Best');
+		
+        return view('post.index',['posts'=>$posts,'topUsers'=>$topUsers,'topGroups'=>$topGroups,'title'=>$title,'description'=>$description]);
     }
 	
 	public function subscribes()
@@ -101,7 +103,9 @@ class PostController extends BaseController
 		$posts=$Post::where('lang',app()->getLocale())->where('draft','!=',1)->orderBy('id','desc')->with(['user','voted'])->paginate(100);
 		//$posts=$Post->voted($posts,$userId);
 		
-        return view('post.index',['posts'=>$posts,'topUsers'=>$topUsers,'topGroups'=>$topGroups,'title'=>$title]);
+		$description=__('description.New');
+		
+        return view('post.index',['posts'=>$posts,'topUsers'=>$topUsers,'topGroups'=>$topGroups,'title'=>$title,'description'=>$description]);
 	}
 	
 	public function draft()
