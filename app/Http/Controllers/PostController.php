@@ -273,6 +273,8 @@ class PostController extends BaseController
 			$ban=false;
 		}
 		
+		$post->date=Carbon::parse($post->created_at)->format('d.n.Y');
+		
         return view('post.show',['post'=>$post,'comments'=>$comments,'ban'=>$ban]);
     }
 

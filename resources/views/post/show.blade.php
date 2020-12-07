@@ -24,7 +24,7 @@
 				?>
 			@endif
 			
-			<small class="post-info"><a href="{{route('user.show',[app()->getLocale(),$post->user->name]) }}">&commat;{{ $post->user->name }}</a> {!! $post->group_slug!=false ? '&gt; <a href="'.route('group.show',[app()->getLocale(),$post->group_slug]).'">'.$post->group->name.'</a>':'' !!} | {{ $post->created_at->diffForHumans() }} <br></small>
+			<small class="post-info"><a href="{{route('user.show',[app()->getLocale(),$post->user->name]) }}">&commat;{{ $post->user->name }}</a> {!! $post->group_slug!=false ? '&gt; <a href="'.route('group.show',[app()->getLocale(),$post->group_slug]).'">'.$post->group->name.'</a>':'' !!} | {{ $post->date }} <br></small>
 
 			<h1 class="post-title">{{ $post->title }}</h1>
 				
