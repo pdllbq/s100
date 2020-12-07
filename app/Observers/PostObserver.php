@@ -41,6 +41,8 @@ class PostObserver
 		$post->html=$this->textToHtml($post);
 		$this->makeTags($post); //Второй раз-так надо, иначе не работает
 		
+		$post->html=$this->bugFix($post->html);
+		
 		$post->excerpt=$this->truncate($post->html,255,array('html' => true, 'ending' => '...'));
 		//$post->excerpt_no_html=$this->truncate($post->html,255,array('html' => false, 'ending' => '...'));
 		$post->excerpt_no_html= strip_tags($post->excerpt);
@@ -162,6 +164,8 @@ class PostObserver
 		$this->htmlTagsToBb($post);
 		$this->makeTags($post);
 		$post->html=$this->textToHtml($post);
+		
+		$post->html=$this->bugFix($post->html);
 		
 		$post->excerpt=$this->truncate($post->html,255,array('html' => true, 'ending' => '...'));
 		//$post->excerpt_no_html=$this->truncate($post->html,255,array('html' => false, 'ending' => '...'));
@@ -330,15 +334,18 @@ class PostObserver
 	
 	protected function makeTags(Post $post)
 	{
-		preg_match_all('/(#\w+)/u', $post->html, $tags);
-		
+		preg_match_all('/[\W](#\w+)/u', $post->text, $tags);
 		$post->tags='';
 		
-		foreach ($tags[0] as $tag){
+		foreach ($tags[1] as $tag){
 			$post->tags.=$tag.',';
+			$t=str_replace('#','',$tag);
+			$post->text=str_replace($tag,
+					'[hashTag]'.$t.'[/hashTag]',
+					$post->text);
 		}
 		
-		$post->text=preg_replace('/#(\w+)/u','[hashTag]$1[/hashTag]', $post->text);
+		//$post->text=preg_replace('/#(\w+)/u','[hashTag]$1[/hashTag]', $post->text);
 	}
 	
 	protected function htmlTagsToBb(Post $post)
@@ -444,5 +451,11 @@ class PostObserver
 		}
 		
 		return false;
+	}
+	
+	function bugFix($html)
+	{
+		$html=str_replace('&amp;nbsp;','&nbsp;',$html);
+		return $html;
 	}
 }
