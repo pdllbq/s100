@@ -334,6 +334,7 @@ class PostObserver
 	
 	protected function makeTags(Post $post)
 	{
+		$post->text=preg_replace('~\[hashTag\](.*?)\[/hashTag\]~','#$1', $post->text);
 		preg_match_all('/[\W](#\w+)/u', $post->text, $tags);
 		$post->tags='';
 		
