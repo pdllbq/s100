@@ -40,6 +40,14 @@
 							<input type="checkbox" id="draft" name="draft" value="on" {{ $post->draft==1?'checked="checked"':'' }}>
 							<label for="draft"> {{ __('post.Save in draft') }}</label>
 						</div>
+						@if(\Auth::user()->is_moder==1)
+							<div class="form-group">
+								<input type="checkbox" id="sandbox" name="sandbox" value="1" {{ $post->in_sandbox==1?'checked="checked"':'' }}>
+								<label for="sandbox">
+									{{ __('moder.Save in sandbox') }}
+								</label>
+							</div>
+						@endif
 						@if(\Auth::user()->iframe_allowed==1)
 							<div class="form-group">
 								<input type="checkbox" id="iframe_mode" name="iframe_mode" value="1" {{ $post->iframe_mode==1?'checked="checked"':'' }}>

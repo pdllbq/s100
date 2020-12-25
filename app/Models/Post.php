@@ -6,9 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 use App\User;
 use App\Models\Rating;
 use App\Models\Comment;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 
 class Post extends Model
 {
+	use SoftDeletes;
+	
     function user()
 	{
 		return $this->belongsTo(User::class);

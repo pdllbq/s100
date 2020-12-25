@@ -234,6 +234,13 @@ class PostController extends BaseController
 		if(!isset($inputs['iframe_url'])){
 			$inputs['iframe_url']='';
 		}
+		if(!isset($inputs['sandbox'])){
+			if(\Auth::user()->is_moder==1){
+				$inputs['sandbox']=0;
+			}else{
+				$inputs['sandbox']=1;
+			}
+		}
 		
 		$Post=new Post;
 		$Post->user_id=$userId;
@@ -242,6 +249,7 @@ class PostController extends BaseController
 		$Post->text=$inputs['text'];
 		$Post->iframe_mode=$inputs['iframe_mode'];
 		$Post->iframe_url=$inputs['iframe_url'];
+		$Post->in_sandbox=$inputs['sandbox'];
 		$Post->lang=\app()->getLocale();
 		if(isset($inputs['draft']) && $inputs['draft']=='on'){
 			$Post->draft=1;
@@ -340,12 +348,20 @@ class PostController extends BaseController
 		if(!isset($inputs['iframe_url'])){
 			$inputs['iframe_url']='';
 		}
+		if(!isset($inputs['sandbox'])){
+			if(\Auth::user()->is_moder==1){
+				$inputs['sandbox']=0;
+			}else{
+				$inputs['sandbox']=1;
+			}
+		}
 		
 		$post->title=$inputs['title'];
 		$post->group_slug=$inputs['group'];
 		$post->text=$inputs['text'];
 		$post->iframe_mode=$inputs['iframe_mode'];
 		$post->iframe_url=$inputs['iframe_url'];
+		$post->in_sandbox=$inputs['sandbox'];
 		$post->lang=\app()->getLocale();
 		if(isset($inputs['draft']) && $inputs['draft']=='on'){
 			$post->draft=1;
@@ -376,13 +392,16 @@ class PostController extends BaseController
 		
 		$post=Post::where('slug',$slug)->first();
 		
+		if($post->user_id!=\Auth::id() && \Auth::user()->is_moder==1){
+			Post::where('slug',$slug)->update(['delete_name'=>\Auth::user()->name]);
+			Post::find($post->id)->delete();
+		}elseif($post->user_id==\Auth::id()){
+			Post::find($post->id)->forceDelete();
+		}
+		
 		if($post->user_id!=\Auth::id()){
 			return redirect()->route('home',app()->getLocale());
 		}
-		
-		
-		
-		Post::where('slug',$slug)->first()->delete();
 		
 		$Rating->deleteRating($slug);
 		
