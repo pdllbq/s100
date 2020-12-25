@@ -2,3 +2,4 @@ User-agent: *
 Disallow: /ru/login/
 Disallow: /ru/register/
 Disallow: /ru/password/
+Disallow: /ru/sandbox/

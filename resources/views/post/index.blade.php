@@ -18,7 +18,13 @@
 					@Auth
 					<span class=" {{ \Route::currentRouteName()=='post.subscribes'?'text-underline':'' }}"><a href="{{ route('post.subscribes',[app()->getLocale()]) }}">{{ __('post.Subscribes') }}</a></span> |
 					@Endauth
-					<span class=" {{ \Route::currentRouteName()=='post.new'?'text-underline':'' }}"><a href="{{ route('post.new',[app()->getLocale()]) }}">{{ __('post.New') }}</a></span>
+					<span class=" {{ \Route::currentRouteName()=='post.new'?'text-underline':'' }}"><a href="{{ route('post.new',[app()->getLocale()]) }}">{{ __('post.New') }}</a></span> |
+					<span class=" {{ \Route::currentRouteName()=='post.sandbox'?'text-underline':'' }}"><a href="{{ route('post.sandbox',[app()->getLocale()]) }}">{{ __('post.Sandbox') }}</a></span>
+					@auth
+						@if(\Auth::user()->is_moder==1)
+							<span class=" {{ \Route::currentRouteName()=='post.moder'?'text-underline':'' }}"><a href="{{ route('post.moder',[app()->getLocale()]) }}">{{ __('post.Moderation') }}</a></span>
+						@endif
+					@endauth
 			</div>
 		</div>
 		
@@ -134,6 +140,12 @@
 					<div class=" {{ \Route::currentRouteName()=='post.subscribes'?'text-underline':'' }}"><a href="{{ route('post.subscribes',[app()->getLocale()]) }}">{{ __('post.Subscribes') }}</a></div>
 					@Endauth
 					<div class=" {{ \Route::currentRouteName()=='post.new'?'text-underline':'' }}"><a href="{{ route('post.new',[app()->getLocale()]) }}">{{ __('post.New') }}</a></div>
+					<div class=" {{ \Route::currentRouteName()=='post.sandbox'?'text-underline':'' }}"><a href="{{ route('post.sandbox',[app()->getLocale()]) }}">{{ __('post.Sandbox') }}</a></div>
+					@auth
+						@if(\Auth::user()->is_moder==1)
+							<div class=" {{ \Route::currentRouteName()=='post.moder'?'text-underline':'' }}"><a href="{{ route('post.moder',[app()->getLocale()]) }}">{{ __('post.Moderation') }}</a></div>
+						@endif
+					@endauth
 				</div>
 				<div class="menu-footer"></div>
 			</div>

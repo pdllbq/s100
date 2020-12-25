@@ -30,5 +30,9 @@ return[
 	'Next post you can create in :time'=>'Следующую запись вы можете создать в :time',
 	'Save in draft'=>'Сохранить в черновике',
 	'Draft'=>'Черновик',
-	'Read more on :site'=>'Читать далее на :site'
+	'Read more on :site'=>'Читать далее на :site',
+	'Sandbox'=>'Песочница',
+	'Moderation'=>'Модерирование',
+	'From sandbox'=>'Из песочницы',
+	'To sandbox'=>'В песочницу',
 ];

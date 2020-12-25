@@ -55,7 +55,19 @@ Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
   Route::get('new','PostController@new')->name('post.new');
 });
 Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
+  Route::get('sandbox','PostController@sandbox')->name('post.sandbox');
+});
+Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
+  Route::get('moder','PostController@moderation')->name('post.moder');
+});
+Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
   Route::get('draft','PostController@draft')->name('post.draft');
+});
+Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
+  Route::get('/post/{slug}/to_sandbox','PostController@toSandbox')->name('post.toSandbox');
+});
+Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
+  Route::get('/post/{slug}/from_sandbox','PostController@fromSandbox')->name('post.fromSandbox');
 });
 Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
   Route::get('subscribes','PostController@subscribes')->name('post.subscribes');

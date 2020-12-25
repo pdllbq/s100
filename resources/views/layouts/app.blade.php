@@ -7,6 +7,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+	@if (trim($__env->yieldContent('noindex')))
+		<meta name="robots" content="noindex">
+	@endif
+	
 	<link rel="icon" type="image/x-icon" href="/favicon.ico">
 	
 	@if (trim($__env->yieldContent('title')))

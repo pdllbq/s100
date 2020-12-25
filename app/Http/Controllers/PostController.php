@@ -42,7 +42,7 @@ class PostController extends BaseController
 		$topUsers=User::where('id','>',0)->orderBy('rating','DESC')->limit(10)->get();
 		$topGroups=Group::where('id','>',0)->orderBy('subscribers_count','DESC')->limit(10)->get();
 		
-		$posts=$Post::where('lang',app()->getLocale())->where('draft','!=',1)->orderBy('24h_rating','desc')->orderBy('id','desc')->with(['user','voted','group'])->paginate(100);
+		$posts=$Post::where('lang',app()->getLocale())->where('draft','!=',1)->where('in_sandbox','!=',1)->orderBy('24h_rating','desc')->orderBy('id','desc')->with(['user','voted','group'])->paginate(100);
 		//$posts=$Post->voted($posts,$userId);
 		
 		$description=__('description.Best');
@@ -100,12 +100,48 @@ class PostController extends BaseController
 		$topUsers=User::where('id','>',0)->orderBy('rating','DESC')->limit(10)->get();
 		$topGroups=Group::where('id','>',0)->orderBy('subscribers_count','DESC')->limit(10)->get();
 		
-		$posts=$Post::where('lang',app()->getLocale())->where('draft','!=',1)->orderBy('id','desc')->with(['user','voted'])->paginate(100);
+		$posts=$Post::where('lang',app()->getLocale())->where('draft','!=',1)->where('in_sandbox','!=',1)->orderBy('id','desc')->with(['user','voted'])->paginate(100);
 		//$posts=$Post->voted($posts,$userId);
 		
 		$description=__('description.New');
 		
         return view('post.index',['posts'=>$posts,'topUsers'=>$topUsers,'topGroups'=>$topGroups,'title'=>$title,'description'=>$description]);
+	}
+	
+	public function sandbox()
+	{
+		$title=__('post.Sandbox');
+		
+		if(isset(\Auth::user()->id)){
+			$userId=\Auth::user()->id;
+		}else{
+			$userId=false;
+		}
+		
+		$topUsers=User::where('id','>',0)->orderBy('rating','DESC')->limit(10)->get();
+		$topGroups=Group::where('id','>',0)->orderBy('subscribers_count','DESC')->limit(10)->get();
+		
+		$posts=Post::where('lang',app()->getLocale())->where('draft','!=',1)->where('in_sandbox',1)->orderBy('id','desc')->with(['user','voted'])->paginate(100);
+		
+		$description=__('description.Sandbox');
+		
+		return view('post.index',['posts'=>$posts,'topUsers'=>$topUsers,'topGroups'=>$topGroups,'title'=>$title,'description'=>$description]);
+	}
+	
+	function moderation()
+	{
+		$title=__('post.Moderation');
+		
+		if(!isset(\Auth::user()->id) || \Auth::user()->is_moder!=1){
+			return redirect('/404');
+		}
+
+		$topUsers=User::where('id','>',0)->orderBy('rating','DESC')->limit(10)->get();
+		$topGroups=Group::where('id','>',0)->orderBy('subscribers_count','DESC')->limit(10)->get();
+		
+		$posts=Post::where('is_moderated',0)->orderBy('id','asc')->with(['user','voted'])->paginate(100);
+		
+		return view('post.index',['posts'=>$posts,'topUsers'=>$topUsers,'topGroups'=>$topGroups,'title'=>$title]);
 	}
 	
 	public function draft()
@@ -256,6 +292,13 @@ class PostController extends BaseController
 		}else{
 			$Post->draft=0;
 		}
+		
+		if(\Auth::user()->is_moder!=1){
+			$Post->in_sandbox=1;
+		}else{
+			$Post->is_moderated=1;
+		}
+		
 		$Post->save();
 		
 		PostTempSave::where('user_name',\Auth::user()->name)->delete();
@@ -529,5 +572,29 @@ class PostController extends BaseController
 		$text=$request->input('text');
 		
 		$PostTempSave->store(\Auth::user()->name,$title,$group,$text);
+	}
+	
+	function fromSandbox($locle,$slug)
+	{
+		if(!isset(\Auth::user()->id) || \Auth::user()->is_moder!=1)
+		{
+			return redirect('/404');
+		}
+		
+		Post::where('slug',$slug)->update(['in_sandbox'=>0,'is_moderated'=>1,'moder_name'=>\Auth::user()->name]);
+		
+		return redirect()->route('post.moder',[\app()->getLocale()]);
+	}
+	
+	function toSandbox($locle,$slug)
+	{
+		if(!isset(\Auth::user()->id) || \Auth::user()->is_moder!=1)
+		{
+			return redirect('/404');
+		}
+		
+		Post::where('slug',$slug)->update(['in_sandbox'=>1,'is_moderated'=>1,'moder_name'=>\Auth::user()->name]);
+		
+		return redirect()->route('post.moder',[\app()->getLocale()]);
 	}
 }

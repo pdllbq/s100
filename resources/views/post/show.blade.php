@@ -2,6 +2,10 @@
 
 @section('title',$post->title)
 
+@if($post->in_sandbox)
+	@section('noindex',1);
+@endif
+
 @section('description',$post->excerpt_no_html)
 
 <?php
@@ -50,6 +54,11 @@ $metaTags=mb_strtolower(preg_replace('/[A-ZA-Я]/u', ' $0', $post->tags));
 				| <a href="{{ route('post.edit',[app()->getLocale(),$post->slug]) }}">{{ __('post.Edit') }}</a> | <a href="{{ route('post.destroy', [app()->getLocale(),$post->slug]) }}" onclick="return confirm('{{ __('post.Destroy') }}?')">{{ __('post.Destroy') }}</a>
 				@elseif(isset(\Auth::user()->is_moder) && \Auth::user()->is_moder==1)
 					| <a href="{{ route('post.destroy', [app()->getLocale(),$post->slug]) }}" onclick="return confirm('{{ __('post.Destroy') }}?')">{{ __('post.Destroy') }}</a>
+					@if($post->in_sandbox==1)
+						| <a href="{{ route('post.fromSandbox', [app()->getLocale(),$post->slug]) }}">{{ __('post.From sandbox') }}</a>
+					@else
+						| <a href="{{ route('post.toSandbox', [app()->getLocale(),$post->slug]) }}">{{ __('post.To sandbox') }}</a>
+					@endif
 				@endif
 			</div>
 			
