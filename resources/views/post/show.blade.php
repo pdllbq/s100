@@ -3,7 +3,7 @@
 @section('title',$post->title)
 
 @if($post->in_sandbox)
-	@section('noindex',1);
+	@section('noindex',1)
 @endif
 
 @section('description',$post->excerpt_no_html)
