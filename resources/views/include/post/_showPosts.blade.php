@@ -35,6 +35,7 @@
 <span class="post-footer">
 	<span onClick="ratingPlus('{{ $post->slug }}','{{ app()->getLocale() }}')" id="button-plus-{{ $post->slug }}" class="rating-button-plus fa {{ $plusActive ?? ''}}">&#xf087;</span> <span id="rating_{{ $post->slug }}">{{ $post->rating }}</span> 
 	<span onClick="ratingMinus('{{ $post->slug }}','{{ app()->getLocale() }}')" id="button-minus-{{ $post->slug }}" class="rating-button-minus fa {{ $minusActive ?? '' }}">&#xf088;</span> |
+	<i class="fa fa-eye">{{ $post->showed }}</i> |
 	<a href="{{ route('post.show',[app()->getLocale(),$post->slug,'#comments']) }}"><span class="fa">&#xf086; {{ $post->comments_count }}</span></a>
 </span>
 <br><br>

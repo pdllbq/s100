@@ -13,6 +13,7 @@ use App\User;
 use App\Models\Notification;
 use App\Models\PostTempSave;
 use Carbon\Carbon;
+use App\Models\PostsReaded;
 
 class PostController extends BaseController
 {
@@ -324,11 +325,17 @@ class PostController extends BaseController
 		
 		if(isset(\Auth::user()->name)){
 			$ban=User::isBanned(\Auth::user()->name);
+			$userName=\Auth::user()->name;
 		}else{
 			$ban=false;
+			$userName=null;
 		}
 		
 		$post->date=Carbon::parse($post->created_at)->format('d.n.Y');
+		
+		$PostsReaded=new PostsReaded;
+		
+		$PostsReaded->readed($slug,\Request::ip(),$userName);
 		
         return view('post.show',['post'=>$post,'comments'=>$comments,'ban'=>$ban]);
     }
