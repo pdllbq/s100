@@ -11,7 +11,7 @@ class PostsReaded extends Model
 	
     function readed($postSlug,$ip,$userName)
 	{
-		$count=self::where('ip',$ip)->count();
+		$count=self::where('slug',$postSlug)->where('ip',$ip)->count();
 		
 		if($count==0){
 			$this->slug=$postSlug;
