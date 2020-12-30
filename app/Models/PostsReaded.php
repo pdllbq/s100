@@ -14,15 +14,7 @@ class PostsReaded extends Model
 		if($userName!=null){
 			$count=self::where('slug',$postSlug)->where('user_name',$userName)->count();
 		}else{
-			$count=0;
-		}
-		
-		if($count==0){
 			$count=self::where('slug',$postSlug)->where('ip',$ip)->count();
-			
-			if($userName!=null){
-				self::where('slug',$postSlug)->where('ip',$ip)->update(['user_name'=>$userName]);
-			}
 		}
 		
 		if($count==0){
