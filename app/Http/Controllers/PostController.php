@@ -145,6 +145,30 @@ class PostController extends BaseController
 		return view('post.index',['posts'=>$posts,'topUsers'=>$topUsers,'topGroups'=>$topGroups,'title'=>$title]);
 	}
 	
+	public function readed()
+	{
+		$title=__('post.Readed');
+		
+		$Post=new Post;
+		
+		if(isset(\Auth::user()->id)){
+			$userId=\Auth::user()->id;
+			$userName=\Auth::user()->name;
+		}else{
+			$userId=false;
+			$userName=null;
+		}
+		
+		$topUsers=User::where('id','>',0)->orderBy('rating','DESC')->limit(10)->get();
+		$topGroups=Group::where('id','>',0)->orderBy('subscribers_count','DESC')->limit(10)->get();
+		
+		$slugs=PostsReaded::select('slug')->where('user_name',$userName)->orderBy('id','desc')->get()->toArray();
+		
+		$posts=$Post::whereIn('slug',$slugs)->with(['user','voted'])->paginate(100);
+		
+        return view('post.index',['posts'=>$posts,'topUsers'=>$topUsers,'topGroups'=>$topGroups,'title'=>$title]);
+	}
+	
 	public function draft()
 	{
 		$title=__('post.Draft');
@@ -161,7 +185,6 @@ class PostController extends BaseController
 		$topGroups=Group::where('id','>',0)->orderBy('subscribers_count','DESC')->limit(10)->get();
 		
 		$posts=$Post::where('user_id',$userId)->where('draft',1)->orderBy('id','desc')->with(['user','voted'])->paginate(100);
-		//$posts=$Post->voted($posts,$userId);
 		
         return view('post.index',['posts'=>$posts,'topUsers'=>$topUsers,'topGroups'=>$topGroups,'title'=>$title]);
 	}

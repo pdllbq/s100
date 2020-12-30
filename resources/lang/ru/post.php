@@ -35,4 +35,5 @@ return[
 	'Moderation'=>'Модерирование',
 	'From sandbox'=>'Из песочницы',
 	'To sandbox'=>'В песочницу',
+	'Readed'=>'Вы прочитали',
 ];
