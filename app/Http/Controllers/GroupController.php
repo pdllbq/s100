@@ -14,6 +14,10 @@ class GroupController extends Controller
 		$group=Group::where('slug',$groupSlug)->first();
 		$posts=Post::where('group_slug',$groupSlug)->orderBy('id','desc')->with(['user','voted'])->paginate(100);
 		
+		if(!isset($group->slug)){
+			return abort(404);
+		}
+		
 		$title=$group->name;
 		
 		//User is subscribed on this group?
