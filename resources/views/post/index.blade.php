@@ -24,6 +24,7 @@
 						|<span id="xs-additional-navigation-show-button" class="btn btn-link" onClick="$('#xs-additional-navigation-show-button').hide(); $('#xs-additional-navigation').show();">&gt;&gt;</span>
 						<span id="xs-additional-navigation" style="display:none;">
 							<span class=" {{ \Route::currentRouteName()=='post.readed'?'text-underline':'' }}"><a href="{{ route('post.readed',[app()->getLocale()]) }}">{{ __('post.Readed') }}</a></span>
+							| <span class=" {{ \Route::currentRouteName()=='post.iLike'?'text-underline':'' }}"><a href="{{ route('post.iLike',[app()->getLocale()]) }}">{{ __('post.You liked') }}</a></span>
 							@if(\Auth::user()->is_moder==1)
 								| <span class=" {{ \Route::currentRouteName()=='post.moder'?'text-underline':'' }}"><a href="{{ route('post.moder',[app()->getLocale()]) }}">{{ __('post.Moderation') }}</a></span>
 							@endif
@@ -147,6 +148,7 @@
 					<div class=" {{ \Route::currentRouteName()=='post.sandbox'?'text-underline':'' }}"><a href="{{ route('post.sandbox',[app()->getLocale()]) }}">{{ __('post.Sandbox') }}</a></div>
 					@auth
 						<div class=" {{ \Route::currentRouteName()=='post.readed'?'text-underline':'' }}"><a href="{{ route('post.readed',[app()->getLocale()]) }}">{{ __('post.Readed') }}</a></div>
+						<div class=" {{ \Route::currentRouteName()=='post.iLike'?'text-underline':'' }}"><a href="{{ route('post.iLike',[app()->getLocale()]) }}">{{ __('post.You liked') }}</a></div>
 						@if(\Auth::user()->is_moder==1)
 							<div class=" {{ \Route::currentRouteName()=='post.moder'?'text-underline':'' }}"><a href="{{ route('post.moder',[app()->getLocale()]) }}">{{ __('post.Moderation') }}</a></div>
 						@endif

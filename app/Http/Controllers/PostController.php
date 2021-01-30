@@ -169,6 +169,28 @@ class PostController extends BaseController
         return view('post.index',['posts'=>$posts,'topUsers'=>$topUsers,'topGroups'=>$topGroups,'title'=>$title]);
 	}
 	
+	public function iLike()
+	{
+		$title=__('post.You liked');
+		
+		$Post=new Post;
+		
+		if(isset(\Auth::user()->id)){
+			$userId=\Auth::user()->id;
+		}else{
+			$userId=false;
+		}
+		
+		$topUsers=User::where('id','>',0)->orderBy('rating','DESC')->limit(10)->get();
+		$topGroups=Group::where('id','>',0)->orderBy('subscribers_count','DESC')->limit(10)->get();
+		
+		$slugs=Rating::select('post_slug')->where('user_id',$userId)->where('type','+')->orderBy('id','desc')->get()->toArray();
+		
+		$posts=$Post::whereIn('slug',$slugs)->with(['user','voted'])->paginate(100);
+		
+        return view('post.index',['posts'=>$posts,'topUsers'=>$topUsers,'topGroups'=>$topGroups,'title'=>$title]);
+	}
+	
 	public function draft()
 	{
 		$title=__('post.Draft');

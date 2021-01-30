@@ -61,6 +61,9 @@ Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
   Route::get('readed','PostController@readed')->name('post.readed');
 });
 Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
+  Route::get('i_like','PostController@iLike')->name('post.iLike');
+});
+Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
   Route::get('moder','PostController@moderation')->name('post.moder');
 });
 Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){

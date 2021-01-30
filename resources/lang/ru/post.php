@@ -36,4 +36,5 @@ return[
 	'From sandbox'=>'Из песочницы',
 	'To sandbox'=>'В песочницу',
 	'Readed'=>'Вы прочитали',
+	'You liked'=>'Вам понравилось',
 ];
