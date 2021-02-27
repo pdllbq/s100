@@ -66,6 +66,10 @@ if(isset(\Auth::user()->id)){
 ?>
 
 <body>
+	<!-- Load Facebook SDK for JavaScript -->
+	<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v10.0&appId=660737471254649&autoLogAppEvents=1" nonce="CLPua9bo"></script>
+	
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-custom">
             <div class="container-fluid">

@@ -46,6 +46,12 @@ $metaTags=mb_strtolower(preg_replace('/[A-ZA-Я]/u', ' $0', $post->tags));
 				<div style="clear:both;"></div>
 
 			</div>
+			<!-- Your share button code -->
+			<div class="fb-share-button" 
+			data-href="{{ url()->current() }}" 
+			data-layout="button_count">Поделится
+			</div>
+				
 			<div class="post-footer">
 				<span onClick="ratingPlus('{{ $post->slug }}','{{ app()->getLocale() }}')" id="button-plus-{{ $post->slug }}" class="rating-button-plus fa {{ $plusActive ?? ''}}">&#xf087;</span> <span id="rating_{{ $post->slug }}">{{ $post->rating }}</span> 
 				<span onClick="ratingMinus('{{ $post->slug }}','{{ app()->getLocale() }}')" id="button-minus-{{ $post->slug }}" class="rating-button-minus fa {{ $minusActive ?? '' }}">&#xf088;</span>
