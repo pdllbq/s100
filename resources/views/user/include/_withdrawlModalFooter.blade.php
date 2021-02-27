@@ -1,0 +1,1 @@
+<a class="btn btn-primary" href="#" onClick="withdrawlSave('{{ route('user.withdrawlSave',[app()->getLocale()]) }}')">{{ __('user.Make withdrawl') }}</a>

@@ -136,7 +136,12 @@ if(isset(\Auth::user()->id)){
 									<a class="dropdown-item" href="{{ route('post.create',app()->getLocale()) }}">{{ __('post.Create') }}</a>
 									<a class="dropdown-item" href="{{ route('post.draft',app()->getLocale()) }}">{{ __('post.Draft') }}</a>
 									<a class="dropdown-item" href="{{ route('user.profile',[app()->getLocale()]) }}">{{ __('user.My profile') }}</a>
-									
+									@if(\Auth::user()->balance>0)
+										<a class="dropdown-item" data-toggle="modal" data-target="#modal-template" onClick="withdrawl('{{ route('user.withdrawl',[app()->getLocale()]) }}');">{{ __('user.Balance').': €'.\Auth::user()->balance }}</a>
+									@endif
+									@if(\Auth::user()->is_admin==1)
+										<a href="{{ route('user.withdrawlModeration',[app()->getLocale()]) }}" class="dropdown-item">{{ __('user.Withdrawl moderation') }}</a>
+									@endif
 									<a class="dropdown-item" href="{{ route('logout', app()->getLocale()) }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

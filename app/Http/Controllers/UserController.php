@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\Group;
 use Carbon\Carbon;
 use App\Models\BanIp;
+use App\Models\Withdrawl;
 
 class UserController extends Controller
 {
@@ -171,6 +172,87 @@ class UserController extends Controller
 		}
 		
 		BanIp::where('ip',$ip)->delete();
+		
+		return redirect()->back();
+	}
+	
+	function withdrawl()
+	{	
+		$balance=\Auth::user()->balance;
+		
+		$data['title']=__('user.Withdrawl');
+		
+		$data['body']=view('user.include._withdrawlModalBody',compact(['balance']))->render();
+		
+		$data['footer']=view('user.include._withdrawlModalFooter')->render();
+		
+		return json_encode($data);
+	}
+	
+	function withdrawlSave(Request $request)
+	{
+		$amount=abs($request->input('amount'));
+		$fullName=$request->input('full_name');
+		$bankAccountNumber=$request->input('bank_account_number');
+		
+		if($amount>\Auth::user()->balance){
+			$data['error']=__('user.Insufficient balance');
+		}elseif($amount>=1){
+			$data['success']=__('user.Withdrawal request successful');
+			
+			$Withdrawl=new Withdrawl;
+			$Withdrawl->user_name=\Auth::user()->name;
+			$Withdrawl->amount=$amount;
+			$Withdrawl->full_name=$fullName;
+			$Withdrawl->bank_account_number=$bankAccountNumber;
+			$Withdrawl->save();
+			
+			User::where('id',\Auth::user()->id)->update(['balance'=>\DB::raw('balance-'.$amount)]);
+			
+		}elseif($amount<1){
+			$data['error']=__('user.Minimum withdrawal amount €1');
+		}
+		
+		return json_encode($data);
+	}
+	
+	function withdrawlModeration()
+	{
+		if(\Auth::user()->is_admin!=1){
+			return redirect('/404');
+		}
+		
+		$data=Withdrawl::where('processed',0)->get();
+		
+		return view('user.withdrawlModeration',compact('data'));
+	}
+	
+	function withdrawlWithdrawed($locale,$id)
+	{
+		if(\Auth::user()->is_admin!=1){
+			return redirect('/404');
+		}
+		
+		Withdrawl::where('id',$id)->update(['processed'=>1]);
+		
+		return redirect()->back();
+	}
+	
+	function withdrawlReturnToBalance($locale,$id)
+	{
+		if(\Auth::user()->is_admin!=1){
+			return redirect('/404');
+		}
+		
+		$data=Withdrawl::where('id',$id)->first();
+		
+		if(!isset($data['user_name'])){
+			return redirect()->back();
+		}
+		
+		User::where('name',$data['user_name'])->update(['balance'=>\DB::raw('balance+'.$data['amount'])]);
+		
+		Withdrawl::where('id',$data['id'])->delete();
 		
 		return redirect()->back();
 	}

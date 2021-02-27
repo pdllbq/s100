@@ -142,6 +142,26 @@ Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
 });
 
 Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
+  Route::get('/user/withdrawl','UserController@withdrawl')->name('user.withdrawl');
+});
+
+Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
+  Route::get('/user/withdrawl_save','UserController@withdrawlSave')->name('user.withdrawlSave');
+});
+
+Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
+  Route::get('/user/withdrawl_moderation','UserController@withdrawlModeration')->name('user.withdrawlModeration');
+});
+
+Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
+  Route::get('/user/withdrawl_withdrawed/{id}','UserController@withdrawlWithdrawed')->name('user.withdrawlWithdrawed');
+});
+
+Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
+  Route::get('/user/withdrawl_return_to_balance/{id}','UserController@withdrawlReturnToBalance')->name('user.withdrawlReturnToBalance');
+});
+
+Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
   Route::post('/user/profile/save','UserController@profileSave')->name('user.profileSave');
 });
 

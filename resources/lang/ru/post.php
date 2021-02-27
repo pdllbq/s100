@@ -37,4 +37,5 @@ return[
 	'To sandbox'=>'В песочницу',
 	'Readed'=>'Вы прочитали',
 	'You liked'=>'Вам понравилось',
+	'Earned €:count'=>'Заработано €:count',
 ];
