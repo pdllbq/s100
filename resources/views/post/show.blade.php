@@ -56,7 +56,7 @@ $metaTags=mb_strtolower(preg_replace('/[A-ZA-Я]/u', ' $0', $post->tags));
 				<span onClick="ratingPlus('{{ $post->slug }}','{{ app()->getLocale() }}')" id="button-plus-{{ $post->slug }}" class="rating-button-plus fa {{ $plusActive ?? ''}}">&#xf087;</span> <span id="rating_{{ $post->slug }}">{{ $post->rating }}</span> 
 				<span onClick="ratingMinus('{{ $post->slug }}','{{ app()->getLocale() }}')" id="button-minus-{{ $post->slug }}" class="rating-button-minus fa {{ $minusActive ?? '' }}">&#xf088;</span>
 				| <i class="fa fa-eye">{{ $post->showed }}</i>
-				| <i class="fa fa-euro" title="{{ __('post.Earned €:count',['count'=>$post->earned]) }}">{{ $post->earned }}</i>
+				| <i class="fa fa-euro" title="{{ __('post.Earned €:count',['count'=>$post->earned]) }}">{{ round($post->earned,2) }}</i>
 
 				@if($post->user_id==Auth::id())
 				| <a href="{{ route('post.edit',[app()->getLocale(),$post->slug]) }}">{{ __('post.Edit') }}</a> | <a href="{{ route('post.destroy', [app()->getLocale(),$post->slug]) }}" onclick="return confirm('{{ __('post.Destroy') }}?')">{{ __('post.Destroy') }}</a>
