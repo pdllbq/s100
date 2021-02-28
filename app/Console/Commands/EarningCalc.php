@@ -53,13 +53,16 @@ class EarningCalc extends Command
 		$this->info('Pay for watch: '.$payForWatch);
 		
 		foreach($data as $value){
-			$post=Post::where('slug',$value['slug'])->first()->toArray();
+			$post=Post::where('slug',$value['slug'])->first();
+			if($post->count()>0){
+				$post=$post->toArray();
+			
+				Post::where('slug',$post['slug'])->increment('earned',$payForWatch);
+
+				User::where('id',$post['user_id'])->increment('balance',$payForWatch);
+			}
 			
 			PostsReaded::where('id',$value['id'])->update(['payed'=>1]);
-			
-			Post::where('slug',$post['slug'])->increment('earned',$payForWatch);
-			
-			User::where('id',$post['user_id'])->increment('balance',$payForWatch);
 		}
     }
 }
