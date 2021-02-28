@@ -54,7 +54,7 @@ class EarningCalc extends Command
 		
 		foreach($data as $value){
 			$post=Post::where('slug',$value['slug'])->first();
-			if($post->count()>0){
+			if(isset($post->id)){
 				$post=$post->toArray();
 			
 				Post::where('slug',$post['slug'])->increment('earned',$payForWatch);
