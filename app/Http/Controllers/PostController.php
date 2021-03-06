@@ -14,6 +14,7 @@ use App\Models\Notification;
 use App\Models\PostTempSave;
 use Carbon\Carbon;
 use App\Models\PostsReaded;
+use App\Models\EmailNotification;
 
 class PostController extends BaseController
 {
@@ -348,6 +349,12 @@ class PostController extends BaseController
 		$Post->save();
 		
 		PostTempSave::where('user_name',\Auth::user()->name)->delete();
+		
+		//Notificate admin for moderation
+		if($inputs['sandbox']==1){
+			$EmailNotification=new EmailNotification;
+			$EmailNotification->newNotification(env('ADMIN_EMAIL'),__('emailNotifications.New post in sandbox subject'),__('emailNotifications.New post in sandbox message :url',['url'=>'https://s100.lv/ru/moder']));
+		}
 		
 		return redirect()->route('post.show',[app()->getLocale(),$Post->slug]);
     }

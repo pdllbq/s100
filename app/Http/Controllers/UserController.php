@@ -11,6 +11,7 @@ use App\Models\Group;
 use Carbon\Carbon;
 use App\Models\BanIp;
 use App\Models\Withdrawl;
+use App\Models\EmailNotification;
 
 class UserController extends Controller
 {
@@ -208,6 +209,12 @@ class UserController extends Controller
 			$Withdrawl->save();
 			
 			User::where('id',\Auth::user()->id)->update(['balance'=>\DB::raw('balance-'.$amount)]);
+			
+			$EmailNotification=new EmailNotification;
+			$email=env('ADMIN_EMAIL');
+			$subject=__('emailNotifications.Request to withdrawl subject');
+			$message=__('emailNotifications.Request to withdrawl message :url',['url'=>'https://s100.lv/ru/user/withdrawl_moderation']);
+			$EmailNotification->newNotification($email,$subject,$message);
 			
 		}elseif($amount<1){
 			$data['error']=__('user.Minimum withdrawal amount €1');
