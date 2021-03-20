@@ -351,6 +351,9 @@ class PostObserver
 	
 	protected function htmlTagsToBb(Post $post)
 	{
+		//<script async="" src="https://telegram.org/js/telegram-widget.js" data-telegram-post="s100lv/2" data-width="100%"></script>
+		$post->text=preg_replace('~<script async="" src="https://telegram.org/js/telegram-widget.js" data-telegram-post="(.*?)" data-width="100%"></script>~im','[telegram]$1[/telegram]', $post->text);
+		//dd($post->text);
 		$post->text=preg_replace('/<a href="(.*?)"(.*?)><\/a>/im','', $post->text);
 		//$post->text=preg_replace('/<img style="(.*?)" src="(.*?)">/im','[img style=$1]$2[/img]', $post->text);
 		$post->text=preg_replace('/<img style="(.*?)" src="(.*?)" onclick="(.*?)">/im','[img style=$1]$2[/img]', $post->text);
@@ -410,8 +413,10 @@ class PostObserver
 		
 		$html= htmlspecialchars($html);
 		
+		//<script async="" src="https://telegram.org/js/telegram-widget.js" data-telegram-post="s100lv/2" data-width="100%"></script>
 		//$html=preg_replace('~\[img style=(.*?)\](.*?)\[/img\]~','<img style="$1" src="$2">', $html);
 		$html=preg_replace('~\[img style=(.*?)\](.*?)\[/img\]~','<img style="$1" src="$2" onclick="showImage(\'$2\')">', $html);
+		$html=preg_replace('~\[telegram\](.*?)\[/telegram\]~','<script async="" src="https://telegram.org/js/telegram-widget.js" data-telegram-post="$1" data-width="100%"></script>', $html);
 		$html=$this->pbb($html);
 		$html=preg_replace('~\[p align=(.*?)\](.*?)\[/p\]~','<p align="$1">$2</p>', $html);
 		$html= str_replace('[br]','<br>', $html);

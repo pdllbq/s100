@@ -86,8 +86,23 @@
 <script type="text/javascript">
 
     $(document).ready(function() {
+		
 
 		$('#text').summernote({
+			
+			styleTags: ['p','h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+			
+			toolbar: [
+				['style', ['style']],
+				['font', ['bold','underline','strikethrough', 'clear']],
+				['insert', ['link', 'picture', 'video','telegramm']],
+				['view', ['fullscreen', 'codeview']],
+			],
+					
+			buttons: {
+				txt: '11111111111111111111111111111111111111111111111111111111111',
+				telegramm: telegrammButton
+			},
 			
 			callbacks: {
 				onPaste: function (e) {

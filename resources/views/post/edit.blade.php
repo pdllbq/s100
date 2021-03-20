@@ -76,6 +76,15 @@
 
 		$('#text').summernote({
 			
+			styleTags: ['p','h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+			
+			toolbar: [
+				['style', ['style']],
+				['font', ['bold','underline','strikethrough', 'clear']],
+				['insert', ['link', 'picture', 'video']],
+				['view', ['fullscreen', 'codeview']],
+			],
+			
 			callbacks: {
 				onPaste: function (e) {
 					var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');

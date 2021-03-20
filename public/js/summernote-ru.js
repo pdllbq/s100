@@ -150,6 +150,9 @@
         specialChar: 'SPECIAL CHARACTERS',
         select: 'Select Special characters',
       },
+	  telegram: {
+		  insert: 'Ссылка на сообщение Telegram'
+	  }
     },
   });
 })(jQuery);

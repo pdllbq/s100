@@ -310,7 +310,7 @@ class PostController extends BaseController
 		
 		
         $inputs=$request->input();
-		
+		//dd($inputs['text']);
 		if(!isset($inputs['iframe_mode'])){
 			$inputs['iframe_mode']=0;
 		}
