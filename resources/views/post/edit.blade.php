@@ -85,6 +85,17 @@
 				['view', ['fullscreen', 'codeview']],
 			],
 			
+			toolbar: [
+				['style', ['style']],
+				['font', ['bold','underline','strikethrough', 'clear']],
+				['insert', ['link', 'picture', 'video','telegramm']],
+				['view', ['fullscreen', 'codeview']],
+			],
+					
+			buttons: {
+				telegramm: telegrammButton
+			},
+			
 			callbacks: {
 				onPaste: function (e) {
 					var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
