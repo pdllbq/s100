@@ -30,3 +30,13 @@ function withdrawlSave(url)
 		}
 	});
 }
+
+function openNav()
+{
+	$('#small-menu-links').css('width','250');
+}
+
+function closeNav()
+{
+	$('#small-menu-links').css('width','0');
+}

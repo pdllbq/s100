@@ -173,7 +173,8 @@ h2{
 	margin:0px;
 	background-color: #f7f7f7;
 	text-align: left;
-	border-left: 1px solid #3490dc;
+	border: 1px solid #3490dc;
+	box-shadow: 0 0 30px #cce3f6;
 }
 
 .menu-footer{
@@ -196,4 +197,52 @@ h2{
   100% {
     color: #5e5e5e;
    }
+}
+
+.btn-add-post{
+	background-color: #ffffff;
+	border: 1px solid #a1cbef;
+	color:#495057;
+}
+
+.btn-add-post:hover{
+    box-shadow: 0 0 20px #cce3f6;
+}
+
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+#small-menu-links{
+	height: 100%;	
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	background-color: #f7f7f7;
+	overflow-x: hidden;
+	padding-top: 60px;
+	transition: 0.5s;
+	border-left:1px solid #dadada;
+}
+
+.open-nav-button{
+	cursor:pointer;
+	background-color:inherit;
+	border:none;
+	
+}
+
+#small-menu-links .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#small-menu-links .closebtn:hover {
+  text-decoration:none;
 }

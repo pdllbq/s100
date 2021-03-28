@@ -11,7 +11,7 @@
 			<div class="col-12">
 				<div class="list-group list-group-flush">
 					@foreach($notifications as $data)
-					<div class="list-group-item">{{ $data->created_at->diffForHumans() }} <a href="{{ route('post.show',[app()->getLocale(),$data->post_slug]).'#comment-'.$data->comment_id }}">{{ __($data->text) }}</a></div>
+						<div class="list-group-item">{{ $data->created_at->diffForHumans() }} <a href="{{ route('post.show',[app()->getLocale(),$data->post_slug]).'#comment-'.$data->comment_id }}">{{ __($data->text) }}</a></div>
 					@endforeach
 				</div>
 			</div>
