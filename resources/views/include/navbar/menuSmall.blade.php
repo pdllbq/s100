@@ -42,7 +42,7 @@
 
 		<li class="nav-item">
 			<a href="#" class="nav-link" onclick="openNav();">
-				{{ Auth::user()->name }} <i class="fa fa-caret-left"></i>
+				<span class="fa fa-bars"></span>
 			</a>
 		</li>
 	</ul>

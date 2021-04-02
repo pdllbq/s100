@@ -12,7 +12,8 @@
 	</a>
 	
 	<!-- New post button -->
-	<a href="{{ route('post.create',[app()->getLocale()]) }}" class="btn btn-add-post nav-link mr-auto">{{ __('post.Add post') }}</a>
+	<a href="{{ route('post.create',[app()->getLocale()]) }}" class="d-block d-sm-none btn btn-add-post nav-link mr-auto" title="{{ __('post.Add post') }}"><i class="fa fa-edit"></i></a>
+	<a href="{{ route('post.create',[app()->getLocale()]) }}" class="d-none d-sm-block btn btn-add-post nav-link mr-auto"><i class="fa fa-edit"></i> {{ __('post.Add post') }}</a>
 	
 	<div class="navbar-nav">
 		
