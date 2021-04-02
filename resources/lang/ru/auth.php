@@ -28,4 +28,5 @@ return [
 	'Logout'=>'Выйти',
 	'Login with Facebook'=>'Войти через Facebook',
 	'E-mail alredy exists'=>'Данная э-почта уже используется на сайте',
+	'Description'=>'Каждый имеет право на свободу слова!'
 ];

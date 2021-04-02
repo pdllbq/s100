@@ -44,6 +44,11 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 	
+	public function showLoginForm()
+	{
+		return view('auth.login2');
+	}
+	
 	function authenticated()
 	{
 		User::where('id',\Auth::user()->id)->update(['ip'=>\Request::ip()]);

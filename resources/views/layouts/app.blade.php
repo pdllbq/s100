@@ -49,7 +49,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-	<link href="{{ asset('css/style.css?1') }}" rel="stylesheet">
+	<link href="{{ asset('css/style.css?2') }}" rel="stylesheet">
 	<link href="{{ asset('css/summernote.css') }}" rel="stylesheet">
 	
 </head>

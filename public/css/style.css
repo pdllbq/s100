@@ -254,3 +254,16 @@ body {
   display: flex;
   align-items: center;
 }
+
+.flex-break-column {
+  flex-basis: 100%;
+  width: 0;
+}
+
+.facebook-button{
+	background-color:#1877f2;
+}
+
+.bg-inherit{
+	background-color:inherit;
+}

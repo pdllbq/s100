@@ -60,7 +60,7 @@ class RegisterController extends Controller
 	public function showRegistrationForm()
     {
 		$banIp=BanIp::isBanned(\Request::ip());
-        return view('auth.register',compact('banIp'));
+        return view('auth.register2',compact('banIp'));
     }
 
     /**
