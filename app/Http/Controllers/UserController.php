@@ -195,6 +195,12 @@ class UserController extends Controller
 		$amount=abs($request->input('amount'));
 		$fullName=$request->input('full_name');
 		$bankAccountNumber=$request->input('bank_account_number');
+		$ethWallet=$request->input('eth_wallet');
+		$otherInfo=$request->input('other_info');
+		
+		$bank=$request->input('bank');
+		$eth=$request->input('eth');
+		$other=$request->input('other');
 		
 		if($amount>\Auth::user()->balance){
 			$data['error']=__('user.Insufficient balance');
@@ -206,6 +212,11 @@ class UserController extends Controller
 			$Withdrawl->amount=$amount;
 			$Withdrawl->full_name=$fullName;
 			$Withdrawl->bank_account_number=$bankAccountNumber;
+			$Withdrawl->eth_wallet=$ethWallet;
+			$Withdrawl->other_info=$otherInfo;
+			$Withdrawl->bank=$bank;
+			$Withdrawl->eth=$eth;
+			$Withdrawl->other=$other;
 			$Withdrawl->save();
 			
 			User::where('id',\Auth::user()->id)->update(['balance'=>\DB::raw('balance-'.$amount)]);
