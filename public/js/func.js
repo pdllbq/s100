@@ -16,15 +16,15 @@ function withdrawl(url)
 
 function withdrawlSave(url)
 {
-	var amount=$('#withdrawl-input-amount').val();
-	var fullName=$('#withdrawl-input-full-name').val();
-	var bankAccountNumber=$('#withdrawl-input-bank-account-number').val();
-	var ethWallet=$('#withdrawl-input-eth-wallet').val();
-	var otherInfo=$('#withdrawl-input-other').val();
+	var amount=$('#modal-template #withdrawl-input-amount').val();
+	var fullName=$('#modal-template #withdrawl-input-full-name').val();
+	var bankAccountNumber=$('#modal-template #withdrawl-input-bank-account-number').val();
+	var ethWallet=$('#modal-template #withdrawl-input-eth-wallet').val();
+	var otherInfo=$('#modal-template #withdrawl-input-other').val();
 	
-	var bank=$('input[name=bank]').val();
-	var eth=$('input[name=eth]').val();
-	var other=$('input[name=other]').val();
+	var bank=$('#modal-template input[name=bank]').val();
+	var eth=$('#modal-template input[name=eth]').val();
+	var other=$('#modal-template input[name=other]').val();
 	
 	$.getJSON(url,{
 			amount:amount,

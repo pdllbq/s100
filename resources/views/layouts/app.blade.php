@@ -31,7 +31,7 @@
 	<script src="{{ asset('js/jquery.js') }}" ></script>
 	<script src="{{ asset('js/popper.js') }}" ></script>
 	<script src="{{ asset('js/app.js') }}" ></script>
-	<script src="{{ asset('js/func.js?2') }}" ></script>
+	<script src="{{ asset('js/func.js?3') }}" ></script>
 	<script src="{{ asset('js/rating.js') }}" ></script>
 	<script src="{{ asset('js/comments.js') }}" ></script>
 	<script src="{{ asset('js/subscribe.js') }}" ></script>

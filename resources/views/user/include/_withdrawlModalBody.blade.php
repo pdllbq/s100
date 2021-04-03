@@ -41,57 +41,57 @@
 </form>
 
 <script>	
-	$('#ethButton').click(function(event){
-		$('input[name=bank]').val('0');
-		$('input[name=eth]').val('1');
-		$('input[name=other]').val('0')
+	$('#modal-template #ethButton').click(function(event){
+		$('#modal-template input[name=bank]').val('0');
+		$('#modal-template input[name=eth]').val('1');
+		$('#modal-template input[name=other]').val('0')
 		
-		$('#group-input-full-name').removeClass('d-block');
-		$('#group-input-full-name').addClass('d-none');
+		$('#modal-template #group-input-full-name').removeClass('d-block');
+		$('#modal-template #group-input-full-name').addClass('d-none');
 		
-		$('#group-input-bank-account-number').removeClass('d-block');
-		$('#group-input-bank-account-number').addClass('d-none');
+		$('#modal-template #group-input-bank-account-number').removeClass('d-block');
+		$('#modal-template #group-input-bank-account-number').addClass('d-none');
 		
-		$('#group-input-other').removeClass('d-block');
-		$('#group-input-other').addClass('d-none');
+		$('#modal-template #group-input-other').removeClass('d-block');
+		$('#modal-template #group-input-other').addClass('d-none');
 		
-		$('#group-input-eth-wallet').removeClass('d-none');
-		$('#group-input-eth-wallet').addClass('d-block');
+		$('#modal-template #group-input-eth-wallet').removeClass('d-none');
+		$('#modal-template #group-input-eth-wallet').addClass('d-block');
 	});
 	
-	$('#bankButton').click(function(event){	
-		$('input[name=bank]').val('1');
-		$('input[name=eth]').val('0');
-		$('input[name=other]').val('0')
+	$('#modal-template #bankButton').click(function(event){	
+		$('#modal-template input[name=bank]').val('1');
+		$('#modal-template input[name=eth]').val('0');
+		$('#modal-template input[name=other]').val('0')
 		
-		$('#group-input-eth-wallet').removeClass('d-block');
-		$('#group-input-eth-wallet').addClass('d-none');
+		$('#modal-template #group-input-eth-wallet').removeClass('d-block');
+		$('#modal-template #group-input-eth-wallet').addClass('d-none');
 		
-		$('#group-input-other').removeClass('d-block');
-		$('#group-input-other').addClass('d-none');
+		$('#modal-template #group-input-other').removeClass('d-block');
+		$('#modal-template #group-input-other').addClass('d-none');
 		
-		$('#group-input-full-name').removeClass('d-none');
-		$('#group-input-full-name').addClass('d-block');
+		$('#modal-template #group-input-full-name').removeClass('d-none');
+		$('#modal-template #group-input-full-name').addClass('d-block');
 		
-		$('#group-input-bank-account-number').removeClass('d-none');
-		$('#group-input-bank-account-number').addClass('d-block');
+		$('#modal-template #group-input-bank-account-number').removeClass('d-none');
+		$('#modal-template #group-input-bank-account-number').addClass('d-block');
 	});
 	
-	$('#otherButton').click(function(event){
-		$('input[name=bank]').val('0');
-		$('input[name=eth]').val('0');
-		$('input[name=other]').val('1')
+	$('#modal-template #otherButton').click(function(event){
+		$('#modal-template input[name=bank]').val('0');
+		$('#modal-template input[name=eth]').val('0');
+		$('#modal-template input[name=other]').val('1')
 		
-		$('#group-input-full-name').removeClass('d-block');
-		$('#group-input-full-name').addClass('d-none');
+		$('#modal-template #group-input-full-name').removeClass('d-block');
+		$('#modal-template #group-input-full-name').addClass('d-none');
 		
-		$('#group-input-eth-wallet').removeClass('d-block');
-		$('#group-input-eth-wallet').addClass('d-none');
+		$('#modal-template #group-input-eth-wallet').removeClass('d-block');
+		$('#modal-template #group-input-eth-wallet').addClass('d-none');
 		
-		$('#group-input-bank-account-number').removeClass('d-block');
-		$('#group-input-bank-account-number').addClass('d-none');
+		$('#modal-template #group-input-bank-account-number').removeClass('d-block');
+		$('#modal-template #group-input-bank-account-number').addClass('d-none');
 		
-		$('#group-input-other').removeClass('d-none');
-		$('#group-input-other').addClass('d-block');
+		$('#modal-template #group-input-other').removeClass('d-none');
+		$('#modal-template #group-input-other').addClass('d-block');
 	});
 </script>
