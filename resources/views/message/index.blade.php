@@ -10,20 +10,38 @@
 	<div class="container-fluid">
 		<div class="row">
 
-			@if($messages->count()==0)
+			@if(count($messages)==0)
 			<div class="col-12">
 				<div class="alert alert-primary">{{ __('message.No messages') }}</div>
 			</div>
 			@endif
 			
-			@foreach($messages as $message)
+			@foreach($messages as $name=>$message)
 			
-			<div class="col-12">
-				<a href="#" onClick="Message.show('{{ route('message.show',[app()->getLocale(),$message->id]) }}')">
-					{!! $message->readed==0 ? '<i class="fa fa-envelope" aria-hidden="true"></i> ' : '<i class="fa fa-envelope-open" aria-hidden="true"></i> ' !!}
-					&commat;{{ $message->from_name }}
-				</a>
-				{{ $message->created_at->diffForHumans() }}
+			<div class="col-12 chat-name" onclick="Message.show('{{ route('message.show',[app()->getLocale(),$name]) }}');">
+				<div class="chat-name-avatar">
+					<div class="chat-name-avatar_inner">
+						@if($message['data']->user['avatar']==null)
+							<img src="/img/no-avatar.png">
+						@else
+							<img src="{{ $message['data']->user['avatar'] }}">
+						@endif
+					</div>
+				</div>
+				
+				<div>
+					{{ $message['data']->created_at->diffForHumans() }}
+				</div>
+				<div>
+					<a href="#" onClick="">
+						&commat;{{ $name }}
+					</a>
+				</div>
+				@if($message['new']>0)
+					<div class="chat-name-new-messages">
+						+{{ $message['new'] }}
+					</div>
+				@endif
 			</div>
 			
 			@endforeach

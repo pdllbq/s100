@@ -49,7 +49,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-	<link href="{{ asset('css/style.css?2') }}" rel="stylesheet">
+	<link href="{{ asset('css/style.css?3') }}" rel="stylesheet">
 	<link href="{{ asset('css/summernote.css') }}" rel="stylesheet">
 	
 </head>
@@ -57,7 +57,7 @@
 <?php
 if(isset(\Auth::user()->id)){
 	$notificationCount= \App\Models\Notification::where('user_id',\Auth::user()->id)->where('readed',0)->count();
-	$messageCount=\App\Models\Message::where('to_name',\Auth::user()->name)->where('readed',0)->count();
+	$messageCount=\App\Models\Message::where('owner_name',\Auth::user()->name)->where('to_name',\Auth::user()->name)->where('readed',0)->count();
 }else{
 	$notificationCount=0;
 	$messageCount=0;
@@ -79,7 +79,7 @@ if(isset(\Auth::user()->id)){
     </div>
 	
 	<div class="footer">
-		&copy;2020 &laquo;<a href="/">{{ $_SERVER['SERVER_NAME'] }}</a>&raquo; v:0.01
+		&copy;2020-2021 &laquo;<a href="/">{{ $_SERVER['SERVER_NAME'] }}</a>&raquo; v:0.03
 	</div>
 	
 </body>

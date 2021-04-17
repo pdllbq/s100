@@ -9,6 +9,11 @@
 		<div class="alert alert-danger">{{ __('message.User not found') }}</div>
 	@elseif(!$ban)
 		<div class="alert alert-success">{{ __('message.Message was sended') }}</div>
+		<script>
+			
+				Message.show('{{ route('message.show',[app()->getLocale(),$u]) }}');
+			
+		</script>
 	@else
 		<div class="alert alert-danger">{{ __('user.You are banned until :time',['time'=>$ban]) }}</div>
 	@endif

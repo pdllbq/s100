@@ -267,3 +267,67 @@ body {
 .bg-inherit{
 	background-color:inherit;
 }
+
+.chat-name-avatar img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.chat-name-avatar{
+	height:50px;
+	width:50px;
+	float:left;
+	margin-right:15px;
+}
+
+.chat-name-avatar_inner{
+	width: 100%;
+	padding-top: 100%;
+	background-color: black;
+	position: relative;
+}
+
+.chat-name{
+	cursor:pointer;
+	padding:0px;
+	margin:5px 0px 5px 0;
+	border-top: 1px solid #dadada;
+	border-bottom: 1px solid #dadada;
+}
+
+.chat-name:hover{
+	background-color:#f7f7f7;
+}
+
+.chat-name-new-messages{
+	text-align:center;
+	float:right;
+	margin-top:-35px;
+	background-color:#d0211c;
+	padding:0 5px;
+	color:#ffffff;
+	border-radius:10px;
+}
+
+.chat-message-my{
+	background-color:#227dc7;
+	color:#ffffff;
+	width:90%;
+	float:right;
+	margin:5px 0;
+	padding:10px;
+	border-radius:10px;
+}
+
+.chat-message-friend{
+	background-color:#dadada;
+	width:90%;
+	float:left;
+	margin:5px 0;
+	padding:10px;
+	border-radius:10px;
+}

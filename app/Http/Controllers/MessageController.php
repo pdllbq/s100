@@ -16,7 +16,9 @@ class MessageController extends Controller
 	
 	function index()
 	{
-		$messages=Message::where('to_name',\Auth::user()->name)->orderBy('id','DESC')->get();
+		$messages=Message::getChats(\Auth::user()->name);
+		
+		//dd($messages);
 		
 		return view('message.index', compact('messages'));
 	}
@@ -38,34 +40,34 @@ class MessageController extends Controller
 		$userExists=User::where('name',$u)->count();
 		
 		if($userExists>0 && !$ban){
-			$Message=new Message;
-
-			$Message->from_name=\Auth::user()->name;
-			$Message->to_name=$u;
-			$Message->message=$inputs['message'];
-			$Message->save();
+			Message::sendNewMessage(\Auth::user()->name,$u,$inputs['message']);
 		}
 		
-		return view('message.store', compact('userExists','ban'));
+		return view('message.store', compact('userExists','ban','u'));
 	}
 	
-	function show($locale,$id)
+	function show($locale,$userName)
 	{
-		$message=Message::where('id',$id)->where('to_name',\Auth::user()->name)->first();
+		$messages=Message::where('owner_name',\Auth::user()->name)
+				->where(function($query) use ($userName){
+					$query->where('to_name',$userName)->orWhere('from_name',$userName);
+				})
+				->get();
 		
-		Message::where('id',$id)->where('to_name',\Auth::user()->name)->update(['readed'=>1]);
+		Message::where('owner_name',\Auth::user()->name)->where('to_name',\Auth::user()->name)->update(['readed'=>1]);
 		
-		return view('message.show',compact('message'));
+		return view('message.show',compact('messages','userName'));
 	}
 	
-	function delete($locale,$id)
+	function delete($locale,$name)
 	{
 		$Message=new Message;
 		
-		if($id=='*'){
-			$Message->where('to_name',\Auth::user()->name)->delete();
+		if($name=='*'){
+			$Message->where('owner_name',\Auth::user()->name)->delete();
 		}else{
-			$Message->where('id',$id)->where('to_name',\Auth::user()->name)->delete();
+			$Message->where('to_name',$name)->where('owner_name',\Auth::user()->name)->delete();
+			$Message->where('to_name',\Auth::user()->name)->where('from_name',$name)->where('owner_name',\Auth::user()->name)->delete();
 		}
 	}
 }
