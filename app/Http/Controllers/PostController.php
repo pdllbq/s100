@@ -656,4 +656,11 @@ class PostController extends BaseController
 		
 		return redirect()->route('post.moder',[\app()->getLocale()]);
 	}
+	
+	function leaveInSandbox($locale,$slug)
+	{
+		Post::where('slug',$slug)->update(['in_sandbox'=>1,'is_moderated'=>1,'moder_name'=>\Auth::user()->name]);
+		
+		return redirect()->route('post.moder',[\app()->getLocale()]);
+	}
 }

@@ -38,4 +38,5 @@ return[
 	'Readed'=>'Вы прочитали',
 	'You liked'=>'Вам понравилось',
 	'Earned €:count'=>'Заработано €:count',
+	'Leave in sandbox'=>'Оставить в песочнице'
 ];

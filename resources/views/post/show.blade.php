@@ -67,6 +67,9 @@ $metaTags=mb_strtolower(preg_replace('/[A-ZA-Я]/u', ' $0', $post->tags));
 					@else
 						| <a href="{{ route('post.toSandbox', [app()->getLocale(),$post->slug]) }}">{{ __('post.To sandbox') }}</a>
 					@endif
+					@if($post->is_moderated==0)
+						| <a href="{{ route('post.leaveInSandbox', [app()->getLocale(),$post->slug]) }}">{{ __('post.Leave in sandbox') }}</a>
+					@endif
 				@endif
 			</div>
 			

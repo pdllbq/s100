@@ -73,6 +73,9 @@ Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
   Route::get('/post/{slug}/to_sandbox','PostController@toSandbox')->name('post.toSandbox');
 });
 Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
+  Route::get('/post/{slug}/to_sandbox','PostController@leaveInSandbox')->name('post.leaveInSandbox');
+});
+Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
   Route::get('/post/{slug}/from_sandbox','PostController@fromSandbox')->name('post.fromSandbox');
 });
 Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
