@@ -27,6 +27,7 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')->hourly();
 		$schedule->command('command:earningCalc')->daily();
 		$schedule->command('command:SendEmailNotifications')->hourly();
+		$schedule->command('command:updateRating')->hourly();
 		//$schedule->command('command:earningCalc')->everyMinute();
     }
 
