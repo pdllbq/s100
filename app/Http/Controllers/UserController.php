@@ -279,6 +279,10 @@ class UserController extends Controller
 	
 	function showReferrals()
 	{
+		if(!isset(\Auth::user()->id){
+			return redirect()->route('login',[App()->getLocale()]);
+		}
+		
 		$referrals=User::where('referral',\Auth::user()->name)->get();
 		
 		$data['title']=__('user.My referrals');
