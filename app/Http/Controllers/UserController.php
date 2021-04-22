@@ -44,6 +44,10 @@ class UserController extends Controller
 	
 	function profile()
 	{
+		if(!isset(\Auth::user()->id)){
+			return redirect()->route('login',[App()->getLocale()]);
+		}
+		
 		$user=User::where('id',\Auth::user()->id)->first();
 		
 		$userGroups=Group::where('user_id',$user->id)->get();
@@ -279,9 +283,6 @@ class UserController extends Controller
 	
 	function showReferrals()
 	{
-		if(!isset(\Auth::user()->id)){
-			return redirect()->route('login',[App()->getLocale()]);
-		}
 		
 		$referrals=User::where('referral',\Auth::user()->name)->get();
 		
