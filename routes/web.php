@@ -153,6 +153,10 @@ Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
 });
 
 Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
+  Route::get('/user/show_referrals','UserController@showReferrals')->name('user.showReferrals');
+});
+
+Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
   Route::get('/user/withdrawl_moderation','UserController@withdrawlModeration')->name('user.withdrawlModeration');
 });
 

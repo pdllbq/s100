@@ -48,7 +48,9 @@ class UserController extends Controller
 		
 		$userGroups=Group::where('user_id',$user->id)->get();
 		
-		return view('user.profile',['user'=>$user,'userGroups'=>$userGroups]);
+		$referralCount=User::where('referral',\Auth::user()->name)->count();
+		
+		return view('user.profile',['user'=>$user,'userGroups'=>$userGroups,'referralCount'=>$referralCount]);
 	}
 	
 	function profileSave(\App\Http\Requests\StoreUserRequest $request)
@@ -273,5 +275,18 @@ class UserController extends Controller
 		Withdrawl::where('id',$data['id'])->delete();
 		
 		return redirect()->back();
+	}
+	
+	function showReferrals()
+	{
+		$referrals=User::where('referral',\Auth::user()->name)->get();
+		
+		$data['title']=__('user.My referrals');
+		
+		$data['body']=view('user.include._showReferrals',compact('referrals'))->render();
+		
+		$data['footer']=view('user.include._referralsModalFooter')->render();
+		
+		return json_encode($data);
 	}
 }

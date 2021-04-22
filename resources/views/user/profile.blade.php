@@ -11,6 +11,10 @@
 			<br>
 			@include('user.include._userGroups',['userGroups'=>$userGroups])
 			<br>
+			@if(isset(\Auth::user()->name) && \Auth::user()->name==$user->name)
+				@include('user.include._userReferralLink',compact('referralCount'))
+				<br>
+			@endif
 		</div>
 		
 		<div class="col-12 col-lg-9">
@@ -38,6 +42,10 @@
 			@include('include.user._userInfo',['user'=>$user,'subscribed'=>0])
 			<br>
 			@include('user.include._userGroups',['userGroups'=>$userGroups])
+			@if(isset(\Auth::user()->name) && \Auth::user()->name==$user->name)
+				<br>
+				@include('user.include._userReferralLink',compact('referralCount'))
+			@endif
 		</div>
 	</div>
 </div>

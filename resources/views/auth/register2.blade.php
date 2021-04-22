@@ -81,7 +81,7 @@ $brand=explode('.',$_SERVER['SERVER_NAME']);
 									<input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
 								</div>
 							</div>
-
+							<input type="hidden" name="referral" value="{{ \Cookie::get('referral') }}">
 							<div class="form-group mb-0">
 								<div class="">
 									<button type="submit" class="btn btn-block btn-lg btn-primary">

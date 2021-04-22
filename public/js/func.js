@@ -54,3 +54,13 @@ function closeNav()
 {
 	$('#small-menu-links').css('width','0');
 }
+
+function openModal(url){
+	$.getJSON(url,function(data){
+		$('#modal-template .modal-title').html(data.title);
+		$('#modal-template .modal-body').html(data.body);
+		$('#modal-template .modal-footer').html(data.footer);
+	});
+	
+	$('#modal-template').modal('show');
+}

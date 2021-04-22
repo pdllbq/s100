@@ -38,6 +38,7 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
 			\App\Http\Middleware\RedirectToNonWwwMiddleware::class,
 			\App\Http\Middleware\RedirectToHttpsMiddleware::class,
+			\App\Http\Middleware\Referral::class,
         ],
 
         'api' => [

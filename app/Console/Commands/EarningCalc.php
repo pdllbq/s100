@@ -49,17 +49,23 @@ class EarningCalc extends Command
 		$this->info('New watches: '.$count);
 		
 		@$payForWatch=env('EARNING_SUM_FOR_A_DAY')/$count;
+		@$referralPercent=$payForWatch/100*10;
 		
 		$this->info('Pay for watch: '.$payForWatch);
+		$this->info('Referral pay: '.$referralPercent);
 		
 		foreach($data as $value){
 			$post=Post::where('slug',$value['slug'])->first();
 			if(isset($post->id)){
-				$post=$post->toArray();
 			
-				Post::where('slug',$post['slug'])->increment('earned',$payForWatch);
-
-				User::where('id',$post['user_id'])->increment('balance',$payForWatch);
+				Post::where('slug',$post->slug)->increment('earned',$payForWatch);
+				
+				User::where('id',$post->user_id)->increment('balance',$payForWatch);
+				User::where('id',$post->user_id)->increment('total_earned',$payForWatch);
+				
+				if(isset($post->user->referral)){
+					User::where('name',$post->user->referral)->increment('balance',$referralPercent);
+				}
 			}
 			
 			PostsReaded::where('id',$value['id'])->update(['payed'=>1]);
