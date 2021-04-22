@@ -279,7 +279,7 @@ class UserController extends Controller
 	
 	function showReferrals()
 	{
-		if(!isset(\Auth::user()->id){
+		if(!isset(\Auth::user()->id)){
 			return redirect()->route('login',[App()->getLocale()]);
 		}
 		
