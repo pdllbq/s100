@@ -28,6 +28,9 @@ class SetLocale
 		if($locale=='ru'){
 			app()->setLocale($locale);
 			session(['locale' => $locale]);
+		}elseif($locale=='lv'){
+			app()->setLocale($locale);
+			session(['locale' => $locale]);
 		}elseif(!$locale){
 			return redirect('/ru');
 		}else{

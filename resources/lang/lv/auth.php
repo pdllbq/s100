@@ -25,5 +25,8 @@ return [
 	'Name'=>'Vārds',
 	'E-Mail Address'=>'E-pasts',
 	'Confirm Password'=>'Apstipriniet paroli',
-	'Logout'=>'Iziet'
+	'Logout'=>'Iziet',
+	'Login with Facebook'=>'Ieiet caur Facebook',
+	'E-mail alredy exists'=>'Šis e-pasts jau tiek izmantots',
+	'Description'=>'Ikvienam ir tiesības uz vārda brīvību!'
 ];

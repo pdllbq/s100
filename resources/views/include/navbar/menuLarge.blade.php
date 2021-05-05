@@ -58,15 +58,12 @@
 				</div>
 			</li>
 		@endguest
-<!--						<li class="nav-item dropdown">
-			<a id="LanguageDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-				{{ __('user.Language') }} <span class="caret"></span>
-			</a>
-			<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-				<a class="dropdown-item" href="{{ route('user.setLang','lv') }}">Latviešu</a>
-				<a class="dropdown-item" href="{{ route('user.setLang','ru') }}">Русский</a>
-				<a class="dropdown-item" href="{{ route('user.setLang','en') }}">English</a>
-			</div>
-		</li>-->
+		
+		@if(app()->getLocale()=='lv')
+			<a href="{{ route('user.setLang','ru') }}" class="nav-link" title="По русски">По русски</a>
+		@elseif(app()->getLocale()=='ru')
+			<a href="{{ route('user.setLang','lv') }}" class="nav-link" title="Latviski">Latviski</a>
+		@endif
+		</li>
 	</ul>
 </div>

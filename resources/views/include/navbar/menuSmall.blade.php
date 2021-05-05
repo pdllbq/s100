@@ -65,9 +65,16 @@
 						 document.getElementById('logout-form').submit();">
 			{{ __('auth.Logout') }}
 		</a>
+		
+		@if(app()->getLocale()=='lv')
+			<a href="{{ route('user.setLang','ru') }}" class="dropdown-item" title="По русски">По русски</a>
+		@elseif(app()->getLocale()=='ru')
+			<a href="{{ route('user.setLang','lv') }}" class="dropdown-item" title="Latviski">Latviski</a>
+		@endif
 
 		<form id="logout-form" action="{{ route('logout', app()->getLocale()) }}" method="POST" style="display: none;">
 			@csrf
 		</form>
 	</div>
+
 @endif
