@@ -1,6 +1,6 @@
 @guest
 	<div class="d-none d-md-block">
-		<ul class="navbar-nav ml-auto">
+		<ul class="nav navbar-nav ml-auto">
 			<li class="nav-item">
 				<a class="nav-link" href="{{ route('login', app()->getLocale()) }}">{{ __('auth.Login') }}</a>
 			</li>
@@ -9,21 +9,39 @@
 					<a class="nav-link" href="{{ route('register', app()->getLocale()) }}">{{ __('auth.Register') }}</a>
 				</li>
 			@endif
+			<li class="nav-item">
+				@if(app()->getLocale()=='lv')
+					<a href="{{ route('user.setLang','ru') }}" class="nav-link" title="По русски">По русски</a>
+				@elseif(app()->getLocale()=='ru')
+					<a href="{{ route('user.setLang','lv') }}" class="nav-link" title="Latviski">Latviski</a>
+				@endif
+			</li>
 		</ul>
 	</div>
 
 	<div class="d-block d-md-none">
-		<a href="#" class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton"  data-display="absolute" aria-haspopup="true" id="navbarLoginDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			{{ __('auth.Login') }}
-		</a>
-		<div class="dropdown">
-			<div class="position-absolute dropdown-menu dropdown-menu-right text-center" aria-labelledby="navbarLoginDropdown">
-				<a class="dropdown-item" href="{{ route('login', app()->getLocale()) }}">{{ __('auth.Login') }}</a>
-				@if (Route::has('register'))
-					<a class="dropdown-item" href="{{ route('register', app()->getLocale()) }}">{{ __('auth.Register') }}</a>
+		<ul class="nav ml-auto">
+			<li class="nav-item dropdown">
+				<a href="#" class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton"  data-display="absolute" aria-haspopup="true" id="navbarLoginDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					{{ __('auth.Login') }}
+				</a>
+				<div class="dropdown">
+					<div class="position-absolute dropdown-menu dropdown-menu-right text-center" aria-labelledby="navbarLoginDropdown">
+						<a class="dropdown-item" href="{{ route('login', app()->getLocale()) }}">{{ __('auth.Login') }}</a>
+						@if (Route::has('register'))
+							<a class="dropdown-item" href="{{ route('register', app()->getLocale()) }}">{{ __('auth.Register') }}</a>
+						@endif
+					</div>
+				</div>
+			</li>
+			<li class="nav-item ml-3">
+				@if(app()->getLocale()=='lv')
+					<a href="{{ route('user.setLang','ru') }}" class="nav-link" title="По русски">Ru</a>
+				@elseif(app()->getLocale()=='ru')
+					<a href="{{ route('user.setLang','lv') }}" class="nav-link" title="Latviski">Lv</a>
 				@endif
-			</div>
-		</div>
+			</li>
+		</ul>
 	</div>
 @else
 

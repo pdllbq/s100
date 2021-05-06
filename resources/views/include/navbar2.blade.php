@@ -15,7 +15,7 @@
 	<a href="{{ route('post.create',[app()->getLocale()]) }}" class="d-block d-sm-none btn btn-add-post nav-link mr-auto" title="{{ __('post.Add post') }}"><i class="fa fa-edit"></i></a>
 	<a href="{{ route('post.create',[app()->getLocale()]) }}" class="d-none d-sm-block btn btn-add-post nav-link mr-auto"><i class="fa fa-edit"></i> {{ __('post.Add post') }}</a>
 	
-	<div class="navbar-nav">
+	<div class="nav navbar-nav">
 		
 		<div class="d-md-none d-lg-block" id="navbarSupportedContent">
 			@include('include.navbar.menuLarge')
