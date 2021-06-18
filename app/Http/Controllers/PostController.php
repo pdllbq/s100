@@ -327,6 +327,7 @@ class PostController extends BaseController
 		
 		$Post=new Post;
 		$Post->user_id=$userId;
+		$Post->user_name=\Auth::user()->name;
 		$Post->title=$inputs['title'];
 		$Post->group_slug=$inputs['group'];
 		$Post->text=$inputs['text'];
@@ -356,7 +357,13 @@ class PostController extends BaseController
 			$EmailNotification->newNotification(env('ADMIN_EMAIL'),__('emailNotifications.New post in sandbox subject'),__('emailNotifications.New post in sandbox message :url',['url'=>'https://s100.lv/ru/moder']));
 		}
 		
-		return redirect()->route('post.show',[app()->getLocale(),$Post->slug]);
+		if($Post->group_slug==null){
+			$slugOrName='@'.\Auth::user()->name;
+		}else{
+			$slugOrName=$Post->group_slug;
+		}
+		
+		return redirect()->route('post.show',[app()->getLocale(),$slugOrName,$Post->slug]);
     }
 
     /**
@@ -365,9 +372,17 @@ class PostController extends BaseController
      * @param  str  $slug
      * @return \Illuminate\Http\Response
      */
-    public function show($lang,$slug)
+    public function show($lang,$groupSlugOrUserName,$slug)
     {
-		$post=Post::where('slug',$slug)->first();
+		if(mb_substr($groupSlugOrUserName,0,1)=='@'){
+			$parameterValue=mb_substr($groupSlugOrUserName,1);
+			$parameterName='user_name';
+		}else{
+			$parameterValue=$groupSlugOrUserName;
+			$parameterName='group_slug';
+		}
+		
+		$post=Post::where('slug',$slug)->where($parameterName,$parameterValue)->first();
 		
 		$comments=Comment::where('post_slug',$slug)->where('answer_id',0)->get();
 		
@@ -391,6 +406,23 @@ class PostController extends BaseController
 		
         return view('post.show',['post'=>$post,'comments'=>$comments,'ban'=>$ban]);
     }
+	
+	function oldShow($lang,$slug)
+	{
+		$post=Post::where('slug',$slug)->first();
+		
+		if(!isset($post->id)){
+			return abort(404);
+		}
+		
+		if($post->group_slug==null){
+			$slugOrName='@'.$post->user_name;
+		}else{
+			$slugOrName=$post->group_slug;
+		}
+		
+		return redirect()->route('post.show',[app()->getLocale(),$slugOrName,$slug]);
+	}
 
     /**
      * Show the form for editing the specified resource.
@@ -472,7 +504,13 @@ class PostController extends BaseController
 		}
 		$post->save();
 		
-		return redirect()->route('post.show',[app()->getLocale(),$post->slug]);
+		if($post->group_slug==null){
+			$slugOrName='@'.\Auth::user()->name;
+		}else{
+			$slugOrName=$post->group_slug;
+		}
+		
+		return redirect()->route('post.show',[app()->getLocale(),$slugOrName,$post->slug]);
     }
 
     /**

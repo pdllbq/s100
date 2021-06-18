@@ -29,9 +29,12 @@ Route::get('/home', function () {
 });
 
 Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
-	Route::get('login/facebook', 'Auth\LoginController@redirectToFacebook');
+	Route::get('/login/facebook', 'Auth\LoginController@redirectToFacebook');
 });
-Route::get('login/facebook/callback', 'Auth\LoginController@handleFacebookCallback');
+Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
+	Route::get('/login/facebook/callback', 'Auth\LoginController@redirectToFacebook');
+});
+Route::get('/login/facebook/callback', 'Auth\LoginController@handleFacebookCallback');
 
 Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
   Route::resource('message','MessageController')->except('create');
@@ -97,7 +100,11 @@ Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
 });
 
 Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
-  Route::get('{slug}','PostController@show')->name('post.show');
+  Route::get('{slug}','PostController@oldShow')->name('post.oldShow');
+});
+
+Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
+  Route::get('/r/{groupSlugOrUserName}/{slug}','PostController@show')->name('post.show');
 });
 
 Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
