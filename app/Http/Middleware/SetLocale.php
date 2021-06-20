@@ -21,7 +21,11 @@ class SetLocale
     {
 		$locale=$request->segment(1);
 		
-		if(isset(\Auth::user()->lang) && $locale!=\Auth::user()->lang){
+		if($locale && $locale!='ru' && $locale!='lv'){
+			return abort('404');
+		}
+		
+		if(isset(\Auth::user()->lang) && !$locale){
 			return redirect('/'.\Auth::user()->lang);
 		}
 		
