@@ -34,7 +34,7 @@ class SetLocale
 		}elseif(!$locale){
 			return redirect('/ru');
 		}else{
-			return redirect('/ru');
+			return abort('404');
 		}
 		//dd(app()->getLocale());
         return $next($request);
