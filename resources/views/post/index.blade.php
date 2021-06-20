@@ -83,7 +83,7 @@
 		<br>
 		
 		<div class="col-12 col-lg-9">
-
+			
 		@include('include.post._showPosts',['posts'=>$posts])
 		<div class="d-block d-lg-none">{{ $posts->onEachSide(0)->links() }}</div>
 		<div class="d-none d-lg-block">{{ $posts->onEachSide(3)->links() }}</div>
