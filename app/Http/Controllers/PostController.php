@@ -44,7 +44,7 @@ class PostController extends BaseController
 		$topUsers=User::where('id','>',0)->orderBy('rating','DESC')->limit(10)->get();
 		$topGroups=Group::where('id','>',0)->orderBy('subscribers_count','DESC')->limit(10)->get();
 		
-		$posts=$Post::where('lang',app()->getLocale())->where('draft','!=',1)->where('in_sandbox','!=',1)->orderBy('24h_rating','desc')->orderBy('id','desc')->with(['user','voted','group'])->paginate(100);
+		$posts=$Post::where('lang',app()->getLocale())->where('draft','!=',1)->where('in_sandbox','!=',1)->orderBy('24h_rating','desc')->orderBy('id','desc')->with(['user','voted','group'])->paginate(20);
 		//$posts=$Post->voted($posts,$userId);
 		
 		$description=__('description.Best');
@@ -81,7 +81,7 @@ class PostController extends BaseController
 		$topUsers=User::where('id','>',0)->orderBy('rating','DESC')->limit(10)->get();
 		$topGroups=Group::where('id','>',0)->orderBy('subscribers_count','DESC')->limit(10)->get();
 		
-		$posts=$posts->orderBy('id','desc')->with(['user','voted'])->paginate(100);
+		$posts=$posts->orderBy('id','desc')->with(['user','voted'])->paginate(20);
 		//$posts=$Post->voted($posts,$userId);
 		
         return view('post.index',['posts'=>$posts,'topUsers'=>$topUsers,'topGroups'=>$topGroups,'title'=>$title]);
@@ -102,7 +102,7 @@ class PostController extends BaseController
 		$topUsers=User::where('id','>',0)->orderBy('rating','DESC')->limit(10)->get();
 		$topGroups=Group::where('id','>',0)->orderBy('subscribers_count','DESC')->limit(10)->get();
 		
-		$posts=$Post::where('lang',app()->getLocale())->where('draft','!=',1)->where('in_sandbox','!=',1)->orderBy('id','desc')->with(['user','voted'])->paginate(100);
+		$posts=$Post::where('lang',app()->getLocale())->where('draft','!=',1)->where('in_sandbox','!=',1)->orderBy('id','desc')->with(['user','voted'])->paginate(20);
 		//$posts=$Post->voted($posts,$userId);
 		
 		$description=__('description.New');
@@ -123,7 +123,7 @@ class PostController extends BaseController
 		$topUsers=User::where('id','>',0)->orderBy('rating','DESC')->limit(10)->get();
 		$topGroups=Group::where('id','>',0)->orderBy('subscribers_count','DESC')->limit(10)->get();
 		
-		$posts=Post::where('lang',app()->getLocale())->where('draft','!=',1)->where('in_sandbox',1)->orderBy('id','desc')->with(['user','voted'])->paginate(100);
+		$posts=Post::where('lang',app()->getLocale())->where('draft','!=',1)->where('in_sandbox',1)->orderBy('id','desc')->with(['user','voted'])->paginate(20);
 		
 		$description=__('description.Sandbox');
 		
@@ -141,7 +141,7 @@ class PostController extends BaseController
 		$topUsers=User::where('id','>',0)->orderBy('rating','DESC')->limit(10)->get();
 		$topGroups=Group::where('id','>',0)->orderBy('subscribers_count','DESC')->limit(10)->get();
 		
-		$posts=Post::where('is_moderated',0)->orderBy('id','asc')->with(['user','voted'])->paginate(100);
+		$posts=Post::where('is_moderated',0)->orderBy('id','asc')->with(['user','voted'])->paginate(20);
 		
 		return view('post.index',['posts'=>$posts,'topUsers'=>$topUsers,'topGroups'=>$topGroups,'title'=>$title]);
 	}
@@ -165,7 +165,7 @@ class PostController extends BaseController
 		
 		$slugs=PostsReaded::select('slug')->where('user_name',$userName)->orderBy('id','desc')->get()->toArray();
 		
-		$posts=$Post::whereIn('slug',$slugs)->with(['user','voted'])->paginate(100);
+		$posts=$Post::whereIn('slug',$slugs)->with(['user','voted'])->paginate(20);
 		
         return view('post.index',['posts'=>$posts,'topUsers'=>$topUsers,'topGroups'=>$topGroups,'title'=>$title]);
 	}
@@ -187,7 +187,7 @@ class PostController extends BaseController
 		
 		$slugs=Rating::select('post_slug')->where('user_id',$userId)->where('type','+')->orderBy('id','desc')->get()->toArray();
 		
-		$posts=$Post::whereIn('slug',$slugs)->with(['user','voted'])->paginate(100);
+		$posts=$Post::whereIn('slug',$slugs)->with(['user','voted'])->paginate(20);
 		
         return view('post.index',['posts'=>$posts,'topUsers'=>$topUsers,'topGroups'=>$topGroups,'title'=>$title]);
 	}
@@ -207,7 +207,7 @@ class PostController extends BaseController
 		$topUsers=User::where('id','>',0)->orderBy('rating','DESC')->limit(10)->get();
 		$topGroups=Group::where('id','>',0)->orderBy('subscribers_count','DESC')->limit(10)->get();
 		
-		$posts=$Post::where('user_id',$userId)->where('draft',1)->orderBy('id','desc')->with(['user','voted'])->paginate(100);
+		$posts=$Post::where('user_id',$userId)->where('draft',1)->orderBy('id','desc')->with(['user','voted'])->paginate(20);
 		
         return view('post.index',['posts'=>$posts,'topUsers'=>$topUsers,'topGroups'=>$topGroups,'title'=>$title]);
 	}
@@ -222,7 +222,7 @@ class PostController extends BaseController
 		
 		$title='#'.$tag;
 		
-		$posts=Post::where('tags','like','%#'.$tag.',%')->orWhere('tags','like','#'.$tag.',%')->orWhere('tags','like','#'.$tag.',')->where('draft','!=',1)->with(['user','voted'])->orderBy('24h_rating','desc')->paginate(100);
+		$posts=Post::where('tags','like','%#'.$tag.',%')->orWhere('tags','like','#'.$tag.',%')->orWhere('tags','like','#'.$tag.',')->where('draft','!=',1)->with(['user','voted'])->orderBy('24h_rating','desc')->paginate(20);
 		
 		if(isset(\Auth::user()->id)){
 			$subscribed=Subscribe::where('master_id',\Auth::user()->id)->where('tag_name','#'.$tag)->count();
