@@ -64,3 +64,12 @@ function openModal(url){
 	
 	$('#modal-template').modal('show');
 }
+
+function earnInfo(lang)
+{
+	if(lang=='ru'){
+		window.location.href='https://s100.lv/ru/r/s100lv/zarabotok-na-napisanie-tekstov-na-saite-s100lv';
+	}else{
+		window.location.href='https://s100.lv/lv/r/s100lv-info/veidojat-rakstu-un-sanemiet-par-to-naudu';
+	}
+}

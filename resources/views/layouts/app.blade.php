@@ -31,7 +31,7 @@
 	<script src="{{ asset('js/jquery.js') }}" ></script>
 	<script src="{{ asset('js/popper.js') }}" ></script>
 	<script src="{{ asset('js/app.js') }}" ></script>
-	<script src="{{ asset('js/func.js?4') }}" ></script>
+	<script src="{{ asset('js/func.js?5') }}" ></script>
 	<script src="{{ asset('js/rating.js') }}" ></script>
 	<script src="{{ asset('js/comments.js') }}" ></script>
 	<script src="{{ asset('js/subscribe.js') }}" ></script>
@@ -79,7 +79,7 @@ if(isset(\Auth::user()->id)){
     </div>
 	
 	<div class="footer">
-		&copy;2020-2021 &laquo;<a href="/">{{ $_SERVER['SERVER_NAME'] }}</a>&raquo; v:0.4.1
+		&copy;2020-2021 &laquo;<a href="/">{{ $_SERVER['SERVER_NAME'] }}</a>&raquo; v:0.4.2
 	</div>
 	
 </body>
