@@ -69,6 +69,16 @@ if(isset(\Auth::user()->id)){
 	<div id="fb-root"></div>
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v10.0&appId=660737471254649&autoLogAppEvents=1" nonce="CLPua9bo"></script>
 	
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-83Q09504VE"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-83Q09504VE');
+	</script>
+	
     <div id="app">
         @include('include.navbar2')
 
