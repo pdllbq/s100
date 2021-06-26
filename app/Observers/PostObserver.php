@@ -370,6 +370,7 @@ class PostObserver
 		$post->text=preg_replace('/<h5>(.*?)<\/h5>/im','[h5]$1[/h5]', $post->text);
 		$post->text=preg_replace('/<h6>(.*?)<\/h6>/im','[h6]$1[/h6]', $post->text);
 		$post->text=preg_replace('/<u>(.*?)<\/u>/im','[u]$1[/u]', $post->text);
+		$post->text=preg_replace('/<strike>(.*?)<\/strike>/im','[strike]$1[/strike]', $post->text);
 		$post->text=preg_replace('/<span style="background-color: rgb\((.*?)\);">(.*?)<\/span>/im','[backgroundColor=rgb($1)]$2[/backgroundColor]', $post->text);
 		$post->text=preg_replace('/<font color="#(.*?)">(.*?)<\/font>/im','[fontColor=$1]$2[/fontColor]', $post->text);
 		$post->text=preg_replace('/<ul>(.*?)<\/ul>/im','[ul]$1[/ul]', $post->text);
@@ -429,6 +430,7 @@ class PostObserver
 		$html=preg_replace('~\[h5\](.*?)\[/h5\]~im','<h5>$1</h5>', $html);
 		$html=preg_replace('~\[h6\](.*?)\[/h6\]~im','<h6>$1</h6>', $html);
 		$html=preg_replace('~\[u\](.*?)\[/u\]~im','<u>$1</u>', $html);
+		$html=preg_replace('~\[strike\](.*?)\[/strike\]~im','<strike>$1</strike>', $html);
 		$html=preg_replace('~\[backgroundColor=(.*?)\](.*?)\[/backgroundColor\]~im','<span style="background-color: $1;">$2</span>', $html);
 		$html=preg_replace('~\[fontColor=(.*?)\](.*?)\[/fontColor\]~im','<font color="#$1">$2</font>', $html);
 		$html=preg_replace('~\[ul\](.*?)\[/ul\]~im','<ul>$1</ul>', $html);

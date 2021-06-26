@@ -60,8 +60,12 @@ $metaTags=mb_strtolower(preg_replace('/[A-ZA-Я]/u', ' $0', $post->tags));
 
 				@if($post->user_id==Auth::id())
 				| <a href="{{ route('post.edit',[app()->getLocale(),$post->slug]) }}">{{ __('post.Edit') }}</a> | <a href="{{ route('post.destroy', [app()->getLocale(),$post->slug]) }}" onclick="return confirm('{{ __('post.Destroy') }}?')">{{ __('post.Destroy') }}</a>
-				@elseif(isset(\Auth::user()->is_moder) && \Auth::user()->is_moder==1)
-					| <a href="{{ route('post.destroy', [app()->getLocale(),$post->slug]) }}" onclick="return confirm('{{ __('post.Destroy') }}?')">{{ __('post.Destroy') }}</a>
+				@endif
+				
+				@if(isset(\Auth::user()->is_moder) && \Auth::user()->is_moder==1)
+					@if($post->user_id!=Auth::id())
+						| <a href="{{ route('post.destroy', [app()->getLocale(),$post->slug]) }}" onclick="return confirm('{{ __('post.Destroy') }}?')">{{ __('post.Destroy') }}</a>
+					@endif	
 					@if($post->in_sandbox==1)
 						| <a href="{{ route('post.fromSandbox', [app()->getLocale(),$post->slug]) }}">{{ __('post.From sandbox') }}</a>
 					@else
