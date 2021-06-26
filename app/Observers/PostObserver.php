@@ -464,6 +464,8 @@ class PostObserver
 	function bugFix($html)
 	{
 		$html=str_replace('&amp;nbsp;','&nbsp;',$html);
+		$html=str_replace('&amp;gt;','&gt;',$html);
+		$html=str_replace('&amp;lt;','&lt;',$html);
 		return $html;
 	}
 }
