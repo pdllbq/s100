@@ -12,7 +12,7 @@ class Slug extends Model
 		$salt='';
 		
 		$slug=\Str::slug($text);
-		while(Post::where('slug',$slug.$salt)->exists()){
+		while(Post::where('slug',$slug.$salt)->exists() || $slug==''){
 			if($i==0){
 				$salt='-'.Carbon::now()->format('d-m-Y');
 			}elseif($i==1){
