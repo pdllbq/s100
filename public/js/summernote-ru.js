@@ -152,6 +152,9 @@
       },
 	  telegram: {
 		  insert: 'Ссылка на сообщение Telegram'
+	  },
+	  tiktok: {
+		  insert: 'Ссылка на видео TikTok'
 	  }
     },
   });

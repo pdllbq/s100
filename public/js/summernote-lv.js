@@ -150,6 +150,14 @@
         specialChar: 'SPECIAL CHARACTERS',
         select: 'Select Special characters',
       },
+      
+	telegram: {
+		  insert: 'Links uz Telegram video'
+	  },
+	  tiktok: {
+		  insert: 'Links uz TikTok video'
+	  }
+      
     },
   });
 })(jQuery);

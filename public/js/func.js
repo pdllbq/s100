@@ -1,3 +1,8 @@
+function rand(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
 function showImage(url)
 {
 	var win = window.open(url, '_blank');
@@ -72,4 +77,14 @@ function earnInfo(lang)
 	}else{
 		window.location.href='https://s100.lv/lv/r/s100lv-info/veidojat-rakstu-un-sanemiet-par-to-naudu';
 	}
+}
+
+function embedTiktok(videoUrl,videoId,spanIdSalt)
+{
+    var text=$('#embedTiktok_'+videoId+'_'+spanIdSalt).text();
+    if(text=='Loading TikTok...'){
+        var html='<div class="tiktokStart"></div><blockquote class="tiktok-embed" cite="'+videoUrl+'" data-video-id="'+videoId+'" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="" href="https://www.tiktok.com/@charlidamelio"></a> <a target="_blank" title="" href=""></a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script><div class="tiktokEnd"></div>';
+
+	$('#embedTiktok_'+videoId+'_'+spanIdSalt).html(html);
+    }
 }

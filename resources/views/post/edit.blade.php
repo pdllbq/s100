@@ -88,12 +88,13 @@
 			toolbar: [
 				['style', ['style']],
 				['font', ['bold','underline','strikethrough', 'clear']],
-				['insert', ['link', 'picture', 'video','telegramm']],
+				['insert', ['link', 'picture', 'video','telegramm','tiktok']],
 				['view', ['fullscreen', 'codeview']],
 			],
 					
 			buttons: {
-				telegramm: telegrammButton
+				telegramm: telegrammButton,
+				tiktok: tiktokButton
 			},
 			
 			callbacks: {

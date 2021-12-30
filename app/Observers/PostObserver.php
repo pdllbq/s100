@@ -4,6 +4,7 @@ namespace App\Observers;
 
 use App\Models\Post;
 use App\Models\Comment;
+use App\Models\PostImages;
 use Illuminate\Support\Facades\Storage;
 use Carbon\Carbon;
 use App\User;
@@ -289,6 +290,7 @@ class PostObserver
 		
 		$post->files='';
 		foreach($savedImages as $img){
+			PostImages::add($post->slug,$img);
 			$post->files.=$img.',';
 		}
 		
@@ -351,6 +353,7 @@ class PostObserver
 	
 	protected function htmlTagsToBb(Post $post)
 	{
+		$post->text=$this->tiktokHtmlToBb($post->text);
 		//<script async="" src="https://telegram.org/js/telegram-widget.js" data-telegram-post="s100lv/2" data-width="100%"></script>
 		$post->text=preg_replace('~<script async="" src="https://telegram.org/js/telegram-widget.js" data-telegram-post="(.*?)" data-width="100%"></script>~im','[telegram]$1[/telegram]', $post->text);
 		//dd($post->text);
@@ -385,6 +388,7 @@ class PostObserver
 		$post->text=preg_replace('/<a href="[^"]+">#(.*?)<\/a>/','[hashTag]$1[/hashTag]', $post->text);
 		$post->text=preg_replace('/<div class="video-responsive">(.*?)<\/div>/im','$1', $post->text);
 		$post->text=preg_replace('/<iframe src="\/\/www.youtube.com\/embed\/(.*?)"(.*?)<\/iframe>/im','[youtube]$1[/youtube]', $post->text);
+
 	}
 	
 	function p($text)
@@ -444,6 +448,7 @@ class PostObserver
 		$html=preg_replace('~\[link=(.*?)\](.*?)\[/link\]~im','<a href="$1" target="_blank">$2</a>', $html);
 		$html=preg_replace('~\[youtube\](.*?)\[/youtube\]~im','<div class="video-responsive"><iframe src="//www.youtube.com/embed/$1" class="note-video-clip" width="640" height="360" frameborder="0"></iframe></div>', $html);
 		$html=preg_replace('~\[hashTag\](.*?)\[/hashTag\]~','<a href="/tag/$1">#$1</a>', $html);
+		$html=$this->tiktokBbToHtml($html);
 		
 		return $html;	
 	}
@@ -467,5 +472,72 @@ class PostObserver
 		$html=str_replace('&amp;gt;','&gt;',$html);
 		$html=str_replace('&amp;lt;','&lt;',$html);
 		return $html;
+	}
+
+	function tiktokHtmlToBb($str)
+	{
+	    //Удаление кола тиктока
+	    $patern='~<div class="tiktokStart"></div>(.*?)<div class="tiktokEnd"></div>~';
+	    $cut=preg_match_all($patern,$str,$cutArr);
+
+	    foreach($cutArr[1] as $cutPatern){
+		$str=str_replace($cutPatern,'',$str);
+	    }
+
+	    $str=str_replace('<div class="tiktokStart"></div><div class="tiktokEnd"></div>','',$str);
+	    //
+	    
+	    //Создание BB-кода
+	    //$patern='<script>embedTiktok(\'https://www.tiktok.com/@kikakiim/video/7028579657507294465?sender_device=pc&sender_web_id=6890825948154283526&is_from_webapp=v1&is_copy_url=0\',\'7028579657507294465\',7415946);</script>';
+	    $patern='~<script>embedTiktok\(\'(.*?)\',\'(.*?)\',(.*?)\);</script>~';
+	    preg_match_all($patern,$str,$replaceArr);
+
+	    //dd($replaceArr);
+
+	    $count=count($replaceArr[0]);
+
+	    for($i=0; $i<$count; $i++){
+		$replaceArr[1][$i]=str_replace('(','',$replaceArr[1][$i]);
+		$replaceArr[1][$i]=str_replace(')','',$replaceArr[1][$i]);
+		$replaceArr[1][$i]=str_replace('\'','',$replaceArr[1][$i]);
+		$replaceArr[1][$i]=str_replace('"','',$replaceArr[1][$i]);
+		$replaceArr[1][$i]=str_replace(';','',$replaceArr[1][$i]);
+		$replaceArr[1][$i]=str_replace('<','',$replaceArr[1][$i]);
+		$replaceArr[1][$i]=str_replace('>','',$replaceArr[1][$i]);
+		$replaceArr[1][$i]=str_replace('}','',$replaceArr[1][$i]);
+		$replaceArr[1][$i]=str_replace('{','',$replaceArr[1][$i]);
+
+		$replaceArr[2][$i]=abs($replaceArr[2][$i]);
+		$replaceArr[3][$i]=abs($replaceArr[3][$i]);
+
+		$str=str_replace($replaceArr[0][$i],'[tiktok]'.$replaceArr[1][$i].'|'.$replaceArr[2][$i].'|'.$replaceArr[3][$i].'[/tiktok]',$str);
+	    }
+	    //
+
+	    //Удалить span для встраивания тикток
+	    $patern='~<span id="embedTiktok_(.*?)_(.*?)">Loading TikTok...</span>~';
+	    $str=preg_replace($patern,'',$str);
+
+	    $patern='~<span id="embedTiktok_(.*?)_(.*?)"></span>~';
+	    $str=preg_replace($patern,'',$str);
+	    return $str;
+	}
+
+	function tiktokBbToHtml($str)
+	{
+	    $patern='~\[tiktok\](.*?)\|(.*?)\|(.*?)\[/tiktok\]~';
+
+	    preg_match_all($patern,$str,$replaceArr2);
+
+	    $count=count($replaceArr2[0]);
+
+	    for($i=0; $i<$count; $i++)
+	    {
+
+
+		$str= str_replace($replaceArr2[0][$i], '<span id="embedTiktok_'.$replaceArr2[2][$i].'_'.$replaceArr2[3][$i].'">Loading TikTok...</span> <script>embedTiktok(\''.$replaceArr2[1][$i].'\',\''.$replaceArr2[2][$i].'\','.$replaceArr2[3][$i].');</script>', $str);
+	    }
+
+	    return $str;
 	}
 }
