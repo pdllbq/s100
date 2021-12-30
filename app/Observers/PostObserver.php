@@ -290,7 +290,7 @@ class PostObserver
 		
 		$post->files='';
 		foreach($savedImages as $img){
-			PostImages::add($post->slug,$img);
+			//PostImages::add($post->slug,$img);
 			$post->files.=$img.',';
 		}
 		
