@@ -510,6 +510,8 @@ class PostObserver
 		$replaceArr[2][$i]=abs($replaceArr[2][$i]);
 		$replaceArr[3][$i]=abs($replaceArr[3][$i]);
 
+		$replaceArr[1][$i]=str_replace('&amp;','&',$replaceArr[1][$i]);
+
 		$str=str_replace($replaceArr[0][$i],'[tiktok]'.$replaceArr[1][$i].'|'.$replaceArr[2][$i].'|'.$replaceArr[3][$i].'[/tiktok]',$str);
 	    }
 	    //
@@ -534,6 +536,7 @@ class PostObserver
 	    for($i=0; $i<$count; $i++)
 	    {
 
+		$replaceArr2[1][$i]=str_replace('&amp;','&',$replaceArr2[1][$i]);
 
 		$str= str_replace($replaceArr2[0][$i], '<span id="embedTiktok_'.$replaceArr2[2][$i].'_'.$replaceArr2[3][$i].'">Loading TikTok...</span> <script>embedTiktok(\''.$replaceArr2[1][$i].'\',\''.$replaceArr2[2][$i].'\','.$replaceArr2[3][$i].');</script>', $str);
 	    }
