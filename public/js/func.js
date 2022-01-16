@@ -85,6 +85,8 @@ function embedTiktok(videoUrl,videoId,spanIdSalt)
     if(text=='Loading TikTok...'){
         var html='<div class="tiktokStart"></div><blockquote class="tiktok-embed" cite="'+videoUrl+'" data-video-id="'+videoId+'" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="" href="https://www.tiktok.com/@charlidamelio"></a> <a target="_blank" title="" href=""></a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script><div class="tiktokEnd"></div>';
 
+	console.log('embed tiktok: '+videoId+' '+spanIdSalt);
+
 	$('#embedTiktok_'+videoId+'_'+spanIdSalt).html(html);
     }
 }

@@ -355,7 +355,8 @@ class PostObserver
 	{
 		$post->text=$this->tiktokHtmlToBb($post->text);
 		//<script async="" src="https://telegram.org/js/telegram-widget.js" data-telegram-post="s100lv/2" data-width="100%"></script>
-		$post->text=preg_replace('~<script async="" src="https://telegram.org/js/telegram-widget.js" data-telegram-post="(.*?)" data-width="100%"></script>~im','[telegram]$1[/telegram]', $post->text);
+		//$post->text=preg_replace('~<script async="" src="https://telegram.org/js/telegram-widget.js" data-telegram-post="(.*?)" data-width="100%"></script>~im','[telegram]$1[/telegram]', $post->text);
+		$post->text=$this->telegramHtmlToBb($post->text);
 		//dd($post->text);
 		$post->text=preg_replace('/<a href="(.*?)"(.*?)><\/a>/im','', $post->text);
 		//$post->text=preg_replace('/<img style="(.*?)" src="(.*?)">/im','[img style=$1]$2[/img]', $post->text);
@@ -421,7 +422,9 @@ class PostObserver
 		//<script async="" src="https://telegram.org/js/telegram-widget.js" data-telegram-post="s100lv/2" data-width="100%"></script>
 		//$html=preg_replace('~\[img style=(.*?)\](.*?)\[/img\]~','<img style="$1" src="$2">', $html);
 		$html=preg_replace('~\[img style=(.*?)\](.*?)\[/img\]~','<img style="$1" src="$2" onclick="showImage(\'$2\')">', $html);
-		$html=preg_replace('~\[telegram\](.*?)\[/telegram\]~','<script async="" src="https://telegram.org/js/telegram-widget.js" data-telegram-post="$1" data-width="100%"></script>', $html);
+		//$html=preg_replace('~\[telegram\](.*?)\[/telegram\]~','<script async="" src="https://telegram.org/js/telegram-widget.js" data-telegram-post="$1" data-width="100%"></script>', $html);
+		$html=$this->telegramBbToHtml($html);
+		$html=$this->tiktokBbToHtml($html);
 		$html=$this->pbb($html);
 		$html=preg_replace('~\[p align=(.*?)\](.*?)\[/p\]~','<p align="$1">$2</p>', $html);
 		$html= str_replace('[br]','<br>', $html);
@@ -476,26 +479,31 @@ class PostObserver
 
 	function tiktokHtmlToBb($str)
 	{
-	    //Удаление кола тиктока
+	    //dd($str);
+	    //Удаление кода тиктока
 	    $patern='~<div class="tiktokStart"></div>(.*?)<div class="tiktokEnd"></div>~';
 	    $cut=preg_match_all($patern,$str,$cutArr);
 
-	    foreach($cutArr[1] as $cutPatern){
+	    //dd($cutArr);
+	    foreach($cutArr[0] as $cutPatern){
 		$str=str_replace($cutPatern,'',$str);
 	    }
 
 	    $str=str_replace('<div class="tiktokStart"></div><div class="tiktokEnd"></div>','',$str);
 	    //
+
+	    //Обработка уже созданых тикток
+	    //$patern='~<span id="embedTiktok_7047019283938872577_9146777">Loading TikTok...</span> ~';
 	    
 	    //Создание BB-кода
 	    //$patern='<script>embedTiktok(\'https://www.tiktok.com/@kikakiim/video/7028579657507294465?sender_device=pc&sender_web_id=6890825948154283526&is_from_webapp=v1&is_copy_url=0\',\'7028579657507294465\',7415946);</script>';
 	    $patern='~<script>embedTiktok\(\'(.*?)\',\'(.*?)\',(.*?)\);</script>~';
 	    preg_match_all($patern,$str,$replaceArr);
 
-	    //dd($replaceArr);
+	    //dd($str);
 
 	    $count=count($replaceArr[0]);
-
+	    //dd($replaceArr);
 	    for($i=0; $i<$count; $i++){
 		$replaceArr[1][$i]=str_replace('(','',$replaceArr[1][$i]);
 		$replaceArr[1][$i]=str_replace(')','',$replaceArr[1][$i]);
@@ -515,13 +523,18 @@ class PostObserver
 		$str=str_replace($replaceArr[0][$i],'[tiktok]'.$replaceArr[1][$i].'|'.$replaceArr[2][$i].'|'.$replaceArr[3][$i].'[/tiktok]',$str);
 	    }
 	    //
+	    //dd($str);
 
 	    //Удалить span для встраивания тикток
-	    $patern='~<span id="embedTiktok_(.*?)_(.*?)">Loading TikTok...</span>~';
-	    $str=preg_replace($patern,'',$str);
-
 	    $patern='~<span id="embedTiktok_(.*?)_(.*?)"></span>~';
 	    $str=preg_replace($patern,'',$str);
+	    
+	    $patern='~<span id="embedTiktok_(.*?)_(.*?)">Loading TikTok...</span>~';
+	    $str=preg_replace($patern,'',$str);
+	    
+
+	    //dd($str);
+
 	    return $str;
 	}
 
@@ -539,6 +552,41 @@ class PostObserver
 		$replaceArr2[1][$i]=str_replace('&amp;','&',$replaceArr2[1][$i]);
 
 		$str= str_replace($replaceArr2[0][$i], '<span id="embedTiktok_'.$replaceArr2[2][$i].'_'.$replaceArr2[3][$i].'">Loading TikTok...</span> <script>embedTiktok(\''.$replaceArr2[1][$i].'\',\''.$replaceArr2[2][$i].'\','.$replaceArr2[3][$i].');</script>', $str);
+	    }
+
+	    return $str;
+	}
+
+	function telegramHtmlToBb($str)
+	{
+	    $patern='~<script async="" src="https://telegram.org/js/telegram-widget.js" data-telegram-post="(.*?)" data-width="100%"></script>~';
+
+	    preg_match_all($patern,$str,$replaceArr);
+	    //dd($replaceArr);
+	    $count=count($replaceArr[0]);
+
+	    for($i=0; $i<$count; $i++){
+		$str=str_replace($replaceArr[0][$i],'[telegram]'.$replaceArr[1][$i].'[/telegram]',$str);
+	    }
+	    $patern='~<iframe id="telegram-post(.*?)</iframe>~';
+	    $str=preg_replace($patern,'',$str);
+
+	    //dd($str);
+	    return $str;
+	}
+
+	function telegramBbToHtml($str)
+	{
+	    $patern='~\[telegram\](.*?)\[/telegram\]~';
+
+	    preg_match_all($patern,$str,$replaceArr);
+
+
+
+	    $count=count($replaceArr[0]);
+
+	    for($i=0; $i<$count; $i++){
+		$str=str_replace($replaceArr[0][$i],'<script async="" src="https://telegram.org/js/telegram-widget.js" data-telegram-post="'.$replaceArr[1][$i].'" data-width="100%"></script>',$str);
 	    }
 
 	    return $str;

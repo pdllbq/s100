@@ -38,7 +38,7 @@ var telegrammButton = function (context) {
 		url=new URL(url);
 		var path=url.pathname;
 		path=path.slice(1);
-		var widget='<script async src="https://telegram.org/js/telegram-widget.js" data-telegram-post="'+path+'" data-width="100%"></script>';
+		var widget='<script async src="https://telegram.org/js/telegram-widget.js" data-telegram-post="'+path+'" data-width="100%"></script><p><br></p>';
 		context.invoke('editor.pasteHTML', widget);
 		$("div.note-editor button.btn-codeview").click();
 		$("div.note-editor button.btn-codeview").click();
@@ -68,7 +68,7 @@ var tiktokButton = function (context) {
 		if(domain=='www.tiktok.com'){	
 		    //var widget='<blockquote class="tiktok-embed" cite="'+url+'" data-video-id="'+data[2]+'" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="" href="https://www.tiktok.com/@charlidamelio"></a> <a target="_blank" title="" href=""></a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>';
 		    var spanIdSalt=rand(1,9999999);
-		    var widget='<span id="embedTiktok_'+data[2]+'_'+spanIdSalt+'">Loading TikTok...</span> <script>embedTiktok(\''+url+'\',\''+data[2]+'\','+spanIdSalt+');</script><p><br></p>';
+		    var widget='<span id="embedTiktok_'+data[2]+'_'+spanIdSalt+'">Loading TikTok...</span> <script>embedTiktok(\''+url+'\',\''+data[2]+'\','+spanIdSalt+');</script> <p><br></p>';
 		}else if(domain=='vm.tiktok.com'){
 		    alert('Wrong URL!');
 		}else{
