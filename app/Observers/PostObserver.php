@@ -481,7 +481,7 @@ class PostObserver
 	{
 	    //dd($str);
 	    //Удаление кода тиктока
-	    $patern='~<div class="tiktokStart"></div>(.*?)<div class="tiktokEnd"></div>~';
+	    $patern='~[<|&lt;]div class="tiktokStart"[>|&gt;][<|&lt;]/div[>|&gt;](.*?)[<|&lt;]div class="tiktokEnd"[>|&gt;][<|&lt;]/div[>|&gt;]~';
 	    $cut=preg_match_all($patern,$str,$cutArr);
 
 	    //dd($cutArr);
@@ -490,6 +490,7 @@ class PostObserver
 	    }
 
 	    $str=str_replace('<div class="tiktokStart"></div><div class="tiktokEnd"></div>','',$str);
+	    $str=str_replace('&lt;div class="tiktokStart"&gt;&lt;/div&gt;&lt;div class="tiktokEnd"&gt;&lt;/div&gt;','',$str);
 	    //
 
 	    //Обработка уже созданых тикток
