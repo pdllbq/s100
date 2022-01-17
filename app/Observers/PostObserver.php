@@ -162,6 +162,7 @@ class PostObserver
 	{
 		
 		$this->saveImages($post);
+		dd(post->html);
 		$this->htmlTagsToBb($post);
 		$this->makeTags($post);
 		$post->html=$this->textToHtml($post);
