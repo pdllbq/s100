@@ -419,6 +419,7 @@ class PostObserver
 		
 		$html= htmlspecialchars($html);
 		
+		$html=$this->tiktokBbToHtml($html);
 		//<script async="" src="https://telegram.org/js/telegram-widget.js" data-telegram-post="s100lv/2" data-width="100%"></script>
 		//$html=preg_replace('~\[img style=(.*?)\](.*?)\[/img\]~','<img style="$1" src="$2">', $html);
 		$html=preg_replace('~\[img style=(.*?)\](.*?)\[/img\]~','<img style="$1" src="$2" onclick="showImage(\'$2\')">', $html);
@@ -451,7 +452,6 @@ class PostObserver
 		$html=preg_replace('~\[link=(.*?)\](.*?)\[/link\]~im','<a href="$1" target="_blank">$2</a>', $html);
 		$html=preg_replace('~\[youtube\](.*?)\[/youtube\]~im','<div class="video-responsive"><iframe src="//www.youtube.com/embed/$1" class="note-video-clip" width="640" height="360" frameborder="0"></iframe></div>', $html);
 		$html=preg_replace('~\[hashTag\](.*?)\[/hashTag\]~','<a href="/tag/$1">#$1</a>', $html);
-		$html=$this->tiktokBbToHtml($html);
 		
 		return $html;	
 	}
