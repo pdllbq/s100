@@ -353,7 +353,6 @@ class PostObserver
 	
 	protected function htmlTagsToBb(Post $post)
 	{
-		$post->text=$this->tiktokHtmlToBb($post->text);
 		//<script async="" src="https://telegram.org/js/telegram-widget.js" data-telegram-post="s100lv/2" data-width="100%"></script>
 		//$post->text=preg_replace('~<script async="" src="https://telegram.org/js/telegram-widget.js" data-telegram-post="(.*?)" data-width="100%"></script>~im','[telegram]$1[/telegram]', $post->text);
 		$post->text=$this->telegramHtmlToBb($post->text);
@@ -389,7 +388,7 @@ class PostObserver
 		$post->text=preg_replace('/<a href="[^"]+">#(.*?)<\/a>/','[hashTag]$1[/hashTag]', $post->text);
 		$post->text=preg_replace('/<div class="video-responsive">(.*?)<\/div>/im','$1', $post->text);
 		$post->text=preg_replace('/<iframe src="\/\/www.youtube.com\/embed\/(.*?)"(.*?)<\/iframe>/im','[youtube]$1[/youtube]', $post->text);
-
+		$post->text=$this->tiktokHtmlToBb($post->text);
 	}
 	
 	function p($text)
