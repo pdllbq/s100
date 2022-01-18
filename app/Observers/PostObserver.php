@@ -162,7 +162,6 @@ class PostObserver
 	{
 		
 		$this->saveImages($post);
-		dd($post->html);
 		$this->htmlTagsToBb($post);
 		$this->makeTags($post);
 		$post->html=$this->textToHtml($post);
@@ -479,16 +478,16 @@ class PostObserver
 
 	function tiktokHtmlToBb($str)
 	{
-	    //dd($str);
+	    
 	    //Удаление кода тиктока
-	    $patern='~[<|&lt;]div class="tiktokStart"[>|&gt;][<|&lt;]/div[>|&gt;](.*?)[<|&lt;]div class="tiktokEnd"[>|&gt;][<|&lt;]/div[>|&gt;]~';
+	    $patern='~[<|&lt;]div class="tiktokStart"[>|&gt;][<|&lt;]/div[>|&gt;](.*?)[<|&lt;]div class="tiktokEnd"[>|&gt;][<|&lt;]/div[>|&gt;]~simU';
 	    $cut=preg_match_all($patern,$str,$cutArr);
-
+	    
 	    //dd($cutArr);
 	    foreach($cutArr[0] as $cutPatern){
 		$str=str_replace($cutPatern,'',$str);
 	    }
-
+	    //dd($str);
 	    $str=str_replace('<div class="tiktokStart"></div><div class="tiktokEnd"></div>','',$str);
 	    $str=str_replace('&lt;div class="tiktokStart"&gt;&lt;/div&gt;&lt;div class="tiktokEnd"&gt;&lt;/div&gt;','',$str);
 	    //
