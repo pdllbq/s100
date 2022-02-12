@@ -335,7 +335,7 @@ body {
 .read-more-img img{
     width:90px;
     height:90px;
-    object-fit: fill;
+    object-fit: cover;
 }
 
 .read-more-title{
