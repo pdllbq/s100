@@ -261,7 +261,7 @@ class PostObserver
 			$extension=explode('/',$data[0]);
 			$extension=$extension[1];
 			$i=0;
-			
+
 			if(isset($data[1])){
 				if(array_search($data[0],$this->allowedFiles)!==false){
 					$fileName='public/post-files/user-'.$post->user_id.'/'.$post->slug.'.'.$extension;
@@ -281,6 +281,9 @@ class PostObserver
 				}else{
 					$img->removeAttribute('src');
 				}
+			}else{
+			    $imgPath=str_replace('/storage/','public/',$data[0]);
+			    $savedImages[]=$imgPath;
 			}
 			
 			$img->removeAttribute('data-filename');
