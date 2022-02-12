@@ -331,3 +331,28 @@ body {
 	padding:10px;
 	border-radius:10px;
 }
+
+.read-more-img img{
+    width:90px;
+    height:90px;
+}
+
+.read-more-title{
+    padding: 3px 10px;
+}
+
+.read-more-excerpt{
+    padding: 5px 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.read-more-text-content{
+    height:90px;
+    background-color: #ffffff;
+}
+
+.read-more-posts{
+    margin:5px 0px;
+    cursor:pointer;
+}

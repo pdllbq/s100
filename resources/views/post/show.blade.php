@@ -84,6 +84,11 @@ $metaTags=mb_strtolower(preg_replace('/[A-ZA-Я]/u', ' $0', $post->tags));
 	<br>
 	
 	<div class="row">
+	    @include('post.include._postReadMore',compact($nextPosts))
+	</div>
+	<br>
+
+	<div class="row">
 		<div class="col-12">
 			@include('ads.binanceLong')
 		</div>
@@ -141,6 +146,8 @@ $metaTags=mb_strtolower(preg_replace('/[A-ZA-Я]/u', ' $0', $post->tags));
 		</div>
 	</div>
 </div>
+
+
 
 @include('post.include._commentAnswer',['ban'=>$ban])
 

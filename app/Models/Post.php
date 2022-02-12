@@ -24,7 +24,7 @@ class Post extends Model
 	}
 	
 	public function referral()
-	{ dd(11111111111111111111111111111);
+	{ 
 		return $this->belongsTo(User::class,'user_id','id');
 	}
 	

@@ -374,6 +374,8 @@ class PostController extends BaseController
      */
     public function show($lang,$groupSlugOrUserName,$slug)
     {
+		$Post=new Post;
+
 		if(mb_substr($groupSlugOrUserName,0,1)=='@'){
 			$parameterValue=mb_substr($groupSlugOrUserName,1);
 			$parameterName='user_name';
@@ -384,6 +386,8 @@ class PostController extends BaseController
 		
 		$post=Post::where('slug',$slug)->where($parameterName,$parameterValue)->first();
 		
+		$nextPosts=$Post::where('lang',app()->getLocale())->where('draft','!=',1)->where('in_sandbox','!=',1)->where('id','<', $post->id)->orderBy('24h_rating','desc')->with(['user','voted','group'])->limit(3)->get();
+
 		$comments=Comment::where('post_slug',$slug)->where('answer_id',0)->get();
 		
 		if(!isset($post->id)){
@@ -404,7 +408,7 @@ class PostController extends BaseController
 		
 		$PostsReaded->readed($slug,\Request::ip(),$userName);
 		
-        return view('post.show',['post'=>$post,'comments'=>$comments,'ban'=>$ban]);
+        return view('post.show',['post'=>$post,'comments'=>$comments,'ban'=>$ban,'nextPosts'=>$nextPosts]);
     }
 	
 	function oldShow($lang,$slug)

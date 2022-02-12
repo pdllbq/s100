@@ -49,7 +49,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-	<link href="{{ asset('css/style.css?3') }}" rel="stylesheet">
+	<link href="{{ asset('css/style.css?4') }}" rel="stylesheet">
 	<link href="{{ asset('css/summernote.css') }}" rel="stylesheet">
 	
 	<!-- Global site tag (gtag.js) - Google Analytics -->
