@@ -10,19 +10,19 @@
 	@if (trim($__env->yieldContent('noindex')))
 		<meta name="robots" content="noindex">
 	@endif
-	
+
 	<link rel="icon" type="image/x-icon" href="/favicon.ico">
-	
+
 	@if (trim($__env->yieldContent('title')))
 		<title>@yield('title') - {{ strtoupper($_SERVER['SERVER_NAME']) }}</title>
 	@else
 		<title>{{ strtoupper($_SERVER['SERVER_NAME']) }}</title>
 	@endif
-	
+
 	@if (trim($__env->yieldContent('description')))
 		<meta name="description" content="@yield('description')">
 	@endif
-	
+
 	@if (trim($__env->yieldContent('keywords')))
 		<meta name="keywords" content="@yield('keywords')">
 	@endif
@@ -42,16 +42,16 @@
 	<script src="{{ asset('js/summernote-ru.js') }}" ></script>
 	<script src="{{ asset('js/summernote-lv.js') }}" ></script>
 	<script src="{{ asset('js/post.js') }}" ></script>
-	
+
 
     <!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-	<link href="{{ asset('css/style.css?4') }}" rel="stylesheet">
+	<link href="{{ asset('css/style.css?5') }}" rel="stylesheet">
 	<link href="{{ asset('css/summernote.css') }}" rel="stylesheet">
-	
+
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-83Q09504VE"></script>
 	<script>
@@ -61,7 +61,7 @@
 
 	  gtag('config', 'G-83Q09504VE');
 	</script>
-	
+
 </head>
 
 <?php
@@ -78,7 +78,7 @@ if(isset(\Auth::user()->id)){
 	<!-- Load Facebook SDK for JavaScript -->
 	<div id="fb-root"></div>
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v10.0&appId=660737471254649&autoLogAppEvents=1" nonce="CLPua9bo"></script>
-	
+
     <div id="app">
         @include('include.navbar2')
 
@@ -87,10 +87,10 @@ if(isset(\Auth::user()->id)){
         </main>
 		@include('include._modal')
     </div>
-	
+
 	<div class="footer">
 		&copy;2020-2021 &laquo;<a href="/">{{ $_SERVER['SERVER_NAME'] }}</a>&raquo; v:0.4.2
 	</div>
-	
+
 </body>
 </html>

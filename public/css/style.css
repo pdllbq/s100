@@ -95,8 +95,6 @@ h1 {
 
 .navbar-brand{
 	text-transform: uppercase;
-	font-weight: bold;
-	
 }
 
 .navbar-brand:hover{
@@ -187,13 +185,13 @@ h2{
 }
 
 
-@keyframes animation-not {   
-  0% {     
-    color: #5e5e5e;   
-  }   
-  50% {     
-    color: red;   
-  } 
+@keyframes animation-not {
+  0% {
+    color: #5e5e5e;
+  }
+  50% {
+    color: red;
+  }
   100% {
     color: #5e5e5e;
    }
@@ -211,11 +209,11 @@ h2{
 
 
 body {
-  
+
 }
 
 #small-menu-links{
-	height: 100%;	
+	height: 100%;
 	width: 0;
 	position: fixed;
 	z-index: 1;
@@ -232,7 +230,7 @@ body {
 	cursor:pointer;
 	background-color:inherit;
 	border:none;
-	
+
 }
 
 #small-menu-links .closebtn {
