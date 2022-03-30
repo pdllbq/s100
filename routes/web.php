@@ -28,6 +28,8 @@ Route::get('/home', function () {
     return redirect('/'.$locale);
 });
 
+Route::get('/test/react','TestController@react')->name('test.react');
+
 Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
 	Route::get('/login/facebook', 'Auth\LoginController@redirectToFacebook');
 });
@@ -252,6 +254,3 @@ Route::get('summernote',array('as'=>'summernote.get','uses'=>'FileController@get
 Route::post('summernote',array('as'=>'summernote.post','uses'=>'FileController@postSummernote'));
 
 //Auth::routes();
-
-
-

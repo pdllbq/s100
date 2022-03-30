@@ -40,56 +40,56 @@ class LoginController extends Controller
      * @return void
      */
     public function __construct()
-    {	
+    {
         $this->middleware('guest')->except('logout');
     }
-	
+
 	public function showLoginForm()
 	{
 		return view('auth.login2');
 	}
-	
+
 	function authenticated()
 	{
 		User::where('id',\Auth::user()->id)->update(['ip'=>\Request::ip()]);
 	}
-	
+
 	function handleFacebookCallback()
 	{
 		if($_SERVER['SERVER_NAME']=='localhost'){
-			return redirect('http://s100.loc/login/facebook/callback?code='.$_GET['code'].'&state='.$_GET['state']);
+			//return redirect('http://s100.loc/login/facebook/callback?code='.$_GET['code'].'&state='.$_GET['state']);
 		}
 
 		$user = Socialite::driver('facebook')->user();
-		
-		
+
+
 		return $this->facebookAuth($user);
 		// $user->token;
-		
+
 	}
-	
+
 	function redirectToFacebook()
 	{
 		Cookie::queue('locale',\app()->getLocale(),5);
 		return Socialite::driver('facebook')->redirect();
 	}
-	
+
 	function facebookAuth($facebookUser){
-		
+
 		$user=User::where('facebook_id',$facebookUser->id)->first();
-		
+
 		if(!isset($user->id)){
 			if(isset($facebookUser->nickname) && $facebookUser->nickname!=null){
 				$name=$facebookUser->nickname;
 			}else{
 				$name=$facebookUser->name;
 			}
-			
+
 			if($this->checkEmail($facebookUser->email)){
 				\app()->setLocale(Cookie::get('locale'));
 				return redirect()->route('login',Cookie::get('locale'))->withErrors([__('auth.E-mail alredy exists')]);
 			}
-			
+
 			$User=new User;
 			$User->name=$this->newNickname($name);
 			$User->facebook_id=$facebookUser->id;
@@ -97,7 +97,7 @@ class LoginController extends Controller
 			$User->avatar=$this->facebookAvatar($facebookUser->avatar_original,$facebookUser->id);
 			$User->password=Hash::make(Str::random(12));
 			$User->save();
-			
+
 			$this->facebookAuth($facebookUser);
 		}else{
 			\Auth::loginUsingId($user->id,true);
@@ -105,37 +105,37 @@ class LoginController extends Controller
 		}
 		return redirect('/'.Cookie::get('locale'));
 	}
-	
+
 	function facebookAvatar($url,$fId)
 	{
 		if($url==null){
 			return null;
 		}
-		
+
 		$contents = file_get_contents($url);
-		
+
 		$fileName='public/facebook_avatars/'.$fId.'.jpeg';
 		Storage::put($fileName,$contents,'public');
 		$url=Storage::url($fileName);
-		
+
 		return $url;
 	}
-	
-	
+
+
 	function newNickname($nick)
 	{
 		$i=rand(0,9);
-		
+
 		$count=User::where('name',$nick)->count();
 		if($count>0){
 			$nick=$nick.$i;
-			
+
 			return $this->newNickname($nick);
 		}else{
 			return $nick;
 		}
 	}
-	
+
 	function checkEmail($mail)
 	{
 		$count=User::where('email',$mail)->count();

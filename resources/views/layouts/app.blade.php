@@ -28,9 +28,10 @@
 	@endif
 
     <!-- Scripts -->
-	<script src="{{ asset('js/jquery.js') }}" ></script>
+		<script src="{{ asset('js/jquery.js') }}" ></script>
+
+		<script src="{{ asset('js/app.js') }}" ></script>
 	<script src="{{ asset('js/popper.js') }}" ></script>
-	<script src="{{ asset('js/app.js') }}" ></script>
 	<script src="{{ asset('js/func.js?5') }}" ></script>
 	<script src="{{ asset('js/rating.js') }}" ></script>
 	<script src="{{ asset('js/comments.js') }}" ></script>

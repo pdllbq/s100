@@ -64,8 +64,8 @@ var tiktokButton = function (context) {
 		var domain=url.hostname;
 		path=path.slice(1);
 		var data=path.split('/');
-		
-		if(domain=='www.tiktok.com'){	
+
+		if(domain=='www.tiktok.com'){
 		    //var widget='<blockquote class="tiktok-embed" cite="'+url+'" data-video-id="'+data[2]+'" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="" href="https://www.tiktok.com/@charlidamelio"></a> <a target="_blank" title="" href=""></a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>';
 		    var spanIdSalt=rand(1,9999999);
 		    var widget='<span id="embedTiktok_'+data[2]+'_'+spanIdSalt+'">Loading TikTok...</span> <script>embedTiktok(\''+url+'\',\''+data[2]+'\','+spanIdSalt+');</script> <p><br></p>';

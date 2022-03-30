@@ -40,7 +40,7 @@
 									<label for="text">{{ __('post.Text') }}</label>
 		<!--							<input id="article-text-new-model" type="hidden" name="text" value="{{ old('text') }}">
 									@trix(\App\Article::class, 'text')-->
-									 <textarea name="text" id="text" class="form-control" rows="20">{{ old('text',$oldText) }}</textarea> 
+									 <textarea name="text" id="text" class="form-control" rows="20">{{ old('text',$oldText) }}</textarea>
 								</div>
 								<div class="form-group">
 									<input type="checkbox" id="draft" name="draft">
@@ -86,24 +86,24 @@
 <script type="text/javascript">
 
     $(document).ready(function() {
-		
 
-		$('#text').summernote({
-			
+
+		jQuery('#text').summernote({
+
 			styleTags: ['p','h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
-			
+
 			toolbar: [
 				['style', ['style']],
 				['font', ['bold','underline','strikethrough', 'clear']],
 				['insert', ['link', 'picture', 'video','telegramm','tiktok']],
 				['view', ['fullscreen', 'codeview']],
 			],
-					
+
 			buttons: {
 				telegramm: telegrammButton,
 				tiktok: tiktokButton
 			},
-			
+
 			callbacks: {
 				onPaste: function (e) {
 					var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
@@ -120,7 +120,7 @@
 		 });
 
    });
-   
+
    $(document).ready(function() {
 		$("#iframe_mode").click(function(event) {
 		  if ($(this).is(":checked"))

@@ -24,134 +24,134 @@ class PostController extends BaseController
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {	
+    {
 		$title=__('post.Best');
-		
+
 		$back=session('after_auth');
 		if($back){
 			session(['after_auth'=>false]);
 			return redirect($back);
 		}
-		
+
 		$Post=new Post;
-		
+
 		if(isset(\Auth::user()->id)){
 			$userId=\Auth::user()->id;
 		}else{
 			$userId=false;
 		}
-		
+
 		$topUsers=User::where('id','>',0)->orderBy('rating','DESC')->limit(10)->get();
 		$topGroups=Group::where('id','>',0)->orderBy('subscribers_count','DESC')->limit(10)->get();
-		
+
 		$posts=$Post::where('lang',app()->getLocale())->where('draft','!=',1)->where('in_sandbox','!=',1)->orderBy('24h_rating','desc')->orderBy('id','desc')->with(['user','voted','group'])->paginate(20);
 		//$posts=$Post->voted($posts,$userId);
-		
+
 		$description=__('description.Best');
-		
+
         return view('post.index',['posts'=>$posts,'topUsers'=>$topUsers,'topGroups'=>$topGroups,'title'=>$title,'description'=>$description]);
     }
-	
+
 	public function subscribes()
 	{
 		$title=__('post.Subscribes');
-		
+
 		$Post=new Post;
-		
+
 		if(isset(\Auth::user()->id)){
 			$userId=\Auth::user()->id;
 		}else{
 			$userId=false;
 		}
-		
+
 		//Subscribed to users, groups, tags
 		$sub['users']=Subscribe::select('slave_id')->where('master_id',$userId)->where('slave_id','!=',0)->get()->toArray();
 		$sub['groups']=Subscribe::select('group_slug')->where('master_id',$userId)->where('group_slug','!=',NULL)->get()->toArray();
 		$sub['tags']=Subscribe::select('tag_name')->where('master_id',$userId)->where('tag_name','!=',NULL)->get()->toArray();
 		//
-		
+
 		$posts=$Post::whereIn('user_id',$sub['users'])->orWhereIn('group_slug',$sub['groups']);
-		
+
 		foreach($sub['tags'] as $tag){
 			$posts=$posts->orWhere('tags','like','%'.$tag['tag_name'].'%');
 		}
-		
+
 		$posts=$posts->where('draft','!=',1);
-		
+
 		$topUsers=User::where('id','>',0)->orderBy('rating','DESC')->limit(10)->get();
 		$topGroups=Group::where('id','>',0)->orderBy('subscribers_count','DESC')->limit(10)->get();
-		
+
 		$posts=$posts->orderBy('id','desc')->with(['user','voted'])->paginate(20);
 		//$posts=$Post->voted($posts,$userId);
-		
+
         return view('post.index',['posts'=>$posts,'topUsers'=>$topUsers,'topGroups'=>$topGroups,'title'=>$title]);
 	}
-	
+
 	public function new()
 	{
 		$title=__('post.New');
-		
+
 		$Post=new Post;
-		
+
 		if(isset(\Auth::user()->id)){
 			$userId=\Auth::user()->id;
 		}else{
 			$userId=false;
 		}
-		
+
 		$topUsers=User::where('id','>',0)->orderBy('rating','DESC')->limit(10)->get();
 		$topGroups=Group::where('id','>',0)->orderBy('subscribers_count','DESC')->limit(10)->get();
-		
+
 		$posts=$Post::where('lang',app()->getLocale())->where('draft','!=',1)->where('in_sandbox','!=',1)->orderBy('id','desc')->with(['user','voted'])->paginate(20);
 		//$posts=$Post->voted($posts,$userId);
-		
+
 		$description=__('description.New');
-		
+
         return view('post.index',['posts'=>$posts,'topUsers'=>$topUsers,'topGroups'=>$topGroups,'title'=>$title,'description'=>$description]);
 	}
-	
+
 	public function sandbox()
 	{
 		$title=__('post.Sandbox');
-		
+
 		if(isset(\Auth::user()->id)){
 			$userId=\Auth::user()->id;
 		}else{
 			$userId=false;
 		}
-		
+
 		$topUsers=User::where('id','>',0)->orderBy('rating','DESC')->limit(10)->get();
 		$topGroups=Group::where('id','>',0)->orderBy('subscribers_count','DESC')->limit(10)->get();
-		
+
 		$posts=Post::where('lang',app()->getLocale())->where('draft','!=',1)->where('in_sandbox',1)->orderBy('id','desc')->with(['user','voted'])->paginate(20);
-		
+
 		$description=__('description.Sandbox');
-		
+
 		return view('post.index',['posts'=>$posts,'topUsers'=>$topUsers,'topGroups'=>$topGroups,'title'=>$title,'description'=>$description]);
 	}
-	
+
 	function moderation()
 	{
 		$title=__('post.Moderation');
-		
+
 		if(!isset(\Auth::user()->id) || \Auth::user()->is_moder!=1){
 			return redirect('/404');
 		}
 
 		$topUsers=User::where('id','>',0)->orderBy('rating','DESC')->limit(10)->get();
 		$topGroups=Group::where('id','>',0)->orderBy('subscribers_count','DESC')->limit(10)->get();
-		
+
 		$posts=Post::where('is_moderated',0)->orderBy('id','asc')->with(['user','voted'])->paginate(20);
-		
+
 		return view('post.index',['posts'=>$posts,'topUsers'=>$topUsers,'topGroups'=>$topGroups,'title'=>$title]);
 	}
-	
+
 	public function readed()
 	{
 		$title=__('post.Readed');
-		
+
 		$Post=new Post;
-		
+
 		if(isset(\Auth::user()->id)){
 			$userId=\Auth::user()->id;
 			$userName=\Auth::user()->name;
@@ -159,79 +159,79 @@ class PostController extends BaseController
 			$userId=false;
 			$userName=null;
 		}
-		
+
 		$topUsers=User::where('id','>',0)->orderBy('rating','DESC')->limit(10)->get();
 		$topGroups=Group::where('id','>',0)->orderBy('subscribers_count','DESC')->limit(10)->get();
-		
+
 		$slugs=PostsReaded::select('slug')->where('user_name',$userName)->orderBy('id','desc')->get()->toArray();
-		
+
 		$posts=$Post::whereIn('slug',$slugs)->with(['user','voted'])->paginate(20);
-		
+
         return view('post.index',['posts'=>$posts,'topUsers'=>$topUsers,'topGroups'=>$topGroups,'title'=>$title]);
 	}
-	
+
 	public function iLike()
 	{
 		$title=__('post.You liked');
-		
+
 		$Post=new Post;
-		
+
 		if(isset(\Auth::user()->id)){
 			$userId=\Auth::user()->id;
 		}else{
 			$userId=false;
 		}
-		
+
 		$topUsers=User::where('id','>',0)->orderBy('rating','DESC')->limit(10)->get();
 		$topGroups=Group::where('id','>',0)->orderBy('subscribers_count','DESC')->limit(10)->get();
-		
+
 		$slugs=Rating::select('post_slug')->where('user_id',$userId)->where('type','+')->orderBy('id','desc')->get()->toArray();
-		
+
 		$posts=$Post::whereIn('slug',$slugs)->with(['user','voted'])->paginate(20);
-		
-        return view('post.index',['posts'=>$posts,'topUsers'=>$topUsers,'topGroups'=>$topGroups,'title'=>$title]);
+
+    return view('post.index',['posts'=>$posts,'topUsers'=>$topUsers,'topGroups'=>$topGroups,'title'=>$title]);
 	}
-	
+
 	public function draft()
 	{
 		$title=__('post.Draft');
-		
+
 		$Post=new Post;
-		
+
 		if(isset(\Auth::user()->id)){
 			$userId=\Auth::user()->id;
 		}else{
 			$userId=false;
 		}
-		
+
 		$topUsers=User::where('id','>',0)->orderBy('rating','DESC')->limit(10)->get();
 		$topGroups=Group::where('id','>',0)->orderBy('subscribers_count','DESC')->limit(10)->get();
-		
+
 		$posts=$Post::where('user_id',$userId)->where('draft',1)->orderBy('id','desc')->with(['user','voted'])->paginate(20);
-		
+
         return view('post.index',['posts'=>$posts,'topUsers'=>$topUsers,'topGroups'=>$topGroups,'title'=>$title]);
 	}
-	
+
 	function preTag($tag)
 	{
 		return redirect()->route('post.tag',[session('locale','lv'),$tag]);
 	}
-	
+
 	function tag($locale,$tag)
 	{
-		
+
 		$title='#'.$tag;
-		
+
 		$posts=Post::where('tags','like','%#'.$tag.',%')->orWhere('tags','like','#'.$tag.',%')->orWhere('tags','like','#'.$tag.',')->where('draft','!=',1)->with(['user','voted'])->orderBy('24h_rating','desc')->paginate(20);
-		
+
 		if(isset(\Auth::user()->id)){
 			$subscribed=Subscribe::where('master_id',\Auth::user()->id)->where('tag_name','#'.$tag)->count();
 		}else{
 			$subscribed=0;
 		}
-		
+
 		$subscribers=Subscribe::where('tag_name','#'.$tag)->count();
-		
+
 		return view('post.index',['posts'=>$posts,'tag'=>$tag,'subscribed'=>$subscribed,'subscribers'=>$subscribers,'title'=>$title]);
 	}
 
@@ -246,21 +246,21 @@ class PostController extends BaseController
 			session(['after_auth'=>\route('post.create',app()->getLocale())]);
 			return redirect()->route('login',app()->getLocale());
 		}
-		
+
 		//User groups
 		$groups=Group::where('user_id',\Auth::user()->id)->get();
 		//
-		
+
 		//Ограничение на один пост в час
 		$canCreate=$this->canCreatePost();
 		//
-		
+
 		$ban=User::isBanned(\Auth::user()->name);
-		
+
 		$oldTitle=null;
 		$oldGroup=null;
 		$oldText=null;
-		
+
 		$old=PostTempSave::where('user_name',\Auth::user()->name)->first();
 		if(isset($old->user_name)){
 			$oldTitle=$old->title;
@@ -274,7 +274,7 @@ class PostController extends BaseController
 		}else{
 			$nextPost=0;
 		}
-		
+
         return view('post.create',['groups'=>$groups,'canCreate'=>$canCreate,'nextPost'=>$nextPost,'ban'=>$ban,'oldTitle'=>$oldTitle,'oldText'=>$oldText,'oldGroup'=>$oldGroup]);
     }
 
@@ -294,22 +294,22 @@ class PostController extends BaseController
 			$userId=\Auth::id();
 		}
 		//
-		
+
 		if(User::isBanned(\Auth::user()->name)){
 			return redirect()->route('post.create',[app()->getLocale()]);
 		}
-		
-		
+
+
 		//Ограничение на один пост в час
 		$canCreate=$this->canCreatePost();
 		//
-		
+
 		if($canCreate==0){
 			return redirect()->route('post.create',[app()->getLocale()]);
 		}
-		
-		
-        $inputs=$request->input();
+
+
+    $inputs=$request->input();
 		//dd($inputs['text']);
 		if(!isset($inputs['iframe_mode'])){
 			$inputs['iframe_mode']=0;
@@ -324,7 +324,7 @@ class PostController extends BaseController
 				$inputs['sandbox']=1;
 			}
 		}
-		
+
 		$Post=new Post;
 		$Post->user_id=$userId;
 		$Post->user_name=\Auth::user()->name;
@@ -340,29 +340,29 @@ class PostController extends BaseController
 		}else{
 			$Post->draft=0;
 		}
-		
+
 		if(\Auth::user()->is_moder!=1){
 			$Post->in_sandbox=1;
 		}else{
 			$Post->is_moderated=1;
 		}
-		
+
 		$Post->save();
-		
+
 		PostTempSave::where('user_name',\Auth::user()->name)->delete();
-		
+
 		//Notificate admin for moderation
 		if($inputs['sandbox']==1){
 			$EmailNotification=new EmailNotification;
 			$EmailNotification->newNotification(env('ADMIN_EMAIL'),__('emailNotifications.New post in sandbox subject'),__('emailNotifications.New post in sandbox message :url',['url'=>'https://s100.lv/ru/moder']));
 		}
-		
+
 		if($Post->group_slug==null){
 			$slugOrName='@'.\Auth::user()->name;
 		}else{
 			$slugOrName=$Post->group_slug;
 		}
-		
+
 		return redirect()->route('post.show',[app()->getLocale(),$slugOrName,$Post->slug]);
     }
 
@@ -383,17 +383,17 @@ class PostController extends BaseController
 			$parameterValue=$groupSlugOrUserName;
 			$parameterName='group_slug';
 		}
-		
+
 		$post=Post::where('slug',$slug)->where($parameterName,$parameterValue)->first();
-		
+
 		$nextPosts=$Post::where('lang',app()->getLocale())->where('draft','!=',1)->where('in_sandbox','!=',1)->where('id','<', $post->id)->orderBy('24h_rating','desc')->with(['user','voted','group'])->limit(3)->get();
 
 		$comments=Comment::where('post_slug',$slug)->where('answer_id',0)->get();
-		
+
 		if(!isset($post->id)){
 			return abort(404);
 		}
-		
+
 		if(isset(\Auth::user()->name)){
 			$ban=User::isBanned(\Auth::user()->name);
 			$userName=\Auth::user()->name;
@@ -401,30 +401,30 @@ class PostController extends BaseController
 			$ban=false;
 			$userName=null;
 		}
-		
+
 		$post->date=Carbon::parse($post->created_at)->format('d.n.Y');
-		
+
 		$PostsReaded=new PostsReaded;
-		
+
 		$PostsReaded->readed($slug,\Request::ip(),$userName);
-		
+
         return view('post.show',['post'=>$post,'comments'=>$comments,'ban'=>$ban,'nextPosts'=>$nextPosts]);
     }
-	
+
 	function oldShow($lang,$slug)
 	{
 		$post=Post::where('slug',$slug)->first();
-		
+
 		if(!isset($post->id)){
 			return abort(404);
 		}
-		
+
 		if($post->group_slug==null){
 			$slugOrName='@'.$post->user_name;
 		}else{
 			$slugOrName=$post->group_slug;
 		}
-		
+
 		return redirect()->route('post.show',[app()->getLocale(),$slugOrName,$slug]);
 	}
 
@@ -442,17 +442,17 @@ class PostController extends BaseController
 			return redirect()->route('login',app()->getLocale());
 		}
 		//
-		
+
 		//User groups
 		$groups=Group::where('user_id',\Auth::user()->id)->get();
 		//
-		
+
         $post=Post::where('slug',$slug)->first();
-		
+
 		if($post->user_id!=\Auth::id()){
 			return redirect()->route('home',app()->getLocale());
 		}
-		
+
 		return view('post.edit',['post'=>$post,'groups'=>$groups]);
     }
 
@@ -471,15 +471,15 @@ class PostController extends BaseController
 			return redirect()->route('login',app()->getLocale());
 		}
 		//
-		
+
         $post=Post::where('slug',$slug)->first();
-		
+
 		if($post->user_id!=\Auth::id()){
 			return redirect()->route('home',app()->getLocale());
 		}
-		
+
 		$inputs=$request->input();
-		
+
 		if(!isset($inputs['iframe_mode'])){
 			$inputs['iframe_mode']=0;
 		}
@@ -493,7 +493,7 @@ class PostController extends BaseController
 				$inputs['sandbox']=1;
 			}
 		}
-		
+
 		$post->title=$inputs['title'];
 		$post->group_slug=$inputs['group'];
 		$post->text=$inputs['text'];
@@ -507,13 +507,13 @@ class PostController extends BaseController
 			$post->draft=0;
 		}
 		$post->save();
-		
+
 		if($post->group_slug==null){
 			$slugOrName='@'.\Auth::user()->name;
 		}else{
 			$slugOrName=$post->group_slug;
 		}
-		
+
 		return redirect()->route('post.show',[app()->getLocale(),$slugOrName,$post->slug]);
     }
 
@@ -526,124 +526,131 @@ class PostController extends BaseController
     public function destroy($lang,$slug)
     {
 		$Rating=new Rating;
-		
+
         //Only logged in users
 		if(!\Auth::check()){
 			session(['after_auth'=>\route('post.create',app()->getLocale())]);
 			return redirect()->route('login',app()->getLocale());
 		}
 		//
-		
+
 		$post=Post::where('slug',$slug)->first();
-		
+
 		if($post->user_id!=\Auth::id() && \Auth::user()->is_moder==1){
 			Post::where('slug',$slug)->update(['delete_name'=>\Auth::user()->name]);
 			Post::find($post->id)->delete();
 		}elseif($post->user_id==\Auth::id()){
 			Post::find($post->id)->forceDelete();
 		}
-		
+
 		if($post->user_id!=\Auth::id()){
 			return redirect()->route('home',app()->getLocale());
 		}
-		
+
 		$Rating->deleteRating($slug);
-		
+
 		return redirect()->route('home',app()->getLocale())->withSuccess(__('post.Post was deleted'));
     }
-	
+
 	public function onlyAuth()
 	{
 		$this->middleware('auth');
-		
-//		
+
+//
 //		if(!\Auth::check()){
 //			return redirect()->route('login',app()->getLocale());
 //		}
 	}
-	
+
 	public function plus($lang,$slug)
 	{
 		if(!isset(\Auth::user()->id)){
 			$data=['auth'=>1,'redirect'=>route('login',app()->getLocale())];
 			return json_encode($data);
 		}
-		
+
 		$ban=User::isBanned(\Auth::user()->name);
 		if($ban){
 			$data=['ban'=>1,'banText'=>__('user.You are banned until :time',['time'=>$ban])];
 			return json_encode($data);
 		}
-		
+
 		$Rating=new Rating;
-		
+
 		$Rating->plus($slug, \Auth::user()->id);
-		
+
 		return json_encode(['rating'=>$Rating->getRating($slug)]);
 	}
-	
+
 	public function minus($lang,$slug)
 	{
 		if(!isset(\Auth::user()->id)){
 			$data=['auth'=>1,'redirect'=>route('login',app()->getLocale())];
 			return json_encode($data);
 		}
-		
+
 		$ban=User::isBanned(\Auth::user()->name);
 		if($ban){
 			$data=['ban'=>1,'banText'=>__('user.You are banned until :time',['time'=>$ban])];
 			return json_encode($data);
 		}
-		
+
 		$Rating=new Rating;
-		
+
 		$Rating->minus($slug, \Auth::user()->id);
-		
-		return json_encode(['rating'=>$Rating->getRating($slug)]); 
+
+		return json_encode(['rating'=>$Rating->getRating($slug)]);
 	}
-	
+
 	function addComment(\App\Http\Requests\StoreCommentRequest $request)
 	{
 		if(!\Auth::check()){
 			session(['after_auth'=>\route('post.create',app()->getLocale())]);
 			return redirect()->route('login',app()->getLocale());
 		}
-		
+
 		$inputs=$request->input();
-		
+
 		if(User::isBanned(\Auth::user()->name)){
 			return redirect()->route('post.show',[app()->getLocale(),$inputs['post-slug'],'#comments']);
 		}
-		
-		
+
+		$post=Post::where('slug',$inputs['post-slug'])->first();
+
+		if($post->group_slug==null){
+			$slugOrName='@'.\Auth::user()->name;
+		}else{
+			$slugOrName=$post->group_slug;
+		}
+
 		$Comment=new Comment;
-		
+
 		$Comment->user_id=\Auth::user()->id;
 		$Comment->answer_id=$inputs['answer-id'];
 		$Comment->post_slug=$inputs['post-slug'];
 		$Comment->text=$inputs['comment'];
 		$Comment->save();
-		
+
 		if($inputs['answer-id']!=0){
 			$comment=Comment::where('id',$inputs['answer-id'])->first();
 			if(isset($comment->id)){
-				Notification::newAnswerOnComment($comment->user_id,$Comment->post_slug,$comment->id);
+				Notification::newAnswerOnComment($comment->user_id,$slugOrName,$Comment->post_slug,$comment->id);
 			}
 		}
 		$commentsCount=Comment::where('post_slug',$inputs['post-slug'])->count();
-		
+
 		Post::where('slug',$inputs['post-slug'])->update(['comments_count'=>$commentsCount]);
-		
-		return redirect()->route('post.show',[app()->getLocale(),$Comment->post_slug,'#comments']);
+
+		return redirect()->route('post.show',[app()->getLocale(),$slugOrName,$Comment->post_slug,'#comments']);
 	}
-	
+
 	function commentGetAnswers($locale,$commentId)
 	{
 		$comments=Comment::where('answer_id',$commentId)->get();
-		
+
 		return view('post.include._commentGetAnswers',['comments'=>$comments]);
 	}
-	
+
 	//Ограничение на один пост в час
 	function canCreatePost()
 	{
@@ -659,50 +666,50 @@ class PostController extends BaseController
 		}else{
 			$canCreate=1;
 		}
-		
+
 		return $canCreate;
 	}
-	
-	
+
+
 	function tempSave(Request $request)
 	{
 		$PostTempSave=new PostTempSave;
-		
+
 		$title=$request->input('title');
 		$group=$request->input('group');
 		$text=$request->input('text');
-		
+
 		$PostTempSave->store(\Auth::user()->name,$title,$group,$text);
 	}
-	
+
 	function fromSandbox($locle,$slug)
 	{
 		if(!isset(\Auth::user()->id) || \Auth::user()->is_moder!=1)
 		{
 			return redirect('/404');
 		}
-		
+
 		Post::where('slug',$slug)->update(['in_sandbox'=>0,'is_moderated'=>1,'moder_name'=>\Auth::user()->name]);
-		
+
 		return redirect()->route('post.moder',[\app()->getLocale()]);
 	}
-	
+
 	function toSandbox($locle,$slug)
 	{
 		if(!isset(\Auth::user()->id) || \Auth::user()->is_moder!=1)
 		{
 			return redirect('/404');
 		}
-		
+
 		Post::where('slug',$slug)->update(['in_sandbox'=>1,'is_moderated'=>1,'moder_name'=>\Auth::user()->name]);
-		
+
 		return redirect()->route('post.moder',[\app()->getLocale()]);
 	}
-	
+
 	function leaveInSandbox($locale,$slug)
 	{
 		Post::where('slug',$slug)->update(['in_sandbox'=>1,'is_moderated'=>1,'moder_name'=>\Auth::user()->name]);
-		
+
 		return redirect()->route('post.moder',[\app()->getLocale()]);
 	}
 }

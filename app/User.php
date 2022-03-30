@@ -37,7 +37,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-	
+
 	static function isBanned($name)
 	{
 		$name=str_replace('@','',$name);
@@ -45,11 +45,15 @@ class User extends Authenticatable
 		if(!isset($user->id)){
 			return false;
 		}
-		
+
+		if($user->ban_until==null){
+			return false;
+		}
+
 		if(Carbon::now()->lt($user->ban_until)){
 			return Carbon::parse($user->ban_until)->format('d.m.Y H:i');
 		}
-		
+
 		return false;
 	}
 }

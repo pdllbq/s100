@@ -7,6 +7,7 @@ use App\Models\Post;
 use App\Models\Group;
 use App\Observers\PostObserver;
 use App\Observers\GroupObserver;
+use Illuminate\Pagination\Paginator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -33,8 +34,10 @@ class AppServiceProvider extends ServiceProvider
         //MariaDB < 10.2.2
         \Schema::defaultStringLength(191);
         \Schema::enableForeignKeyConstraints();
-		
-		Post::observe(PostObserver::class);
-		Group::observe(GroupObserver::class);
+
+				Post::observe(PostObserver::class);
+				Group::observe(GroupObserver::class);
+
+				Paginator::useBootstrap();
     }
 }
