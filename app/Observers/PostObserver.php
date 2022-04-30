@@ -28,32 +28,32 @@ class PostObserver
      */
     public function created(Post $post)
     {
-        
+
     }
-	
+
 	public function creating(Post $post)
     {
 		$post->text=str_replace('<p></p>','',$post->text);
-		
+
 		$post->slug=$this->makeSlug($post);
 		$this->saveImages($post);
 		$this->htmlTagsToBb($post);
 		$this->makeTags($post);
 		$post->html=$this->textToHtml($post);
 		$this->makeTags($post); //Второй раз-так надо, иначе не работает
-		
+
 		$post->html=$this->bugFix($post->html);
-		
+
 		$post->excerpt=$this->truncate($post->html,255,array('html' => true, 'ending' => '...'));
 		//$post->excerpt_no_html=$this->truncate($post->html,255,array('html' => false, 'ending' => '...'));
 		$post->excerpt_no_html= strip_tags($post->excerpt);
-		
+
 		$user=User::where('id',\Auth::id())->first();
-		
+
 		$post->{'24h_rating'}=$user->rating;
 
 	}
-	
+
 	function truncate($text, $length = 100, $options = array()) {
 		$default = array(
 			'ending' => '...', 'exact' => true, 'html' => false
@@ -142,32 +142,32 @@ class PostObserver
 
 		return $truncate;
 	}
-	
+
 	function makeExcerpt($post)
 	{
 		$post=strip_tags($post);
-		
+
 		$count=mb_strlen($post);
-		
+
 		if($count>110){
 			$excerpt=mb_substr($post,55).'...';
 		}else{
 			return NULL;
 		}
-		
+
 		return $excerpt;
 	}
-	
+
 	public function updating(Post $post)
 	{
-		
+
 		$this->saveImages($post);
 		$this->htmlTagsToBb($post);
 		$this->makeTags($post);
 		$post->html=$this->textToHtml($post);
-		
+
 		$post->html=$this->bugFix($post->html);
-		
+
 		$post->excerpt=$this->truncate($post->html,255,array('html' => true, 'ending' => '...'));
 		//$post->excerpt_no_html=$this->truncate($post->html,255,array('html' => false, 'ending' => '...'));
 		$post->excerpt_no_html= strip_tags($post->excerpt);
@@ -183,7 +183,7 @@ class PostObserver
     {
         //
     }
-	
+
 	function deleting(Post $post)
 	{
 		$dom = new \DomDocument('1.0', 'UTF-8');
@@ -193,23 +193,23 @@ class PostObserver
 			$e=1;
 		}
 		$imgs=$dom->getElementsByTagName('img');
-		
+
 		$savedImages=[];
-		
+
 		foreach($imgs as $key=>$img){
 			$image=$img->getAttribute('src');
 			$data=explode(';',$image);
-			
+
 			$data[0]=str_replace('/storage/','/storage/app/public/',$data[0]);
-			
+
 			if(file_exists(base_path().$data[0])){
 				unlink(base_path().$data[0]);
 			}
 		}
-		
+
 		Comment::deleteAllByPostSlug($post->slug);
 	}
-	
+
 
     /**
      * Handle the post "deleted" event.
@@ -241,20 +241,20 @@ class PostObserver
     public function forceDeleted(Post $post)
     {
     }
-	
+
 	protected function saveImages(Post $post)
 	{
 		$post->text=str_replace("\r\n",'',$post->text);
 		$post->text=str_replace("\r",'',$post->text);
 		$post->text=str_replace("\n",'',$post->text);
-		
+
 		$dom = new \DomDocument('1.0', 'UTF-8');
 		libxml_use_internal_errors(true);
 		$dom->loadHtml(mb_convert_encoding($post->text, 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
 		$imgs=$dom->getElementsByTagName('img');;
-		
+
 		$savedImages=[];
-		
+
 		foreach($imgs as $key=>$img){
 			$image=$img->getAttribute('src');
 			$data=explode(';',$image);
@@ -285,25 +285,25 @@ class PostObserver
 			    $imgPath=str_replace('/storage/','public/',$data[0]);
 			    $savedImages[]=$imgPath;
 			}
-			
+
 			$img->removeAttribute('data-filename');
-			
+
 			$post->text=$dom->saveHTML($dom->documentElement);
 		}
-		
+
 		$post->files='';
 		foreach($savedImages as $img){
 			//PostImages::add($post->slug,$img);
 			$post->files.=$img.',';
 		}
-		
+
 	}
-	
+
 	protected function makeSlug(Post $post)
 	{
 		$i=0;
 		$salt='';
-		
+
 		$slug=\Str::slug($post->title);
 		while(Post::where('slug',$slug.$salt)->exists()){
 			if($i==0){
@@ -315,34 +315,34 @@ class PostObserver
 			}
 			$i++;
 		}
-		
+
 		if(strlen($slug.$salt)>255 || $this->routeExists($slug.$salt)){
 			$slug=$this->makeRandomSlug();
 			$salt='';
 		}
-		
+
 		return $slug.$salt;
 	}
-	
+
 	protected function makeRandomSlug()
 	{
 		$simbols=['1','2','3','4','5','6','7','8','9','0','-','q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m','Q','W','E','R','T','Y','U','I','O','P','A','S','D','F','G','H','J','K','L','Z','X','C','V','B','N','M'];
-		
+
 		$slug=$simbols[array_rand($simbols)];
-		
+
 		while(Post::where('slug',$slug)->exists()){
 			$slug=$slug.$simbols[array_rand($simbols)];
 		}
-		
+
 		return $slug;
 	}
-	
+
 	protected function makeTags(Post $post)
 	{
 		$post->text=preg_replace('~\[hashTag\](.*?)\[/hashTag\]~','#$1', $post->text);
 		preg_match_all('/[\W](#\w+)/u', $post->text, $tags);
 		$post->tags='';
-		
+
 		foreach ($tags[1] as $tag){
 			$post->tags.=$tag.',';
 			$t=str_replace('#','',$tag);
@@ -350,10 +350,10 @@ class PostObserver
 					'[hashTag]'.$t.'[/hashTag]',
 					$post->text);
 		}
-		
+
 		//$post->text=preg_replace('/#(\w+)/u','[hashTag]$1[/hashTag]', $post->text);
 	}
-	
+
 	protected function htmlTagsToBb(Post $post)
 	{
 		$post->text=$this->tiktokHtmlToBb($post->text);
@@ -394,34 +394,34 @@ class PostObserver
 		$post->text=preg_replace('/<iframe src="\/\/www.youtube.com\/embed\/(.*?)"(.*?)<\/iframe>/im','[youtube]$1[/youtube]', $post->text);
 
 	}
-	
+
 	function p($text)
 	{
 		$text=str_replace('<p></p>','',$text);
-		
+
 		$i=0;
 		while(strpos($text,'<p>')!==false && strpos($text,'</p>')!==false){
 			$text=preg_replace('/<p>(.*?)<\/p>/s','[p]$1[/p]', $text);
 		}
-		
+
 		return $text;
 	}
-	
+
 	function pbb($text)
 	{
 		while(strpos($text,'[p]')!==false && strpos($text,'[/p]')!==false){
 			$text=preg_replace('/\[p\](.*?)\[\/p\]/s','<p>$1</p>', $text);
 		}
-		
+
 		return $text;
 	}
-	
+
 	protected function textToHtml(Post $post)
 	{
 		$html=$post->text;
-		
+
 		$html= htmlspecialchars($html);
-		
+
 		//<script async="" src="https://telegram.org/js/telegram-widget.js" data-telegram-post="s100lv/2" data-width="100%"></script>
 		//$html=preg_replace('~\[img style=(.*?)\](.*?)\[/img\]~','<img style="$1" src="$2">', $html);
 		$html=preg_replace('~\[img style=(.*?)\](.*?)\[/img\]~','<img style="$1" src="$2" onclick="showImage(\'$2\')">', $html);
@@ -455,23 +455,23 @@ class PostObserver
 		$html=preg_replace('~\[youtube\](.*?)\[/youtube\]~im','<div class="video-responsive"><iframe src="//www.youtube.com/embed/$1" class="note-video-clip" width="640" height="360" frameborder="0"></iframe></div>', $html);
 		$html=preg_replace('~\[hashTag\](.*?)\[/hashTag\]~','<a href="/tag/$1">#$1</a>', $html);
 		$html=$this->tiktokBbToHtml($html);
-		
-		return $html;	
+
+		return $html;
 	}
-	
+
 	function routeExists($route)
 	{
 		$routeCollection = app()->routes->getRoutes();
-		
+
 		foreach ($routeCollection as $value) {
 			if(str_replace('{locale}/','',$value->uri())==$route){
 				return true;
 			}
 		}
-		
+
 		return false;
 	}
-	
+
 	function bugFix($html)
 	{
 		$html=str_replace('&amp;nbsp;','&nbsp;',$html);
@@ -482,97 +482,50 @@ class PostObserver
 
 	function tiktokHtmlToBb($str)
 	{
-	    //dd($str);
-	    //Удаление кода тиктока
-	    $patern='~<div class="tiktokStart"></div>(.*?)<div class="tiktokEnd"></div>~s';
-	    $cut=preg_match_all($patern,$str,$cutArr);
+		//dd($str);
+		$patern='~<iframe class="embed-tiktok" src="(.*?)" width="100%" height="633px" frameborder="0"></iframe>~';
 
-	    //dd($cutArr);
-	    foreach($cutArr[0] as $cutPatern){
-		$str=str_replace($cutPatern,'',$str);
-	    }
+		preg_match_all($patern,$str,$replaceArr);
+		//dd($replaceArr);
+		$count=count($replaceArr[0]);
 
-	    $str=str_replace('<div class="tiktokStart"></div><div class="tiktokEnd"></div>','',$str);
-	    //
+		for($i=0; $i<$count; $i++){
+			$str=str_replace($replaceArr[0][$i],'[tiktok]'.$replaceArr[1][$i].'[/tiktok]',$str);
+		}
 
-	    //Обработка уже созданых тикток
-	    //$patern='~<span id="embedTiktok_7047019283938872577_9146777">Loading TikTok...</span> ~';
-	    
-	    //Создание BB-кода
-	    //$patern='<script>embedTiktok(\'https://www.tiktok.com/@kikakiim/video/7028579657507294465?sender_device=pc&sender_web_id=6890825948154283526&is_from_webapp=v1&is_copy_url=0\',\'7028579657507294465\',7415946);</script>';
-	    $patern='~<script>embedTiktok\(\'(.*?)\',\'(.*?)\',(.*?)\);</script>~';
-	    preg_match_all($patern,$str,$replaceArr);
-
-	    //dd($str);
-
-	    $count=count($replaceArr[0]);
-	    //dd($replaceArr);
-	    for($i=0; $i<$count; $i++){
-		$replaceArr[1][$i]=str_replace('(','',$replaceArr[1][$i]);
-		$replaceArr[1][$i]=str_replace(')','',$replaceArr[1][$i]);
-		$replaceArr[1][$i]=str_replace('\'','',$replaceArr[1][$i]);
-		$replaceArr[1][$i]=str_replace('"','',$replaceArr[1][$i]);
-		$replaceArr[1][$i]=str_replace(';','',$replaceArr[1][$i]);
-		$replaceArr[1][$i]=str_replace('<','',$replaceArr[1][$i]);
-		$replaceArr[1][$i]=str_replace('>','',$replaceArr[1][$i]);
-		$replaceArr[1][$i]=str_replace('}','',$replaceArr[1][$i]);
-		$replaceArr[1][$i]=str_replace('{','',$replaceArr[1][$i]);
-
-		$replaceArr[2][$i]=abs($replaceArr[2][$i]);
-		$replaceArr[3][$i]=abs($replaceArr[3][$i]);
-
-		$replaceArr[1][$i]=str_replace('&amp;','&',$replaceArr[1][$i]);
-
-		$str=str_replace($replaceArr[0][$i],'[tiktok]'.$replaceArr[1][$i].'|'.$replaceArr[2][$i].'|'.$replaceArr[3][$i].'[/tiktok]',$str);
-	    }
-	    //
-	    //dd($str);
-
-	    //Удалить span для встраивания тикток
-	    $patern='~<span id="embedTiktok_(.*?)_(.*?)"></span>~';
-	    $str=preg_replace($patern,'',$str);
-	    
-	    $patern='~<span id="embedTiktok_(.*?)_(.*?)">Loading TikTok...</span>~';
-	    $str=preg_replace($patern,'',$str);
-	    
-
-	    //dd($str);
-
-	    return $str;
+		//dd($str);
+		return $str;
 	}
 
 	function tiktokBbToHtml($str)
 	{
-	    $patern='~\[tiktok\](.*?)\|(.*?)\|(.*?)\[/tiktok\]~';
+		$patern='~\[tiktok\](.*?)\[/tiktok\]~';
 
-	    preg_match_all($patern,$str,$replaceArr2);
+		preg_match_all($patern,$str,$replaceArr);
 
-	    $count=count($replaceArr2[0]);
+		$count=count($replaceArr[0]);
 
-	    for($i=0; $i<$count; $i++)
-	    {
+		for($i=0; $i<$count; $i++){
+			//$str=str_replace($replaceArr[0][$i],'<script async="" src="https://telegram.org/js/telegram-widget.js" data-telegram-post="'.$replaceArr[1][$i].'" data-width="100%"></script>',$str);
+			$str=str_replace($replaceArr[0][$i],'<iframe class="embed-tiktok" src="'.$replaceArr[1][$i].'" width="100%" height="633px" frameborder="0"></iframe>',$str);
+		}
 
-		$replaceArr2[1][$i]=str_replace('&amp;','&',$replaceArr2[1][$i]);
-
-		$str= str_replace($replaceArr2[0][$i], '<span id="embedTiktok_'.$replaceArr2[2][$i].'_'.$replaceArr2[3][$i].'">Loading TikTok...</span> <script>embedTiktok(\''.$replaceArr2[1][$i].'\',\''.$replaceArr2[2][$i].'\','.$replaceArr2[3][$i].');</script>', $str);
-	    }
-
-	    return $str;
+		return $str;
 	}
 
 	function telegramHtmlToBb($str)
 	{
-	    $patern='~<script async="" src="https://telegram.org/js/telegram-widget.js" data-telegram-post="(.*?)" data-width="100%"></script>~';
+			//dd($str);
+	    //$patern='~<script async="" src="https://telegram.org/js/telegram-widget.js" data-telegram-post="(.*?)" data-width="100%"></script>~';
+			$patern='~<iframe class="embed-telegram" onload="resizeIframe\(this\)" src="(.*?)" width="100%" frameborder="0"></iframe>~';
 
 	    preg_match_all($patern,$str,$replaceArr);
 	    //dd($replaceArr);
 	    $count=count($replaceArr[0]);
 
 	    for($i=0; $i<$count; $i++){
-		$str=str_replace($replaceArr[0][$i],'[telegram]'.$replaceArr[1][$i].'[/telegram]',$str);
+				$str=str_replace($replaceArr[0][$i],'[telegram]'.$replaceArr[1][$i].'[/telegram]',$str);
 	    }
-	    $patern='~<iframe id="telegram-post(.*?)</iframe>~';
-	    $str=preg_replace($patern,'',$str);
 
 	    //dd($str);
 	    return $str;
@@ -589,7 +542,8 @@ class PostObserver
 	    $count=count($replaceArr[0]);
 
 	    for($i=0; $i<$count; $i++){
-		$str=str_replace($replaceArr[0][$i],'<script async="" src="https://telegram.org/js/telegram-widget.js" data-telegram-post="'.$replaceArr[1][$i].'" data-width="100%"></script>',$str);
+				//$str=str_replace($replaceArr[0][$i],'<script async="" src="https://telegram.org/js/telegram-widget.js" data-telegram-post="'.$replaceArr[1][$i].'" data-width="100%"></script>',$str);
+				$str=str_replace($replaceArr[0][$i],'<iframe class="embed-telegram" onload="resizeIframe(this)" src="'.$replaceArr[1][$i].'" width="100%" frameborder="0"></iframe>',$str);
 	    }
 
 	    return $str;

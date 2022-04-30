@@ -249,6 +249,12 @@ Route::get('/', function () {
     return redirect('/'.$locale);
 });
 
+Route::get('/embed/tiktok/{userName}/{videoId}','EmbedController@tiktok')->name('embed.tiktok');
+
+Route::get('/embed/youtube/{videoId}','EmbedController@youtube')->name('embed.youtube');
+
+Route::get('/embed/telegram/{groupName}/{postId}','EmbedController@telegram')->name('embed.telegram');
+
 Route::get('summernote',array('as'=>'summernote.get','uses'=>'FileController@getSummernote'));
 
 Route::post('summernote',array('as'=>'summernote.post','uses'=>'FileController@postSummernote'));

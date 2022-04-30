@@ -26,11 +26,11 @@ function withdrawlSave(url)
 	var bankAccountNumber=$('#modal-template #withdrawl-input-bank-account-number').val();
 	var ethWallet=$('#modal-template #withdrawl-input-eth-wallet').val();
 	var otherInfo=$('#modal-template #withdrawl-input-other').val();
-	
+
 	var bank=$('#modal-template input[name=bank]').val();
 	var eth=$('#modal-template input[name=eth]').val();
 	var other=$('#modal-template input[name=other]').val();
-	
+
 	$.getJSON(url,{
 			amount:amount,
 			full_name:fullName,
@@ -66,7 +66,7 @@ function openModal(url){
 		$('#modal-template .modal-body').html(data.body);
 		$('#modal-template .modal-footer').html(data.footer);
 	});
-	
+
 	$('#modal-template').modal('show');
 }
 
@@ -89,4 +89,11 @@ function embedTiktok(videoUrl,videoId,spanIdSalt)
 
 	$('#embedTiktok_'+videoId+'_'+spanIdSalt).html(html);
     }
+}
+
+function resizeIframe(obj) {
+	console.log(obj.contentWindow.document.body.offsetHeight + 'px');
+
+	obj.style.height=0;
+  obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
 }

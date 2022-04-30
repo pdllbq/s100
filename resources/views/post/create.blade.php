@@ -95,12 +95,12 @@
 			toolbar: [
 				['style', ['style']],
 				['font', ['bold','underline','strikethrough', 'clear']],
-				['insert', ['link', 'picture', 'video','telegramm','tiktok']],
+				['insert', ['link', 'picture', 'video','telegram','tiktok']],
 				['view', ['fullscreen', 'codeview']],
 			],
 
 			buttons: {
-				telegramm: telegrammButton,
+				telegram: telegramButton,
 				tiktok: tiktokButton
 			},
 
