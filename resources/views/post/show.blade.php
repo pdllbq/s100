@@ -128,7 +128,7 @@ $metaTags=mb_strtolower(preg_replace('/[A-ZA-Я]/u', ' $0', $post->tags));
 			<div class="card">
 				<div class="card-body">
 					<a id="comment-{{ $comment->id }}"  name="comment-{{ $comment->id }}"></a>
-					<small class="post-info"><a href="{{route('user.show',[app()->getLocale(),$comment->user->name]) }}">&commat;{{ $post->user->name }}</a> | {{ $comment->created_at->diffForHumans() }} <br></small>
+					<small class="post-info"><a href="{{route('user.show',[app()->getLocale(),$comment->user->name]) }}">&commat;{{ $comment->user->name }}</a> | {{ $comment->created_at->diffForHumans() }} <br></small>
 					{{ $comment->text }}
 					@auth
 						<div><small class="post-info"><span id="commentModal" class="btn-link" style="cursor:pointer;" data-toggle="modal" data-target="#commentAnswerModal" data-commentid="{{ $comment->id }}">{{ __('post.Make answer') }}</span></small></div>
