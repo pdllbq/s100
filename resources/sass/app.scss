@@ -4,8 +4,15 @@
 // Variables
 @import 'variables';
 
+@import 'holidayCalendar';
+
+@import 'main';
+
+
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
 
 @import "~font-awesome/scss/font-awesome.scss";
+
+@import '@natscale/react-calendar/dist/main.css';

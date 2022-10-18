@@ -235,6 +235,10 @@ Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
 });
 
 Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
+	Route::get('/brivdienu-kalendars/{year}','HolidayCalendarController@index')->name('holidayCalendar');
+});
+
+Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
 	Route::post('/password/new_save','\App\Http\Controllers\Auth\ResetPasswordController@saveNewPassword')->name('password.saveNewPassword');
 });
 

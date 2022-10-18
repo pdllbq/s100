@@ -317,6 +317,12 @@ class PostController extends BaseController
 		if(!isset($inputs['iframe_url'])){
 			$inputs['iframe_url']='';
 		}
+		if(!isset($inputs['redirect_url'])){
+			$inputs['redirect_url']='';
+		}
+		if(!isset($inputs['redirect_mode'])){
+			$inputs['redirect_mode']=0;
+		}
 		if(!isset($inputs['sandbox'])){
 			if(\Auth::user()->is_moder==1){
 				$inputs['sandbox']=0;
@@ -333,6 +339,8 @@ class PostController extends BaseController
 		$Post->text=$inputs['text'];
 		$Post->iframe_mode=$inputs['iframe_mode'];
 		$Post->iframe_url=$inputs['iframe_url'];
+		$Post->redirect_url=$inputs['redirect_url'];
+		$Post->redirect_mode=$inputs['redirect_mode'];
 		$Post->in_sandbox=$inputs['sandbox'];
 		$Post->lang=\app()->getLocale();
 		if(isset($inputs['draft']) && $inputs['draft']=='on'){
@@ -407,6 +415,10 @@ class PostController extends BaseController
 		$PostsReaded=new PostsReaded;
 
 		$PostsReaded->readed($slug,\Request::ip(),$userName);
+
+		if($post->redirect_mode==1 && $post->user_name!=$userName){
+			return redirect($post->redirect_url);
+		}
 
         return view('post.show',['post'=>$post,'comments'=>$comments,'ban'=>$ban,'nextPosts'=>$nextPosts]);
     }
@@ -486,6 +498,12 @@ class PostController extends BaseController
 		if(!isset($inputs['iframe_url'])){
 			$inputs['iframe_url']='';
 		}
+		if(!isset($inputs['redirect_url'])){
+			$inputs['redirect_url']='';
+		}
+		if(!isset($inputs['redirect_mode'])){
+			$inputs['redirect_mode']=0;
+		}
 		if(!isset($inputs['sandbox'])){
 			if(\Auth::user()->is_moder==1){
 				$inputs['sandbox']=0;
@@ -499,6 +517,8 @@ class PostController extends BaseController
 		$post->text=$inputs['text'];
 		$post->iframe_mode=$inputs['iframe_mode'];
 		$post->iframe_url=$inputs['iframe_url'];
+		$post->redirect_url=$inputs['redirect_url'];
+		$post->redirect_mode=$inputs['redirect_mode'];
 		$post->in_sandbox=$inputs['sandbox'];
 		$post->lang=\app()->getLocale();
 		if(isset($inputs['draft']) && $inputs['draft']=='on'){

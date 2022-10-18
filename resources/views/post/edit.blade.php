@@ -53,11 +53,23 @@
 								<input type="checkbox" id="iframe_mode" name="iframe_mode" value="1" {{ $post->iframe_mode==1?'checked="checked"':'' }}>
 								<label for="iframe_mode">Iframe</label>
 							</div>
-							<div id="iframe_input" class="form-group" {{ $post->iframe_mode==0?'style="display:none;"':'style="display:block;"' }} style="display:none;">
+							<div id="iframe_input" class="form-group" {{ $post->iframe_mode==0?'style=display:none;':'style=display:block;' }}>
 								<label for="iframe_url">Iframe URL</label>
 								<input type="text" id="iframe_url" name="iframe_url" value="{{ old('iframe_url',$post->iframe_url) }}" class="form-control">
 							</div>
 						@endif
+
+						@if(\Auth::user()->iframe_allowed==1)
+							<div class="form-group">
+								<input type="checkbox" id="redirect_mode" name="redirect_mode" value="1" {{ $post->redirect_mode==1?'checked="checked"':'' }}>
+								<label for="redirect_mode">Redirect</label>
+							</div>
+							<div id="redirect_input" class="form-group" {{ $post->redirect_mode==0?'style=display:none;':'style=display:block;' }}>
+								<label for="redirect_url">Redirect URL</label>
+								<input type="text" id="redirect_url" name="redirect_url" value="{{ old('redirect_url',$post->redirect_url) }}" class="form-control">
+							</div>
+						@endif
+
 						<div class="form-group">
 							<input type="submit" value="{{ __('post.Save') }}" class="btn btn-success">
 							<a href="{{ url()->previous() }}" class="btn btn-primary">{{ __('post.Cancel') }}</a>
@@ -127,6 +139,13 @@
 			$("#iframe_input").show('fast');
 		  else
 			$("#iframe_input").hide('fast');
+		});
+
+		$("#redirect_mode").click(function(event) {
+		  if ($(this).is(":checked"))
+			$("#redirect_input").show('fast');
+		  else
+			$("#redirect_input").hide('fast');
 		});
 	});
 </script>

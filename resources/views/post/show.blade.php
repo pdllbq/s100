@@ -41,6 +41,13 @@ $metaTags=mb_strtolower(preg_replace('/[A-ZA-Я]/u', ' $0', $post->tags));
 					<div class="iframe-responsive"><iframe src="{{ $post->iframe_url }}"></iframe></div>
 				@else
 					{!! $post->html !!}
+
+					@if($post->redirect_mode==1)
+						<div class="redirect-link">
+							<a href="{{ $post->redirect_url }}">{{ $post->redirect_url }}</a>
+						</div>
+					@endif
+
 				@endif
 
 				<div style="clear:both;"></div>
