@@ -54,15 +54,17 @@
 	<link href="{{ asset('css/style.css?5') }}" rel="stylesheet">
 	<link href="{{ asset('css/summernote.css') }}" rel="stylesheet">
 
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-83Q09504VE"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
+	@if($_SERVER['SERVER_NAME']=='s100.lv')
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-83Q09504VE"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
 
-	  gtag('config', 'G-83Q09504VE');
-	</script>
+		gtag('config', 'G-83Q09504VE');
+		</script>
+	@endif
 
 </head>
 
