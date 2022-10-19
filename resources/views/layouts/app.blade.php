@@ -93,7 +93,41 @@ if(isset(\Auth::user()->id)){
     </div>
 
 	<div class="footer">
-		&copy;2020-2021 &laquo;<a href="/">{{ $_SERVER['SERVER_NAME'] }}</a>&raquo; v:0.4.2
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-lg-6">
+					<div class="col-12 h2">
+						{{ __('main.Useful') }}
+					</div>
+					<div>
+						<a href="{{ route('holidayCalendar', [\App::getLocale(), 2022]) }}">{{ __('main.Holiday calendar :year',['year'=>2022]) }}</a>
+					</div>
+					<div>
+						<a href="{{ route('holidayCalendar', [\App::getLocale(), 2023]) }}">{{ __('main.Holiday calendar :year',['year'=>2023]) }}</a>
+					</div>
+				</div>
+				<div class="col-12 col-lg-6">
+					<div class="h2">
+						{{ __('main.About site') }}
+					</div>
+					@if(\App::getLocale()=='ru')
+						<div>
+							<a href="https://s100.lv/ru/r/s100lv/zarabotok-na-napisanie-tekstov-na-saite-s100lv">{{ __('main.Whrite and earn') }}</a>
+						</div>
+						<div>
+							<a href="https://s100.lv/ru/r/s100lv/priglasai-druzei-i-polucai-10-ot-ix-zarabotka">Партнёрская программа</a>
+						</div>
+					@else
+						<div>
+							<a href="https://s100.lv/lv/r/s100lv-info/veidojat-rakstu-un-sanemiet-par-to-naudu">{{ __('main.Whrite and earn') }}</a>
+						</div>
+					@endif
+				</div>
+				<div class="col-12">
+					&copy;2020 - {{  now()->year }} &laquo;<a href="/">{{ $_SERVER['SERVER_NAME'] }}</a>&raquo;
+				</div>
+			</div>
+		</div>
 	</div>
 
 </body>
