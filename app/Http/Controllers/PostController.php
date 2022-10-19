@@ -28,7 +28,7 @@ class PostController extends BaseController
 		$title=__('post.Best');
 
 		$back=session('after_auth');
-		if($back){
+		if($back && \Auth::check()){
 			session(['after_auth'=>false]);
 			return redirect($back);
 		}
