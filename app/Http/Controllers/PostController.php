@@ -382,6 +382,16 @@ class PostController extends BaseController
      */
     public function show($lang,$groupSlugOrUserName,$slug)
     {
+		$uri = $_SERVER['REQUEST_URI'];
+		
+		//Get uri last symbol
+		$uriLastSymbol=substr($uri,-1);
+
+		if($uriLastSymbol=='?'){
+			return redirect()->route('post.show',[app()->getLocale(),$groupSlugOrUserName,$slug]);
+		}
+
+
 		$Post=new Post;
 
 		if(mb_substr($groupSlugOrUserName,0,1)=='@'){
