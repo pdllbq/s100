@@ -16,7 +16,8 @@ class PostObserver
 		'data:image/png',
 		'data:image/jpeg',
 		'data:image/jpg',
-		'data:image/gif'
+		'data:image/gif',
+		'data:image/webp',
 	];
 
 
@@ -160,7 +161,6 @@ class PostObserver
 
 	public function updating(Post $post)
 	{
-
 		$this->saveImages($post);
 		$this->htmlTagsToBb($post);
 		$this->makeTags($post);
@@ -261,7 +261,6 @@ class PostObserver
 			$extension=explode('/',$data[0]);
 			$extension=$extension[1];
 			$i=0;
-
 			if(isset($data[1])){
 				if(array_search($data[0],$this->allowedFiles)!==false){
 					$fileName='public/post-files/user-'.$post->user_id.'/'.$post->slug.'.'.$extension;
@@ -343,11 +342,16 @@ class PostObserver
 		preg_match_all('/[\W](#\w+)/u', $post->text, $tags);
 		$post->tags='';
 
+		//Sort array by length
+		usort($tags[1], function($a, $b) {
+			return strlen($b) - strlen($a);
+		});
+
 		foreach ($tags[1] as $tag){
 			$post->tags.=$tag.',';
 			$t=str_replace('#','',$tag);
 			$post->text=str_replace($tag,
-					'[hashTag]'.$t.'[/hashTag]',
+			'[hashTag]'.$t.'[/hashTag]',
 					$post->text);
 		}
 
