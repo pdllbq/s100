@@ -420,6 +420,11 @@ class PostController extends BaseController
 			return redirect($post->redirect_url);
 		}
 
+		//Check post language and redirect if needed
+		if($post->lang!=app()->getLocale()){
+			return redirect()->route('post.show',[$post->lang,$groupSlugOrUserName,$slug]);
+		}
+
         return view('post.show',['post'=>$post,'comments'=>$comments,'ban'=>$ban,'nextPosts'=>$nextPosts]);
     }
 
