@@ -124,6 +124,11 @@ if(isset(\Auth::user()->id)){
 					@endif
 				</div>
 				<div class="col-12">
+					<a href="{{ route('rss',[app()->getLocale()]) }}" target="_blank" title="RSS">
+						<i class="fas fa-rss"></i>
+					</a>
+				</div>
+				<div class="col-12">
 					&copy;2020 - {{  now()->year }} &laquo;<a href="/">{{ $_SERVER['SERVER_NAME'] }}</a>&raquo;
 				</div>
 			</div>
