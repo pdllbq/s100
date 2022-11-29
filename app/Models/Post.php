@@ -28,27 +28,6 @@ class Post extends Model
 		return $this->belongsTo(User::class,'user_id','id');
 	}
 	
-//	public function voted($posts,$userId)
-//	{
-//		if($userId==false){
-//			return $posts;
-//		}
-//		
-//		$newPosts=[];
-//		
-//		foreach($posts as $data){
-//			$slugs[]=$data['slug'];
-//			$newPosts[$data['slug']]=$data;
-//		}
-//		
-//		$rating=Rating::where('user_id',$userId)->whereIn('post_slug',$slugs)->get();
-//		
-//		dd($posts);
-//		
-//		return (object) $newPosts;
-//	}
-	
-	
 	function voted()
 	{
 		if(!isset(\Auth()->user()->id)){
@@ -77,4 +56,17 @@ class Post extends Model
 		
 		$posts->delete();
 	}
+
+	//Get post image
+	public function getPostImage()
+	{
+		$img=explode(',',$this->files);
+
+		if(isset($img[0])){
+			return $img[0];
+		}
+
+		return null;
+	}
+
 }

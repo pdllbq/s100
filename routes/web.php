@@ -95,6 +95,10 @@ Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
   Route::get('@{userName}','UserController@show')->name('user.show');
 });
 
+//rss
+Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
+  Route::get('/rss','PostController@rss')->name('rss');
+});
 
 Route::get('/tag/{tag}','PostController@preTag')->name('post.preTag');
 Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){

@@ -747,4 +747,11 @@ class PostController extends BaseController
 
 		return redirect()->route('post.moder',[\app()->getLocale()]);
 	}
+
+	function rss($locale)
+	{
+		$posts=Post::where('lang',app()->getLocale())->where('draft','!=',1)->where('in_sandbox','!=',1)->orderBy('id','desc')->limit(100)->get();
+
+		return response()->view('post.rss',['posts'=>$posts])->header('Content-Type', 'text/xml');
+	}
 }
