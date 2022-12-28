@@ -16,7 +16,7 @@
 		<div class="col-12 col-lg-9">
 		@include('include.post._showPosts',['posts'=>$posts])
 		
-				
+		{{ $posts->links() }}		
 		</div>
 				
 		<div class="d-none d-lg-block col-lg-3">
@@ -33,7 +33,5 @@
 @include('user.include._newGroupModal')
 
 @include('user.include._editGroupModal')
-
-{{ $posts->links() }}
 
 @endsection
