@@ -12,7 +12,7 @@ class GroupController extends Controller
     function show($locale,$groupSlug)
 	{
 		$group=Group::where('slug',$groupSlug)->first();
-		$posts=Post::where('group_slug',$groupSlug)->orderBy('id','desc')->with(['user','voted'])->paginate(100);
+		$posts=Post::where('group_slug',$groupSlug)->orderBy('id','desc')->with(['user','voted'])->paginate(20);
 		
 		if(!isset($group->slug)){
 			return abort(404);

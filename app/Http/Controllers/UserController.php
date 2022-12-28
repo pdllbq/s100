@@ -28,7 +28,7 @@ class UserController extends Controller
 		
 		$title='@'.$user->name;
 		
-		$posts=Post::where('user_id',$user->id)->where('draft',0)->orderBy('id','DESC')->with(['user','voted'])->paginate(100);
+		$posts=Post::where('user_id',$user->id)->where('draft',0)->orderBy('id','DESC')->with(['user','voted'])->paginate(20);
 		if(isset(\Auth::user()->id)){
 			$subscribed=Subscribe::where('master_id',\Auth::user()->id)->where('slave_id',$user->id)->count();
 		}else{
