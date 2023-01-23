@@ -115,7 +115,9 @@ class HolidayCalendarController extends Controller
             $calendarMay->add_event(__('holidayCalendar.1st of May'), '2023-05-01', 1, 'green');
             $calendarMay->add_event(__('holidayCalendar.Pre-holiday day -7 hours working day'), '2023-05-03', 1, 'orange');
             $calendarMay->add_event(__('holidayCalendar.The day of the proclamation of the Declaration of Independence of the Republic of Latvia'), '2023-05-04', 1, 'green');
+            $calendarMay->add_event(__('holidayCalendar.The working day has been moved to :date', ['date' => '20.05.2023']), '2023-05-05', 1, 'green');
             $calendarMay->add_event(__('holidayCalendar.Mothers Day'), '2023-05-14', 1, 'green');
+            $calendarMay->add_event(__('holidayCalendar.Working day, transferred from :date', ['date' => '05.05.2023']), '2023-05-20', 1, 'orange');
             $calendarMay->add_event(__('holidayCalendar.Pentecost'), '2023-05-28', 1, 'green');
 
             $calendarJun = new Calendar('2023-06-01', [

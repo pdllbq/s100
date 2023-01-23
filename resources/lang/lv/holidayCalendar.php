@@ -46,6 +46,9 @@ return [
     'Rescheduled holiday from :from' => 'Pārceltā brīvdiena (no :from)',
     'Description' => 'Latvijā, tāpat kā lielākajā daļā pasaules valstu, darba nedēļa sastāv no 5 darba dienām un 2 brīvdienām. Nedēļas nogales parasti iekrīt sestdienās un svētdienās. Atsevišķos gadījumos saskaņā ar likumu "Par svētku, atceres un atzīmējamām dienām" var tikt piešķirtas papildu brīvdienas, pārceltas brīvdienas, kā arī piešķirtas saīsinātas darba dienas. Šajā kalendārā var uzzināt par visam  brivdienām Latvijā :year gadā.',
     
+    'The working day has been moved to :date' => 'Darba diena pārcelta uz :date',
+    'Working day, transferred from :date' => 'Darba diena, pārcelta no :date',
+
     ':count working days' => '{0} :count darba dienas|{1} :count darba diena|[2,4] :count darba dienas|[5,*] :count darba dienas',
     ':count working hours' => '{0} :count darba stundas|{1} :count darba stunda|[2,4] :count darba stundas|[5,*] :count darba stundas',
 ];
