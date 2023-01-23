@@ -100,9 +100,6 @@ if(isset(\Auth::user()->id)){
 						{{ __('main.Useful') }}
 					</div>
 					<div>
-						<a href="{{ route('holidayCalendar', [\App::getLocale(), 2022]) }}">{{ __('main.Holiday calendar :year',['year'=>2022]) }}</a>
-					</div>
-					<div>
 						<a href="{{ route('holidayCalendar', [\App::getLocale(), 2023]) }}">{{ __('main.Holiday calendar :year',['year'=>2023]) }}</a>
 					</div>
 				</div>
