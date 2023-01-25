@@ -65,6 +65,10 @@
             {!! $calendarDec !!}
         </div>
 
+        <div class="col-12">
+            @include('include.ads.ads')
+        </div>
+
     </div>
 </div>
 
