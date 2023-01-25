@@ -120,6 +120,9 @@
   display: block;
   margin: 0 auto;
 }
+#info-insertimg {
+  max-width: 100%;
+}
 
 /*!
  * Bootstrap v4.6.1 (https://getbootstrap.com/)
