@@ -115,6 +115,12 @@
   text-decoration: none;
 }
 
+#info-insert {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
 /*!
  * Bootstrap v4.6.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors

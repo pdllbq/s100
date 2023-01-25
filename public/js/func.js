@@ -97,3 +97,24 @@ function resizeIframe(obj) {
 	obj.style.height=0;
   obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
 }
+
+function insertInfo(lang, divId)
+{
+	
+	var settings = {
+		'cache': false,
+		"async": true,
+		"crossDomain": true,
+		"url": "https://info.vlz.lv/"+lang+"/info/get",
+		"method": "GET",
+		"dataType": "html",
+		"headers": {
+			"accept": "atext/html",
+			"Access-Control-Allow-Origin":"*"
+		}
+	}
+
+	$.ajax(settings).done(function (data) {
+		$("#"+divId).html(data);
+	});
+}

@@ -97,7 +97,7 @@ $metaTags=mb_strtolower(preg_replace('/[A-ZA-Я]/u', ' $0', $post->tags));
 
 	<div class="row">
 		<div class="col-12">
-			@include('ads.binanceLong')
+			@include('include.ads.ads')
 		</div>
 	</div>
 
