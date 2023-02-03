@@ -12,7 +12,7 @@
 						<th scope="col">{{ __('user.Amount') }}</th>
 						<th scope="col">{{ __('user.Full name') }}</th>
 						<th scope="col">{{ __('user.Bank account number') }}</th>
-						<th scope="col">{{ __('user.ETH wallet') }}</th>
+						<th scope="col">{{ __('user.BNB wallet') }}</th> {{-- Было ETH wallet --}}
 						<th scope="col">{{ __('user.Other info') }}</th>
 						<th scope="col">{{ __('user.Action') }}</th>
 					</tr>
@@ -25,7 +25,7 @@
 							@if($arr['bank']==1)
 								Bank
 							@elseif($arr['eth']==1)
-								ETH
+								BNB {{-- Было ETH --}}
 							@elseif($arr['other']==1)
 								Other
 							@endif

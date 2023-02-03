@@ -46,6 +46,7 @@ return [
 	'Return to balance'=>'Вернуть на баланс',
 	'No request for withdrawl'=>'Нет запросов на вывод средств',
 	'ETH wallet'=>'ETH-кошелёк',
+	'BNB wallet'=>'BNB (Binance coin)-кошелёк',
 	'Withdrawl other'=>'Напишите куда вы хотите вывести деньги и всю необходимую для вывода информацию. Например WebMoney и номер кошелька.',
 	'Withdrawl type'=>'Тип вывода',
 	'Other info'=>'Информация о другом методе вывода',

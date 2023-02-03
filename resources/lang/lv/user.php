@@ -46,6 +46,7 @@ return [
 	'Return to balance'=>'Atgriezt uz bilance',
 	'No request for withdrawl'=>'Nav izņemšanas pieprasījumu',
 	'ETH wallet'=>'ETH-maciņš',
+	'BNB wallet'=>'BNB (Binance coin)-maciņš',
 	'Withdrawl other'=>'Uzrakstiet, kur vēlaties izņemt naudu, un visu informāciju, kas nepieciešama izņemšanai. Piemēram, Paypal un e-pasts.',
 	'Withdrawl type'=>'Izņemšanas tips',
 	'Other info'=>'nformācija par citu izņemšanas metodi',

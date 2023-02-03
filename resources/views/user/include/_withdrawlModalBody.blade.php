@@ -4,10 +4,7 @@
 			<input type="radio" name="withdrawl-type" value="bank" checked>Банк</input>
 		</label>
 		<label class="btn btn-secondary" id="ethButton">
-			<input type="radio" name="withdrawl-type" value="eth">ETH</input>
-		</label>
-		<label class="btn btn-secondary" id="otherButton">
-			<input type="radio" name="withdrawl-type" value="other">Другой</input>
+			<input type="radio" name="withdrawl-type" value="eth">BNB</input> {{-- Было ETH --}}
 		</label>
 	</div>
 </div>
@@ -24,7 +21,7 @@
 		<input class="form-control" type="text" id="withdrawl-input-full-name" name="withdrawl-input-full-name" placeholder="{{ __('user.Name Surname') }}">
 	</div>
 	<div class="form-group d-none" id="group-input-eth-wallet">
-		<label for="withdrawl-input-eth-wallet">{{ __('user.ETH wallet') }}</label>
+		<label for="withdrawl-input-eth-wallet">{{ __('user.BNB wallet') }}</label> {{-- Было ETH wallet --}}
 		<input class="form-control" type="text" id="withdrawl-input-eth-wallet" name="withdrawl-input-eth-wallet">
 	</div>
 	<div class="form-group d-none" id="group-input-other">
