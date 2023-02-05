@@ -105,6 +105,14 @@ Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
   Route::get('/tag/{tag}','PostController@tag')->name('post.tag');
 });
 
+//lang group
+Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
+  //Admin
+  Route::get('/admin','AdminController@index')->name('admin.index');
+  Route::get('/admin/news','AdminController@news')->name('admin.news');
+  //
+});
+
 Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
   Route::get('{slug}','PostController@oldShow')->name('post.oldShow');
 });
