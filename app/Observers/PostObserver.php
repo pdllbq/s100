@@ -271,8 +271,17 @@ class PostObserver
 					}
 
 					Storage::put($fileName, base64_decode(str_replace('base64,','',$data[1])));
-					chmod($path, 0777);
-					chmod($fileName, 0666);
+					//s
+					try{
+						chmod(Storage::path($path), 0777);
+					}catch(Exception $e){
+						$e=1;
+					}
+					try{
+						chmod(Storage::path($fileName), 0666);
+					}catch(Exception $e){
+						$e=1;
+					}
 					$savedImages[]=$fileName;
 
 					$style=$img->getAttribute('style');
