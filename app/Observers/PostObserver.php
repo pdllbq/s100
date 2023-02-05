@@ -263,13 +263,25 @@ class PostObserver
 			$i=0;
 			if(isset($data[1])){
 				if(array_search($data[0],$this->allowedFiles)!==false){
-					$fileName='public/post-files/user-'.$post->user_id.'/'.$post->slug.'.'.$extension;
+					$path='public/post-files/user-'.$post->user_id;
+					$fileName=$path.'/'.$post->slug.'.'.$extension;
 					while(Storage::exists($fileName)){
-						$fileName='public/post-files/user-'.$post->user_id.'/'.$post->slug.'-'.$i.'.'.$extension;
+						$fileName=$path.'/'.$post->slug.'-'.$i.'.'.$extension;
 						$i++;
 					}
 
 					Storage::put($fileName, base64_decode(str_replace('base64,','',$data[1])));
+					//s
+					try{
+						chmod(Storage::path($path), 0777);
+					}catch(Exception $e){
+						$e=1;
+					}
+					try{
+						chmod(Storage::path($fileName), 0666);
+					}catch(Exception $e){
+						$e=1;
+					}
 					$savedImages[]=$fileName;
 
 					$style=$img->getAttribute('style');
