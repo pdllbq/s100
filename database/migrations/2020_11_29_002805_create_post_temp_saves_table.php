@@ -13,17 +13,17 @@ class CreatePostTempSavesTable extends Migration
      */
     public function up()
     {
-        Schema::create('post_temp_saves', function (Blueprint $table) {
-            $table->id();
+        // Schema::create('post_temp_saves', function (Blueprint $table) {
+        //     $table->id();
 			
-			$table->string('user_name');
-			$table->string('title',255);
-			$table->text('group_slug');
-			$table->longText('text');
-            $table->timestamps();
+		// 	$table->string('user_name');
+		// 	$table->string('title',255);
+		// 	$table->text('group_slug');
+		// 	$table->longText('text');
+        //     $table->timestamps();
 			
-			$table->index(['user_name']);
-        });
+		// 	$table->index(['user_name']);
+        // });
     }
 
     /**
@@ -33,6 +33,6 @@ class CreatePostTempSavesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('post_temp_saves');
+        // Schema::dropIfExists('post_temp_saves');
     }
 }

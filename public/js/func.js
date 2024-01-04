@@ -118,3 +118,89 @@ function insertInfo(lang, divId)
 		$("#"+divId).html(data);
 	});
 }
+
+function newsSourceEdit(divId,lang,sourceId,sourceUrl, sourceLang)
+{
+	$('#'+divId).modal('show');
+
+	$('#edit_source_url').val(sourceUrl);
+	$('#edit_source_lang').val(sourceLang);
+	$('#edit_source_id').val(sourceId);
+}
+
+function newsSourceEditSave(modalId,successId,route)
+{
+	var sourceUrl=$('#edit_source_url').val();
+	var sourceLang=$('#edit_source_lang').val();
+	var sourceId=$('#edit_source_id').val();
+	var _token=$('[name=_token]').val();
+
+	$.post(route,{
+		edit_source_url:sourceUrl,
+		edit_source_lang:sourceLang,
+		edit_source_id:sourceId,
+		_token:_token
+	},function(data){
+		if(data.error){
+			console.log(data.error);
+			$('#edit_source_modal_error').html(data.error);
+			$('#edit_source_modal_error').show();
+		}else if(data.success){
+			console.log(data.success);
+			$('#edit_source_modal_error').hide();
+			$('#'+modalId).modal('hide');
+			location.reload();
+			window.scrollTo(0, 0);
+		}
+	},'json');
+}
+
+function newsSourceDelete(question, route)
+{
+	if(confirm(question)){
+		window.location.href=route;
+	}
+}
+
+function newsFilterEdit(modalId, filterId, name, lang)
+{
+	$('#'+modalId).modal('show');
+
+	$('#edit_filter_name').val(name);
+	$('#edit_filter_lang').val(lang);
+	$('#edit_filter_id').val(filterId);
+}
+
+function newsFilterEditSave(route)
+{
+	var id = $('#edit_filter_id').val();
+	var name = $('#edit_filter_name').val();
+	var lang = $('#edit_filter_lang').val();
+	var _token = $('[name=_token]').val();
+
+	$.post(route,{
+		edit_filter_id:id,
+		edit_filter_name:name,
+		edit_filter_lang:lang,
+		_token:_token
+	},function(data){
+		if(data.error){
+			console.log(data.error);
+			$('#edit_filter_modal_error').html(data.error);
+			$('#edit_filter_modal_error').show();
+		}else if(data.success){
+			console.log(data.success);
+			$('#edit_filter_modal_error').hide();
+			$('#edit_filter_modal').modal('hide');
+			location.reload();
+			window.scrollTo(0, 0);
+		}
+	},'json');
+}
+
+function newsFilterDelete(question, route)
+{
+	if(confirm(question)){
+		window.location.href=route;
+	}
+}

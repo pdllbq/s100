@@ -133,6 +133,12 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'add_source_url' => [
+            'required' => 'Необходимо ввести URL.',
+        ],
+        'filter' => [
+            'required' => 'Необходимо ввести название фильтра.',
+        ],
     ],
 
     /*

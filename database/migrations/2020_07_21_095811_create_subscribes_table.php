@@ -13,16 +13,16 @@ class CreateSubscribesTable extends Migration
      */
     public function up()
     {
-        Schema::create('subscribes', function (Blueprint $table) {
-            $table->id();
-			$table->bigInteger('master_id');
-			$table->bigInteger('slave_id')->default(0);
-			$table->bigInteger('group_id')->default(0);
-			$table->string('tag_name','255')->nullable();
-            $table->timestamps();
+        // Schema::create('subscribes', function (Blueprint $table) {
+        //     $table->id();
+		// 	$table->bigInteger('master_id');
+		// 	$table->bigInteger('slave_id')->default(0);
+		// 	$table->bigInteger('group_id')->default(0);
+		// 	$table->string('tag_name','255')->nullable();
+        //     $table->timestamps();
 			
-			$table->index(['master_id','slave_id','group_id','tag_name']);
-        });
+		// 	$table->index(['master_id','slave_id','group_id','tag_name']);
+        // });
     }
 
     /**
@@ -32,6 +32,6 @@ class CreateSubscribesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('subscribes');
+        //Schema::dropIfExists('subscribes');
     }
 }

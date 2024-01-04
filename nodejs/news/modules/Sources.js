@@ -1,12 +1,36 @@
-const sourcesListPath = 'db/sources.json';
-const Datastore = require('nedb');
+var mysql = require('mysql');
+const Mc = require('./Mc');
 
-let Sources = {
-    get: function(){
-        let db = new Datastore({ filename: sourcesListPath, autoload: true });
+var con = mysql.createConnection({
+    connectionLimit : 1,
+    host: process.env.DB_HOST,
+    user: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE,
+    port: process.env.DB_PORT,
+    insecureAuth : true
+});
 
-        db.insert({ url: 'https://s100.lv/ru/rss', lang: 'en' });
-        db.insert({ url: 'https://s100.lv/lv/rss', lang: 'fr' });
+var Sources = {
+
+    // Get all sources
+    get: function(callback) {
+        var sql = "SELECT * FROM `news_sources`";
+
+        const sources = Mc.syncQuery(sql);
+
+        return sources;
+    },
+
+    // Test
+    test: function() {
+        console.log(process.env.DB_HOST);
+
+        con.connect(function(err) {
+            if (err) throw err;
+            console.log("Connected!");
+            con.end()
+        });
     }
 }
 

@@ -13,13 +13,13 @@ class CreateBanIpsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ban_ips', function (Blueprint $table) {
-            $table->id();
+        // Schema::create('ban_ips', function (Blueprint $table) {
+        //     $table->id();
 			
-			$table->ipAddress('ip');
+		// 	$table->ipAddress('ip');
 			
-            $table->timestamps();
-        });
+        //     $table->timestamps();
+        // });
     }
 
     /**
@@ -29,6 +29,6 @@ class CreateBanIpsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ban_ips');
+        // Schema::dropIfExists('ban_ips');
     }
 }

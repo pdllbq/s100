@@ -13,13 +13,13 @@ class CreateEmailNotificationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('email_notifications', function (Blueprint $table) {
-            $table->id();
-			$table->string('email',255);
-			$table->string('subject',255);
-			$table->longText('message');
-            $table->timestamps();
-        });
+        // Schema::create('email_notifications', function (Blueprint $table) {
+        //     $table->id();
+		// 	$table->string('email',255);
+		// 	$table->string('subject',255);
+		// 	$table->longText('message');
+        //     $table->timestamps();
+        // });
     }
 
     /**
@@ -29,6 +29,6 @@ class CreateEmailNotificationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('email_notifications');
+        // Schema::dropIfExists('email_notifications');
     }
 }

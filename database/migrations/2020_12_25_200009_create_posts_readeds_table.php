@@ -13,15 +13,15 @@ class CreatePostsReadedsTable extends Migration
      */
     public function up()
     {
-        Schema::create('posts_readed', function (Blueprint $table) {
-            $table->id();
+        // Schema::create('posts_readed', function (Blueprint $table) {
+        //     $table->id();
 			
-			$table->string('slug',255);
-			$table->ipAddress('ip');
-			$table->string('user_name',191)->nullable();
+		// 	$table->string('slug',255);
+		// 	$table->ipAddress('ip');
+		// 	$table->string('user_name',191)->nullable();
 			
-            $table->timestamps();
-        });
+        //     $table->timestamps();
+        // });
     }
 
     /**
@@ -31,6 +31,6 @@ class CreatePostsReadedsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts_readeds');
+        // Schema::dropIfExists('posts_readeds');
     }
 }

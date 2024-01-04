@@ -13,15 +13,15 @@ class CreateNotificationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('notifications', function (Blueprint $table) {
-            $table->id();
+        // Schema::create('notifications', function (Blueprint $table) {
+        //     $table->id();
 			
-			$table->string('text',255);
-			$table->string('post_slug','255');
-			$table->bigInteger('comment_id');
+		// 	$table->string('text',255);
+		// 	$table->string('post_slug','255');
+		// 	$table->bigInteger('comment_id');
 			
-            $table->timestamps();
-        });
+        //     $table->timestamps();
+        // });
     }
 
     /**
@@ -31,6 +31,6 @@ class CreateNotificationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('notifications');
+        //Schema::dropIfExists('notifications');
     }
 }

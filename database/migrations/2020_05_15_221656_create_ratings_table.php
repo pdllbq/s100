@@ -13,17 +13,17 @@ class CreateRatingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ratings', function (Blueprint $table) {
-            $table->id();
-			$table->bigInteger('user_id')->unsigned();
-			$table->string('post_slug',255)->default(NULL);
-			$table->string('type',1); // + or -
-            $table->timestamps();
+        // Schema::create('ratings', function (Blueprint $table) {
+        //     $table->id();
+		// 	$table->bigInteger('user_id')->unsigned();
+		// 	$table->string('post_slug',255)->default(NULL);
+		// 	$table->string('type',1); // + or -
+        //     $table->timestamps();
 			
-			$table->index(['user_id','type','post_slug']);
+		// 	$table->index(['user_id','type','post_slug']);
 			
-			$table->foreign('user_id')->references('id')->on('users');
-        });
+		// 	$table->foreign('user_id')->references('id')->on('users');
+        // });
     }
 
     /**
@@ -33,6 +33,6 @@ class CreateRatingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ratings');
+        //Schema::dropIfExists('ratings');
     }
 }

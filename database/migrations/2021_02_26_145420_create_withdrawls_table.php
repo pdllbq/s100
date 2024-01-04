@@ -13,16 +13,16 @@ class CreateWithdrawlsTable extends Migration
      */
     public function up()
     {
-        Schema::create('withdrawls', function (Blueprint $table) {
-            $table->id();
-			$table->string('user_name',255);
-			$table->float('amount');
-			$table->string('full_name',255);
-			$table->string('bank_account_number',255);
-			$table->integer('processed')->default(0);
+        // Schema::create('withdrawls', function (Blueprint $table) {
+        //     $table->id();
+		// 	$table->string('user_name',255);
+		// 	$table->float('amount');
+		// 	$table->string('full_name',255);
+		// 	$table->string('bank_account_number',255);
+		// 	$table->integer('processed')->default(0);
 			
-            $table->timestamps();
-        });
+        //     $table->timestamps();
+        // });
     }
 
     /**
@@ -32,6 +32,6 @@ class CreateWithdrawlsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('withdrawls');
+        // Schema::dropIfExists('withdrawls');
     }
 }

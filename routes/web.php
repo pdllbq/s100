@@ -110,7 +110,21 @@ Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
   //Admin
   Route::get('/admin','AdminController@index')->name('admin.index');
   Route::get('/admin/news','AdminController@news')->name('admin.news');
+  Route::post('/admin/news/store','AdminController@newsStore')->name('admin.news.store');
+  Route::post('/admin/news/update','AdminController@newsUpdate')->name('admin.news.update');
+  Route::get('/admin/news/delete/{id}','AdminController@newsDelete')->name('admin.news.delete');
+  Route::get('/admin/news/filters','AdminController@newsFilters')->name('admin.news.filters');
+  Route::post('/admin/news/filters/store','AdminController@newsFiltersStore')->name('admin.news.filters.store');
+  Route::post('/admin/news/filters/update','AdminController@newsFiltersUpdate')->name('admin.news.filters.update');
+  Route::get('/admin/news/filters/delete/{id}','AdminController@newsFiltersDelete')->name('admin.news.filters.delete');
+  Route::post('/admin/news/filters/words/store','AdminController@newsFiltersWordsStore')->name('admin.news.filters.words.store');
   //
+});
+
+//News
+Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
+  Route::get('/news','NewsController@index')->name('news.index');
+  Route::get('/news/{filteSlug}','NewsController@filter')->name('news.filter');
 });
 
 Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){

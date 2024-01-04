@@ -13,11 +13,11 @@ class CreateAvailableTagsTable extends Migration
      */
     public function up()
     {
-        Schema::create('available_tags', function (Blueprint $table) {
-            $table->id();
-			$table->string('tag');
-            $table->timestamps();
-        });
+        // Schema::create('available_tags', function (Blueprint $table) {
+        //     $table->id();
+		// 	$table->string('tag');
+        //     $table->timestamps();
+        // });
     }
 
     /**
@@ -27,6 +27,6 @@ class CreateAvailableTagsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('available_tags');
+        //Schema::dropIfExists('available_tags');
     }
 }

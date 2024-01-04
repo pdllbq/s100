@@ -8,6 +8,7 @@ use App\Models\Group;
 use App\Observers\PostObserver;
 use App\Observers\GroupObserver;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -32,8 +33,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //MariaDB < 10.2.2
-        \Schema::defaultStringLength(191);
-        \Schema::enableForeignKeyConstraints();
+        Schema::defaultStringLength(191);
+        Schema::enableForeignKeyConstraints();
 
 				Post::observe(PostObserver::class);
 				Group::observe(GroupObserver::class);

@@ -133,6 +133,12 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'add_source_url' => [
+            'required' => 'Ievadiet URL.',
+        ],
+        'filter' => [
+            'required' => 'Ievadiet filtru nosaukumu.',
+        ],
     ],
 
     /*

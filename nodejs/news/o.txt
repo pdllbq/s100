@@ -1,0 +1,1559 @@
+Start
+Parsing rss feeds...
+getTag for: Пригожин дал интервью, в котором раскритиковал ход &quot;спецоперации&quot;, похвалил ВСУ и предложил &quot;пожить в образе Северной Кореи&quot;
+getTag for: Время собирать шины: к 2025 году Латвия должна вернуть на переработку 90% проданных покрышек
+getTag for: Полиция: во время акции протеста против политики правительства возможны провокации
+getTag for: По всей Германии прошли обыски у радикальных экоактивистов
+getTag for: &quot;Мы уже давно опоздали&quot;. Физик о строительстве АЭС в Латвии
+Filter: 1
+checkGuid for: https://rus.delfi.lv/news/daily/latvia/my-uzhe-davno-opozdali-fizik-o-stroitelstve-aes-v-latvii.d?id=55560208
+getTag for: В Плявниеки подросток предложил мальчику секс за деньги; полиция начала проверку
+getTag for: За свободу слова и независимость медиа: Минкульт отреагировал на решение NEPLP о штрафе TVNet
+getTag for: Додик в Москве. Зачем лидер боснийских сербов встречался с Путиным?
+getTag for: FT: в рейде на Белгородскую область участвовала бронетехника из США. Пентагон не разрешал применять ее на территории РФ
+getTag for: Служба здравоохранения будет рассылать приглашения женщинам на скрининг рака, но только электронно
+getTag for: В Кремле заявили, что Россия выступает против заморозки конфликта с Украиной
+getTag for: В Лимбажском крае мальчик чуть не умер после сальто на батуте
+getTag for: Валайнис: пока сложно сказать, удастся ли Сейму избрать нового президента 31 мая
+getTag for: Перехват российских &quot;зомби&quot;: как живет авиабаза НАТО в Эстонии
+getTag for: Германия предоставила убежище 55 отказникам из РФ
+getTag for: Полиция нашла на Югле хранилище разнообразных наркотиков
+getTag for: Третьяковская галерея отказалась выдавать РПЦ &quot;Троицу&quot; Рублева в ближайшее время
+getTag for: Франция запретила короткие внутренние авиаперелеты, чтобы снизить выбросы CO2
+getTag for: &quot;Грайворон перекрыт, туда никого не впускают&quot;. Что мы знаем о диверсионном рейде в Белгородскую область
+getTag for: Министр юстиции Латвии раскритиковала ЕС за отсутствие плана по возвращению украинских детей
+getTag for: Pasaulē lielākais aviācijas bāzeskuģis ieradies Oslo uz NATO mācībām
+getTag for: Valsts kanceleja plāno administratīvā sloga mazināšanu; Mitrevics vēlas straujākas pārmaiņas
+getTag for: S04E224: Laila Odiņa
+getTag for: Artūrs Visockis-Rubenis: 'Jauno basketbolistu attīstība ir emocionāli smags darbs.'
+Filter: 2
+checkGuid for: https://www.delfi.lv/podkasti/basketstudija-21/arturs-visockis-rubenis-jauno-basketbolistu-attistiba-ir-emocionali-smags-darbs.d?id=55560662
+getTag for: Ukrainas baznīca pāriet uz jaunu kalendāru – Ziemassvētkus svinēs 25. decembrī
+getTag for: Vācijas policija izmeklēšanas ietvaros par klimata aktīvistiem veic kratīšanas
+getTag for: Armijas pārtikas līgumā armijas vadība nav izvērtējusi būtiskus organizatoriska rakstura jautājumu, secina prokuratūra
+getTag for: Gajānā skolniece telefona konfiskācijas dēļ aizdedzina kopmītnes; 19 bojāgājušie
+getTag for: Intervija ar Valsts prezidenta amata kandidātu Uldi Pīlēnu
+Filter: 2
+checkGuid for: https://www.delfi.lv/podkasti/nakamais-ludzu/intervija-ar-valsts-prezidenta-amata-kandidatu-uldi-pilenu.d?id=55560080
+getTag for: Krievijas Belgorodas apgabalā pēc dronu uzbrukuma deg gāzesvads
+getTag for: 897 700 eiro parādi, 517 000 eiro aizdevumi – ko atklāj astoņu LPV deputātu deklarācijas
+Filter: 2
+checkGuid for: https://www.delfi.lv/news/national/politics/897-700-eiro-paradi-517-000-eiro-aizdevumi-ko-atklaj-astonu-lpv-deputatu-deklaracijas.d?id=55559344
+getTag for: ASV ukraiņus darbam ar 'Abrams' tankiem sāks apmācīt aptuveni nedēļas laikā
+getTag for: Puse amerikāņu atbalsta militārās palīdzības sniegšanu Ukrainai, liecina aptauja
+getTag for: 'Krievijas brīvība' ziņo par iznīcinātu krievu rotu Belgorodā; noliedz lielus zaudējumus sev
+getTag for: Ukrainas pilotu apmācības ar F-16 varētu sākties jūlijā, prognozē Dānijas ministrs
+getTag for: Ingars Pilmanis: Par drošāku un labāku pasauli
+getTag for: Otrdien dzēsts paaugstinātas bīstamības ugunsgrēks Rēzeknē
+getTag for: Kristīne Lagarda: Euro vienotības 25 gadi
+getTag for: Otrdien avārijās cietuši septiņi gājēji un seši velosipēdisti
+getTag for: RNP 'mēģina noklusēt problēmas uzņēmumā' – atsāk parakstu vākšanu valdes izvērtēšanai
+getTag for: Надо думать, как увеличить число работающих в Латвии — министр
+getTag for: Мошенники «добрались» до СГД — не отвечайте на письма о возврате переплаченных налогов
+getTag for: Дни белорусской культуры в Даугавпилсе — выставка, концерт, презентация книги и «белорусский Жюль Верн»
+getTag for: ТЧК-подкаст. Посол Украины Анатолий Куцевол. Интервью
+getTag for: Для жителей резко вырастут счета за электричество
+getTag for: ВИДЕО: информационная программа «Новый день» 24.05.2023
+getTag for: Нападение РФ на Украину: ВСУ начнут обучаться на танках Abrams на следующей неделе
+getTag for: Решение о поддержке кандидата в президенты СЗК примет в день выборов — председатель фракции
+getTag for: В выходные похолодает, местами возможны заморозки
+getTag for: «Нужны 1,5 тыс. волонтеров» — bezvests.lv информирует о времени и месте сборов для поиска пропавшей Юстине
+getTag for: Мы сражались как звери — Витолиньш об игре со сборной Швейцарии
+getTag for: Огороды на Луцавсале хотят превратить в зону биологического разнообразия
+getTag for: В Латвии собирают подписи, чтобы прекратить обеспечивать бывших президентов
+getTag for: Сальто на батуте едва не закончилось смертью десятилетнего мальчика
+getTag for: Рижанам напомнили, где купаться и как это сделать безопасно
+getTag for: Среда, 24 мая: воздух прогреется до 26 градусов
+getTag for: Латвия — Швейцария: неприступный бастион взят, сборная Латвии — в четвертьфинале!
+getTag for: Украина сегодня. Фотохроника 23.05.2023
+getTag for: Новая котельная на щепе в Лиепае — послание потомкам
+getTag for: Выдворение, а не депортация: СМИ оштрафовали за «неверную информацию» в интервью
+getTag for: Нападение РФ на Украину: в Белгородской области родилась новая Россия — оппозиционный политик
+getTag for: Многие покинувшие Украину из-за войны ждут возможности вернуться — посол
+getTag for: До конца июня ограничено движение в районе улицы Лачплеша в Риге
+getTag for: ВИДЕО: «Сегодня вечером» — новости на Rus.LSM в 19:00
+getTag for: Ограбили магазин и врезались в полицейский автомобиль — в Риге задержана банда грабителей
+getTag for: «Сегодня», сто лет назад. Ограничения на въезд в Латвию из России. Ужесточены экзамены в русских школах. Отказ от летнего времени
+getTag for: Полиция больше не будет охранять бывшую резиденцию посла РФ в Юрмале
+getTag for: Для охраны границ могут ввести специальный усиленный режим
+getTag for: Айя Зариня взывает — «Солнце. Свет. Ветер!» #kultura1kB
+getTag for: ВИДЕО: «Подробности» на ЛР-4. 23.05.2023
+getTag for: Ограничено движение по шоссе Икшкиле-Даугавпилс
+getTag for: Минфин против привязки финансирования общественных СМИ к ВВП
+getTag for: ВИДЕО: Программа «ТЧК». Интервью с послом Украины в Латвии
+getTag for: Для выхода в четвертьфинал ЧМ по хоккею Латвии нужно брать очки со Швейцарией
+getTag for: ВИДЕО: «Новости сегодня» — на Rus.LSM в 15:00
+getTag for: Граждане РФ смогут дополнительно регистрироваться на экзамен по госязыку в июне
+getTag for: На выходных в Латвии пройдет Ночь церквей
+getTag for: Банк Латвии выпустит памятную 2-евровую монету «Подсолнух для Украины»
+getTag for: Банк Латвії випустить пам'ятну монету «Соняшник для України»
+getTag for: Черные подсолнухи и ложки-люди — чувство войны художницы Сандры Крастини #kultura1kB
+getTag for: ТЧК-подкаст. Выборы президента Латвии: кандидат Элина Пинто. Интервью
+getTag for: В футбольную инфраструктуру Даугавпилса вложат миллионы
+getTag for: ВИДЕО: информационная программа «Новый день» 23.05.2023
+getTag for: Нападение РФ на Украину: в Белгородской области — атаки дронов и «зачистка территории» силовиками
+getTag for: Нацобъединение, скорее всего, не поддержит ни одного из кандидатов в президенты — министр
+getTag for: Брамс, Рахманинов Хачатурян — три юбиляра этого года соединятся в АНКОЛе #kultura1kB
+getTag for: В субботу, 27 мая bezvests.lv приглашает присоединиться к новым поискам пропавшей Юстине
+getTag for: За бортом коалиции может оказаться любая партия — политолог
+getTag for: «Ми з України». Можливості вибору форми та методів навчання для українських дітей розширюються
+getTag for: В некоторых региональных больницах изменится спектр медуслуг
+getTag for: Kas ir Drive in un kāpēc to izvēlēties?
+getTag for: Kā atmest smēķēšanu? Ceļvedis pīpmanim
+getTag for: Klasiskie cigarešu smēķēšanas pavadoņi: dzelteni zobi, slikta elpa un bojātas smaganas
+getTag for: Par apkures atslēgšanu un darbiem iedzīvotāju dzīvokļos
+getTag for: Atvērts logs neglābj no cigarešu dūmiem
+getTag for: Pirmo reizi Daugavpilī: slavenā pianiste Poļina Osetinska prezentēs pasaules kino klasikas baroka mūzikas šedevrus
+getTag for: Aktieri Dmitrijs Nazarovs un Olga Vasiļjeva pēc aizbraukšanas no Krievijas kāps uz skatuves Daugavpilī ar programmu „L'amour-mur” vai „Ačgārnā lielvalsts”
+getTag for: Liels Stand Up koncerts Daugavpilī
+getTag for: Auto rezerves daļu interneta veikals Latvijā
+getTag for: Grupa “A-Europa” ar “dzīvo” koncertu Daugavpils Kultūras pilī
+getTag for: Tumsas pabērni (Raidījums nr. 10)
+getTag for: Cigaretes – sportistu lāsts
+getTag for: Berezins: “Šobrīd visiem Latvijas treneriem ir ļoti grūti”
+Filter: 2
+checkGuid for: http://lat.grani.lv/latvia/18608-berezins-sobrid-visiem-latvijas-treneriem-ir-loti-gruti.html
+getTag for: 05/05! "Inženieru arsenāla" lielā atklāšana!
+getTag for: Zinātnes cīņa ar cigaretēm
+getTag for: Jubileju gaidot, ieskicēsim Krāslavas dažas šķautnes (2. daļa)
+getTag for: Arī viena cigarete ir par daudz
+getTag for: Pilsētas jubileju gaidot: Krāslava atver logus
+getTag for: Tumsas pabērni (Raidījums nr. 9)
+getTag for: Daugavpilī atdzimst tūrisma industrija
+getTag for: ���� ����� ������ �������������� �� ����� ��������
+getTag for: ���� ����� ��������? �������� ��������� ��������� (14 ������)
+getTag for: ��-�� ������������� ����� ��������� ������� �����������
+getTag for: ��� �������� �� ����������? (�����)
+getTag for: �����������: ������������ ����� ������ � ������ ����������
+getTag for: ����� ������ ����������� ������ ����� ������ �� ��������� ������?
+getTag for: ����� ������ �������� ������ ������ (�����)
+getTag for: �� �������������� ����� ������ ������������� ��������
+getTag for: ��������� �������� ���������� � �������������� ������������� � �������������� �����
+getTag for: ���� ��������: ����� �������� ������� ������ (�����)
+getTag for: ������������� ��� ����� ��������
+getTag for: �������������� � ��������� � �������������
+getTag for: ���������������� ���������� �� ����� �������� �� ���������� ����� ��������� ����� �� 50
+getTag for: ���������� �� 100+ ������ (13.01.2020, �����)
+getTag for: ��������� II �������, ��� ������������ ������� ������ ����� ������ ������ ������
+getTag for: �������� ������� ������� ���������������� ������� � ���������� ����. �� ��� ���� �������� ��������?
+getTag for: KNAB ���������� ��������� �� 18 ����� ����
+getTag for: ��� ������� ��������� ������� (�����)
+getTag for: ��������� ������� LAMPA ���������� � ������� � ��� �����������
+getTag for: ����� 30 ���. ��������� �������� ��������� � �������� ����� ������ ����� ������
+similarity for: &quot;Мы уже давно опоздали&quot;. Физик о строительстве АЭС в Латвии
+savePost: &quot;Мы уже давно опоздали&quot;. Физик о строительстве АЭС в Латвии
+similarity for: Artūrs Visockis-Rubenis: 'Jauno basketbolistu attīstība ir emocionāli smags darbs.'
+savePost: Artūrs Visockis-Rubenis: 'Jauno basketbolistu attīstība ir emocionāli smags darbs.'
+similarity for: Intervija ar Valsts prezidenta amata kandidātu Uldi Pīlēnu
+savePost: Intervija ar Valsts prezidenta amata kandidātu Uldi Pīlēnu
+similarity for: 897 700 eiro parādi, 517 000 eiro aizdevumi – ko atklāj astoņu LPV deputātu deklarācijas
+savePost: 897 700 eiro parādi, 517 000 eiro aizdevumi – ko atklāj astoņu LPV deputātu deklarācijas
+similarity for: Berezins: “Šobrīd visiem Latvijas treneriem ir ļoti grūti”
+savePost: Berezins: “Šobrīd visiem Latvijas treneriem ir ļoti grūti”
+Post saved: &quot;Мы уже давно опоздали&quot;. Физик о строительстве АЭС в Латвии
+checkGuidCount: 5
+Post saved: Artūrs Visockis-Rubenis: 'Jauno basketbolistu attīstība ir emocionāli smags darbs.'
+checkGuidCount: 5
+Post saved: Intervija ar Valsts prezidenta amata kandidātu Uldi Pīlēnu
+checkGuidCount: 5
+Post saved: 897 700 eiro parādi, 517 000 eiro aizdevumi – ko atklāj astoņu LPV deputātu deklarācijas
+checkGuidCount: 5
+Post saved: Berezins: “Šobrīd visiem Latvijas treneriem ir ļoti grūti”
+checkGuidCount: 5
+getTag for: IZM: Liepājas Universitāte pievienosies Rīgas Tehniskajai universitātei
+
+getTag for: «Kas notiek Latvijā?» – par nedēļu pirms Valsts prezidenta vēlēšanām
+
+Filter: 2
+checkGuid for: https://www.lsm.lv/raksts/kas-notiek-latvija/raksti/24.05.2023-kas-notiek-latvija-par-nedelu-pirms-valsts-prezidenta-velesanam.a509967/
+getTag for: Konkurences padome konstatē pārmērīgas prasības iepirkumos par kultūras pieminekļu apsekošanu
+
+getTag for: Ceturtdien Kurzemē kļūs vēsāks
+
+Filter: 2
+checkGuid for: https://www.lsm.lv/raksts/laika-zinas/laika-zinas/24.05.2023-ceturtdien-kurzeme-klus-vesaks.a509933/
+getTag for: Salnas radītie zaudējumi augļu un ogu ražotājiem liek domāt par izdzīvošanu
+
+Filter: 2
+checkGuid for: https://www.lsm.lv/raksts/zinas/ekonomika/24.05.2023-salnas-raditie-zaudejumi-auglu-un-ogu-razotajiem-liek-domat-par-izdzivosanu.a509961/
+getTag for: «Gazprom» peļņa pērn sarukusi par vairāk nekā 40%
+
+getTag for: Maza un bagāta: ko mēs zinām par Īriju?
+
+Filter: 2
+checkGuid for: https://www.lsm.lv/raksts/dzive--stils/celosana/24.05.2023-maza-un-bagata-ko-mes-zinam-par-iriju.a509849/
+getTag for: Floridas gubernators Desantiss grasās oficiāli paziņot par kandidēšanu ASV prezidenta vēlēšanās
+
+getTag for: Organizē, tirgo kafiju un trenē: Ziemeļvalstīs daudz pienākumu bērnu sportā uzņemas vecāki
+
+getTag for: ZZS un Nacionālā apvienība par atbalstu kādam prezidenta amata kandidātam izlems vēlēšanu dienā
+
+Filter: 2
+checkGuid for: https://www.lsm.lv/raksts/zinas/latvija/24.05.2023-zzs-un-nacionala-apvieniba-par-atbalstu-kadam-prezidenta-amata-kandidatam-izlems-velesanu-diena.a509907/
+getTag for: Rietumu eksperti reidu Belgorodas apgabalā uzskata par prelūdiju Ukrainas pretuzbrukumam
+
+getTag for: Šī diena vēsturē. Pirmo reizi notiek Eirovīzijas dziesmu konkurss
+
+getTag for: Vietvara Kūku pagastā trīs gadus pēc postoša ugunsgrēka no savas zemes nenovāc krāsmatas
+
+Filter: 2
+checkGuid for: https://www.lsm.lv/raksts/dzive--stils/ikdienai/24.05.2023-vietvara-kuku-pagasta-tris-gadus-pec-postosa-ugunsgreka-no-savas-zemes-nenovac-krasmatas.a509935/
+getTag for: Mājsaimniecībām elektrības sadales tarifs no jūlija pieaugs par 5–18 eiro un vairāk
+
+getTag for: Somijā diskutē par sabiedriskā medija uzturēšanas nodokli
+
+getTag for: Itālijā cīnās ar postošo plūdu sekām; cietušajam reģionam piešķir 2 miljardu eiro palīdzību
+
+getTag for: Mūžībā devies horeogrāfs, Dziesmu un deju svētku Goda virsvadītājs Uldis Šteins
+
+Filter: 2
+checkGuid for: https://www.lsm.lv/raksts/kultura/kulturtelpa/24.05.2023-muziba-devies-horeografs-dziesmu-un-deju-svetku-goda-virsvaditajs-uldis-steins.a509944/
+getTag for: Ļauties plūdumam. Saruna ar mūziķi Uldi Marhileviču
+
+Filter: 2
+checkGuid for: https://www.lsm.lv/raksts/kultura/muzika/24.05.2023-lauties-pludumam-saruna-ar-muziki-uldi-marhilevicu.a509861/
+getTag for: Dziesmu svētku vokālo ansambļu konkursa finālā piedalīsies 30 ansambļi
+
+Filter: 2
+checkGuid for: https://www.lsm.lv/raksts/kultura/dziesmu-un-deju-svetki/24.05.2023-dziesmu-svetku-vokalo-ansamblu-konkursa-finala-piedalisies-30-ansambli.a509940/
+getTag for: Nedēļas nogalē kļūs vēsāks, vietām būs salna; joprojām arī sauss
+
+getTag for: Jauno mūziķu konkursā «Hadrons» uzvar grupa «Māra Dagne»
+
+Filter: 2
+checkGuid for: https://www.lsm.lv/raksts/kultura/muzika/24.05.2023-jauno-muziku-konkursa-hadrons-uzvar-grupa-mara-dagne.a509929/
+getTag for: Zemesvēži, kurmji, ūdensžurkas – padomi cīņai ar dārza postītājiem
+
+getTag for: Meklējiet ceriņziedu laimes! Izprintējami uzdevumi mazajiem lasītājiem un skaitītājiem
+
+getTag for: Kārļa Vērdiņa dzejas krājums «Pieaugušie» izdots franciski
+
+getTag for: Latvijas hokeja izlase jau labojusi rekordus pasaules čempionātā, gatava iet vēl tālāk
+
+Filter: 2
+checkGuid for: https://www.lsm.lv/raksts/sports/hokejs/24.05.2023-latvijas-hokeja-izlase-jau-labojusi-rekordus-pasaules-cempionata-gatava-iet-vel-talak.a509910/
+getTag for: Dēlu pēc tēva nāves pārsteidz sveši cilvēki ar aizdomīga paskata testamentu
+
+Filter: 2
+checkGuid for: https://www.lsm.lv/raksts/dzive--stils/ikdienai/24.05.2023-delu-pec-teva-naves-parsteidz-svesi-cilveki-ar-aizdomiga-paskata-testamentu.a509913/
+getTag for: Rogovkā pazudušās Justīnes meklēšanas misijā aicina pieteikties 1500 brīvprātīgo
+
+getTag for: Karš Ukrainā fotogrāfu acīm. 2023. gada 23. maijs.
+
+getTag for: Sārts: Ir sākusies Ukrainas pretuzbrukuma operācijas sākuma fāze
+
+Filter: 2
+checkGuid for: https://www.lsm.lv/raksts/zinas/arzemes/24.05.2023-sarts-ir-sakusies-ukrainas-pretuzbrukuma-operacijas-sakuma-faze.a509917/
+getTag for: Maijs – sējas, lapu, ziedoņa un dziedoņu mēnesis
+
+getTag for: Ārsts: Mēnesī ap 200 bērnu gūst traumas satiksmes negadījumos; īpaši smagas ar elektroskūteriem
+
+getTag for: Krimināllietu pret Trampu sāks izskatīt nākamā gada martā
+
+getTag for: Iedzīvotāji aktīvi izmanto iespēju bez maksas nodot riepas – 10 dienās savāktas 170 tonnas
+
+Filter: 2
+checkGuid for: https://www.lsm.lv/raksts/dzive--stils/vide-un-dzivnieki/24.05.2023-iedzivotaji-aktivi-izmanto-iespeju-bez-maksas-nodot-riepas-10-dienas-savaktas-170-tonnas.a509905/
+getTag for: Līdz ar elektroauto skaita pieaugumu sakuplo arī uzlādes punktu tīkls
+
+Filter: 2
+checkGuid for: https://www.lsm.lv/raksts/zinas/ekonomika/24.05.2023-lidz-ar-elektroauto-skaita-pieaugumu-sakuplo-ari-uzlades-punktu-tikls.a509873/
+getTag for: Sievietes loma svarīgās TV un radio diskusijās. Kas mainījies gada laikā?
+
+Filter: 2
+checkGuid for: https://www.lsm.lv/raksts/arpus-etera/arpus-etera/24.05.2023-sievietes-loma-svarigas-tv-un-radio-diskusijas-kas-mainijies-gada-laika.a509778/
+getTag for: Eiropas Savienība piegādājusi Ukrainai 220 000 artilērijas lādiņu
+
+getTag for: Latviešu ēdieni, ko novērtējam par maz. Šķīvja mītu analīze
+
+getTag for: Prezidenta amata kandidāts Uldis Pīlēns – ar koptu tēlu un ambīcijām; kandidēšana satricinājusi valdības pamatus
+
+getTag for: Krāslavā poļu pamatskolas nākotne ir neziņā tīta; iecerei par slēgšanu – konsultācijas ar Poliju
+
+getTag for: Bļugeram rezultatīva piespēle, «Golden Knights» nonāk soļa attālumā no Stenlija kausa fināla
+
+getTag for: Kaimiņš gaida ciemos! Ieskats, kā igauņi veido kultūras tūrismu
+
+getTag for: Trešdiena būs saulaina un silta, tomēr vietām īslaicīgi līs
+
+getTag for: Hokeja izlases treneris Vītoliņš: Visi komandā bija pelnījuši labākā spēlētāja balvu
+
+Filter: 2
+checkGuid for: https://www.lsm.lv/raksts/sports/hokejs/24.05.2023-hokeja-izlases-treneris-vitolins-visi-komanda-bija-pelnijusi-labaka-speletaja-balvu.a509894/
+getTag for: Valstsvienības kapteinis Daugaviņš pēc uzvaras pār Šveici: Lielāka kaifa no hokeja laikam nav
+
+Filter: 2
+checkGuid for: https://www.lsm.lv/raksts/sports/hokejs/24.05.2023-valstsvienibas-kapteinis-daugavins-pec-uzvaras-par-sveici-lielaka-kaifa-no-hokeja-laikam-nav.a509893/
+getTag for: Ziņojums: Daļa Krievijas deportēto ukraiņu bērnu nogādāti Baltkrievijā
+
+getTag for: Latvijas hokejisti pieveic Šveici, pasaules čempionātu turpinās ceturtdaļfinālā. Spilgtākie mirkļi
+
+Filter: 2
+checkGuid for: https://www.lsm.lv/raksts/sports/hokejs/23.05.2023-latvijas-hokejisti-pieveic-sveici-pasaules-cempionatu-turpinas-ceturtdalfinala-spilgtakie-mirkli.a509690/
+getTag for: Ziņas vieglajā valodā 23. maijā
+
+getTag for: Natālija Mihailova. Tiesības uz nāvi
+
+getTag for: 24. maijs
+
+getTag for: Francijā aizliegts veikt īsus pārlidojumus
+
+similarity for: «Kas notiek Latvijā?» – par nedēļu pirms Valsts prezidenta vēlēšanām
+
+savePost: «Kas notiek Latvijā?» – par nedēļu pirms Valsts prezidenta vēlēšanām
+
+similarity for: Ceturtdien Kurzemē kļūs vēsāks
+
+savePost: Ceturtdien Kurzemē kļūs vēsāks
+
+similarity for: Salnas radītie zaudējumi augļu un ogu ražotājiem liek domāt par izdzīvošanu
+
+savePost: Salnas radītie zaudējumi augļu un ogu ražotājiem liek domāt par izdzīvošanu
+
+similarity for: Maza un bagāta: ko mēs zinām par Īriju?
+
+savePost: Maza un bagāta: ko mēs zinām par Īriju?
+
+similarity for: ZZS un Nacionālā apvienība par atbalstu kādam prezidenta amata kandidātam izlems vēlēšanu dienā
+
+savePost: ZZS un Nacionālā apvienība par atbalstu kādam prezidenta amata kandidātam izlems vēlēšanu dienā
+
+similarity for: Vietvara Kūku pagastā trīs gadus pēc postoša ugunsgrēka no savas zemes nenovāc krāsmatas
+
+savePost: Vietvara Kūku pagastā trīs gadus pēc postoša ugunsgrēka no savas zemes nenovāc krāsmatas
+
+similarity for: Mūžībā devies horeogrāfs, Dziesmu un deju svētku Goda virsvadītājs Uldis Šteins
+
+savePost: Mūžībā devies horeogrāfs, Dziesmu un deju svētku Goda virsvadītājs Uldis Šteins
+
+similarity for: Ļauties plūdumam. Saruna ar mūziķi Uldi Marhileviču
+
+savePost: Ļauties plūdumam. Saruna ar mūziķi Uldi Marhileviču
+
+similarity for: Dziesmu svētku vokālo ansambļu konkursa finālā piedalīsies 30 ansambļi
+
+savePost: Dziesmu svētku vokālo ansambļu konkursa finālā piedalīsies 30 ansambļi
+
+similarity for: Jauno mūziķu konkursā «Hadrons» uzvar grupa «Māra Dagne»
+
+savePost: Jauno mūziķu konkursā «Hadrons» uzvar grupa «Māra Dagne»
+
+similarity for: Latvijas hokeja izlase jau labojusi rekordus pasaules čempionātā, gatava iet vēl tālāk
+
+savePost: Latvijas hokeja izlase jau labojusi rekordus pasaules čempionātā, gatava iet vēl tālāk
+
+similarity for: Dēlu pēc tēva nāves pārsteidz sveši cilvēki ar aizdomīga paskata testamentu
+
+savePost: Dēlu pēc tēva nāves pārsteidz sveši cilvēki ar aizdomīga paskata testamentu
+
+similarity for: Sārts: Ir sākusies Ukrainas pretuzbrukuma operācijas sākuma fāze
+
+savePost: Sārts: Ir sākusies Ukrainas pretuzbrukuma operācijas sākuma fāze
+
+similarity for: Iedzīvotāji aktīvi izmanto iespēju bez maksas nodot riepas – 10 dienās savāktas 170 tonnas
+
+savePost: Iedzīvotāji aktīvi izmanto iespēju bez maksas nodot riepas – 10 dienās savāktas 170 tonnas
+
+similarity for: Līdz ar elektroauto skaita pieaugumu sakuplo arī uzlādes punktu tīkls
+
+savePost: Līdz ar elektroauto skaita pieaugumu sakuplo arī uzlādes punktu tīkls
+
+similarity for: Sievietes loma svarīgās TV un radio diskusijās. Kas mainījies gada laikā?
+
+savePost: Sievietes loma svarīgās TV un radio diskusijās. Kas mainījies gada laikā?
+
+similarity for: Hokeja izlases treneris Vītoliņš: Visi komandā bija pelnījuši labākā spēlētāja balvu
+
+savePost: Hokeja izlases treneris Vītoliņš: Visi komandā bija pelnījuši labākā spēlētāja balvu
+
+similarity for: Valstsvienības kapteinis Daugaviņš pēc uzvaras pār Šveici: Lielāka kaifa no hokeja laikam nav
+
+savePost: Valstsvienības kapteinis Daugaviņš pēc uzvaras pār Šveici: Lielāka kaifa no hokeja laikam nav
+
+similarity for: Latvijas hokejisti pieveic Šveici, pasaules čempionātu turpinās ceturtdaļfinālā. Spilgtākie mirkļi
+
+savePost: Latvijas hokejisti pieveic Šveici, pasaules čempionātu turpinās ceturtdaļfinālā. Spilgtākie mirkļi
+
+Post saved: «Kas notiek Latvijā?» – par nedēļu pirms Valsts prezidenta vēlēšanām
+
+checkGuidCount: 24
+Post saved: Ceturtdien Kurzemē kļūs vēsāks
+
+checkGuidCount: 24
+Post saved: Salnas radītie zaudējumi augļu un ogu ražotājiem liek domāt par izdzīvošanu
+
+checkGuidCount: 24
+Post saved: Maza un bagāta: ko mēs zinām par Īriju?
+
+checkGuidCount: 24
+Post saved: ZZS un Nacionālā apvienība par atbalstu kādam prezidenta amata kandidātam izlems vēlēšanu dienā
+
+checkGuidCount: 24
+Post saved: Vietvara Kūku pagastā trīs gadus pēc postoša ugunsgrēka no savas zemes nenovāc krāsmatas
+
+checkGuidCount: 24
+getTag for: Igaunijā plāno paaugstināt PVN likmi tūristu mītnēm
+getTag for: Pēdējos gados palielinājusies mūsdienu verdzības izplatība pasaulē
+getTag for: Saūda Arābija veido jaunu reģionālo politiku un atgūst varu
+getTag for: FM pauž delikātas bažas par Latvijai piešķirtās eironaudas apguvi
+getTag for: Apstiprināti Sadales tīkla un AST precizētie elektroenerģijas sadales un pārvades tarifi
+getTag for: Pāragri prognozēt, vai maija beigās tiks ievēlēts Valsts prezidents, uzskata ZZS politiķis
+getTag for: Slimnīcu biedrība vēsta, ka speciālistus tajās saglabāšot “minimālā apmērā”
+getTag for: Sākusies Ukrainas pretuzbrukuma sākotnējā fāze, secina Sārts
+getTag for: Īres tirgus aktivitāti “silda” ārvalstu studenti un citi ārzemnieki
+getTag for: ASV distancējas no uzbrukumiem Belgorodas apkaimē
+Post saved: Mūžībā devies horeogrāfs, Dziesmu un deju svētku Goda virsvadītājs Uldis Šteins
+
+checkGuidCount: 24
+Post saved: Ļauties plūdumam. Saruna ar mūziķi Uldi Marhileviču
+
+checkGuidCount: 24
+Post saved: Dziesmu svētku vokālo ansambļu konkursa finālā piedalīsies 30 ansambļi
+
+checkGuidCount: 24
+Post saved: Jauno mūziķu konkursā «Hadrons» uzvar grupa «Māra Dagne»
+
+checkGuidCount: 24
+Post saved: Latvijas hokeja izlase jau labojusi rekordus pasaules čempionātā, gatava iet vēl tālāk
+
+checkGuidCount: 24
+Post saved: Dēlu pēc tēva nāves pārsteidz sveši cilvēki ar aizdomīga paskata testamentu
+
+checkGuidCount: 24
+Post saved: Sārts: Ir sākusies Ukrainas pretuzbrukuma operācijas sākuma fāze
+
+checkGuidCount: 24
+Post saved: Iedzīvotāji aktīvi izmanto iespēju bez maksas nodot riepas – 10 dienās savāktas 170 tonnas
+
+checkGuidCount: 24
+Post saved: Līdz ar elektroauto skaita pieaugumu sakuplo arī uzlādes punktu tīkls
+
+checkGuidCount: 24
+Post saved: Sievietes loma svarīgās TV un radio diskusijās. Kas mainījies gada laikā?
+
+checkGuidCount: 24
+Post saved: Hokeja izlases treneris Vītoliņš: Visi komandā bija pelnījuši labākā spēlētāja balvu
+
+checkGuidCount: 24
+Post saved: Valstsvienības kapteinis Daugaviņš pēc uzvaras pār Šveici: Lielāka kaifa no hokeja laikam nav
+
+checkGuidCount: 24
+Post saved: Latvijas hokejisti pieveic Šveici, pasaules čempionātu turpinās ceturtdaļfinālā. Spilgtākie mirkļi
+
+checkGuidCount: 24
+getTag for: В Латвии с 1 июля вырастут тарифы на электричество. Регулятор советует экономить
+getTag for: А что происходит? Экспорт Латвии в Россию в прошлом году вырос на 63,7%
+Filter: 1
+checkGuid for: https://bb.lv/statja/ekonomika/2023/05/24/a-chto-proishodit-eksport-latvii-v-rossiyu-v-proshlom-godu-vyros-na-637
+getTag for: На выходных ожидаются заморозки
+getTag for: Письма о скрининге рака, шлют на официальный адрес е-почты. Он у вас есть?
+getTag for: Я убедился, что хорошо проделанная работа окупается – Витолиньш
+getTag for: США не давали согласия на применение их техники на территории России - Пентагон
+getTag for: А вот это обидно - жители Эстонии и Литвы тратят больше жителей Латвии
+getTag for: Зрители вообще остались без нервов - нападающий Дзиеркалс
+getTag for: Букеровскую премию присудили болгарскому писателю Господинову
+getTag for: У руководства РФ нет иммунитета к уголовной ответственности - Ринкевичс
+getTag for: В Латвии опасная тенденция - растет агрессия в молодежной среде. Что происходит?
+getTag for: Блюгерс помог «Голден Найтс» одержать третью победу в полуфинале Кубка Стенли
+getTag for: Принц Уильям удивил королевских фанатов
+getTag for: Полиция усматривает риски провокаций во время акции протеста в Риге 27 мая
+Filter: 1
+checkGuid for: https://bb.lv/statja/chp-i-kriminal/2023/05/24/goliciya-usmatrivaet-riski-provokaciy-vo-vremya-akcii-protesta-v-rige-27-maya
+getTag for: Военные ФРГ не исключают, что поддержат коалицию истребителей для Украины
+getTag for: Латвия стала лучшей на ЧМ по хоккею в одном из компонентов игры
+getTag for: Важно уважать свободу слова и независимость СМИ - Минкультуры о штрафе TVNet
+getTag for: Атаки дронов и взрывы: в Белгородской области РФ по-прежнему неспокойно
+getTag for: «На что мы платим налоги?» - в Латвии обнаружили отсутствие полиции
+Filter: 1
+checkGuid for: https://bb.lv/statja/nasha-latvija/2023/05/24/na-chto-my-platim-nalogi-v-latvii-obnaruzhili-otsutstvie-policii
+getTag for: При подписании договора с Zītari LZ руководство армии не учло важные вопросы
+getTag for: Киев настаивает на сохранении транзита российского газа через Украину - WP
+getTag for: Аллергия после косметики - куда жаловаться?
+getTag for: Проверьте сердце, почки и режим питания - бесплатно!
+getTag for: Продукты, богатые клетчаткой: отличное подспорье при любой диете
+getTag for: На четвертьфинал хоккейного чемпионата будут доступны дополнительные билеты
+Filter: 1
+checkGuid for: https://bb.lv/statja/sport/2023/05/24/na-chetvertfinal-hokkeynogo-chempionata-budut-dostupny-dopolnitelnye-bilety
+getTag for: Такого еще не было: 50 cent согласился дать в Риге дополнительный концерт
+getTag for: «Многое для здоровья дает родная земля!»
+getTag for: 5 вещей, которые вы никогда не увидите на Кейт Миддлтон
+getTag for: Можно ли пить кофе, когда болит голова: объясняет врач
+getTag for: Отставка гнсека ЛОК: пловцы - за, борцы - против
+getTag for: Действия, которые провоцируют проблемы со здоровьем.
+getTag for: Как выбрать постельное белье: сатин, бязь или жатка
+getTag for: Великая Джойс Дидонато везет в Латвию свой рай
+Filter: 1
+checkGuid for: https://bb.lv/statja/lifenews/2023/05/24/velikaya-dzhoys-didonato-vezet-v-latviyu-svoy-ray
+getTag for: Германия предоставила убежище 55 отказникам из РФ
+getTag for: Что делать, если вас ужалила пчела, оса или шершень? Как оказать первую помощь
+getTag for: Бережем нашего защитника:продукты для печени.
+getTag for: Силовые упражнения для женщин
+getTag for: Экстрасенсы рядом с нами: 8 доказательств, что у собак есть сверхспособности
+getTag for: 5 самых летних оттенков для педикюра
+getTag for: Общие налоговые задолженности в начале мая возросли
+getTag for: Пропавшая 25-летняя кошка,  два года назад, расплакалась, увидев своих хозяев
+getTag for: Гигиеническая помада - использование не по назначению
+getTag for: 4 вещи, которые не стоит говорить на собеседовании. Не повторяйте эти ошибки!
+getTag for: Рон Десантис намерен объявить об участии в президентских выборах 2024 года
+getTag for: Пока рано прогнозировать, будет ли у нас новый президент в мае - Валайнис
+getTag for: Кариньш встретится в Брюсселе с руководителями НАТО и Европарламента
+getTag for: 5 ошибок, о которых люди жалеют в конце жизни. Как избежать их
+getTag for: Гороскоп на 24 мая 2022 года
+getTag for: Снимаю шляпу перед ребятами - Родриго Аболс
+getTag for: Убытки официального издания «Латвияс Вестнесис» уменьшились в девять раз
+Filter: 1
+checkGuid for: https://bb.lv/statja/ekonomika/2023/05/24/ubytki-oficialnogo-izdaniya-latviyas-vestnesis-umenshilis-v-devyat-raz
+getTag for: Цены на акции падают в США и Европе
+getTag for: Стране гнут скрепы: нужен ли Латвии гендерный подход в борьбе с насилием?
+Filter: 1
+checkGuid for: https://bb.lv/statja/nasha-latvija/2023/05/24/strane-gnut-skrepy-nuzhen-li-latvii-gendernyy-podhod-v-borbe-s-nasiliem
+getTag for: Народные приметы на 24 мая
+getTag for: В столице Судана - затишье: перемирие впервые соблюдается
+getTag for: Латвии нужна новая экономическая политика: шесть причин, почему тормозит старая
+Filter: 1
+checkGuid for: https://bb.lv/statja/nasha-latvija/2023/05/24/nalogi-elektrichestvo-i-rabochaya-sila-latvii-nuzhna-novaya-ekonomicheskaya-politika
+getTag for: Надеюсь, что лучший гол в карьере еще впереди - Даугавиньш
+getTag for: В среду погода определяется областью высокого давления
+getTag for: Гражданка Латвии стала инвалидом из-за халатного врача и старого маммографа
+getTag for: Учителя словенские: сегодня православные вспоминают Кирилла и Мефодия
+getTag for: В Израиле на заправке женщина подожгла бензобак чужой машины, появилось видео
+getTag for: Женщина спасла тукана и птица на ее глазах «расцвела»: видео
+getTag for: В Мексике проснулся смертоносный вулкан, миллионы жителей эвакуируют
+getTag for: Лукашенко заявил, что не собирается умирать
+getTag for: Эксперты усомнились в необходимости новых консолей
+getTag for: Питбуль похудел на 26,5 кг за 8 месяцев: видео поразительного преображения
+getTag for: Назван новый конкурент России на газовом рынке Европы
+getTag for: Госдолг Великобритании достиг рекорда
+getTag for: Мировое производство грузовых контейнеров рухнуло
+getTag for: Латвия сквозь швейцарскую оборону прорвалась в четвертьфинал (ВИДЕО)
+Filter: 1
+checkGuid for: https://bb.lv/statja/sport/2023/05/23/latviya-skvoz-shveycarskuyu-oboronu-prorvalas-v-chetvertfinal-video
+getTag for: Фотографии еды утолили аппетит при просмотре более 30 раз
+getTag for: В Пентагоне высказались о цели поставок Украине истребителей F-16
+getTag for: Курс биткоина превысил 27 тысяч долларов
+getTag for: В Белом доме высказались о неизбежности дефолта в США
+getTag for: Эндокринолог назвала способы обойти ложное чувство голода
+getTag for: Две европейские страны объединились для замены нефтепровода «Дружба»
+getTag for: «Мало!» Рижскую думу призвали в Сейме переименовать ещё ряд улиц в столице
+getTag for: Названа опасность клубники для некоторых людей
+getTag for: Конгрессмен предрек дефолт в США из-за Байдена
+getTag for: Начат уголовный процесс о причинении телесных повреждений школьнику в Улброке
+getTag for: «Колониальная политика еще видна на наших улицах» - советник президента ЛР
+getTag for: Физические упражнения уменьшили риск тяжелого инсульта
+getTag for: Врач рассказал, какие средства от комаров могут быть вредня для человека
+getTag for: Почему мы потеем во сне и как это исправить?
+getTag for: Может ли работа по дому заменить тренировку? Результаты исследования
+getTag for: В Евросоюзе заподозрили Испанию в выдаче «золотых виз» россиянам
+getTag for: Натуропат рассказала, что поможет при изжоге и вздутии живота
+getTag for: Две недорогие, но очень полезные каши
+getTag for: Доктор Мясников перечислил способы справиться со вспышкой агрессии
+getTag for: Мировые цены на пшеницу рухнули до двухлетнего минимума
+getTag for: Как за две минуты навсегда отключить рекламу в приложениях
+getTag for: Какой кофе самый полезный и когда его лучше пить
+getTag for: «Русский уголь нам не нужен»: уголь из России начал терять покупателей в Азии
+getTag for: Стерлядь из пробирки скоро можно будет купить и попробовать
+getTag for: Как уменьшить бюрократию? Депутаты задумались
+getTag for: В прошлом году население Эстонии выросло, но за счет миграции
+getTag for: Почему кошки часто «застревают» на дереве?
+getTag for: Питон заглатывает животное целиком – неужели желудочный сок растворит добычу?
+getTag for: Почему кошки балдеют от валерианы?
+getTag for: Какие птицы самые умные?
+getTag for: «Катастрофа для мира»: глава Минфина США допустила объявление дефолта уже 1 июня
+getTag for: Почему одни куриные яйца белые, а другие коричневые?
+getTag for: Мужчины, у которых в детстве дома были кошки, могут столкнуться с проблемами...
+getTag for: Почему петухи кукарекают?
+getTag for: В РФ приняли закон, по которому у призывников будут отбирать загранпаспорта
+getTag for: Пятая часть населения Земли подвергнется опасной жаре
+getTag for: В Вильнюсе построят Национальный стадион
+getTag for: «Хаббл» зафиксировал плотное шаровое скопление звезд
+getTag for: В британском Кардиффе возникли беспорядки после гибели двух подростков
+getTag for: Дизайн iPhone изменят
+getTag for: В Литве скоро легализуют однополое партнерство
+getTag for: Завтра в Латвии станет еще теплее - синоптики
+getTag for: Власти ЛР получат право вводить особый режим на границе
+getTag for: Полиция перестала охранять резиденцию посла России в Юрмале
+getTag for: Поторопились взять в НАТО? В финской армии обнаружили дедовщину
+getTag for: Власти ЛР оплатят летние лагеря детям украинских беженцев
+getTag for: Граждане России смогут дополнительно регистрироваться на экзамен по латышскому
+getTag for: НСЭСМИ наказал интернет-портал за неправильное употребление слова «депортация»
+getTag for: В Эстонии хотят перейти на искусственное мясо
+getTag for: Минобороны РФ сообщило о «разгроме украинских формирований» под Белгородом
+getTag for: Власти ФРГ признали, что Россия в состоянии вести долгую войну
+getTag for: Лиепайская диета: жить со вкусом, но знать меру
+getTag for: Предпринимательница рассказала о том, почему население не хочет защищать Латвию
+Filter: 1
+checkGuid for: https://bb.lv/statja/nasha-latvija/2023/05/23/predprinimatelnica-rasskazala-o-tom-pochemu-naselenie-ne-hochet-zashchishchat-latviyu
+getTag for: Отступать некуда: словаки сместили сборную Латвии на пятое место (ВИДЕО)
+getTag for: Через два года в Латвии президента будет выбирать народ?
+Filter: 1
+checkGuid for: https://bb.lv/statja/politika/2023/05/23/cherez-2-goda-budet-vsenarodnyy-prezident
+getTag for: Активность армии РФ в Бахмуте снизилась — Киев
+getTag for: Маникюр Венеры: повторяем дизайн
+getTag for: Азербайджан пообещал удвоить поставки газа в Европу
+getTag for: Уход за кожей после 30: восемь правил молодости!
+getTag for: Осенью в Риге пройдет мероприятие, которое соберет 10 тыс зарубежных участников
+getTag for: Главы МИД Германии и Венгрии поругались из-за Украины на встрече в Брюсселе
+getTag for: Любимые ароматы Одри Хепберн, Мэрилин Монро,прошлого столетия
+getTag for: Правительство поможет фермерам застраховать семена, растения и животных
+getTag for: «Денвер Наггетс» впервые в своей истории вышли в финал НБА (ВИДЕО)
+getTag for: На выходных в десятый раз пройдет Ночь церквей
+getTag for: НАТО заключит с Украиной особый договор о поставках вооружений
+getTag for: В Белгородской области воюют российские партизаны — Киев
+getTag for: Лиепиньш отказал в исполнении на Празднике песни песни, написанной с Димитерсом
+getTag for: В Краславском крае опять перевернулась лодка, и опять с жертвами
+getTag for: Голосование за президента может стать голосованием за правительство -  Митревицс
+getTag for: Начат сбор подписей за запрет проката электросамокатов в Латвии
+getTag for: Астронавты-частники добрались до МКС: билет в космос обошелся в 55 млн долларов
+getTag for: Сборная Камеруна отказалась играть в футбол с Россией
+getTag for: ЧМ-2023: сборная Латвии идет до конца
+Filter: 1
+checkGuid for: https://bb.lv/statja/sport/2023/05/23/chm-2023-sbornaya-latvii-idet-do-konca
+getTag for: Неужели? В конце года инфляция может сократиться до 3%
+getTag for: Зарплаты учителей: прекратить исследовать и начать платить!
+getTag for: Меценаты раскошелились на 4 млн, но музей  застрял в бюрократическом болоте
+getTag for: Кейт Миддлтон пришла на цветочную выставку
+getTag for: У латвийского пенсионера было плохое настроение и он застрелил собаку
+getTag for: 9 мифов о здоровье, которые в корне не верны
+getTag for: У Кабмина пройдет пикет за соблюдение прав беженцев на границе
+Filter: 1
+checkGuid for: https://bb.lv/statja/nasha-latvija/2023/05/23/u-kabmina-proydet-piket-za-soblyudenie-prav-bezhencev-na-granice
+getTag for: Никогда не одалживай посуду! Это может привести к плохим последствиям...
+getTag for: Хочет ли Нарва в Россию: эстонские русские поспорили
+getTag for: Как сделать мужа миллионером: 7 золотых правил
+getTag for: Польша начинает готовить отчет об ущербе, причиненном ей СССР
+getTag for: Шакира взяла младшего сына на прогулку с друзьями
+getTag for: Премьер-министр России прибыл в Китай
+getTag for: Почему нельзя мерить чужие кольца: приметы и здравый смысл
+getTag for: Кейт Миддлтон занимается пчеловодством.
+getTag for: У самоуправлений  могут возникнуть проблемы с доставкой хоров на Праздник песни
+getTag for: Короли латвийского футзала названы
+getTag for: На фондовых рынках нет единой тенденции
+getTag for: «Код» счастья на одежде: пора внимательно просмотреть свой гардероб!
+getTag for: Гандбол: Добельский «Тенакс» — девятикратный чемпион
+getTag for: Узбекистан на ощупь и на вкус: до жемчужин Средней Азии ближе, чем вы думаете
+getTag for: Израильские ученые: здоровой пищи не существует! Вот почему...
+getTag for: Шаги прогресса: новые технологии несут ЕС большие перемены
+getTag for: Гороскоп на 23 мая 2023 года всем знакам зодиака
+getTag for: Что случилось с пропавшей Юстиной? Версий много, ответов - нет
+getTag for: В Канаде домашняя свинка росла,росла и наконец выросла!
+getTag for: В США возобновлены переговоры о повышении потолка госдолга
+getTag for: Шесть рисков, с которыми столкнутся владельцы криптовалют
+getTag for: Начат сбор подписей за запрет проката электросамокатов в Латвии
+getTag for: Убивает ли микроволновка вредные бактерии?
+getTag for: Баскетбол: ВЭФ–Рига — снова чемпион!
+getTag for: Середина мая в Латвии была на 1,8 градуса теплее обычного
+getTag for: На заметку: чем замаскировать запах чеснока изо рта
+getTag for: Народные приметы на 23 мая
+getTag for: На пляже Кипсалы будет открыт купальный сезон
+getTag for: Мурниеце примет участие во встрече министров обороны Совета ЕС
+getTag for: Четыре продукта от тромбов: укрепят сосуды, cнизят холестерин, помогут похудеть
+getTag for: У Улманиса и Вике-Фрейберги предлагают отобрать квартиру, машину и секретарей
+getTag for: «Латвия — богатое государство»: деньги можно брать из воздуха
+Filter: 1
+checkGuid for: https://bb.lv/statja/nasha-latvija/2023/05/23/latviya-bogatoe-gosudarstvo-dengi-mozhno-brat-iz-vozduha
+getTag for: Финская компания Gasum расторгла контракт с «Газпромом»
+getTag for: Опрос: только 9% британцев считают Brexit успешным
+getTag for: «Пиррова победа» - New York Times о взятии Бахмута
+getTag for: Сегодня Латвия встречается со Швейцарией и поборется за место в четвертьфинале
+Filter: 1
+checkGuid for: https://bb.lv/statja/sport/2023/05/23/segodnya-latviya-vstrechaetsya-so-shveycariey-i-poboretsya-za-mesto-v-chetvertfinale
+getTag for: Кто обидел Левитса и Дзинтарса? Партнеры недовольны премьерской партией
+Filter: 1
+checkGuid for: https://bb.lv/statja/politika/2023/05/23/kto-obidel-levitsa-i-dzintarsa-partnery-nedovolny-premerskoy-partiey
+getTag for: В Латвии ожидается теплый летний день
+getTag for: Триста «проектов риска»: под угрозой программы ЕС почти на миллиард евро
+getTag for: NOSTALGIA FEST ‘23 на Большой эстраде в Межапарке. Представляем участников
+getTag for: Кенгуровая крыса сцепилась с гремучей змеей. Кто вышел победителем?
+getTag for: Как овчарка родила зелёного щенка и почему он стал желтым (ВИДЕО)
+getTag for: Жуткая самооборона: ящерицы, которые стреляют кровью из глаз. Видео
+getTag for: Евросоюз сократил поставки автомобилей в Россию на 80 процентов
+getTag for: Зачем макаки пытаются спариваться с оленями. Наблюдаем...
+getTag for: Осьминогам могут сниться кошмары (ВИДЕО)
+getTag for: «Без русского газа»: финский энергогигант разорвал контракт с «Газпромом»
+getTag for: Заявлено о разводе Пугачёвой и Галкина — СМИ
+getTag for: «Русское зерно нам не нужно»: Китай отказался от российской пшеницы
+getTag for: Сборная Казахстана достойно завершила Чемпионат мира в Риге (ВИДЕО)
+similarity for: А что происходит? Экспорт Латвии в Россию в прошлом году вырос на 63,7%
+savePost: А что происходит? Экспорт Латвии в Россию в прошлом году вырос на 63,7%
+similarity for: Полиция усматривает риски провокаций во время акции протеста в Риге 27 мая
+savePost: Полиция усматривает риски провокаций во время акции протеста в Риге 27 мая
+similarity for: «На что мы платим налоги?» - в Латвии обнаружили отсутствие полиции
+savePost: «На что мы платим налоги?» - в Латвии обнаружили отсутствие полиции
+similarity for: На четвертьфинал хоккейного чемпионата будут доступны дополнительные билеты
+savePost: На четвертьфинал хоккейного чемпионата будут доступны дополнительные билеты
+similarity for: Великая Джойс Дидонато везет в Латвию свой рай
+savePost: Великая Джойс Дидонато везет в Латвию свой рай
+similarity for: Убытки официального издания «Латвияс Вестнесис» уменьшились в девять раз
+savePost: Убытки официального издания «Латвияс Вестнесис» уменьшились в девять раз
+similarity for: Стране гнут скрепы: нужен ли Латвии гендерный подход в борьбе с насилием?
+savePost: Стране гнут скрепы: нужен ли Латвии гендерный подход в борьбе с насилием?
+similarity for: Латвии нужна новая экономическая политика: шесть причин, почему тормозит старая
+savePost: Латвии нужна новая экономическая политика: шесть причин, почему тормозит старая
+similarity for: Латвия сквозь швейцарскую оборону прорвалась в четвертьфинал (ВИДЕО)
+savePost: Латвия сквозь швейцарскую оборону прорвалась в четвертьфинал (ВИДЕО)
+similarity for: Предпринимательница рассказала о том, почему население не хочет защищать Латвию
+savePost: Предпринимательница рассказала о том, почему население не хочет защищать Латвию
+similarity for: Через два года в Латвии президента будет выбирать народ?
+savePost: Через два года в Латвии президента будет выбирать народ?
+similarity for: ЧМ-2023: сборная Латвии идет до конца
+savePost: ЧМ-2023: сборная Латвии идет до конца
+similarity for: У Кабмина пройдет пикет за соблюдение прав беженцев на границе
+savePost: У Кабмина пройдет пикет за соблюдение прав беженцев на границе
+similarity for: «Латвия — богатое государство»: деньги можно брать из воздуха
+savePost: «Латвия — богатое государство»: деньги можно брать из воздуха
+similarity for: Сегодня Латвия встречается со Швейцарией и поборется за место в четвертьфинале
+savePost: Сегодня Латвия встречается со Швейцарией и поборется за место в четвертьфинале
+similarity for: Кто обидел Левитса и Дзинтарса? Партнеры недовольны премьерской партией
+savePost: Кто обидел Левитса и Дзинтарса? Партнеры недовольны премьерской партией
+Post saved: А что происходит? Экспорт Латвии в Россию в прошлом году вырос на 63,7%
+checkGuidCount: 40
+Post saved: Полиция усматривает риски провокаций во время акции протеста в Риге 27 мая
+checkGuidCount: 40
+Post saved: «На что мы платим налоги?» - в Латвии обнаружили отсутствие полиции
+checkGuidCount: 40
+Post saved: На четвертьфинал хоккейного чемпионата будут доступны дополнительные билеты
+checkGuidCount: 40
+Post saved: Великая Джойс Дидонато везет в Латвию свой рай
+checkGuidCount: 40
+Post saved: Убытки официального издания «Латвияс Вестнесис» уменьшились в девять раз
+checkGuidCount: 40
+Post saved: Стране гнут скрепы: нужен ли Латвии гендерный подход в борьбе с насилием?
+checkGuidCount: 40
+getTag for: Vieglatlēts Višķers pilnībā noliedz savu vainu par kukuļa piedāvāšanu
+Filter: 2
+checkGuid for: https://vs.lv/raksts/kriminalzinas/2023/05/24/vieglatlets-viskers-pilniba-noliedz-savu-vainu-par-kukula-piedavasanu
+getTag for: Miris horeogrāfs, Dziesmu un deju svētku Goda virsvadītājs Uldis Šteins
+Filter: 2
+checkGuid for: https://vs.lv/raksts/izklaide/2023/05/24/miris-horeografs-dziesmu-un-deju-svetku-goda-virsvaditajs-uldis-steins
+getTag for: Līksms VIDEO nodemonstrē, kā cilvēki reaģē uz apli ar uzrakstu «Dejo šeit»
+getTag for: Rīgā uzstāsies amerikāņu eksperimentālā roka grupa Swans
+getTag for: Sinoptiķi: Ceturtdien Latvijā palielināsies mākoņu daudzums
+getTag for: Pēc plūdiem Jēkabpils novadā plāno veikt plašus ielu remontdarbus
+getTag for: Vācija piešķīrusi patvērumu 55 no mobilizācijas bēgušajiem krieviem
+getTag for: Policija 27.maijā plānotās protesta akcijas laikā saskata provokāciju riskus
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/24/policija-27maija-planotas-protesta-akcijas-laika-saskata-provokaciju-riskus
+getTag for: Influencere asarās - sapņu tetovējums sabojāts (+VIDEO)
+getTag for: Daudz! Četru lielāko banku klientiem četros mēnešos izkrāpti 3,439 miljoni eiro
+Filter: 2
+checkGuid for: https://vs.lv/raksts/kriminalzinas/2023/05/24/daudz-cetru-lielako-banku-klientiem-cetros-menesos-izkrapti-3439-miljoni-eiro
+getTag for: Lietuva pastiprinās sankcijām pakļauto preču eksporta kontroli
+getTag for: Britu izlūki: Armiju patvaļīgi pametuši vismaz 1053 Krievijas karavīri
+getTag for: KM: Sabiedrībā ir svarīgi ievērot vārda brīvību
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/24/km-sabiedriba-ir-svarigi-ieverot-varda-brivibu
+getTag for: Vācijas policija veic kratīšanas pie klimata aktīvistiem
+getTag for: Jauno mūziķu konkursā Hadrons 2023 uzvarējusi grupa Māra Dagne
+Filter: 2
+checkGuid for: https://vs.lv/raksts/izklaide/2023/05/24/jauno-muziku-konkursa-hadrons-2023-uzvarejusi-grupa-mara-dagne
+getTag for: SPRK apstiprinājusi elektroenerģijas sadales un pārvades tarifus
+Filter: 2
+checkGuid for: https://vs.lv/raksts/ekonomika/2023/05/24/sprk-apstiprinajusi-elektroenergijas-sadales-un-parvades-tarifus
+getTag for: Prokuratūra: Parakstot līgumu ar Zītari LZ, nav izvērtēti būtiski jautājumi
+Filter: 2
+checkGuid for: https://vs.lv/raksts/kriminalzinas/2023/05/24/prokuratura-parakstot-ligumu-ar-zitari-lz-nav-izverteti-butiski-jautajumi
+getTag for: Ukraina ziņo, cik okupanti iznīcināti (24.maijs)
+getTag for: Trešdienas joku deva
+getTag for: Uz hokeja čempionāta ceturtdaļfinālu būs pieejamas papildu biļetes
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sports/2023/05/24/buncis-uz-hokeja-cempionata-ceturtdalfinalu-bus-pieejamas-papildu-biletes
+getTag for: Palielinājusies mūsdienu verdzības izplatība pasaulē
+getTag for: Rīgā un Liepājā norisināsies Teātra festivāls Nr.2
+Filter: 2
+checkGuid for: https://vs.lv/raksts/izklaide/2023/05/24/riga-un-liepaja-norisinasies-teatra-festivals-nr2
+getTag for: Šausmas Salaspilī: Piedegot ēdienam, cietis cilvēks
+getTag for: Sārts: Ir sākusies Ukrainas pretuzbrukuma operācijas sākotnējā fāze
+Filter: 2
+checkGuid for: https://vs.lv/raksts/pasaule/2023/05/24/sarts-ir-sakusies-ukrainas-pretuzbrukuma-operacijas-sakotneja-faze
+getTag for: Dzierkals: Jāiet tik tālu, cik var
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sports/2023/05/24/dzierkals-jaiet-tik-talu-cik-var
+getTag for: Kopējie nodokļu parādi Latvijā maija sākumā pieauguši līdz 857,4 miljoniem eiro
+getTag for: Valainis: Balsu makšķerēšanas kampaņā prezidents nedabūs atbalstu
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/24/valainis-balsu-makskeresanas-kampana-prezidents-nedabus-atbalstu
+getTag for: Vītoliņš: Pārliecinājos, ka labi padarīts darbs atmaksājas
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sports/2023/05/24/vitolins-parliecinajos-ka-labi-padarits-darbs-atmaksajas
+getTag for: Desantiss plāno paziņot par nodomu pretendēt uz ASV prezidenta amatu
+Filter: 2
+checkGuid for: https://vs.lv/raksts/pasaule/2023/05/24/desantiss-plano-pazinot-par-nodomu-pretendet-uz-asv-prezidenta-amatu
+getTag for: Ukrainas piloti darbam ar F-16 tiks apmācīti Eiropā
+getTag for: Nedēļas nogalē, turpinoties sausumam, vietām gaidāma salna
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/24/nedelas-nogale-turpinoties-sausumam-vietam-gaidama-salna
+getTag for: Briselē Kariņš tiksies ar NATO un EP augstākajām amatpersonām
+getTag for: Rodrigo Ābols izceļ komandas biedru pašaizliedzību izcīnītajā uzvarā
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sports/2023/05/24/rodrigo-abols-izcel-komandas-biedru-pasaizliedzibu-izcinitaja-uzvara
+getTag for: Oficiālā izdevuma «Latvijas Vēstnesis» zaudējumi pērn sarukuši deviņas reizes
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/24/oficiala-izdevuma-latvijas-vestnesis-zaudejumi-pern-sarukusi-devinas-reizes
+getTag for: ASV un Eiropā akciju cenas krītas
+getTag for: Tiesa Trampa krimināllietu sāks izskatīt martā
+getTag for: Daugaviņš: Ceru, ka karjeras labākais vārtu guvums vēl ir priekšā
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sports/2023/05/24/daugavins-ceru-ka-karjeras-labakais-vartu-guvums-vel-ir-prieksa
+getTag for: Siltajā trešdienā saule mīsies ar mākoņiem
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/24/siltaja-tresdiena-saule-misies-ar-makoniem
+getTag for: Slavenajam 50 cent būs arī papildkoncerts Rīgā
+getTag for: Kazāks akcentē nepieciešamību bankām aktīvāk kreditēt
+Filter: 2
+checkGuid for: https://vs.lv/raksts/ekonomika/2023/05/23/kazaks-akcente-nepieciesamibu-bankam-aktivak-kreditet
+getTag for: Esam ceturtdaļfinālā!!! Elpu aizraujošā spēlē Latvija varonīgi uzveic Šveici
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sports/2023/05/23/esam-ceturtdalfinala-elpu-aizraujosa-spele-latvija-varonigi-uzveic-sveici
+getTag for: Itālijā 23 000 cilvēki palikuši bez pajumtes - piešķir milzīgu palīdzības summu
+getTag for: Borels atklāj, cik artilērijas šāviņu un raķešu nosūtīts Ukrainai
+getTag for: Belgorodas apgabalā pirmdien dzīvību zaudējuši divi Krievijas karavīri
+getTag for: Lielbritānija noteiks ierobežojumus ārzemju studentiem
+getTag for: Apakškomisija aicinās Rīgas domi pārdēvēt Maskavas ielu - kā?
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/23/apakskomisija-aicinas-rigas-domi-pardevet-maskavas-ielu-ka
+getTag for: ECT: Atsakoties atzīt viendzimuma pārus, Rumānija pārkāpj cilvēktiesības
+getTag for: Mūrniece: Redzamas Eiropas militārās industrijas nepietiekamās ražošanas jaudas
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/23/murniece-redzamas-eiropas-militaras-industrijas-nepietiekamas-razosanas-jaudas
+getTag for: Kalējs: Pēc slimnīcu tīkla izmaiņām vairāki pakalpojumi paliks minimālā apmērā
+Filter: 2
+checkGuid for: https://vs.lv/raksts/veseliba/2023/05/23/kalejs-pec-slimnicu-tikla-izmainam-vairaki-pakalpojumi-paliks-minimala-apmera
+getTag for: Okupanti pagarina žurnālista Gerškoviča apcietinājumu
+getTag for: Uz Dziesmu svētku laiku Rīgā plāno atjaunot lielāku Lāčplēša ielas caurlaidību
+getTag for: ASV uzveic Zviedriju un garantē pirmo vietu grupā - vai būs Latvijas pretiniece?
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sports/2023/05/23/asv-uzveic-zviedriju-un-garante-pirmo-vietu-grupa-vai-bus-latvijas-pretiniece
+getTag for: Čakšas: EuroBasket 2025 varētu Latvijai ienest 100 miljonus eiro
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/23/caksas-eurobasket-2025-varetu-latvijai-ienest-100-miljonus-eiro
+getTag for: Sunaks: Ukraina Rietumu atbalstu saņems arī nākamajos gados
+getTag for: Kriminālprocesā par dižozola nozāģēšanu Mārupē viens aizdomās turētais
+getTag for: Ko Kariņš saka par Latvijas un Igaunijas kopīgo IRIS-T iepirkumu?
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/23/ko-karins-saka-par-latvijas-un-igaunijas-kopigo-iris-t-iepirkumu
+getTag for: Klimata aktīvisti iztraucē aviosatiksmi Ženēvas lidostā
+getTag for: Rīgā zagļi bēgšanas laikā ietriekušies policijas auto
+getTag for: Kijiva: Krievu uzbrukuma aktivitāte Bahmutā mazinājusies
+getTag for: Levits izskatījis 18 apžēlošanas lūgumus - vai kādu atbalstīja?
+getTag for: Neskaidrība - vai Vācija piegādās Ukrainai raķetes Taurus?
+getTag for: Trešdien temperatūra Latvijā turpinās paaugstināties
+getTag for: Uz PČ skriešanā Rīgā varētu ierasties līdz 10 000 apmeklētāju no ārvalstīm
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sports/2023/05/23/uz-pc-skriesana-riga-varetu-ierasties-lidz-10-000-apmekletaju-no-arvalstim
+getTag for: Austrumu slimnīcā darbu varētu atsākt staru terapijas aparāts vēža pacientiem
+Filter: 2
+checkGuid for: https://vs.lv/raksts/veseliba/2023/05/23/austrumu-slimnica-darbu-varetu-atsakt-staru-terapijas-aparats-veza-pacientiem
+getTag for: Sestdien policija Rīgā pārbaudīja 151 personu - kādas narkotikas atrada? (VIDEO)
+Filter: 2
+checkGuid for: https://vs.lv/raksts/kriminalzinas/2023/05/23/sestdien-policija-riga-parbaudija-151-personu-kadas-narkotikas-atrada-video
+getTag for: Spānijā aizturēti jauni vīrieši - uz tilta izkāra futbola zvaigznes lelli
+getTag for: Rīdzinieks apgalvo, ka kaimiņa galvu izmeta ārā pa logu - policija atbildējusi
+Filter: 2
+checkGuid for: https://vs.lv/raksts/interesanti-fakti/2023/05/23/ridzinieks-apgalvo-ka-kaimina-galvu-izmeta-ara-pa-logu-policija-atbildejusi
+getTag for: Uzmanību! Svarīga informācija par valstī izsludināto ugunsnedrošo periodu
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/23/uzmanibu-svariga-informacija-par-valsti-izsludinato-ugunsnedroso-periodu
+getTag for: Izšķirošā spēle ar Šveici - Dārziņš atklāj ko interesantu par pretinieku stilu
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sports/2023/05/23/izskirosa-spele-ar-sveici-darzins-atklaj-ko-interesantu-par-pretinieku-stilu
+getTag for: Valdība segs PMLP izdevumus par atbalstu Ukrainas bēgļiem - cik lielu summu?
+getTag for: Covid-19 pandēmija beigusies! Kariņš apsver atcelt ar infekciju saistītu likumu
+getTag for: Slovākija sakauj Norvēģiju - Latvijai būs jāpaņem vismaz punkts pret Šveici
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sports/2023/05/23/slovakija-sakauj-norvegiju-latvijai-bus-japanem-vismaz-punkts-pret-sveici
+getTag for: Bezvēsts pazuduši trīs cilvēki - policija lūdz sabiedrības palīdzību
+getTag for: Prezidenta vēlēšanas: Kuram kandidātam uzvaru prognozē bukmeikeri?
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/23/prezidenta-velesanas-kuram-kandidatam-uzvaru-prognoze-bukmeikeri
+getTag for: Kaspars nav nodevējs! Līga Dimitere komentē skandālu pēc Liepiņa izteikumiem
+getTag for: NEPLP grib sodīt medijus par nepareizu vārda "deportācijas" lietošanu
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/23/neplp-grib-sodit-medijus-par-nepareizu-varda-deportacijas-lietosanu
+getTag for: Ņūkāslas "United" pēc 20 gadu pārtraukuma atgriežas UEFA Čempionu līgā
+getTag for: Skandāls! Dziesmu svētku noslēguma koncertā neizpildīs Liepiņa dziesmu
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/23/skandals-dziesmu-svetku-nosleguma-koncerta-neizpildis-liepina-dziesmu
+getTag for: Dziesmu svētku biļešu tirgošanas sistēmas maiņa ir sevi attaisnojusi
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/23/dziesmu-svetku-bilesu-tirgosanas-sistemas-maina-ir-sevi-attaisnojusi
+getTag for: Lebrons Džeimss apsver lēmumu noslēgt karjeru
+getTag for: Rets un šaušalīgs novērojums - tornado veidošanās virs galvas (+VIDEO)
+getTag for: Velsas galvaspilsētā naktī izcēlušās plašas nekārtības
+Filter: 2
+checkGuid for: https://vs.lv/raksts/pasaule/2023/05/23/velsas-galvaspilseta-nakti-izcelusas-plasas-nekartibas
+getTag for: Floridas "Panthers" nonāk uzvaras attālumā no Stenlija kausa fināla (VIDEO)
+getTag for: Polija gatavo ziņojumu par PSRS nodarītajiem zaudējumiem
+getTag for: Pēc Levita... Vāc parakstus, lai neuzturētu bijušo Valsts prezidentu
+getTag for: Ukraina ziņo, cik okupanti iznīcināti (23.maijs)
+getTag for: Krievijas premjerministrs ieradies vizītē Ķīnā. Ir daudz runājama
+getTag for: Latgalē sēru vēsts. Satiksmes negadījumā dzīvību zaudējis gājējs
+Filter: 2
+checkGuid for: https://vs.lv/raksts/kriminalzinas/2023/05/23/latgale-seru-vests-satiksmes-negadijuma-dzivibu-zaudejis-gajejs
+getTag for: Denveras "Nuggets" pirmo reizi komandas vēsturē sasniedz NBA finālu (VIDEO)
+getTag for: Iespējams balsojums par Valsts prezidentu varētu būt arī balsojums par valdību
+getTag for: Otrdienas joku deva
+getTag for: Pašvaldībām nav autobusu Dziesmu svētku dalībnieku pārvadāšanai
+Filter: 2
+checkGuid for: https://vs.lv/raksts/izklaide/2023/05/23/pasvaldibam-nav-autobusu-dziesmu-svetku-dalibnieku-parvadasanai
+getTag for: Demokrāti un republikāņi atsāk sarunas par ASV parāda griestu paaugstināšanu
+getTag for: Latvijas hokeja izlase relaksējās Baltic Beach Hotel & SPA
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sports/2023/05/23/latvijas-hokeja-izlase-relaksejas-baltic-beach-hotel-spa
+getTag for: Vāc parakstus par nomas elektroskrejriteņu aizliegšanu Latvijā
+getTag for: Velo maršruti Rīgā un Jūrmalā brīvdienām
+getTag for: Ķīpsalas pludmalē atklās peldsezonu
+getTag for: Maija vidus Latvijā bijis 1,8 grādus siltāks nekā ierasts
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/23/maija-vidus-latvija-bijis-18-gradus-siltaks-neka-ierasts
+getTag for: Urbanovičs: Vēloties saglabāt koalīciju, AS un NA beigās nobalsos par Rinkēviču
+getTag for: Vai dzīvoklis, mašīna, sekretārs bijušajam Valsts prezidentam tas ir samērīgi?
+getTag for: Porošenko: Vienīgais miera sarunu formāts ir par Ukrainas dalību NATO
+getTag for: Šodien Latvija tiekas ar Šveici un lūko nodrošināt spēlēšanu ceturtdaļfinālā
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sports/2023/05/23/sodien-latvija-tiekas-ar-sveici-un-luko-nodrosinat-spelesanu-ceturtdalfinala
+getTag for: Aptauja: Tikai 9% britu atzīst breksitu par sekmīgi īstenotu
+getTag for: Latvijā gaidāma vasarīgi silta diena
+getTag for: Kariņš pikts! Viņš runas par koalīcijas izmaiņām dēvē par spekulācijām
+getTag for: Atkal rīkos Āfrikas cūku mēra informatīvo kampaņu
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/22/atkal-rikos-afrikas-cuku-mera-informativo-kampanu
+getTag for: Turcijas vēlēšanu trešās vietas ieguvējs pauž atbalstu Erdoganam
+getTag for: Izveidota darba grupa, kas padziļināti analīzēs vardarbību ģimenēs
+Filter: 2
+checkGuid for: https://vs.lv/raksts/kriminalzinas/2023/05/22/izveidota-darba-grupa-kas-padzilinati-analizes-vardarbibu-gimenes
+getTag for: Liepājas autobusu parka boss Krongorns atstādināts no amata
+getTag for: Panākts risinājums EP vēlēšanās balsot jebkurā iecirknī
+getTag for: Kokorevičs informē, ko jāizmanto enerģētiskajai neatkarībai
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/22/kokorevics-informe-ko-jaizmanto-energetiskajai-neatkaribai
+getTag for: Brīnumi! Baltkrievijā apžēlots opozicionārs un bijušais redaktors Protasevičs
+getTag for: Rīgā notiks Eiropas Padomes Parlamentārās asamblejas sanāksme
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/22/riga-notiks-eiropas-padomes-parlamentaras-asamblejas-sanaksme
+getTag for: Serbijā akreditēta nerezidējošā Latvijas vēstniece Ieva Briede
+Filter: 2
+checkGuid for: https://vs.lv/raksts/pasaule/2023/05/22/serbija-akrediteta-nerezidejosa-latvijas-vestniece-ieva-briede
+getTag for: «Mazais princis», «Citi zēni» un «Singapūras satīns» uzstāsies Gaujas svētkos
+getTag for: Sensācija Rīgā! Norvēģija bullīšos uzveic Kanādu
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sports/2023/05/22/sensacija-riga-norvegija-bullisos-uzveic-kanadu
+getTag for: Rīkos semināru par daudzdzīvokļu māju energoefektivitātes programmu
+getTag for: Zooloģiskajā dārzā notiks Kokvardes karnevāls
+Filter: 2
+checkGuid for: https://vs.lv/raksts/izklaide/2023/05/22/zoologiskaja-darza-notiks-kokvardes-karnevals
+getTag for: Rinkēvičs: Eiropas Miera mehānisms jāsaglabā kā globāls instruments
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/22/rinkevics-eiropas-miera-mehanisms-jasaglaba-ka-globals-instruments
+getTag for: Krievu partizāni veic nesaprotamu operāciju Belgorodas apgabalā
+getTag for: No tankkuģa pie Ventspils evakuēts saslimis apkalpes loceklis
+getTag for: Ungārija plāno atbrīvot 700 cilvēku kontrabandistu; Austrija prasa paskaidrojumu
+getTag for: Vidēji vasarās ūdenstilpēs mirst 50 cilvēki
+getTag for: Ministre: Krieviju karš Ukrainā nav pilnībā novājinājis
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/22/ministre-krieviju-kars-ukraina-nav-pilniba-novajinajis
+getTag for: Rīgā grib aizliegt pārspīlētas reklāmas
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/22/riga-grib-aizliegt-parspiletas-reklamas
+getTag for: PVD sācis meža dzīvnieku vakcināciju pret trakumsērgu
+getTag for: Latvijā sākas nieru veselības nedēļa
+Filter: 2
+checkGuid for: https://vs.lv/raksts/veseliba/2023/05/22/latvija-sakas-nieru-veselibas-nedela
+getTag for: Otrdien laiks paliks vēl siltāks
+getTag for: Satraucoši - vairāk nekā 40% darbinieku sajutušies «izdeguši» darbā
+getTag for: Levits: Valsts iesaiste enerģētikas nozarē ir neizbēgama
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/22/levits-valsts-iesaiste-energetikas-nozare-ir-neizbegama
+getTag for: Džeriņš savainots - kurš ies viņa vietā?
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sports/2023/05/22/dzerins-savainots-kurs-ies-vina-vieta
+getTag for: Neizprotamā Latvijas nākotne - Ventspilī izteikti trūkst skolotāju sākumskolās
+getTag for: Armēnija varētu atzīt Kalnu Karabahu par daļu no Azerbaidžānas - ko prasa pretī?
+getTag for: Komisija izvērtējusi trīs prezidenta kandidātus - vai visi atbilst?
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/22/komisija-izvertejusi-tris-prezidenta-kandidatus-vai-visi-atbilst
+getTag for: Traģiska diena Gajanā - 20 skolēni gājuši bojā ugunsgrēkā
+getTag for: «Rīgas gaisma» plāno Ukrainai ziedot trīs lietotas automašīnas
+getTag for: Tiesībsargs: Ādažu slimnīca nenodrošina cilvēkiem ar invaliditāti pieejamu vidi
+getTag for: Prigožins atklāj, kad Vagner nodos kontroli pār Bahmutu krievu armijai
+getTag for: Eksperts: Visām Baltijas valstīm vajadzētu vienu pretgaisa aizsardzības sistēmu
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/22/eksperts-visam-baltijas-valstim-vajadzetu-vienu-pretgaisa-aizsardzibas-sistemu
+getTag for: Uzmanību! Šobrīd Olaines pagastā tiek dzēsts meža ugunsgrēks
+getTag for: «Meta» piemērots 1,2 miljardu eiro liels naudassods - par ko?
+getTag for: Graube: Okupantiem Bahmutā draud aplenkšana
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/22/graube-okupantiem-bahmuta-draud-aplenksana
+getTag for: Zemkopības ministrs devies pieredzes apmaiņas vizītē uz Somiju
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/22/zemkopibas-ministrs-devies-pieredzes-apmainas-vizite-uz-somiju
+getTag for: Savāc 10 000 parakstu par e-cigarešu aromātu saglabāšanu
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/22/savac-10-000-parakstu-par-e-cigaresu-aromatu-saglabasanu
+getTag for: Lielbritānijas valdība pārdod sev piederošās NatWest akcijas - par cik?
+getTag for: Ministrs sola - līdz Dziesmusvētkiem tramvajs sāks kursēt pāri Brasas tiltam
+getTag for: Brazīliešu zvaigzne reaģē uz kārtējiem apvainojumiem: Spānija ir rasistu valsts
+getTag for: Latvijā ievieš jaunu importa muitas deklarāciju sistēmu
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/22/latvija-ievies-jaunu-importa-muitas-deklaraciju-sistemu
+getTag for: Darījumu skaits un kopsumma ar meža zemēm pakāpeniski aug kopš 2019.gada
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/22/darijumu-skaits-un-kopsumma-ar-meza-zemem-pakapeniski-aug-kops-2019gada
+getTag for: Latvijas pasts izdos pastmarku par godu režisoram Pētersonam (+FOTO)
+Filter: 2
+checkGuid for: https://vs.lv/raksts/izklaide/2023/05/22/latvijas-pasts-izdos-pastmarku-par-godu-rezisoram-petersonam-foto
+getTag for: Arī mīluļiem patīk futbols! Suns izskrien laukumā un atsakās atdot bumbu (VIDEO)
+getTag for: Bulgārijas prokrieviskās partijas atbalstītāji apķēpājuši EK pārstāvniecības ēku
+getTag for: Baltkrievi turpina mēģinājumus iekļūt Latvijā - atturēti vēl 53 cilvēki
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/22/baltkrievi-turpina-meginajumus-ieklut-latvija-attureti-vel-53-cilveki
+getTag for: Cik latviešu šovasar ceļos par spīti dzīves dārdzībai?
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/22/cik-latviesu-sovasar-celos-par-spiti-dzives-dardzibai
+getTag for: Rēzeknē un Viļānos konfiscē tabakas un cigarešu izgatavošanas iekārtas (+FOTO)
+getTag for: Latvija pirmo reizi uzņems Eiropas vadošos ultrasonogrāfijas ekspertus
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/22/latvija-pirmo-reizi-uznems-eiropas-vadosos-ultrasonografijas-ekspertus
+getTag for: Izmaiņas Mediju nama valdē - kādas?
+getTag for: Rīgā kādai personai aizdedzies apģērbs
+getTag for: Izraēlas armijas reidā Rietumkrastā nogalināti trīs palestīnieši
+getTag for: No rītdienas būs izmaiņas satiksmes organizācijā uz Bauskas šosejas (+KARTE)
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/22/no-ritdienas-bus-izmainas-satiksmes-organizacija-uz-bauskas-sosejas-karte
+getTag for: ISW: Vagner, visticamāk, nespēs turpināt cīņu ārpus Bahmutas
+getTag for: Iznācis jaunākais WTA rangs - kur pēc Romas pusfināla ierindojas Ostapenko?
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sports/2023/05/22/iznacis-jaunakais-wta-rangs-kur-pec-romas-pusfinala-ierindojas-ostapenko
+getTag for: Svētdien uz ceļiem cietuši 17 cilvēki - cik velosipēdisti un gājēji?
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/22/svetdien-uz-celiem-cietusi-17-cilveki-cik-velosipedisti-un-gajeji
+getTag for: Sensacionālā Heat - sagrauj Celtics un nonāk šokējošā 3-0 vadībā (+VIDEO)
+getTag for: Ukraina sniedz datus par okupantu dzīvā spēka zaudējumiem (22.maijs)
+getTag for: Kas pēc Pinto domām ir Valsts prezidenta būtiskākā funkcija?
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/22/kas-pec-pinto-domam-ir-valsts-prezidenta-butiskaka-funkcija
+getTag for: Bļugers palīdz uzvarā pret Stars, Golden Knights tuvojas finālam (+VIDEO)
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sports/2023/05/22/blugers-palidz-uzvara-pret-stars-golden-knights-tuvojas-finalam-video
+getTag for: Āfrikas cūku mēris turpina izplatīties - cik mežacūkām atrada pagājušajā nedēļā?
+getTag for: Uz SKS devusies otra privātā misija
+getTag for: Vāc parakstus par jaunas brīdinājuma ceļazīmes «Melnais punkts» ieviešanu
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/22/vac-parakstus-par-jaunas-bridinajuma-celazimes-melnais-punkts-ieviesanu
+getTag for: Valsts ceļi ziņo par satiksmes ierobežojumiem - būvdarbi 49 auto posmos
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/22/valsts-celi-zino-par-satiksmes-ierobezojumiem-buvdarbi-49-auto-posmos
+getTag for: Jelgavā pazudušais vīrietis atrasts miris
+getTag for: Kasēs varēs iegādāties neizpirktās biļetes uz Dziesmu un deju svētku pasākumiem
+Filter: 2
+checkGuid for: https://vs.lv/raksts/izklaide/2023/05/22/kases-vares-iegadaties-neizpirktas-biletes-uz-dziesmu-un-deju-svetku-pasakumiem
+getTag for: Grieķijas parlamenta vēlēšanās uzvar konservatīvie
+getTag for: Nodokļu ieņēmumi četros mēnešos par 4,5% pārsniedz plānu
+getTag for: Pasaules čempionāta turnīra priekšpēdējā spēļu dienā tiek aizvadīti četri mači
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sports/2023/05/22/pasaules-cempionata-priekspedeja-spelu-diena-tiek-aizvaditi-cetri-maci
+getTag for: Lulu «apbēdina» nespēja tikties ar Zelenski
+getTag for: Pēcpusdienā vietām valstī īslaicīgi līs
+getTag for: Sieviete devusi kukuli, lai vīra vadīšanas eksāmens būtu krieviski - kāds sods?
+getTag for: Eiropas čempioni! Madrides Real spraigā galotnē uzveic Olympiakos
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sports/2023/05/22/eiropas-cempioni-madrides-real-spraiga-galotne-uzveic-olympiakos
+getTag for: Mecenāts stipendijām novēlējis dāsnu summu - cik lielu?
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/21/mecenats-stipendijam-novelejis-dasnu-summu-cik-lielu
+getTag for: Bijušo VDK darbinieku tiesā par uzkūdīšanu izpaust informāciju
+Filter: 2
+checkGuid for: https://vs.lv/raksts/kriminalzinas/2023/05/21/bijuso-vdk-darbinieku-tiesa-par-uzkudisanu-izpaust-informaciju
+getTag for: Latvijai ir vēl uz ko tiekties - ASV salādē deviņas ripas Francijas vārtos
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sports/2023/05/21/latvijai-ir-vel-uz-ko-tiekties-asv-salade-devinas-ripas-francijas-vartos
+getTag for: Iesaka atteikties no diennakts ķirurga un reanimatologa pakalpojumiem
+Filter: 2
+checkGuid for: https://vs.lv/raksts/veseliba/2023/05/21/iesaka-atteikties-no-diennakts-kirurga-un-reanimatologa-pakalpojumiem
+getTag for: Desmitiem tūkstošu moldāvu pieprasa valsts dalību ES
+getTag for: Jūrmalā labiekārtota pludmale un atpūtas vietas
+getTag for: Arī otrajā pārbaudes spēlē igaunietes ir pārākas pār Latvijas volejbolistēm
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sports/2023/05/21/ari-otraja-parbaudes-spele-igaunietes-ir-parakas-par-latvijas-volejbolistem
+getTag for: Riga izcīna astoto uzvaru pēc kārtas un lido pretī čempiontitulam
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sports/2023/05/21/riga-izcina-astoto-uzvaru-pec-kartas-un-lido-preti-cempiontitulam
+getTag for: Cik KM plāno novirzīt Rīgas Latviešu biedrības nama atjaunošanas programmai?
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/21/cik-km-plano-novirzit-rigas-latviesu-biedribas-nama-atjaunosanas-programmai
+getTag for: Zelenskis garantējis Baidenam - F-16 neuzbruks Krievijas teritorijai
+getTag for: Garšvielu ražotājs Anatols būtiski samazinājis pamatkapitālu - par cik?
+getTag for: Slovākija paņem trīs punktus pret slovēņiem - cīņa par ceturtdaļfinālu turpinās
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sports/2023/05/21/slovakija-panem-tris-punktus-pret-sloveniem-cina-par-ceturtdalfinalu-turpinas
+getTag for: Šobrīd būtiski vairāk jauniešu turpina mācīties nekā 2010. gadā
+getTag for: Seska un Franča ekipāža triumfē Polijas rallijā
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sports/2023/05/21/seska-un-franca-ekipaza-triumfe-polijas-rallija
+getTag for: Nežēlīgi - kopš marta notiesāti jau trīs mājdzīvnieku slepkavas
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/21/nezeligi-kops-marta-notiesati-jau-tris-majdzivnieku-slepkavas
+getTag for: Aprīlī pieauga sērijveida dzīvokļu cenas divos Latvijas reģionos
+getTag for: Nedēļa sāksies ar dažādu laiku - vietām saule, citur lietus
+getTag for: Zemkopības ministrija: Zeme ir Latvijas nacionālā bagātība
+Filter: 2
+checkGuid for: https://vs.lv/raksts/sabiedriba/2023/05/21/zemkopibas-ministrija-zeme-ir-latvijas-nacionala-bagatiba
+getTag for: Plāno izveidot valsts organizētā vēža skrīninga programmu vadību
+getTag for: Zelenskis: Neviens nesēdīsies pie sarunu galda ar Krieviju
+Post saved: Латвии нужна новая экономическая политика: шесть причин, почему тормозит старая
+checkGuidCount: 130
+Post saved: Латвия сквозь швейцарскую оборону прорвалась в четвертьфинал (ВИДЕО)
+checkGuidCount: 130
+Post saved: Предпринимательница рассказала о том, почему население не хочет защищать Латвию
+checkGuidCount: 130
+Post saved: Через два года в Латвии президента будет выбирать народ?
+checkGuidCount: 130
+Post saved: ЧМ-2023: сборная Латвии идет до конца
+checkGuidCount: 130
+Post saved: У Кабмина пройдет пикет за соблюдение прав беженцев на границе
+checkGuidCount: 130
+Post saved: «Латвия — богатое государство»: деньги можно брать из воздуха
+checkGuidCount: 130
+Post saved: Сегодня Латвия встречается со Швейцарией и поборется за место в четвертьфинале
+checkGuidCount: 130
+Post saved: Кто обидел Левитса и Дзинтарса? Партнеры недовольны премьерской партией
+checkGuidCount: 130
+similarity for: Vieglatlēts Višķers pilnībā noliedz savu vainu par kukuļa piedāvāšanu
+savePost: Vieglatlēts Višķers pilnībā noliedz savu vainu par kukuļa piedāvāšanu
+similarity for: Miris horeogrāfs, Dziesmu un deju svētku Goda virsvadītājs Uldis Šteins
+savePost: Miris horeogrāfs, Dziesmu un deju svētku Goda virsvadītājs Uldis Šteins
+similarity for: Policija 27.maijā plānotās protesta akcijas laikā saskata provokāciju riskus
+savePost: Policija 27.maijā plānotās protesta akcijas laikā saskata provokāciju riskus
+similarity for: Daudz! Četru lielāko banku klientiem četros mēnešos izkrāpti 3,439 miljoni eiro
+savePost: Daudz! Četru lielāko banku klientiem četros mēnešos izkrāpti 3,439 miljoni eiro
+similarity for: KM: Sabiedrībā ir svarīgi ievērot vārda brīvību
+savePost: KM: Sabiedrībā ir svarīgi ievērot vārda brīvību
+similarity for: Jauno mūziķu konkursā Hadrons 2023 uzvarējusi grupa Māra Dagne
+savePost: Jauno mūziķu konkursā Hadrons 2023 uzvarējusi grupa Māra Dagne
+similarity for: SPRK apstiprinājusi elektroenerģijas sadales un pārvades tarifus
+savePost: SPRK apstiprinājusi elektroenerģijas sadales un pārvades tarifus
+similarity for: Prokuratūra: Parakstot līgumu ar Zītari LZ, nav izvērtēti būtiski jautājumi
+savePost: Prokuratūra: Parakstot līgumu ar Zītari LZ, nav izvērtēti būtiski jautājumi
+similarity for: Uz hokeja čempionāta ceturtdaļfinālu būs pieejamas papildu biļetes
+savePost: Uz hokeja čempionāta ceturtdaļfinālu būs pieejamas papildu biļetes
+similarity for: Rīgā un Liepājā norisināsies Teātra festivāls Nr.2
+savePost: Rīgā un Liepājā norisināsies Teātra festivāls Nr.2
+similarity for: Sārts: Ir sākusies Ukrainas pretuzbrukuma operācijas sākotnējā fāze
+savePost: Sārts: Ir sākusies Ukrainas pretuzbrukuma operācijas sākotnējā fāze
+similarity for: Dzierkals: Jāiet tik tālu, cik var
+savePost: Dzierkals: Jāiet tik tālu, cik var
+similarity for: Valainis: Balsu makšķerēšanas kampaņā prezidents nedabūs atbalstu
+savePost: Valainis: Balsu makšķerēšanas kampaņā prezidents nedabūs atbalstu
+similarity for: Vītoliņš: Pārliecinājos, ka labi padarīts darbs atmaksājas
+savePost: Vītoliņš: Pārliecinājos, ka labi padarīts darbs atmaksājas
+similarity for: Desantiss plāno paziņot par nodomu pretendēt uz ASV prezidenta amatu
+savePost: Desantiss plāno paziņot par nodomu pretendēt uz ASV prezidenta amatu
+similarity for: Nedēļas nogalē, turpinoties sausumam, vietām gaidāma salna
+savePost: Nedēļas nogalē, turpinoties sausumam, vietām gaidāma salna
+similarity for: Rodrigo Ābols izceļ komandas biedru pašaizliedzību izcīnītajā uzvarā
+savePost: Rodrigo Ābols izceļ komandas biedru pašaizliedzību izcīnītajā uzvarā
+similarity for: Oficiālā izdevuma «Latvijas Vēstnesis» zaudējumi pērn sarukuši deviņas reizes
+savePost: Oficiālā izdevuma «Latvijas Vēstnesis» zaudējumi pērn sarukuši deviņas reizes
+similarity for: Daugaviņš: Ceru, ka karjeras labākais vārtu guvums vēl ir priekšā
+savePost: Daugaviņš: Ceru, ka karjeras labākais vārtu guvums vēl ir priekšā
+similarity for: Siltajā trešdienā saule mīsies ar mākoņiem
+savePost: Siltajā trešdienā saule mīsies ar mākoņiem
+similarity for: Kazāks akcentē nepieciešamību bankām aktīvāk kreditēt
+savePost: Kazāks akcentē nepieciešamību bankām aktīvāk kreditēt
+similarity for: Esam ceturtdaļfinālā!!! Elpu aizraujošā spēlē Latvija varonīgi uzveic Šveici
+savePost: Esam ceturtdaļfinālā!!! Elpu aizraujošā spēlē Latvija varonīgi uzveic Šveici
+similarity for: Apakškomisija aicinās Rīgas domi pārdēvēt Maskavas ielu - kā?
+savePost: Apakškomisija aicinās Rīgas domi pārdēvēt Maskavas ielu - kā?
+similarity for: Mūrniece: Redzamas Eiropas militārās industrijas nepietiekamās ražošanas jaudas
+savePost: Mūrniece: Redzamas Eiropas militārās industrijas nepietiekamās ražošanas jaudas
+similarity for: Kalējs: Pēc slimnīcu tīkla izmaiņām vairāki pakalpojumi paliks minimālā apmērā
+savePost: Kalējs: Pēc slimnīcu tīkla izmaiņām vairāki pakalpojumi paliks minimālā apmērā
+similarity for: ASV uzveic Zviedriju un garantē pirmo vietu grupā - vai būs Latvijas pretiniece?
+savePost: ASV uzveic Zviedriju un garantē pirmo vietu grupā - vai būs Latvijas pretiniece?
+similarity for: Čakšas: EuroBasket 2025 varētu Latvijai ienest 100 miljonus eiro
+savePost: Čakšas: EuroBasket 2025 varētu Latvijai ienest 100 miljonus eiro
+similarity for: Ko Kariņš saka par Latvijas un Igaunijas kopīgo IRIS-T iepirkumu?
+savePost: Ko Kariņš saka par Latvijas un Igaunijas kopīgo IRIS-T iepirkumu?
+similarity for: Uz PČ skriešanā Rīgā varētu ierasties līdz 10 000 apmeklētāju no ārvalstīm
+savePost: Uz PČ skriešanā Rīgā varētu ierasties līdz 10 000 apmeklētāju no ārvalstīm
+similarity for: Austrumu slimnīcā darbu varētu atsākt staru terapijas aparāts vēža pacientiem
+savePost: Austrumu slimnīcā darbu varētu atsākt staru terapijas aparāts vēža pacientiem
+similarity for: Sestdien policija Rīgā pārbaudīja 151 personu - kādas narkotikas atrada? (VIDEO)
+savePost: Sestdien policija Rīgā pārbaudīja 151 personu - kādas narkotikas atrada? (VIDEO)
+similarity for: Rīdzinieks apgalvo, ka kaimiņa galvu izmeta ārā pa logu - policija atbildējusi
+savePost: Rīdzinieks apgalvo, ka kaimiņa galvu izmeta ārā pa logu - policija atbildējusi
+similarity for: Uzmanību! Svarīga informācija par valstī izsludināto ugunsnedrošo periodu
+savePost: Uzmanību! Svarīga informācija par valstī izsludināto ugunsnedrošo periodu
+similarity for: Izšķirošā spēle ar Šveici - Dārziņš atklāj ko interesantu par pretinieku stilu
+savePost: Izšķirošā spēle ar Šveici - Dārziņš atklāj ko interesantu par pretinieku stilu
+similarity for: Slovākija sakauj Norvēģiju - Latvijai būs jāpaņem vismaz punkts pret Šveici
+savePost: Slovākija sakauj Norvēģiju - Latvijai būs jāpaņem vismaz punkts pret Šveici
+similarity for: Prezidenta vēlēšanas: Kuram kandidātam uzvaru prognozē bukmeikeri?
+savePost: Prezidenta vēlēšanas: Kuram kandidātam uzvaru prognozē bukmeikeri?
+similarity for: NEPLP grib sodīt medijus par nepareizu vārda "deportācijas" lietošanu
+savePost: NEPLP grib sodīt medijus par nepareizu vārda "deportācijas" lietošanu
+similarity for: Skandāls! Dziesmu svētku noslēguma koncertā neizpildīs Liepiņa dziesmu
+savePost: Skandāls! Dziesmu svētku noslēguma koncertā neizpildīs Liepiņa dziesmu
+similarity for: Dziesmu svētku biļešu tirgošanas sistēmas maiņa ir sevi attaisnojusi
+savePost: Dziesmu svētku biļešu tirgošanas sistēmas maiņa ir sevi attaisnojusi
+similarity for: Velsas galvaspilsētā naktī izcēlušās plašas nekārtības
+savePost: Velsas galvaspilsētā naktī izcēlušās plašas nekārtības
+similarity for: Latgalē sēru vēsts. Satiksmes negadījumā dzīvību zaudējis gājējs
+savePost: Latgalē sēru vēsts. Satiksmes negadījumā dzīvību zaudējis gājējs
+similarity for: Pašvaldībām nav autobusu Dziesmu svētku dalībnieku pārvadāšanai
+savePost: Pašvaldībām nav autobusu Dziesmu svētku dalībnieku pārvadāšanai
+similarity for: Latvijas hokeja izlase relaksējās Baltic Beach Hotel & SPA
+savePost: Latvijas hokeja izlase relaksējās Baltic Beach Hotel & SPA
+similarity for: Maija vidus Latvijā bijis 1,8 grādus siltāks nekā ierasts
+savePost: Maija vidus Latvijā bijis 1,8 grādus siltāks nekā ierasts
+similarity for: Šodien Latvija tiekas ar Šveici un lūko nodrošināt spēlēšanu ceturtdaļfinālā
+savePost: Šodien Latvija tiekas ar Šveici un lūko nodrošināt spēlēšanu ceturtdaļfinālā
+similarity for: Atkal rīkos Āfrikas cūku mēra informatīvo kampaņu
+savePost: Atkal rīkos Āfrikas cūku mēra informatīvo kampaņu
+similarity for: Izveidota darba grupa, kas padziļināti analīzēs vardarbību ģimenēs
+savePost: Izveidota darba grupa, kas padziļināti analīzēs vardarbību ģimenēs
+similarity for: Kokorevičs informē, ko jāizmanto enerģētiskajai neatkarībai
+savePost: Kokorevičs informē, ko jāizmanto enerģētiskajai neatkarībai
+similarity for: Rīgā notiks Eiropas Padomes Parlamentārās asamblejas sanāksme
+savePost: Rīgā notiks Eiropas Padomes Parlamentārās asamblejas sanāksme
+similarity for: Serbijā akreditēta nerezidējošā Latvijas vēstniece Ieva Briede
+savePost: Serbijā akreditēta nerezidējošā Latvijas vēstniece Ieva Briede
+similarity for: Sensācija Rīgā! Norvēģija bullīšos uzveic Kanādu
+savePost: Sensācija Rīgā! Norvēģija bullīšos uzveic Kanādu
+similarity for: Zooloģiskajā dārzā notiks Kokvardes karnevāls
+savePost: Zooloģiskajā dārzā notiks Kokvardes karnevāls
+similarity for: Rinkēvičs: Eiropas Miera mehānisms jāsaglabā kā globāls instruments
+savePost: Rinkēvičs: Eiropas Miera mehānisms jāsaglabā kā globāls instruments
+similarity for: Ministre: Krieviju karš Ukrainā nav pilnībā novājinājis
+savePost: Ministre: Krieviju karš Ukrainā nav pilnībā novājinājis
+similarity for: Rīgā grib aizliegt pārspīlētas reklāmas
+savePost: Rīgā grib aizliegt pārspīlētas reklāmas
+similarity for: Latvijā sākas nieru veselības nedēļa
+savePost: Latvijā sākas nieru veselības nedēļa
+similarity for: Levits: Valsts iesaiste enerģētikas nozarē ir neizbēgama
+savePost: Levits: Valsts iesaiste enerģētikas nozarē ir neizbēgama
+similarity for: Džeriņš savainots - kurš ies viņa vietā?
+savePost: Džeriņš savainots - kurš ies viņa vietā?
+similarity for: Komisija izvērtējusi trīs prezidenta kandidātus - vai visi atbilst?
+savePost: Komisija izvērtējusi trīs prezidenta kandidātus - vai visi atbilst?
+similarity for: Eksperts: Visām Baltijas valstīm vajadzētu vienu pretgaisa aizsardzības sistēmu
+savePost: Eksperts: Visām Baltijas valstīm vajadzētu vienu pretgaisa aizsardzības sistēmu
+similarity for: Graube: Okupantiem Bahmutā draud aplenkšana
+savePost: Graube: Okupantiem Bahmutā draud aplenkšana
+similarity for: Zemkopības ministrs devies pieredzes apmaiņas vizītē uz Somiju
+savePost: Zemkopības ministrs devies pieredzes apmaiņas vizītē uz Somiju
+similarity for: Savāc 10 000 parakstu par e-cigarešu aromātu saglabāšanu
+savePost: Savāc 10 000 parakstu par e-cigarešu aromātu saglabāšanu
+similarity for: Latvijā ievieš jaunu importa muitas deklarāciju sistēmu
+savePost: Latvijā ievieš jaunu importa muitas deklarāciju sistēmu
+similarity for: Darījumu skaits un kopsumma ar meža zemēm pakāpeniski aug kopš 2019.gada
+savePost: Darījumu skaits un kopsumma ar meža zemēm pakāpeniski aug kopš 2019.gada
+similarity for: Latvijas pasts izdos pastmarku par godu režisoram Pētersonam (+FOTO)
+savePost: Latvijas pasts izdos pastmarku par godu režisoram Pētersonam (+FOTO)
+similarity for: Baltkrievi turpina mēģinājumus iekļūt Latvijā - atturēti vēl 53 cilvēki
+savePost: Baltkrievi turpina mēģinājumus iekļūt Latvijā - atturēti vēl 53 cilvēki
+similarity for: Cik latviešu šovasar ceļos par spīti dzīves dārdzībai?
+savePost: Cik latviešu šovasar ceļos par spīti dzīves dārdzībai?
+similarity for: Latvija pirmo reizi uzņems Eiropas vadošos ultrasonogrāfijas ekspertus
+savePost: Latvija pirmo reizi uzņems Eiropas vadošos ultrasonogrāfijas ekspertus
+similarity for: No rītdienas būs izmaiņas satiksmes organizācijā uz Bauskas šosejas (+KARTE)
+savePost: No rītdienas būs izmaiņas satiksmes organizācijā uz Bauskas šosejas (+KARTE)
+similarity for: Iznācis jaunākais WTA rangs - kur pēc Romas pusfināla ierindojas Ostapenko?
+savePost: Iznācis jaunākais WTA rangs - kur pēc Romas pusfināla ierindojas Ostapenko?
+similarity for: Svētdien uz ceļiem cietuši 17 cilvēki - cik velosipēdisti un gājēji?
+savePost: Svētdien uz ceļiem cietuši 17 cilvēki - cik velosipēdisti un gājēji?
+similarity for: Kas pēc Pinto domām ir Valsts prezidenta būtiskākā funkcija?
+savePost: Kas pēc Pinto domām ir Valsts prezidenta būtiskākā funkcija?
+similarity for: Bļugers palīdz uzvarā pret Stars, Golden Knights tuvojas finālam (+VIDEO)
+savePost: Bļugers palīdz uzvarā pret Stars, Golden Knights tuvojas finālam (+VIDEO)
+similarity for: Vāc parakstus par jaunas brīdinājuma ceļazīmes «Melnais punkts» ieviešanu
+savePost: Vāc parakstus par jaunas brīdinājuma ceļazīmes «Melnais punkts» ieviešanu
+similarity for: Valsts ceļi ziņo par satiksmes ierobežojumiem - būvdarbi 49 auto posmos
+savePost: Valsts ceļi ziņo par satiksmes ierobežojumiem - būvdarbi 49 auto posmos
+similarity for: Kasēs varēs iegādāties neizpirktās biļetes uz Dziesmu un deju svētku pasākumiem
+savePost: Kasēs varēs iegādāties neizpirktās biļetes uz Dziesmu un deju svētku pasākumiem
+similarity for: Pasaules čempionāta turnīra priekšpēdējā spēļu dienā tiek aizvadīti četri mači
+savePost: Pasaules čempionāta turnīra priekšpēdējā spēļu dienā tiek aizvadīti četri mači
+similarity for: Eiropas čempioni! Madrides Real spraigā galotnē uzveic Olympiakos
+savePost: Eiropas čempioni! Madrides Real spraigā galotnē uzveic Olympiakos
+similarity for: Mecenāts stipendijām novēlējis dāsnu summu - cik lielu?
+savePost: Mecenāts stipendijām novēlējis dāsnu summu - cik lielu?
+similarity for: Bijušo VDK darbinieku tiesā par uzkūdīšanu izpaust informāciju
+savePost: Bijušo VDK darbinieku tiesā par uzkūdīšanu izpaust informāciju
+similarity for: Latvijai ir vēl uz ko tiekties - ASV salādē deviņas ripas Francijas vārtos
+savePost: Latvijai ir vēl uz ko tiekties - ASV salādē deviņas ripas Francijas vārtos
+similarity for: Iesaka atteikties no diennakts ķirurga un reanimatologa pakalpojumiem
+savePost: Iesaka atteikties no diennakts ķirurga un reanimatologa pakalpojumiem
+similarity for: Arī otrajā pārbaudes spēlē igaunietes ir pārākas pār Latvijas volejbolistēm
+savePost: Arī otrajā pārbaudes spēlē igaunietes ir pārākas pār Latvijas volejbolistēm
+similarity for: Riga izcīna astoto uzvaru pēc kārtas un lido pretī čempiontitulam
+savePost: Riga izcīna astoto uzvaru pēc kārtas un lido pretī čempiontitulam
+similarity for: Cik KM plāno novirzīt Rīgas Latviešu biedrības nama atjaunošanas programmai?
+savePost: Cik KM plāno novirzīt Rīgas Latviešu biedrības nama atjaunošanas programmai?
+similarity for: Slovākija paņem trīs punktus pret slovēņiem - cīņa par ceturtdaļfinālu turpinās
+savePost: Slovākija paņem trīs punktus pret slovēņiem - cīņa par ceturtdaļfinālu turpinās
+similarity for: Seska un Franča ekipāža triumfē Polijas rallijā
+savePost: Seska un Franča ekipāža triumfē Polijas rallijā
+similarity for: Nežēlīgi - kopš marta notiesāti jau trīs mājdzīvnieku slepkavas
+savePost: Nežēlīgi - kopš marta notiesāti jau trīs mājdzīvnieku slepkavas
+similarity for: Zemkopības ministrija: Zeme ir Latvijas nacionālā bagātība
+savePost: Zemkopības ministrija: Zeme ir Latvijas nacionālā bagātība
+Post saved: Vieglatlēts Višķers pilnībā noliedz savu vainu par kukuļa piedāvāšanu
+checkGuidCount: 130
+getTag for: Представитель СЗК: слишком рано прогнозировать, будет ли избран президент в конце мая
+getTag for: Ассоциация журналистов: действия НСЭСМИ угрожают свободе слова в Латвии
+getTag for: США дистанцируется от причастности к нападениям на Белгородскую область
+getTag for: НАТО отслеживает российских «зомби» с базы в Эстонии
+getTag for: В Латвии действуют 3 148 компаний полностью на офшорном капитале
+Filter: 1
+checkGuid for: https://bnn-news.ru/?p=276696
+getTag for: Пиленс покинет UPB, даже если не станет главой государства
+getTag for: Премьер-министр Литвы: некоторые следят за войной в Украине, как за Евровидением
+getTag for: На средства ЕС построят велодорожки из Риги в Пиньки, Улброку и Кекаву
+getTag for: В Белгороде атаковано здание ФСБ
+getTag for: Мурниеце: ошибочно считать, что война в Украине ослабила Россию
+getTag for: Фото/Видео | Сообщают о военной операции российских добровольцев в России
+getTag for: Кариньш назвал слухи о возможных изменениях в коалиции спекуляциями
+getTag for: Российские бизнесмены хотят перейти на шестидневную рабочую неделю
+getTag for: Представители Рижской думы и школ нацменьшинств обсудили меры для успешного перехода на обучение на госязыке
+getTag for: На выборах в парламент Греции победили правые либералы
+getTag for: Сообщения о Бахмуте все еще противоречивые
+getTag for: Страны G7 намерены уменьшить зависимость от Китая и призвали Пекин повлиять на Россию
+getTag for: Министр внутренних дел Франции предупреждает об угрозе исламского терроризма в Европе
+getTag for: Латвия и Эстония впервые с момента восстановления независимости совершат общую военную закупку
+Filter: 1
+checkGuid for: https://bnn-news.ru/?p=276649
+getTag for: Начало недели будет теплым, затем похолодает
+getTag for: Эрдоган продолжит блокировать вступление Швеции в НАТО
+getTag for: Проект Rail Baltica в Литве продвигается полным ходом
+getTag for: Зеленский: арабские страны прикрывают глаза на войну
+getTag for: Латвийские хоккеисты одержали победу в матче ЧМ со Словенией
+Filter: 1
+checkGuid for: https://bnn-news.ru/?p=276631
+getTag for: Страны G7 договорились о новых санкциях в отношении России
+getTag for: Соперник Эрдогана обещает освободить Турцию от беженцев
+getTag for: Собирают подписи за отмену содержания экс-президентов на народные деньги
+getTag for: Глава УДГМ: число соискателей убежища в Латвии очень велико
+getTag for: Великобритания запретит импорт алмазов из России
+getTag for: Латвийская компания, возможно, участвовала в поддержке России
+getTag for: В конце недели постепенно потеплеет, на следующей неделе возможны дожди
+getTag for: Экзамен на знание госязыка сдают лишь половина записавшихся граждан РФ
+getTag for: Огрский музей и дом его бывшего руководителя посетила Госполиция
+getTag for: Монтана стала первым штатом, запретившим TikTok
+getTag for: Эстонская полиция расследует случаи уклонения от обязательной военной службы
+getTag for: В нынешнем году портовые грузы увеличились в нескольких сегментах, в целом наблюдается спад
+getTag for: Венгрия блокирует новое финансирование ЕС для компенсации расходов на военную поддержку Украины
+getTag for: Бывший командир группы «Вагнер» решил вернуться в Россию
+getTag for: Издание: 25 европейских компаний снабжают российскую армию товарами, используемыми в военных целях
+getTag for: Ринкевич: Россия должна вывести свои войска из Украины, Грузии и Молдовы
+Filter: 1
+checkGuid for: https://bnn-news.ru/?p=276575
+getTag for: Ventbunkers развивает систему очистки промышленных сточных вод для европейских клиентов
+getTag for: Белорусская оппозиция готовится к уходу Лукашенко
+getTag for: Президент ЛОК Жорж Тикмерс подал в отставку
+getTag for: ЦРУ открыто ищет информаторов в России; Кремль следит за ситуацией
+getTag for: ЦИК: проведение референдумов в самоуправлениях с 1 января будет невозможно
+getTag for: Кариньш: на здравоохранение нужно выделить больший кусок «пирога»
+getTag for: Правительство Эстонии подержало легализацию однополых браков
+getTag for: Предвыборные выступления — только на латышском, в частном порядке — допустимы на другом языке
+Filter: 1
+checkGuid for: https://bnn-news.ru/?p=276550
+getTag for: На службу в СГО добровольно записались 488 граждан Латвии
+getTag for: Европейские страны добились перемещения бюро ВОЗ из Москвы
+Post saved: Miris horeogrāfs, Dziesmu un deju svētku Goda virsvadītājs Uldis Šteins
+checkGuidCount: 135
+Post saved: Policija 27.maijā plānotās protesta akcijas laikā saskata provokāciju riskus
+checkGuidCount: 135
+Post saved: Daudz! Četru lielāko banku klientiem četros mēnešos izkrāpti 3,439 miljoni eiro
+checkGuidCount: 135
+Post saved: KM: Sabiedrībā ir svarīgi ievērot vārda brīvību
+checkGuidCount: 135
+Post saved: Jauno mūziķu konkursā Hadrons 2023 uzvarējusi grupa Māra Dagne
+checkGuidCount: 135
+Post saved: SPRK apstiprinājusi elektroenerģijas sadales un pārvades tarifus
+checkGuidCount: 135
+Post saved: Prokuratūra: Parakstot līgumu ar Zītari LZ, nav izvērtēti būtiski jautājumi
+checkGuidCount: 135
+Post saved: Uz hokeja čempionāta ceturtdaļfinālu būs pieejamas papildu biļetes
+checkGuidCount: 135
+Post saved: Rīgā un Liepājā norisināsies Teātra festivāls Nr.2
+checkGuidCount: 135
+Post saved: Sārts: Ir sākusies Ukrainas pretuzbrukuma operācijas sākotnējā fāze
+checkGuidCount: 135
+Post saved: Dzierkals: Jāiet tik tālu, cik var
+checkGuidCount: 135
+Post saved: Valainis: Balsu makšķerēšanas kampaņā prezidents nedabūs atbalstu
+checkGuidCount: 135
+Post saved: Vītoliņš: Pārliecinājos, ka labi padarīts darbs atmaksājas
+checkGuidCount: 135
+Post saved: Desantiss plāno paziņot par nodomu pretendēt uz ASV prezidenta amatu
+checkGuidCount: 135
+Post saved: Nedēļas nogalē, turpinoties sausumam, vietām gaidāma salna
+checkGuidCount: 135
+Post saved: Rodrigo Ābols izceļ komandas biedru pašaizliedzību izcīnītajā uzvarā
+checkGuidCount: 135
+Post saved: Oficiālā izdevuma «Latvijas Vēstnesis» zaudējumi pērn sarukuši deviņas reizes
+checkGuidCount: 135
+Post saved: Daugaviņš: Ceru, ka karjeras labākais vārtu guvums vēl ir priekšā
+checkGuidCount: 135
+Post saved: Siltajā trešdienā saule mīsies ar mākoņiem
+checkGuidCount: 135
+Post saved: Kazāks akcentē nepieciešamību bankām aktīvāk kreditēt
+checkGuidCount: 135
+Post saved: Esam ceturtdaļfinālā!!! Elpu aizraujošā spēlē Latvija varonīgi uzveic Šveici
+checkGuidCount: 135
+Post saved: Apakškomisija aicinās Rīgas domi pārdēvēt Maskavas ielu - kā?
+checkGuidCount: 135
+Post saved: Mūrniece: Redzamas Eiropas militārās industrijas nepietiekamās ražošanas jaudas
+checkGuidCount: 135
+Post saved: Kalējs: Pēc slimnīcu tīkla izmaiņām vairāki pakalpojumi paliks minimālā apmērā
+checkGuidCount: 135
+Post saved: ASV uzveic Zviedriju un garantē pirmo vietu grupā - vai būs Latvijas pretiniece?
+checkGuidCount: 135
+Post saved: Čakšas: EuroBasket 2025 varētu Latvijai ienest 100 miljonus eiro
+checkGuidCount: 135
+Post saved: Ko Kariņš saka par Latvijas un Igaunijas kopīgo IRIS-T iepirkumu?
+checkGuidCount: 135
+Post saved: Uz PČ skriešanā Rīgā varētu ierasties līdz 10 000 apmeklētāju no ārvalstīm
+checkGuidCount: 135
+Post saved: Austrumu slimnīcā darbu varētu atsākt staru terapijas aparāts vēža pacientiem
+checkGuidCount: 135
+Post saved: Sestdien policija Rīgā pārbaudīja 151 personu - kādas narkotikas atrada? (VIDEO)
+checkGuidCount: 135
+Post saved: Rīdzinieks apgalvo, ka kaimiņa galvu izmeta ārā pa logu - policija atbildējusi
+checkGuidCount: 135
+Post saved: Uzmanību! Svarīga informācija par valstī izsludināto ugunsnedrošo periodu
+checkGuidCount: 135
+Post saved: Izšķirošā spēle ar Šveici - Dārziņš atklāj ko interesantu par pretinieku stilu
+checkGuidCount: 135
+Post saved: Slovākija sakauj Norvēģiju - Latvijai būs jāpaņem vismaz punkts pret Šveici
+checkGuidCount: 135
+Post saved: Prezidenta vēlēšanas: Kuram kandidātam uzvaru prognozē bukmeikeri?
+checkGuidCount: 135
+Post saved: NEPLP grib sodīt medijus par nepareizu vārda "deportācijas" lietošanu
+checkGuidCount: 135
+Post saved: Skandāls! Dziesmu svētku noslēguma koncertā neizpildīs Liepiņa dziesmu
+checkGuidCount: 135
+Post saved: Dziesmu svētku biļešu tirgošanas sistēmas maiņa ir sevi attaisnojusi
+checkGuidCount: 135
+Post saved: Velsas galvaspilsētā naktī izcēlušās plašas nekārtības
+checkGuidCount: 135
+Post saved: Latgalē sēru vēsts. Satiksmes negadījumā dzīvību zaudējis gājējs
+checkGuidCount: 135
+Post saved: Pašvaldībām nav autobusu Dziesmu svētku dalībnieku pārvadāšanai
+checkGuidCount: 135
+Post saved: Latvijas hokeja izlase relaksējās Baltic Beach Hotel & SPA
+checkGuidCount: 135
+Post saved: Maija vidus Latvijā bijis 1,8 grādus siltāks nekā ierasts
+checkGuidCount: 135
+Post saved: Šodien Latvija tiekas ar Šveici un lūko nodrošināt spēlēšanu ceturtdaļfinālā
+checkGuidCount: 135
+Post saved: Atkal rīkos Āfrikas cūku mēra informatīvo kampaņu
+checkGuidCount: 135
+Post saved: Izveidota darba grupa, kas padziļināti analīzēs vardarbību ģimenēs
+checkGuidCount: 135
+Post saved: Kokorevičs informē, ko jāizmanto enerģētiskajai neatkarībai
+checkGuidCount: 135
+Post saved: Rīgā notiks Eiropas Padomes Parlamentārās asamblejas sanāksme
+checkGuidCount: 135
+Post saved: Serbijā akreditēta nerezidējošā Latvijas vēstniece Ieva Briede
+checkGuidCount: 135
+Post saved: Sensācija Rīgā! Norvēģija bullīšos uzveic Kanādu
+checkGuidCount: 135
+Post saved: Zooloģiskajā dārzā notiks Kokvardes karnevāls
+checkGuidCount: 135
+Post saved: Rinkēvičs: Eiropas Miera mehānisms jāsaglabā kā globāls instruments
+checkGuidCount: 135
+Post saved: Ministre: Krieviju karš Ukrainā nav pilnībā novājinājis
+checkGuidCount: 135
+Post saved: Rīgā grib aizliegt pārspīlētas reklāmas
+checkGuidCount: 135
+Post saved: Latvijā sākas nieru veselības nedēļa
+checkGuidCount: 135
+Post saved: Levits: Valsts iesaiste enerģētikas nozarē ir neizbēgama
+checkGuidCount: 135
+Post saved: Džeriņš savainots - kurš ies viņa vietā?
+checkGuidCount: 135
+Post saved: Komisija izvērtējusi trīs prezidenta kandidātus - vai visi atbilst?
+checkGuidCount: 135
+Post saved: Eksperts: Visām Baltijas valstīm vajadzētu vienu pretgaisa aizsardzības sistēmu
+checkGuidCount: 135
+Post saved: Graube: Okupantiem Bahmutā draud aplenkšana
+checkGuidCount: 135
+Post saved: Zemkopības ministrs devies pieredzes apmaiņas vizītē uz Somiju
+checkGuidCount: 135
+Post saved: Savāc 10 000 parakstu par e-cigarešu aromātu saglabāšanu
+checkGuidCount: 135
+Post saved: Latvijā ievieš jaunu importa muitas deklarāciju sistēmu
+checkGuidCount: 135
+Post saved: Darījumu skaits un kopsumma ar meža zemēm pakāpeniski aug kopš 2019.gada
+checkGuidCount: 135
+Post saved: Latvijas pasts izdos pastmarku par godu režisoram Pētersonam (+FOTO)
+checkGuidCount: 135
+Post saved: Baltkrievi turpina mēģinājumus iekļūt Latvijā - atturēti vēl 53 cilvēki
+checkGuidCount: 135
+Post saved: Cik latviešu šovasar ceļos par spīti dzīves dārdzībai?
+checkGuidCount: 135
+Post saved: Latvija pirmo reizi uzņems Eiropas vadošos ultrasonogrāfijas ekspertus
+checkGuidCount: 135
+Post saved: No rītdienas būs izmaiņas satiksmes organizācijā uz Bauskas šosejas (+KARTE)
+checkGuidCount: 135
+Post saved: Iznācis jaunākais WTA rangs - kur pēc Romas pusfināla ierindojas Ostapenko?
+checkGuidCount: 135
+Post saved: Svētdien uz ceļiem cietuši 17 cilvēki - cik velosipēdisti un gājēji?
+checkGuidCount: 135
+Post saved: Kas pēc Pinto domām ir Valsts prezidenta būtiskākā funkcija?
+checkGuidCount: 135
+Post saved: Bļugers palīdz uzvarā pret Stars, Golden Knights tuvojas finālam (+VIDEO)
+checkGuidCount: 135
+Post saved: Vāc parakstus par jaunas brīdinājuma ceļazīmes «Melnais punkts» ieviešanu
+checkGuidCount: 135
+Post saved: Valsts ceļi ziņo par satiksmes ierobežojumiem - būvdarbi 49 auto posmos
+checkGuidCount: 135
+Post saved: Kasēs varēs iegādāties neizpirktās biļetes uz Dziesmu un deju svētku pasākumiem
+checkGuidCount: 135
+Post saved: Pasaules čempionāta turnīra priekšpēdējā spēļu dienā tiek aizvadīti četri mači
+checkGuidCount: 135
+Post saved: Eiropas čempioni! Madrides Real spraigā galotnē uzveic Olympiakos
+checkGuidCount: 135
+Post saved: Mecenāts stipendijām novēlējis dāsnu summu - cik lielu?
+checkGuidCount: 135
+Post saved: Bijušo VDK darbinieku tiesā par uzkūdīšanu izpaust informāciju
+checkGuidCount: 135
+Post saved: Latvijai ir vēl uz ko tiekties - ASV salādē deviņas ripas Francijas vārtos
+checkGuidCount: 135
+Post saved: Iesaka atteikties no diennakts ķirurga un reanimatologa pakalpojumiem
+checkGuidCount: 135
+Post saved: Arī otrajā pārbaudes spēlē igaunietes ir pārākas pār Latvijas volejbolistēm
+checkGuidCount: 135
+Post saved: Riga izcīna astoto uzvaru pēc kārtas un lido pretī čempiontitulam
+checkGuidCount: 135
+Post saved: Cik KM plāno novirzīt Rīgas Latviešu biedrības nama atjaunošanas programmai?
+checkGuidCount: 135
+Post saved: Slovākija paņem trīs punktus pret slovēņiem - cīņa par ceturtdaļfinālu turpinās
+checkGuidCount: 135
+Post saved: Seska un Franča ekipāža triumfē Polijas rallijā
+checkGuidCount: 135
+Post saved: Nežēlīgi - kopš marta notiesāti jau trīs mājdzīvnieku slepkavas
+checkGuidCount: 135
+Post saved: Zemkopības ministrija: Zeme ir Latvijas nacionālā bagātība
+checkGuidCount: 135
+similarity for: В Латвии действуют 3 148 компаний полностью на офшорном капитале
+savePost: В Латвии действуют 3 148 компаний полностью на офшорном капитале
+similarity for: Латвия и Эстония впервые с момента восстановления независимости совершат общую военную закупку
+savePost: Латвия и Эстония впервые с момента восстановления независимости совершат общую военную закупку
+similarity for: Латвийские хоккеисты одержали победу в матче ЧМ со Словенией
+savePost: Латвийские хоккеисты одержали победу в матче ЧМ со Словенией
+similarity for: Ринкевич: Россия должна вывести свои войска из Украины, Грузии и Молдовы
+savePost: Ринкевич: Россия должна вывести свои войска из Украины, Грузии и Молдовы
+similarity for: Предвыборные выступления — только на латышском, в частном порядке — допустимы на другом языке
+savePost: Предвыборные выступления — только на латышском, в частном порядке — допустимы на другом языке
+Post saved: В Латвии действуют 3 148 компаний полностью на офшорном капитале
+checkGuidCount: 135
+Post saved: Латвия и Эстония впервые с момента восстановления независимости совершат общую военную закупку
+checkGuidCount: 135
+Post saved: Латвийские хоккеисты одержали победу в матче ЧМ со Словенией
+checkGuidCount: 135
+Post saved: Ринкевич: Россия должна вывести свои войска из Украины, Грузии и Молдовы
+checkGuidCount: 135
+Post saved: Предвыборные выступления — только на латышском, в частном порядке — допустимы на другом языке
+checkGuidCount: 135

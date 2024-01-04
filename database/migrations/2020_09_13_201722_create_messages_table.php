@@ -13,18 +13,18 @@ class CreateMessagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('messages', function (Blueprint $table) {
-            $table->id();
+        // Schema::create('messages', function (Blueprint $table) {
+        //     $table->id();
 			
-			$table->bigInteger('from_id');
-			$table->bigInteger('to_id');
-			$table->longText('message');
-			$table->boolean('readed')->default(false);
+		// 	$table->bigInteger('from_id');
+		// 	$table->bigInteger('to_id');
+		// 	$table->longText('message');
+		// 	$table->boolean('readed')->default(false);
 			
-			$table->index(['from_id','to_id','readed']);
+		// 	$table->index(['from_id','to_id','readed']);
 			
-            $table->timestamps();
-        });
+        //     $table->timestamps();
+        // });
     }
 
     /**
@@ -34,6 +34,6 @@ class CreateMessagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('messages');
+        //Schema::dropIfExists('messages');
     }
 }

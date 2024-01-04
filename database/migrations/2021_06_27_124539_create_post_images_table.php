@@ -13,12 +13,12 @@ class CreatePostImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('post_images', function (Blueprint $table) {
-            $table->id();
-			$table->string('post_slug',255);
-			$table->text('file_name');
-            $table->timestamps();
-        });
+        // Schema::create('post_images', function (Blueprint $table) {
+        //     $table->id();
+		// 	$table->string('post_slug',255);
+		// 	$table->text('file_name');
+        //     $table->timestamps();
+        // });
     }
 
     /**
@@ -28,6 +28,6 @@ class CreatePostImagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('post_images');
+        // Schema::dropIfExists('post_images');
     }
 }

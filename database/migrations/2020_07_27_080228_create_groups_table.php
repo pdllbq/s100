@@ -13,15 +13,15 @@ class CreateGroupsTable extends Migration
      */
     public function up()
     {
-        Schema::create('groups', function (Blueprint $table) {
-            $table->id();
-			$table->bigInteger('user_id');
-			$table->string('name', 255);
-			$table->string('slug',255);
-			$table->string('avatar',255);
-			$table->longText('description');
-            $table->timestamps();
-        });
+        // Schema::create('groups', function (Blueprint $table) {
+        //     $table->id();
+		// 	$table->bigInteger('user_id');
+		// 	$table->string('name', 255);
+		// 	$table->string('slug',255);
+		// 	$table->string('avatar',255);
+		// 	$table->longText('description');
+        //     $table->timestamps();
+        // });
     }
 
     /**
@@ -31,6 +31,6 @@ class CreateGroupsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('groups');
+        //Schema::dropIfExists('groups');
     }
 }
