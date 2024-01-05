@@ -2,9 +2,17 @@
 
 @section('title', __('holidayCalendar.title', ['year' => $year]))
 
-@section('description', __('holidayCalendar.description', ['year' => $year]))
+@if($year == 2024)
+    @section('description', __('holidayCalendar.description2024'))
+@else
+    @section('description', __('holidayCalendar.description', ['year' => $year]))
+@endif
 
-@section('keywords', __('holidayCalendar.keywords', ['year' => $year]))
+@if($year == 2024)
+    @section('keywords', __('holidayCalendar.keywords2024'))
+@else
+    @section('keywords', __('holidayCalendar.keywords', ['year' => $year]))
+@endif
 
 @section('content')
 
@@ -25,7 +33,9 @@
         </div>
 
         <div class="col-12">
-            {{ __('holidayCalendar.Description', ['year' => $year]) }}
+            @if($year != 2024)
+                {{ __('holidayCalendar.Description', ['year' => $year]) }}
+            @endif
         </div>
         
         <div class="col-12 col-md-6 col-lg-4">
@@ -64,6 +74,12 @@
         <div class="col-12 col-md-6 col-lg-4">
             {!! $calendarDec !!}
         </div>
+
+        @if($year == 2024)
+            <div class="col-12">
+                @include('holidayCalendar.description.'.app()->getLocale())
+            </div>
+        @endif
 
         <div class="col-12">
             @include('include.ads.ads')
