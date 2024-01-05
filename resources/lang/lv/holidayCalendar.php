@@ -2,8 +2,14 @@
 
 return [
     'title' => 'Latvijas svētku un brīvdienas kalendārs :year',
+
     'description' => 'Visi svētki un brīvdienas Latvijā :year',
+    'description2024' => 'Uzziniet par Latvijas brīvdienām 2024. gadā. Pilns kalendārs ar darba dienām, brīvdienām, un svinamām dienām, ieskaitot Jaungada dienu un Ziemassvētkus.',
+
     'keywords' => 'svētki, kalendārs, brīvdienas, :year, sarkanās dienas',
+    'keywords2024' => 'Latvijas Brīvdienas 2024, Svētku Kalendārs, Darba Dienas un Brīvdienas, Jaungada Diena 2024, Lieldienas, Pirmsvētku Diena, Latvijas Republikas Proklamēšanas Diena, Vasarsvētki, Jāņi, Ziemassvētki 2024, Latvijas Vēsturiskie Notikumi, Mātes Diena, Darba Svētki',   
+
+
     'Mon' => 'P',
     'Tue' => 'O',
     'Wed' => 'T',
