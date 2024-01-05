@@ -26,7 +26,7 @@ return [
     'year' => 'gads',
 
     'New Year\'s Day' => 'Jaungada diena',
-    'Pre-holiday day -7 hours working day' => 'Pirmsvētku diena- 7 stundu darba diena',
+    'Pre-holiday day -7 hours working day' => 'Pirmsvētku diena. 7 stundu darba diena',
     'Big Friday' => 'Lielā Piektdiena',
     'The first Easter' => 'Pirmās Lieldienas',
     'The second Easter' => 'Otrās Lieldienas',
@@ -51,4 +51,23 @@ return [
 
     ':count working days' => '{0} :count darba dienas|{1} :count darba diena|[2,4] :count darba dienas|[5,*] :count darba dienas',
     ':count working hours' => '{0} :count darba stundas|{1} :count darba stunda|[2,4] :count darba stundas|[5,*] :count darba stundas',
+
+    'Lielā piektdiena' => 'Lielā piektdiena',
+    'Pirmās Lieldienas' => 'Pirmās Lieldienas',
+    'Otrās Lieldienas' => 'Otrās Lieldienas',
+    'Darba svētki, Latvijas Republikas Satversmes sapulces sasaukšanas diena' => 'Darba svētki, Latvijas Republikas Satversmes sapulces sasaukšanas diena',
+    'Latvijas Republikas Neatkarības deklarācijas pasludināšanas diena' => 'Latvijas Republikas Neatkarības deklarācijas pasludināšanas diena',
+    'Pārceltā brīvdiena no :date' => 'Pārceltā brīvdiena no :date',
+    'Mātes diena' => 'Mātes diena',
+    'Vasarsvētki' => 'Vasarsvētki',
+    'Līgo' => 'Līgo',
+    'Jāņu diena' => 'Jāņu diena',
+    'Latvijas Republikas proklamēšanas diena' => 'Latvijas Republikas proklamēšanas diena',
+    'Valsts un pašvaldības iestādes pārceļ darba dienu no :date' => 'Valsts un pašvaldības iestādes pārceļ darba dienu no :date',
+    'Pirmssvētku diena. 7 darba stundas. Valsts un pašvaldības iestādes pārceļ darba dienu uz :date' => 'Pirmssvētku diena. 7 darba stundas. Valsts un pašvaldības iestādes pārceļ darba dienu uz :date',
+    'Ziemassvētku vakars' => 'Ziemassvētku vakars',
+    'Pirmie Ziemassvētki' => 'Pirmie Ziemassvētki',
+    'Otrie Ziemassvētki' => 'Otrie Ziemassvētki',
+    'Valsts un pašvaldības iestādes pārceļ darba dienu no :date' => 'Valsts un pašvaldības iestādes pārceļ darba dienu no :date',
+    'Gada noslēguma diena' => 'Gada noslēguma diena',
 ];
