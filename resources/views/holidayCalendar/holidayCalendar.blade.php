@@ -19,9 +19,9 @@
 
         <div class="col-12 h1 text-center">
             {{ __('holidayCalendar.year') }}: 
-            <a href="{{ route('holidayCalendar',[$lang,'2022']) }}" class="@if($year == 2022) disabled @endif">2022</a> 
+            <a href="{{ route('holidayCalendar',[$lang,'2023']) }}" class="@if($year == 2023) disabled @endif">2023</a> 
             / 
-            <a href="{{ route('holidayCalendar',[$lang,'2023']) }}" class="@if($year == 2023) disabled @endif">2023</a>
+            <a href="{{ route('holidayCalendar',[$lang,'2024']) }}" class="@if($year == 2024) disabled @endif">2024</a>
         </div>
 
         <div class="col-12">
