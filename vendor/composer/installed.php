@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '8d08862c415da7fe651f1347d179e64c4d1cb5fe',
+        'reference' => '641e3063e6723c7dbd3033221b46e88bc272f22e',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -110,6 +110,15 @@
             'install_path' => __DIR__ . '/../egulias/email-validator',
             'aliases' => array(),
             'reference' => 'ee0db30118f661fb166bcffbf5d82032df484697',
+            'dev_requirement' => false,
+        ),
+        'ezyang/htmlpurifier' => array(
+            'pretty_version' => 'v4.17.0',
+            'version' => '4.17.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../ezyang/htmlpurifier',
+            'aliases' => array(),
+            'reference' => 'bbc513d79acf6691fa9cf10f192c90dd2957f18c',
             'dev_requirement' => false,
         ),
         'facade/ignition-contracts' => array(
@@ -415,7 +424,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '8d08862c415da7fe651f1347d179e64c4d1cb5fe',
+            'reference' => '641e3063e6723c7dbd3033221b46e88bc272f22e',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(

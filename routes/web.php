@@ -28,7 +28,7 @@ Route::get('/home', function () {
     return redirect('/'.$locale);
 });
 
-Route::get('/test/react','TestController@react')->name('test.react');
+Route::get('/test/index','TestController@index')->name('test.index');
 
 Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
 	Route::get('/login/facebook', 'Auth\LoginController@redirectToFacebook');
@@ -118,6 +118,7 @@ Route::group(['prefix'=>'{locale}','middleware'=>'setlocale'],function(){
   Route::post('/admin/news/filters/update','AdminController@newsFiltersUpdate')->name('admin.news.filters.update');
   Route::get('/admin/news/filters/delete/{id}','AdminController@newsFiltersDelete')->name('admin.news.filters.delete');
   Route::post('/admin/news/filters/words/store','AdminController@newsFiltersWordsStore')->name('admin.news.filters.words.store');
+  Route::get('/admin/news/list','AdminController@newsList')->name('admin.news.list');
   //
 });
 

@@ -34,5 +34,6 @@ return array(
     'b1dd4e332496ee9d8933dc654076e9a5' => $vendorDir . '/jajo/jsondb/helpers/dataTypes.php',
     'ac0c476eaaca2c96072228f64c624fb0' => $vendorDir . '/jajo/jsondb/helpers/json.php',
     '320163ac6b93aebe3dc25b60a0533d56' => $vendorDir . '/spatie/laravel-ignition/src/helpers.php',
+    '2cffec82183ee1cea088009cef9a6fc3' => $vendorDir . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
     'ef157334f1067da991ff8953983afdb3' => $baseDir . '/app/Helpers/helper.php',
 );

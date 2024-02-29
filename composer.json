@@ -9,6 +9,7 @@
         "barryvdh/laravel-cors": "^3.0",
         "barryvdh/laravel-debugbar": "^3.7",
         "benhall14/php-calendar": "^1.2",
+        "ezyang/htmlpurifier": "^4.17",
         "guzzlehttp/guzzle": "^7.2",
         "jajo/jsondb": "^3.0",
         "laravel/framework": "^9.2",

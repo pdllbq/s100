@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use \App\Models\NewsSource;
 use \App\Models\NewsFilterName;
 use App\Models\NewsFilterWords;
+use App\Models\NewsPost;
 
 class AdminController extends Controller
 {
@@ -241,4 +242,13 @@ class AdminController extends Controller
         return redirect(route('admin.news.filters', app()->getLocale()))->with('status', __('admin.Filter updated'));
     }
 
+    //News list
+    function newsList($locale)
+    {
+        $this->onlyAdmin();
+
+        $posts = NewsPost::orderBy('id', 'desc')->paginate(10);
+
+        return view('admin.newsList', compact('posts'));
+    }
 }
